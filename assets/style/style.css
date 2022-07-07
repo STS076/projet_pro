@@ -1,3 +1,45 @@
-body{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+
+body {
     font-family: 'Poppins';
 }
+
+h1 {
+    font-family: 'Handlee', cursive;
+    letter-spacing: 0.1rem;
+}
+
+/* Mentions Légales */
+@media screen and (min-width:600px) {
+    .mentions {
+        width: 70%;
+        margin-left: 13%;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .mentions {
+        text-align: justify;
+        margin: 1rem;
+    }
+}
+
+/* background */
+.background {
+    background: rgba(0, 0, 0, 0.1) url("../images/background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    background-attachment: fixed;
+}
+
+/* navbar */
+
+.navigation {
+    background-color: rgba(216, 112, 147, 0.574);
+}
+
+
+
