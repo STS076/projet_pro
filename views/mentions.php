@@ -1,10 +1,10 @@
 <?php require_once '../elements/top.php' ?>
 
-<body class="d-flex flex-column min-vh-100">
+<body class="background  d-flex flex-column min-vh-100">
 
     <?php require_once '../elements/header.php' ?>
 
-    <main class="background pt-4">
+    <main class="pt-4">
         <div class="container  mt-5 bg-light">
             <div class="row justif-content-center m-0 p-0">
                 <div class="col-lg-8 col-11 mentions">

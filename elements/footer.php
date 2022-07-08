@@ -1,8 +1,16 @@
 <div class="container">
-    <footer class="mt-auto pt-4">
-        <div class="text-center text-dark mt-auto py-4 bg-light">
-            Sophie |<a href="mentions.php" class="text-dark text-decoration-none"> Mentions légales</a>
+    <footer class="d-flex flex-wrap justify-content-evenly mt-auto py-4 bg-light">
+        <div class="">
+            <span class="ms-3">
+                © Sophie Toussaint
+            </span>
         </div>
+        <div class="">
+            <a href="mentions.php" class=" m-0 p-0 text-dark text-decoration-none"> Mentions légales</a>
+        </div>
+        <!-- <ul class="justify-content-end">
+           
+        </ul> -->
     </footer>
 </div>
 

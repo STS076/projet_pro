@@ -1,21 +1,22 @@
 <div class="container">
-    <header class="d-lg-block d-none bg-light ">
-        <div class="pt-5">
-            <h1 class="text-center py-5">All about costumes<img class="logocss" src="../assets/img/logosport.png" alt=""></h1>
+    <header class="d-lg-block d-none sewing bg-light ">
+        <div class="py-5">
+            <h1 class="text-center py-5 bw-bold text-white">All about costumes<img class="logocss" src="../assets/img/logosport.png" alt=""></h1>
         </div>
-        <nav class="navbar navbar-expand-lg shadow-5-strong mt-4 navigation">
-            <a class="navbar-brand " href="#"></a>
+        <nav class="navbar navbar-expand-lg shadow-5-strong py-3 navigation">
+            <!-- <a class="navbar-brand " href="#"></a> -->
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
                 <ul class="navbar-nav  w-100 nav-justified  nav d-flex">
-                    <li class="nav-item ">
-                        <a href="home.php" class="nav-link  fw-bold  text-dark"> <i class="bi bi-house-door m-2"></i>Home</a>
+                    <li class="nav-item d-flex">
+                        <a href="home.php" class="nav-link fw-bold text-dark"><i class="bi bi-house-door m-2"></i>Home</a>
+                        <a href="login.php" class="nav-link fw-bold text-dark"><i class="bi bi-person-circle"></i></a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link active titre box fw-bold text-dark" href="pages.php?sport=bike">News</a>
+                        <a class="nav-link active titre box fw-bold text-dark" href="news.php">News</a>
                     </li>
 
                     <!-- <li class="nav-item">
-
                         <?php if (isset($_SESSION['user'])) {  ?>
                             <a class="nav-link fw-bold active titre me-5 " href="logout.php"><i class="bi bi-person me-2"></i>
                                 Deconnexion
@@ -33,7 +34,7 @@
                             Costumes by genre
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Science Fiction</a></li>
+                            <li><a class="dropdown-item text-dark" href="#">Science Fiction</a></li>
                             <li><a class="dropdown-item" href="#">Fantasy</a></li>
 
                             <li><a class="dropdown-item" href="#">Historical</a></li>
@@ -49,7 +50,6 @@
                         </ul>
                     </li>
                 </ul>
-
             </div>
         </nav>
     </header>

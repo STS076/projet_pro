@@ -38,8 +38,13 @@ h1 {
 /* navbar */
 
 .navigation {
-    background-color: rgba(216, 112, 147, 0.574);
+    background-color: #AF9151;
 }
 
-
-
+.sewing {
+    background: rgba(0, 0, 0, 0.1) url("../images/header.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+}
