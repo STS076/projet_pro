@@ -48,3 +48,7 @@ h1 {
     background-size: cover;
     background-blend-mode: darken;
 }
+
+.welcome{
+    font-family: 'Handlee', cursive;
+}

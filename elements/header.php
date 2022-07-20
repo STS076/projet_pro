@@ -31,22 +31,23 @@
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-dark  fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Costumes by genre
+                            Costumes by dates
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item text-dark" href="#">Science Fiction</a></li>
-                            <li><a class="dropdown-item" href="#">Fantasy</a></li>
-
-                            <li><a class="dropdown-item" href="#">Historical</a></li>
+                            <li><a class="dropdown-item text-dark" href="#">2000's</a></li>
+                            <li><a class="dropdown-item" href="#">1980 - 1990</a></li>
+                            <li><a class="dropdown-item" href="#">1958 - 1979</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-dark  fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Costumes by movie
+                            Costumes by genre
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Star Wars</a></li>
-                            <li><a class="dropdown-item" href="#">Lord of the Rings</a></li>
+                            <li><a class="dropdown-item" href="#">Historical</a></li>
+                            <li><a class="dropdown-item" href="#">Fantasy</a></li>
+                            <li><a class="dropdown-item" href="#">Science Fiction</a></li>
+                            <li><a class="dropdown-item" href="#">Drama</a></li>
                         </ul>
                     </li>
                 </ul>
