@@ -20,7 +20,7 @@ require_once '../elements/top.php';
                         <div class="card-body">
                             <p class="card-title text-center fw-bold fs-5">Jardin des tuileries</p>
                             <p class="card-text">Explore with a guide one of Paris most famous park near the Louvre.</p>
-                            <a href="deals.php?choice=tuileries m-0 p-0">Explore</a>
+                            <a href="deals.php?choice=tuileries">Explore</a>
                         </div>
                     </div>
                 </div>
@@ -34,7 +34,7 @@ require_once '../elements/top.php';
                         <div class="card-body">
                             <p class="card-title text-center fw-bold fs-5">Jardin des tuileries</p>
                             <p class="card-text">Explore with a guide one of Paris most famous park near the Louvre.</p>
-                            <a href="deals.php?choice=tuileries m-0 p-0">Explore</a>
+                            <a href="deals.php?choice=tuileries">Explore</a>
                         </div>
                     </div>
                 </div>
@@ -48,7 +48,7 @@ require_once '../elements/top.php';
                         <div class="card-body">
                             <p class="card-title text-center fw-bold fs-5">Jardin des tuileries</p>
                             <p class="card-text">Explore with a guide one of Paris most famous park near the Louvre.</p>
-                            <a href="deals.php?choice=tuileries m-0 p-0">Explore</a>
+                            <a href="deals.php?choice=tuileries">Explore</a>
                         </div>
                     </div>
                 </div>
@@ -62,7 +62,7 @@ require_once '../elements/top.php';
                         <div class="card-body">
                             <p class="card-title text-center fw-bold fs-5">Jardin des tuileries</p>
                             <p class="card-text">Explore with a guide one of Paris most famous park near the Louvre.</p>
-                            <a href="deals.php?choice=tuileries m-0 p-0">Explore</a>
+                            <a href="deals.php?choice=tuileries">Explore</a>
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
 
 
@@ -9,10 +7,11 @@ body {
 }
 
 h1 {
-    font-family: 'Handlee', cursive;
-    letter-spacing: 0.1rem;
-    color: #242D3C;
+    font-family: 'Just Another Hand', cursive;
+    letter-spacing: 0.2rem;
+    color: rgb(0, 0, 77);
 }
+
 
 /* Mentions Légales */
 @media screen and (min-width:600px) {
@@ -54,12 +53,12 @@ h1 {
 }
 
 .welcome {
-    font-family: 'Handlee', cursive;
+    font-family: 'Just Another Hand', cursive;
 }
 
 /* footer */
 footer {
-    background-color: #242D3C;
+    background-color: rgb(0, 0, 77);
     color: white;
 }
 
@@ -68,7 +67,7 @@ footer {
 .cadre {
     position: relative;
     text-align: center;
-    font-family: 'Handlee', cursive;
+    font-family: 'Just Another Hand', cursive;
     font-size: 2rem;
     color: whitesmoke;
 }
@@ -141,4 +140,13 @@ footer {
 
 .bouton {
     background-color: #242D3C;
+}
+
+
+
+@media screen and (min-width:600px) {
+    .map {
+        width: 600px;
+        height: 450px
+    }
 }

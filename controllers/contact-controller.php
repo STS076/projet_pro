@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (isset($_POST['emailAddress'])) {
         if ($_POST['emailAddress'] == '') {
-            $errors['emailAddress'] = "* please put an email address";
+            $errors['emailAddress'] = "* please fill out your email address";
         } else if (!filter_var($_POST['emailAddress'], FILTER_VALIDATE_EMAIL)) {
             $errors['emailAddress'] = "* invalid email address";
         }

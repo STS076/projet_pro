@@ -1,31 +1,18 @@
 <header class="d-lg-block d-none sewing bg-light ">
     <div class="py-3">
-        <h1 class="text-center py-2 bw-bold text-black">It's always better when it's free<img class="logocss" src="../assets/img/logosport.png" alt=""></h1>
+        <h1 class="text-center py-2 bw-bold">It's always better when it's free<img class="logocss" src="../assets/img/logosport.png" alt=""></h1>
     </div>
     <nav class="navbar navbar-expand-lg shadow-5-strong py-2 navigation">
         <!-- <a class="navbar-brand " href="#"></a> -->
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="navbar-nav  w-100 nav-justified  nav d-flex">
                 <li class="nav-item d-flex">
-                    <a href="home.php" class="nav-link fw-bold text-white"><i class="bi bi-house-door m-2"></i>Home</a>
-                    <a href="contact.php" class="nav-link fw-bold text-white">Contact Us</a>
+                    <a href="home.php" class="nav-link fw-bold text-white">Home</a>
+                    
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active titre box fw-bold text-white" href="news.php">News</a>
                 </li>
-                <!-- <li class="nav-item">
-                        <?php if (isset($_SESSION['user'])) {  ?>
-                            <a class="nav-link fw-bold active titre me-5 " href="logout.php"><i class="bi bi-person me-2"></i>
-                                Deconnexion
-                            </a>
-                        <?php } else {  ?>
-                            <a class="nav-link fw-bold active titre me-5 " href="login.php"><i class="bi bi-person me-2"></i>
-                                S'indentifier
-                            </a>
-                        <?php   }
-                        ?>
-                    </li> -->
-
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-white  fw-bold" href=id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Arrondissement
@@ -67,6 +54,9 @@
                         <li><a class="dropdown-item" href="#">Nature</a></li>
                         <li><a class="dropdown-item" href="#">Restaurants</a></li>
                     </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active titre box fw-bold text-white" href="contact.php">Contact us</a>
                 </li>
             </ul>
         </div>
