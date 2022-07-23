@@ -11,6 +11,8 @@
 
     <link rel="stylesheet" href="../assets/style/style.css">
 
-    <title>Costumes</title>
-</head>
 
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/eiffel.png">
+
+    <title>Paris for free</title>
+</head>

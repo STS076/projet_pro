@@ -1,18 +1,17 @@
-<div class="container">
-    <footer class="d-flex flex-wrap justify-content-evenly mt-auto py-4 bg-light">
-        <div class="">
-            <span class="ms-3">
-                © Sophie Toussaint
-            </span>
-        </div>
-        <div class="">
-            <a href="mentions.php" class=" m-0 p-0 text-dark text-decoration-none"> Mentions légales</a>
-        </div>
-        <!-- <ul class="justify-content-end">
+<footer class="d-flex flex-wrap justify-content-evenly mt-auto py-4 ">
+    <div class="">
+        <span class="ms-3 text-white">
+            © Sophie Toussaint
+        </span>
+    </div>
+    <div class="">
+        <a href="mentions.php" class=" m-0 p-0 text-white text-decoration-none"> Mentions légales</a>
+    </div>
+    <!-- <ul class="justify-content-end">
            
         </ul> -->
-    </footer>
-</div>
+</footer>
+
 
 <!-- JavaScript Bundle with Popper -->
 
