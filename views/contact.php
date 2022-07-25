@@ -14,23 +14,23 @@ require_once '../elements/top.php' ?>
 
             <form action="" method="POST">
                 <div class="container d-flex align-items-center flex-column  subway mt-1 mb-4 " id="page">
-
+                    <div class="form-group col-lg-6 col-12 my-3 text-center">
+                        <label>Your email address:</label>
+                        <input class="text-center form-control" id="emailAddress" placeholder="Email" name="emailAddress" value="<?= isset($_POST['emailAddress']) ? $_POST['emailAddress'] : '' ?>">
+                        <p class="text-danger" id="erroremailAddress"><?= isset($errors['emailAddress']) ? $errors['emailAddress'] : '' ?></p>
+                    </div>
                     <div class=" form-group col-lg-6 col-11 text-center">
                         <select class="text-center form-control" name="option" id="option">
                             <option selected disabled>choose an option</option>
-                            <option value="1">This concerns a new deal</option>
-                            <option value="2">There is a mistake in one of our ads</option>
+                            <option value="New Deal">This concerns a new deal</option>
+                            <option value="Mistake">There is a mistake in one of our ads</option>
                         </select>
                         <p class="text-danger" id="erroroption"><?= isset($errors['option']) ? $errors['option'] : '' ?></p>
                     </div>
 
+
                     <div class="form-group col-lg-6 col-12 my-3 text-center">
-                        <label>Your email:</label>
-                        <input class="text-center form-control" id="emailAddress" placeholder="Email" name="emailAddress" value="<?= isset($_POST['emailAddress']) ? $_POST['emailAddress'] : '' ?>">
-                        <p class="text-danger" id="erroremailAddress"><?= isset($errors['emailAddress']) ? $errors['emailAddress'] : '' ?></p>
-                    </div>
-                    <div class="form-group col-lg-6 col-12 my-3 text-center">
-                    <label>Your message:</label>
+                        <label>Your message:</label>
                         <textarea class="form-control" name="review" rows="8" cols="40">
                             </textarea>
 

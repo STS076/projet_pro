@@ -23,8 +23,8 @@ require_once '../elements/top.php' ?>
 
             <?php foreach ($arrondissements as $value) {
             ?>
-                <div class="col-lg-3 col-11 m-2 p-0 shadow-sm">
-                    <div class="card cadre m-0 p-0">
+                <div class="col-lg-3 col-11 m-2 p-0">
+                    <div class="card cadre m-0 p-0 shadow-sm">
                         <img class="image m-0 p-0" src="../assets/images/arrondissements/<?= $value['picture'] ?>.jpg">
                         <p class="arrondissement"><a class="text-white text-decoration-none" href="arrondissements.php?choice=<?= $value['id'] ?>"><?= $value['arrondissement'] ?> Arrondissement</a></p>
                     </div>
@@ -46,7 +46,7 @@ require_once '../elements/top.php' ?>
                     <div class="form-group m-0 p-0">
                         <input class="m-0 p-0" type="text" name="mail" placeholder="Your email" />
                         <input class="m-0 p-0" type="submit" value="Sign up" />
-                        <p class="text-danger" id="errorsurname"><?= isset($errors['mail']) ? $errors['mail'] : '' ?></p>
+                        <p class="text-danger" id="errorsurname"><?= isset($erreurs['mail']) ? $erreurs['mail'] : '' ?></p>
                     </div>
                 </form>
             </div>

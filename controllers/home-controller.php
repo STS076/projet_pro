@@ -8,11 +8,11 @@ $queFaitOn = 'mail'; //'mail' ou 'bdd'
 $mail_admin = 'sophfrom76@hotmail.com';
 //si le bouton "S'inscrire" est cliqué, on traite le formulaire
 if (!empty($_POST['mail'])) {
-    $errors = [];
+    $erreurs = [];
     //on vérifie la validité de l'adresse mail
     //pour une explication de cette regex, vous pouvez aller ici : https://www.c2script.com/scripts/verifier-une-adresse-mail-en-php-s2.html
     if (!preg_match("#^[-\w]+((\.[-\w]+){1,})?@[-\w]+\1?\.[a-z]{2,}$#i", $_POST['mail']))
-    $errors['mail'] = "* format invalide";
+        $erreurs['mail'] = "* format invalide";
     else {
         //soit on s'envoi le mail par courriel, soit un l'enregistre dans une base de données
         if ($queFaitOn == 'mail') {
@@ -26,8 +26,5 @@ if (!empty($_POST['mail'])) {
             //juste par sécurité, il vous faudra protéger contre les attaques de injections SQL mais avec la preg_match ya pas besoin :)
             mysqli_query($mysqli, "INSERT INTO newsletter SET mail='" . $_POST['mail'] . "'");
         }
-
-        echo "<p>Merci pour votre inscription, nous allons bientôt vous envoyer nos newsletters !</p>";
     }
 }
-

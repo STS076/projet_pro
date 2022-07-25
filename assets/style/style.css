@@ -28,20 +28,16 @@ h1 {
     }
 }
 
-/* background */
-/* .background {
-    background: rgba(0, 0, 0, 0.1) url("../images/background.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-blend-mode: darken;
-    background-attachment: fixed;
-} */
+
 
 /* navbar */
 
 .navigation {
     background-color: #242d3c6b;
+}
+
+.navigationMobile{
+    background-color:  #242D3C;
 }
 
 .sewing {
@@ -56,13 +52,18 @@ h1 {
     font-family: 'Just Another Hand', cursive;
 }
 
+.MenuBurger{
+    color: white;
+}
+
 /* footer */
+
 footer {
     background-color: rgb(0, 0, 77);
     color: white;
 }
 
-/* accueil */
+/* accueil, ériture arrondissement sur images */
 
 .cadre {
     position: relative;
@@ -80,7 +81,7 @@ footer {
 }
 
 
-/* newsletter */
+/* barre de séparation newsletter */
 
 @media screen and (min-width:600px) {
 
@@ -108,7 +109,7 @@ footer {
     }
 }
 
-/* commentaires */
+/* barres de séparations */
 
 @media screen and (min-width:600px) {
 
@@ -136,17 +137,23 @@ footer {
     }
 }
 
-/* Bouton */
+/* Bouton submit formulaire de contact */
 
 .bouton {
     background-color: #242D3C;
 }
 
-
+/* google map */
 
 @media screen and (min-width:600px) {
     .map {
         width: 600px;
         height: 450px
     }
+}
+
+/* photo accueil */
+
+.image{
+    height: 15rem;
 }

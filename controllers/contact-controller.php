@@ -1,29 +1,18 @@
 <?php
-
-
 $showForm = true;
 
-// lance les test uniquement lors de la validation du formulaire de type POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-    // déclare un tableau d'erreur
     $errors = [];
 
-    // déclare les regex 
     $regexName = "/^[a-zA-Z-éèëêâäàöôûùüîïç]+$/";
 
-    // isset permet de vérifier si la variable existe
     if (isset($_POST['reviws'])) {
         if ($_POST['reviws'] == '') {
-            // si vide, créé une clef dans le tableau d'erreur
             $errors['reviws'] = "* please leave a review";
         } else if (!preg_match($regexName, $_POST['reviws'])) {
             $errors['reviws'] = "* format invalide";
         }
     }
-
-
-
 
     if (isset($_POST['emailAddress'])) {
         if ($_POST['emailAddress'] == '') {
@@ -32,8 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $errors['emailAddress'] = "* invalid email address";
         }
     }
-
-
 
     if (!isset($_POST['option'])) {
         $errors['option'] = "* please choose an option";
@@ -55,13 +42,35 @@ function safeInput($input)
     return $safeInput;
 }
 
-// protéger ce qu'on va controller, rentre ce qu'on récupère safe. utiliser la fonction trim et htmlspecialchar
-// pour échapper les caractères HTML 
-// trim sert à supprimer les espaces en début ou de fin de chaine
+/*
+Vous pouvez prendre tout le contenu de cette page pour l'insérer là où vous voulez sur votre site, attention à bien mettre ce code dans un page avec l'extension .php pour que le code fonctionne
+*/
+//enregistrer le mail dans une base de donnée ou le recevoir par mail ?
+// $queFaitOn = 'review'; //'mail' ou 'bdd'
+// //votre mail pour recevoir les nouvelles adresses:
+// $mail_admin = 'sophfrom76@hotmail.com';
+// //si le bouton "S'inscrire" est cliqué, on traite le formulaire
+// if (!empty($_POST['review'])) {
+//     $errors = [];
+//     //on vérifie la validité de l'adresse mail
+//     //pour une explication de cette regex, vous pouvez aller ici : https://www.c2script.com/scripts/verifier-une-adresse-mail-en-php-s2.html
+//     if (!preg_match("#^[-\w]+((\.[-\w]+){1,})?@[-\w]+\1?\.[a-z]{2,}$#i", $_POST['emailAddress']))
+//     $errors['emailAddress'] = "* format invalide";
+//     else {
+//         //soit on s'envoi le mail par courriel, soit un l'enregistre dans une base de données
+//         if ($queFaitOn == 'review') {
 
-// faire un tableau associatif pour les formules pour les afficher correctement en fonction de l'index. 
-$arrayFormula = [
-    1 => 'étudiante',
-    2 => 'normale',
-    3 => 'prémium'
-];
+//             //l'envoyer par mail
+//             mail($mail_admin, $_POST['option'], "Nouveau message bon plan {$_SERVER['HTTP_HOST']} : " . $_POST['review']);
+//         } else {
+
+//             //l'enregistrer en BDD
+//             //il vous faudra bien évidemment ouvrir un connexion MySQLi avec mysqli_connect() et créer la table newsletter
+//             //juste par sécurité, il vous faudra protéger contre les attaques de injections SQL mais avec la preg_match ya pas besoin :)
+//             mysqli_query($mysqli, "INSERT INTO newsletter SET review='" . $_POST['review'] . "'");
+//         }
+
+       
+//     }
+// }
+
