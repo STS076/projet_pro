@@ -18,86 +18,86 @@ $arrondissements = [
     [
         "arrondissement" => "4<sup> th</sup>",
         "id" => "4",
-        "picture" => "tuileries1"
+        "picture" => "pompidou4"
     ],
     [
         "arrondissement" => "5<sup> th</sup>",
         "id" => "5",
-        "picture" => "tuileries1"
+        "picture" => "pantheon5"
     ],
     [
         "arrondissement" => "6<sup> th</sup>",
         "id" => "6",
-        "picture" => "tuileries1"
+        "picture" => "senat6"
     ],
     [
         "arrondissement" => "7<sup> th</sup>",
         "id" => "7",
-        "picture" => "tuileries1"
+        "picture" => "orsay7"
     ],
     [
         "arrondissement" => "8<sup> th</sup>",
         "id" => "8",
-        "picture" => "tuileries1"
+        "picture" => "arc-de-triomphe8"
     ],
     [
         "arrondissement" => "9<sup> th</sup>",
         "id" => "9",
-        "picture" => "tuileries1"
+        "picture" => "garnier9"
     ],
     [
         "arrondissement" => "10<sup> th</sup>",
         "id" => "10",
-        "picture" => "tuileries1"
+        "picture" => "gare_du_nord10"
     ],
     [
         "arrondissement" => "11<sup> th</sup>",
         "id" => "11",
-        "picture" => "tuileries1"
+        "picture" => "place_nation11"
     ],
     [
         "arrondissement" => "12<sup> th</sup>",
         "id" => "12",
-        "picture" => "tuileries1"
+        "picture" => "opera_bastille12"
     ],
     [
         "arrondissement" => "13<sup> th</sup>",
         "id" => "13",
-        "picture" => "tuileries1"
+        "picture" => "hopital_pitie13"
     ],
     [
         "arrondissement" => "14<sup> th</sup>",
         "id" => "14",
-        "picture" => "tuileries1"
+        "picture" => "observatoire14"
     ],
     [
         "arrondissement" => "15<sup> th</sup>",
         "id" => "15",
-        "picture" => "tuileries1"
+        "picture" => "grenelle15"
     ],
     [
         "arrondissement" => "16<sup> th</sup>",
         "id" => "16",
-        "picture" => "tuileries1"
+        "picture" => "jardins16"
     ],
     [
         "arrondissement" => "17<sup> th</sup>",
         "id" => "17",
-        "picture" => "tuileries1"
+        "picture" => "batignolles17"
     ],
     [
         "arrondissement" => "18<sup> th</sup>",
         "id" => "18",
-        "picture" => "tuileries1"
+        "picture" => "sacre-coeur-paris18"
     ],
     [
         "arrondissement" => "19<sup> th</sup>",
         "id" => "19",
-        "picture" => "tuileries1"
+        "picture" => "butte-chaumont19"
     ],
     [
         "arrondissement" => "20<sup> th</sup>",
         "id" => "20",
-        "picture" => "tuileries1"
+        "picture" => "pere_lachaise20"
     ],
 ];

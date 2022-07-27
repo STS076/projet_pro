@@ -26,7 +26,7 @@ require_once '../elements/top.php' ?>
                 <div class="col-lg-3 col-11 m-2 p-0">
                     <div class="card cadre m-0 p-0 shadow-sm">
                         <img class="image m-0 p-0" src="../assets/images/arrondissements/<?= $value['picture'] ?>.jpg">
-                        <p class="arrondissement"><a class="text-white text-decoration-none" href="arrondissements.php?choice=<?= $value['id'] ?>"><?= $value['arrondissement'] ?> Arrondissement</a></p>
+                        <p class="arrondissement"><a class="text-white glass text-decoration-none" href="arrondissements.php?choice=<?= $value['id'] ?>"><?= $value['arrondissement'] ?> Arrondissement</a></p>
                     </div>
                 </div>
             <?php } ?>

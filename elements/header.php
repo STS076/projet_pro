@@ -1,7 +1,7 @@
-<header class=" sewing bg-light ">
+<header class=" paris bg-light ">
     <div class="py-5">
         <a href="home.php" class="text-decoration-none">
-            <h1 class="text-center py-5 bw-bold">It's always better when it's free</h1>
+            <p class="text-center titleMain py-5 bw-bold fs-1">It's always better when it's free</p>
         </a>
     </div>
     <nav class="navbar navbar-expand-lg shadow-5-strong py-2 navigation">
@@ -9,14 +9,14 @@
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="navbar-nav  w-100 nav-justified  nav d-flex">
                 <li class="nav-item d-flex">
-                    <a href="home.php" class="nav-link fw-bold text-white">Home</a>
+                    <a href="home.php" class="nav-link fw-bold text-black">Home</a>
 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active titre box fw-bold text-white" href="news.php">News</a>
+                    <a class="nav-link active titre box fw-bold text-black" href="news.php">News</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white  fw-bold" href=id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="arrondissements.php">
+                    <a class="nav-link dropdown-toggle text-black  fw-bold" href=id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="arrondissements.php">
                         Arrondissement
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -43,7 +43,7 @@
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white  fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle text-black  fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Categories
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -58,15 +58,12 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active titre box fw-bold text-white" href="contact.php">Contact us</a>
+                    <a class="nav-link active titre box fw-bold text-black" href="contact.php">Contact us</a>
                 </li>
             </ul>
         </div>
     </nav>
 </header>
-
-
-
 
 
 
@@ -76,8 +73,8 @@
     <nav class="navbar fixed-bottom navbar-expand-lg navigationMobile shadow-5-strong py-2">
         <div class="container-fluid">
             <!-- <a class="navbar-brand me-5 pe-5 text-light" href="home.php"><a class="navbar-brand text-light" href="home.php">Home</a></a> -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupported" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon "></span>
+            <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupported" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupported">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">

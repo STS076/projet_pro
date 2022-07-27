@@ -6,7 +6,7 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-h1 {
+.titleMain {
     font-family: 'Just Another Hand', cursive;
     letter-spacing: 0.2rem;
     color: rgb(0, 0, 77);
@@ -33,14 +33,19 @@ h1 {
 /* navbar */
 
 .navigation {
-    background-color: #242d3c6b;
+    background-color: #ffffff84;
+    color: rgb(0, 0, 77);
+    /* position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1; */
 }
 
-.navigationMobile{
-    background-color:  #242D3C;
+.navigationMobile {
+    background-color: #242D3C;
 }
 
-.sewing {
+.paris {
     background: rgba(0, 0, 0, 0.1) url("../images/header.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -52,7 +57,7 @@ h1 {
     font-family: 'Just Another Hand', cursive;
 }
 
-.MenuBurger{
+.MenuBurger {
     color: white;
 }
 
@@ -78,6 +83,15 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+}
+
+.glass {
+    background: rgba(36, 45, 60, 0.15);
+    border-radius: 10%;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 
@@ -152,8 +166,25 @@ footer {
     }
 }
 
+@media screen and (max-width:600px) {
+    .carte {
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .map {
+        align-items: center;
+        width: 300px;
+        height: 300px;
+        margin-left: 10%;
+        margin-bottom: 2rem;
+    }
+}
+
 /* photo accueil */
 
-.image{
+.image {
     height: 15rem;
 }
