@@ -4,7 +4,7 @@
             <p class="text-center titleMain py-5 bw-bold fs-1">It's always better when it's free</p>
         </a>
     </div>
-    <nav class="navbar navbar-expand-lg shadow-5-strong py-2 navigation">
+    <nav class="d-lg-block d-none navbar navbar-expand-lg shadow-5-strong py-2 navigation">
         <!-- <a class="navbar-brand " href="#"></a> -->
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="navbar-nav  w-100 nav-justified  nav d-flex">
@@ -17,7 +17,7 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-black  fw-bold" href=id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="arrondissements.php">
-                        Arrondissement
+                        Arrondissements
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="arrondissements.php?choice=1">1<sup>st</sup> Arrondissement</a></li>

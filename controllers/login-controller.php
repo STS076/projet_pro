@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             'firstname' => 'Sophie',
             'role' => 2
         ];
-        header('location: home.php');
+        header('location: parameters.php');
         exit;
     }
 }

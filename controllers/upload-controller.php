@@ -17,7 +17,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else{
         setcookie('main', '', time() -3600); 
     }
-    header('Location: parameters.php');
+    header('Location: upload.php');
 };
-
-

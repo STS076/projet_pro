@@ -1,6 +1,6 @@
 <?php require_once '../elements/top.php' ?>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
 
 <?php require_once '../elements/header.php' ?>
 

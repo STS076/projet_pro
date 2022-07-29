@@ -188,3 +188,16 @@ footer {
 .image {
     height: 15rem;
 }
+
+/* image gallery  */
+#imgPreview {
+    width: 400px;
+    max-height: 400px;
+    display: block;
+}
+
+
+.galleryPicture{
+    width: 50%;
+    height: auto;
+}

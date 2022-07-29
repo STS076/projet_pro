@@ -11,6 +11,9 @@
 
     <link rel="stylesheet" href="../assets/style/style.css">
 
+    <!-- Lightbox CSS -->
+    <link rel="stylesheet" href="../assets/dist/css/lightbox.css">
+    <link rel="stylesheet" href="../assets/dist/css/lightbox.min.css">
 
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/eiffel.png">
 

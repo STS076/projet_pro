@@ -30,7 +30,7 @@ require_once '../elements/top.php' ?>
             </div>
 
             <div class="my-3 text-center">
-                <button class="btn bouton border border-dark text-dark" id="submit" name="submit">Login</button>
+                <button class="btn bouton border border-dark text-light" id="submit" name="submit">Login</button>
             </div>
 
         </div>
