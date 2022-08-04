@@ -37,9 +37,9 @@ require_once '../elements/top.php';
 
 
             <h3 class="fst-italic comments fw-bold text-center p-5">Gallery</h3>
-            <div class="container m-5 p-5 border border-danger">
-                
-                <div class="row" data-masonry='{"percentPosition": true }'>
+
+            <div class="container px-5">
+                <div class="row justify-content-center border border-danger" data-masonry='{ "percentPosition": true }'>
 
 
                     <?php
@@ -47,7 +47,7 @@ require_once '../elements/top.php';
                         if ($value == '.' || $value == '..') {
                         } else {
                     ?>
-                            <div class="col-sm-6 col-lg-4 mb-2">
+                            <div class="col-11 col-lg-4 my-2 gallery border border-info">
                                 <div class="">
                                     <a class="example-image-link" href="../assets/images/gallery/<?= $value ?>" data-lightbox="galerie"><img src="../assets/images/gallery/<?= $value ?>" data-lightbox="cozy" class="galleryPicture"></a>
                                 </div>
@@ -61,7 +61,9 @@ require_once '../elements/top.php';
                 </div>
             </div>
 
-            <div class="row m-0 p-0 justify-content-evenly">
+
+
+            <div class="row mx-0 mt-5 p-0 justify-content-evenly">
                 <div class="col-lg-8 col-11">
                     <a href="contact.php" class="text-secondary">You noticed any mistake on this deal ? please contact us.</a>
                 </div>
@@ -74,12 +76,24 @@ require_once '../elements/top.php';
             <div class="col-lg-8 col-11 d-flex justify-content-center">
                 <form action="" method="post" accept-charset="utf-8" class="d-flex justify-content-center">
                     <fieldset>
-                        <p><label for="rating">Rating</label><input type="radio" name="rating" value="5" /> 5 <input type="radio" name="rating" value="4" /> 4
-                            <input type="radio" name="rating" value="3" /> 3 <input type="radio" name="rating" value="2" /> 2 <input type="radio" name="rating" value="1" /> 1
-                        </p>
-                        <p><textarea name="review" rows="8" cols="40">
+                        <div>
+                                <label for="rating">Rating : </label>
+                            <div class="rating"> 
+                                <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> 
+                                <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> 
+                                <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> 
+                                <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> 
+                                <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label> 
+                            </div>
+                            
+                        </div>
+                        <div>
+                            <p class="border border-danger">
+                                <label>Your comment :</label>
+                                <textarea name="review" rows="8" cols="40">
                             </textarea>
-                        </p>
+                            </p>
+                        </div>
                         <p><input type="submit" value="Submit Review"></p>
                         <input type="hidden" name="product_type" value="actual_product_type" id="product_type">
                         <input type="hidden" name="product_id" value="actual_product_id" id="product_id">
@@ -88,6 +102,8 @@ require_once '../elements/top.php';
             </div>
 
         </div>
+
+
     </main>
 
 

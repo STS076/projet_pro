@@ -5,20 +5,20 @@
     <?php require_once '../elements/header.php' ?>
 
 
-    <a href="home.php" class="text-decoration-none text-dark border border-dark shadow-sm p-2 mx-2">retour</a>
+    <a href="parameters.php" class="text-decoration-none text-dark border border-dark shadow-sm p-2 mx-2">retour</a>
 
-    <h1 class="text-center p-5 ">Télécharger vos images</h1>
+    <p class="text-center py-3 fs-5 fw-bold fst-italic">Upload images for gallery</p>
 
 
-    <div class="row m-0 pt-5 px-0 justify-content-center">
+    <div class="row m-0 pt-3 px-0 justify-content-center">
         <div class="col-lg-8 col-11 charger border border-dark shadow-sm rounded p-5 mb-5 mx-0 text-center">
             <form action="upload.php" method="post" enctype="multipart/form-data">
-                <label for="file">Fichier <i class="ms-1 bi bi-cloud-arrow-up"></i></label>
+                <label for="file">File <i class="ms-1 bi bi-cloud-arrow-up"></i></label>
                 <div class="d-flex justify-content-center p-3">
                     <img id="imgPreview" id="fileToUpload">
                 </div>
                 <input type="file" name="fileToUpload" id="fileToUpload">
-                <button type="submit" class="btn border text-white border-dark bouton p-1 m-1">Enregistrer</button>
+                <button type="submit" class="btn border text-white border-dark bouton p-1 m-1">Save</button>
             </form>
 
             <?php
