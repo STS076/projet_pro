@@ -11,7 +11,7 @@
 
 
     <div class="row m-0 pt-3 px-0 justify-content-center">
-        <div class="col-lg-8 col-11 charger border border-dark shadow-sm rounded p-5 mb-5 mx-0 text-center">
+        <!-- <div class="col-lg-8 col-11 charger border border-dark shadow-sm rounded p-5 mb-5 mx-0 text-center"> -->
             <form action="upload.php" method="post" enctype="multipart/form-data">
                 <label for="file">File <i class="ms-1 bi bi-cloud-arrow-up"></i></label>
                 <div class="d-flex justify-content-center p-3">

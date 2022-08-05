@@ -5,7 +5,7 @@
     <?php require_once '../elements/header.php' ?>
 
     <main class="pt-4">
-        <div class="container  mt-5 bg-light">
+        <div class="container  my-5">
             <div class="row justif-content-center m-0 p-0">
                 <div class="col-lg-8 col-11 mentions">
 

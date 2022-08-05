@@ -14,7 +14,7 @@
                 $date_format = '%A %d %B %Y';
                 foreach ($costumes as $value) { ?>
                     <div class="card col-lg-4 col-11 p-0 m-5">
-                        <!-- <img src="<?= $value->enclosure['url'] ?>" alt="image couverture" class="image"> -->
+                        <img src="<?= $value->enclosure['url'] ?>" alt="image couverture" class="image">
                         <div class="card-body">
                             <p class="card-title"><?= $value->title ?></p>
                             <p><?= strftime($date_format, strtotime($value->pubDate)) ?></p>

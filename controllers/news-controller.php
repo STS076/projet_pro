@@ -1,5 +1,5 @@
 <?php
-$fluxRSS = 'https://www.oscars.org/feed/latest-academy-news';
+$fluxRSS = 'https://www.parisperfect.com/blog/feed/';
 
 function recupXML($url)
 {
