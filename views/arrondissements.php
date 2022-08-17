@@ -9,7 +9,15 @@ require_once '../elements/top.php';
 
     <main>
 
-    <h2 class="text-center fst-italic my-5 comments">1 <sup>st</sup> Arrondissement</h2>
+        <h2 class="text-center fst-italic my-5 comments">1 <sup>st</sup> Arrondissement</h2>
+        <div class="row m-0 justify-content-center">
+            <div class="col-lg-8 col-11 ">
+                <p>
+                    From Place Vendome to the Ile de la Cité and the Louvre, the 1st arrondissement is one of the oldest districts of Paris. It is also the district of the Kings of France, where they lived with their courts first in the Palais de la Cité and later in the Louvre Palace.
+                    Here, visitors will find some of the most sumptuous historical buildings like the Conciergerie, the Sainte-Chapelle, the Louvre Palace, or the Saint-Germain-l’Auxerrois Church.
+                </p>
+            </div>
+        </div>
         <div class="row justify-content-evenly mx-0 my-5">
             <div class="card mb-3 m-2 p-0 col-lg-5 col-11 shadow-sm">
                 <div class="row mx-0 p-0">

@@ -6,3 +6,4 @@ fileToUpload.addEventListener("change", function () {
         imgPreview.setAttribute('src', oFREvent.target.result);
     };
 })
+

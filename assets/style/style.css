@@ -171,8 +171,9 @@ footer {
 @media screen and (min-width:600px) {
     .map {
         width: 600px;
-        height: 450px
+        height: 450px;
     }
+    
 }
 
 @media screen and (max-width:600px) {
@@ -191,6 +192,7 @@ footer {
         margin-bottom: 2rem;
     }
 }
+
 
 /*  */
 /*gallery  */
@@ -269,3 +271,7 @@ footer {
 .rating:hover>input:checked~label:before {
     opacity: 0.4
 }
+
+
+/*  */
+

@@ -12,7 +12,7 @@ require_once '../elements/top.php';
         <div class="row mx-0 my-5 justify-content-evenly p-0">
             <h2 class="fst-italic fw-bold text-center mb-5">Jardin des Tuileries</h2>
             <div class="col-lg-4 col-11 m-0 p-0">
-                <p><span class="fw-bolder">Good Deal : </span>Walking through history<br>
+                <p><span class="fw-bolder">Good Deal : </span>Walking through history.<br>
                     Close to the Louvre, Le Jardin des Tuileries is one of the most sought after spot in Paris and from its inhabitants. You can learn all about this place in a free visit by the city of Paris, they will tell you about the key moments of the gardens and the characteristics that made history.
                 </p>
                 <p><span class="fw-bolder">Where : </span>Meeting point at L'arc de triomphe du Carousel du Louvre</p>
@@ -21,7 +21,7 @@ require_once '../elements/top.php';
 
                 </p>
                 <p><span class="fw-bolder">Price : </span>Free</p>
-                <p><span class="fw-bolder">contact : </span>01 40 20 90 43</p>
+                <p><span class="fw-bolder">Contact : </span>01 40 20 90 43</p>
                 <p><span class="fw-bolder">How to get here : </span>Metro Concorde, Tuileries<br>
                     RER Musée d'orsay
                 </p>

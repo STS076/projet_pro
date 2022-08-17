@@ -13,10 +13,11 @@ require_once '../elements/top.php' ?>
 
     <a href="upload.php" class="m-2 text-decoration-none text-dark p-2">upload gallery</a>
     <a href="home.php" class="m-2 text-decoration-none text-dark p-2">retour</a>
-    <div class="container d-flex align-items-center flex-column bg-light subway mt-1 mb-4 p-5 blanc border border-dark shadow-sm" id="page">
+    <p class="fw-bold fst-italic fs-3 py-3 text-center">Hello <?= $_SESSION['user']['firstname'] ?> <?= $_SESSION['user']['surname'] ?></p>
+    <div class="container d-flex align-items-center flex-column bg-light subway mt-1 mb-4 p-4 blanc border border-dark shadow-sm" id="page">
         <form action="" method="POST">
-            <p class="fw-bold fst-italic fs-5 py-3 text-center">Hello <?= $_SESSION['user']['firstname'] ?> <?= $_SESSION['user']['surname'] ?></p>
-            <p class="py-3 text-center">Upload a new deal</p>
+
+            <p class=" text-center fs-5 my-4 fw-bold">Upload a new deal</p>
             <div class="row m-0 p-0">
 
 
@@ -153,6 +154,47 @@ require_once '../elements/top.php' ?>
         </div>
 
 
+    </div>
+
+    <div class="container d-flex align-items-center flex-column bg-light subway mt-1 mb-4 p-5 blanc border border-dark shadow-sm" id="page">
+        <p class="text-center fs-5 my-4 fw-bold">Deals waiting for confirmation</p>
+
+        <div class="row m-0">
+            <div class="col-lg-4 col-11">
+
+                <div class="card" style="width: 18rem;">
+                    <img src="" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <button type="button" class="btn bouton text-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Launch demo modal
+                        </button>
+                    </div>
+                </div>
+            
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
 
     <?php require_once '../elements/footer.php' ?>
