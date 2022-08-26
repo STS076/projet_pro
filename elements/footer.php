@@ -1,11 +1,14 @@
 <footer class="d-flex flex-wrap justify-content-evenly mt-auto py-4 ">
     <div class="">
         <span class="ms-3 text-white">
-            <a href="parameters.php" class="text-decoration-none text-white"> © Sophie Toussaint </a>
+            <a href="admin.php" class="text-decoration-none text-white"> © Sophie Toussaint </a>
         </span>
     </div>
-    <div class="">
-        <a href="mentions.php" class=" m-0 p-0 text-white text-decoration-none"> Mentions légales</a>
+    <div class="ms-3 text-white">
+        <a href="mentions.php" class=" m-0 p-0 text-white text-decoration-none"> Legal Disclaimer</a>
+    </div>
+    <div class="text-white">
+        <a href="SignUp.php" class=" m-0 p-0 text-white text-decoration-none"> Sign Up / Sign In</a>
     </div>
 
 </footer>

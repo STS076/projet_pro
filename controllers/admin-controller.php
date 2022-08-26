@@ -1,7 +1,7 @@
 <?php
 
 if (!isset($_SESSION['user'])) {
-    header('Location: login.php');
+    header('Location: loginAdmin.php');
     exit;
 }
 
@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else{
         setcookie('main', '', time() -3600); 
     }
-    header('Location: parameters.php');
+    header('Location: admin.php');
 };
 
 

@@ -2,11 +2,11 @@
 
 session_start();
 
-require_once '../controllers/login-controller.php';
+require_once '../controllers/loginAdmin-controller.php';
 
 require_once '../elements/top.php' ?>
 
-<body class="background">
+<body class="">
 
     <?php require_once '../elements/header.php' ?>
 
