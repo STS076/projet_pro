@@ -173,7 +173,7 @@ footer {
         width: 600px;
         height: 450px;
     }
-    
+
 }
 
 @media screen and (max-width:600px) {
@@ -274,4 +274,12 @@ footer {
 
 
 /*  */
+.boutons {
+    width: 20rem;
+    height: 5rem;
+    background-color: #242D3C;
+}
 
+.fontCat{
+    font-size: 0.9rem;
+}

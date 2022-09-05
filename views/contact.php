@@ -1,4 +1,5 @@
 <?php
+
 require_once '../controllers/contact-controller.php';
 require_once '../elements/top.php' ?>
 
@@ -30,16 +31,15 @@ require_once '../elements/top.php' ?>
 
 
                     <div class="form-group col-lg-6 col-12 my-3 text-center">
-                        <label>Your message:</label>
-                        <textarea class="form-control" name="review" rows="8" cols="40">
-                            </textarea>
+                        <label>Your message: <span class="text-danger" id="errorreview"><?= isset($errors['review']) ? $errors['review'] : '' ?></span></label>
+                        <textarea class="form-control" name="review" rows="8" cols="40" value="<?= isset($_POST['review']) ? $_POST['review'] : '' ?>"></textarea>
 
-                        <p class="text-danger" id="errorreview"><?= isset($errors['review']) ? $errors['review'] : '' ?></p>
+
                     </div>
 
                     <div class="row text-center">
                         <div class="col-lg-12 col-12 my-1">
-                            <p>J'ai lu et j'accèpte les conditions générales d'utilisation :</p>
+                            <p>I agree with the terms and conditions :</p>
                             <input type="checkbox" id="checkbox" name="checkbox" value="<?= isset($_POST['checkbox']) ? $_POST['checkbox'] : '' ?>">
                             <p class="text-danger" id="errorcheckbox"><?= isset($errors['checkbox']) ? $errors['checkbox'] : '' ?></p>
                         </div>
@@ -55,9 +55,9 @@ require_once '../elements/top.php' ?>
     <?php } else { ?>
 
 
-
-        <p class="text-center fs-4 py-5">Thank you for contacting us, we will review your message as soon as possible.</p>
-
+        <div class="container bg-light col-lg-8  bienvenue d-flex align-items-center flex-column rounded my-5 py-3 border border-dark shadow">
+            <p class="text-center fs-4 py-5">Thank you for contacting us, we will review your message as soon as possible.</p>
+        </div>
 
     <?php } ?>
 

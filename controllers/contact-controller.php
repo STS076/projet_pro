@@ -1,4 +1,22 @@
 <?php
+
+require_once '../config.php';
+require_once '../models/Database.php';
+require_once '../models/Categories.php';
+require_once '../models/Arrondissements.php';
+require_once '../models/AddDeals.php';
+require_once '../models/DealsHasCat.php';
+require_once '../models/Images.php';
+require_once '../models/Role.php';
+require_once '../models/Users.php';
+
+$arr = new Arrondissements();
+$allTagsArrArray = $arr->getAllTagArr();
+
+$category = new Categories();
+$allTagsCategoryArray = $category->getAllTagCategory();
+
+
 $showForm = true;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -22,12 +40,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
+    if (isset($_POST['review'])){
+        if (empty($_POST['review'])){
+            $errors['review'] = " * please fill in your message"; 
+        }
+    }
+
     if (!isset($_POST['option'])) {
         $errors['option'] = "* please choose an option";
     }
 
     if (!isset($_POST['checkbox'])) {
-        $errors['checkbox'] = "* Veuillez valider les conditions générales d'utilisation";
+        $errors['checkbox'] = "* please validate terms and conditions";
     }
 
     if (count($errors) == 0) {

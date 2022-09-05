@@ -12,9 +12,9 @@
             </div>
 
             <div class=" form-group col-lg-6 col-12 my-3 text-center">
-                <label class="text-dark">Email Address : </label>
-                <input class="text-center form-control identify" placeholder="Email Address" id="emailAddress" value="<?= isset($_POST['emailAddress']) ? $_POST['emailAddress'] : '' ?>" name="pseudo">
-                <p class="text-danger"><?= isset($errors['emailAddress']) ? $errors['emailAddress'] : '' ?></p>
+                <label class="text-dark">Username : </label>
+                <input class="text-center form-control identify" placeholder="Username" id="username" value="<?= isset($_POST['username']) ? $_POST['username'] : '' ?>" name="pseudo">
+                <p class="text-danger"><?= isset($errors['username']) ? $errors['username'] : '' ?></p>
             </div>
 
             <div class="form-group col-lg-6 col-12 my-3 text-center">

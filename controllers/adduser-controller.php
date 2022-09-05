@@ -22,7 +22,6 @@ $category = new Categories();
 $allTagsCategoryArray = $category->getAllTagCategory();
 
 
-$showForm = true;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -88,8 +87,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $usersObj = new Users();
         $usersObj->addUsers($pseudo,  $prenom,  $nom,  $adresseEmail,  $motDePasse);
 
-        // header('location: admin.php');
-        // exit;
+        header('location: dashboard-users.php');
+        exit;
     }
 }
 

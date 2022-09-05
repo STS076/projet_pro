@@ -1,7 +1,7 @@
 <footer class="d-flex flex-wrap justify-content-evenly mt-auto py-4 ">
     <div class="">
         <span class="ms-3 text-white">
-            <a href="admin.php" class="text-decoration-none text-white"> © Sophie Toussaint </a>
+            <a href="loginAdmin.php" class="text-decoration-none text-white"> © Sophie Toussaint </a>
         </span>
     </div>
     <div class="ms-3 text-white">

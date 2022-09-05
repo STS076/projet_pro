@@ -1,5 +1,9 @@
 <?php
 
+if (!isset($_SESSION['user'])) {
+    header('Location: loginAdmin.php');
+    exit;
+}
 require_once '../config.php';
 require_once '../models/Database.php';
 require_once '../models/Categories.php';
@@ -15,3 +19,6 @@ $allTagsArrArray = $arr->getAllTagArr();
 
 $category = new Categories();
 $allTagsCategoryArray = $category->getAllTagCategory();
+
+$users = new Users(); 
+$AllUsersArray = $users->getAllUsers();

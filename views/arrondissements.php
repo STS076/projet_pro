@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once '../elements/top.php';
+require_once '../controllers/arrondissements-controller.php';
 ?>
 
 <body class="d-flex flex-column min-vh-100">
