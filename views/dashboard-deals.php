@@ -4,7 +4,9 @@ session_start();
 
 // require_once '../controllers/dashboard-controller.php';
 
-require_once '../elements/top.php' ?>
+require_once '../elements/top.php';
+
+?>
 
 <body class="d-flex flex-column min-vh-100">
 

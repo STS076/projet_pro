@@ -1,8 +1,8 @@
 <?php
 
 session_start();
-
-require_once '../controllers/dashboard-controller.php';
+// var_dump($_SESSION);
+// require_once '../controllers/dashboard-controller.php';
 
 require_once '../elements/top.php' ?>
 
@@ -11,7 +11,7 @@ require_once '../elements/top.php' ?>
     <?php require_once '../elements/header.php' ?>
 
     <div class="container rounded d-flex align-items-center flex-column  bg-light border border-dark shadow-sm p-5 my-5 ">
-        <p class="fw-bold fs-4 fst-italic p-2 text-center"> Welcome <?= $_SESSION['user']['firstname'] ?> </p>
+        <p class="fw-bold fs-4 fst-italic p-2 text-center"> Welcome <?= $_SESSION['user']['users_name'] ?> </p>
         <div class="row align-item">
             <div class="col text-center m-3">
                 <a href="dashboard-deals.php"> <button class="text-center text-center text-light rounded  boutons">Deals</button></a>

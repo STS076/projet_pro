@@ -87,7 +87,7 @@ class Users extends Database
         $query->bindValue(':username', $username, PDO::PARAM_STR);
         $query->bindValue(':mail', $mail, PDO::PARAM_STR);
         $query->bindValue(':password', $password, PDO::PARAM_STR);
-        $query->bindValue(':role', 3 ,PDO::PARAM_INT);
+        $query->bindValue(':role', 3, PDO::PARAM_INT);
 
         $query->execute();
     }
@@ -99,6 +99,40 @@ class Users extends Database
         $query = $pdo->query($sql);
         // query exécute la requete , ne récupère aucune donnée. execute quand récupère les données et avec prepare. protège des injections sql. permet de ne pas mettre par ex des caractères html et sql 
         $result = $query->fetchall();
+        return $result;
+    }
+
+    public function checkIfMailExists(string $users_mail)
+    {
+
+        $pdo = parent::connectDb();
+        $sql = "SELECT `users_mail` FROM `users` WHERE `users_mail`= :users_mail";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':users_mail', $users_mail, PDO::PARAM_STR);
+        $query->execute();
+
+
+        $result = $query->fetchAll();
+
+        if (count($result) != 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function getInfosUsers(string $users_mail): array
+    {
+        $pdo = parent::connectDb();
+        $sql = "SELECT * FROM `users` WHERE `users_mail`= :users_mail";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':users_mail', $users_mail, PDO::PARAM_STR);
+        $query->execute();
+
+        // je stock dans $result les données récupérées à l'aide de la méthode fetch. il s'agit d'un tableau assos de type clef valeur.
+        // fetch permet d'aller chercher toutes les info liées à users. 
+        $result = $query->fetch(PDO::FETCH_ASSOC);
+
         return $result;
     }
 }

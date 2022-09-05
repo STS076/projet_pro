@@ -40,24 +40,24 @@ require_once '../elements/top.php' ?>
                 </div>
 
                 <div class="d-flex flex-column">
-                    <label class="py-2">How to get there : <span class="text-danger"><?= isset($errors['dealMap']) ? $errors['dealMap'] : '' ?></span></label>
-                    <input type="text" id="dealMap" value="<?= isset($_POST['dealMap']) ? $_POST['dealMap'] : '' ?>" name="dealMap">
-                </div>
-
-                <div class="d-flex flex-column">
-                    <label class="py-2">More info : <span class="text-danger"><?= isset($errors['dealMetro']) ? $errors['dealMetro'] : '' ?></span></label>
+                    <label class="py-2">How to get there : <span class="text-danger"><?= isset($errors['dealMetro']) ? $errors['dealMetro'] : '' ?></span></label>
                     <input type="text" id="dealMetro" value="<?= isset($_POST['dealMetro']) ? $_POST['dealMetro'] : '' ?>" name="dealMetro">
                 </div>
 
                 <div class="d-flex flex-column">
-                    <label class="py-2">Map : <span class="text-danger"><?= isset($errors['dealInfo']) ? $errors['dealInfo'] : '' ?></label>
+                    <label class="py-2">More info : <span class="text-danger"><?= isset($errors['dealInfo']) ? $errors['dealInfo'] : '' ?></span></label>
                     <input type="text" id="dealInfo" value="<?= isset($_POST['dealInfo']) ? $_POST['dealInfo'] : '' ?>" name="dealInfo">
+                </div>
+
+                <div class="d-flex flex-column">
+                    <label class="py-2">Map : <span class="text-danger"><?= isset($errors['dealMap']) ? $errors['dealMap'] : '' ?></label>
+                    <input type="text" id="dealMap" value="<?= isset($_POST['dealMap']) ? $_POST['dealMap'] : '' ?>" name="dealMap">
                 </div>
 
                 <div class="d-flex flex-column">
                     <label class="py-2">Tag Arrondissement : <span class="text-danger"><?= isset($errors['dealTagArr']) ? $errors['dealTagArr'] : '' ?></label>
 
-                    <select id="dealTagArr"  value="<?= isset($_POST['dealTagArr']) ? $_POST['dealTagArr'] : '' ?>" name="dealTagArr[]">
+                    <select id="dealTagArr"  value="<?= isset($_POST['dealTagArr']) ? $_POST['dealTagArr'] : '' ?>" name="dealTagArr">
                         <option value="">Please select an Arrondissement</option>
                         <?php foreach ($allTagsArrArray as $value) { ?>
                             <option value="<?= $value['tag_arr_id'] ?>" name="dealTagArr[<?= $value['tag_arr_id'] ?>]"><?= $value['tag_arr_name'] ?></option>
@@ -66,7 +66,7 @@ require_once '../elements/top.php' ?>
                     </select>
                 </div>
 
-                <div class="d-flex flex-column">
+                <!-- <div class="d-flex flex-column">
                     <label class="py-2">Tag Category : <span class="text-danger"><?= isset($errors['dealTagCat']) ? $errors['dealTagCat'] : '' ?></label>
 
                     <select id="dealTagCat" multiple value="<?= isset($_POST['dealTagCat']) ? $_POST['dealTagCat'] : '' ?>" name="dealTagCat[]">
@@ -76,7 +76,7 @@ require_once '../elements/top.php' ?>
                         <?php } ?>
 
                     </select>
-                </div>
+                </div> -->
 
                 <div class="text-center pt-5">
                     <button class="btn bouton text-white" value="connect">Add</button>

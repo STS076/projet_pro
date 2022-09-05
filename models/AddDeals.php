@@ -89,13 +89,13 @@ class Deals extends Database
         $this->_deals_validate = $deals_validate;
     }
 
-    public function addDeals(string $deals_title, string $deals_when, string $deals_where, string $deals_price, string $deals_map, string $deals_metro, string $deals_info, bool $deals_validate): void
+    public function addDeals(string $deals_title, string $deals_when, string $deals_where, string $deals_price, string $deals_map, string $deals_metro, string $deals_info): void
     {
         $pdo = parent::connectDb();
-        $sql = "INSERT INTO `deals` (`deals_title`, `deals_when`, `deals_where`, `deals_price`, `deals_map`, `deals_metro`, `deals_info`, `deals_validate`, `tag_arr_id_TAG_ARR`, `users_id_USERS`)
+        $sql = "INSERT INTO `deals` (`deals_title`, `deals_when`, `deals_where`, `deals_price`, `deals_map`, `deals_metro`, `deals_info`,  `tag_arr_id_TAG_ARR`, `users_id_USERS`)
 
 
-        VALUES (:deals_title, :deals_when, :deals_where, :deals_price, :deals_map, :deals_metro, :deals_info, :deals_validate, :tag_arr_id_TAG_ARR, :users_id_USERS) ";
+        VALUES (:deals_title, :deals_when, :deals_where, :deals_price, :deals_map, :deals_metro, :deals_info, :tag_arr_id_TAG_ARR, :users_id_USERS) ";
 
         $query = $pdo->prepare($sql);
 
@@ -106,7 +106,6 @@ class Deals extends Database
         $query->bindValue(':deals_map', $deals_map, PDO::PARAM_STR);
         $query->bindValue(':deals_metro',$deals_metro , PDO::PARAM_INT);
         $query->bindValue(':deals_info', $deals_info, PDO::PARAM_STR);
-        $query->bindValue(':deals_validate',$deals_validate , PDO::PARAM_STR);
         $query->bindValue(':tag_arr_id_TAG_ARR', 0, PDO::PARAM_STR);
         $query->bindValue(':users_id_USERS', 0 , PDO::PARAM_STR);
 

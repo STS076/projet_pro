@@ -5,7 +5,7 @@ if (!isset($_SESSION['user'])) {
     exit;
 }
 
-require_once '../config.php';
+require_once '../.gitignore/config.php';
 require_once '../models/Database.php';
 require_once '../models/Categories.php';
 require_once '../models/Arrondissements.php';
@@ -20,6 +20,9 @@ $allTagsArrArray = $arr->getAllTagArr();
 
 $category = new Categories();
 $allTagsCategoryArray = $category->getAllTagCategory();
+
+$cat = new DealsHasCat();
+// $allDealsCatArray = $cat->getDealCategory($allTagsCategoryArray['tag_categories_id']);
 
 $showForm = true;
 
@@ -59,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
     if (isset($_POST['dealMap'])) {
-        if (empty($_POST['dealMap'])) {
+        if (empty($_POST['dealMetro'])) {
             $errors['dealMap'] = '*Please enter a map';
         } else if (!preg_match($regexName, $_POST['dealMap'])) {
             $errors['dealMap'] = "* Tag not valid";
@@ -79,18 +82,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $errors['dealInfo'] = "* Tag not valid";
         }
     }
-    if (isset($_POST['dealTagArr[]'])) {
-        if (empty($_POST['dealTagArr[]'])) {
-            $errors['dealTagArr[]'] = '*Please select an Arrondissement';
+    if (isset($_POST['dealMap'])) {
+        if (empty($_POST['dealMap'])) {
+            $errors['dealMap'] = '*Please enter more info';
+        } else if (!preg_match($regexName, $_POST['dealMap'])) {
+            $errors['dealMap'] = "* Tag not valid";
+        }
+    }
+    if (isset($_POST['dealTagArr'])) {
+        if (empty($_POST['dealTagArr'])) {
+            $errors['dealTagArr'] = '*Please select an Arrondissement';
         }
     }
 
     if (count($errors) == 0) {
         $showForm = false;
-        $tagArr = safeInput($_POST['tagArr']);
+        $dealTitle = safeInput($_POST['dealTitle']);
+        $dealWhen = safeInput($_POST['dealWhen']);
+        $dealWhere = safeInput($_POST['dealWhere']);
+        $dealPrice = safeInput($_POST['dealPrice']);
+        $dealMap = safeInput($_POST['dealMap']);
+        $dealMetro = safeInput($_POST['dealMetro']);
+        $dealInfo = safeInput($_POST['dealInfo']);
+        $dealTagArr = safeInput($_POST['dealTagArr']);
 
-        // $tagArrObj = new Arrondissements();
-        // $tagArrObj->addTagArr($tagArr);
+        $dealObj = new Deals();
+        $dealObj->addDeals($dealTitle,$dealWhen,$dealWhere, $dealPrice, $dealMap, $dealMetro, $dealInfo,$dealTagArr, $_SESSION['user']['role_id_ROLE']  ); 
 
         header('location: dashboard-deals.php');
         exit;

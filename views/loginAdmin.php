@@ -1,7 +1,8 @@
 <?php
 
 session_start();
-
+// var_dump($_POST);
+// var_dump($_SESSION);
 require_once '../controllers/loginAdmin-controller.php';
 
 require_once '../elements/top.php' ?>
@@ -31,6 +32,7 @@ require_once '../elements/top.php' ?>
 
             <div class="my-3 text-center">
                 <button class="btn bouton border border-dark text-light" id="submit" name="submit">Login</button>
+                <p class="text-danger" id="errorConnect"><?= isset($errors['connection']) ? $errors['connection'] : '' ?></p>
             </div>
 
         </div>

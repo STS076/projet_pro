@@ -1,6 +1,6 @@
 <?php 
 
-require_once '../config.php';
+require_once '../.gitignore/config.php';
 require_once '../models/Database.php';
 require_once '../models/Categories.php';
 require_once '../models/Arrondissements.php';
