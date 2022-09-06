@@ -64,8 +64,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['dealMap'])) {
         if (empty($_POST['dealMetro'])) {
             $errors['dealMap'] = '*Please enter a map';
-        } else if (!preg_match($regexName, $_POST['dealMap'])) {
-            $errors['dealMap'] = "* Tag not valid";
         }
     }
     if (isset($_POST['dealMetro'])) {
@@ -111,15 +109,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $dealMetro = safeInput($_POST['dealMetro']);
         $dealInfo = safeInput($_POST['dealInfo']);
         $dealTagArr = safeInput($_POST['dealTagArr']);
-        $deakTagCat = $_POST['dealTagCat'];
+
 
         $dealObj = new Deals();
         $idDeals = $dealObj->addDeals($dealTitle, $dealWhen, $dealWhere, $dealPrice, $dealMap, $dealMetro, $dealInfo, $dealTagArr, $_SESSION['user']['users_id']);
 
-        $cat = new DealsHasCat();
-        $cat->addDealCategory($deakTagCat, $idDeals);
+        $category = new Categories();
+        $allTagsCategoryArray = $category->getAllTagCategory();
+        var_dump($_POST);
+
         foreach ($_POST['dealTagCat'] as $value) {
-            $cat->addDealCategory($deakTagCat, $idDeals);
+            $cat = new DealsHasCat();
+            $cat->addDealCategory($value, $idDeals);
         };
 
         $allcatarray = $cat->getDealCategory($idDeals);

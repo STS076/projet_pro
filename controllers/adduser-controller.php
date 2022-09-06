@@ -1,9 +1,9 @@
 <?php
 
-// if (!isset($_SESSION['user'])) {
-//     header('Location: signUp.php');
-//     exit;
-// }
+if (!isset($_SESSION['user'])) {
+    header('Location: loginAdmin.php');
+    exit;
+}
 
 require_once '../.gitignore/config.php';
 require_once '../models/Database.php';

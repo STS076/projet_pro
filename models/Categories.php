@@ -39,6 +39,22 @@ class Categories extends Database
         $query->execute();
     }
 
+    public function getOneCategory($tag_categories_id): array
+    {
+        $pdo = parent::connectDb();
+
+        $sql = "SELECT * from `tag_categories` inner join  deals_has_cat on tag_categories_id_TAG_CATEGORIES=tag_categories_id" ;
+
+        $query = $pdo->prepare($sql);
+
+        $query->bindValue(':tag_categories_id', $tag_categories_id, PDO::PARAM_STR);
+
+        $query->execute();
+
+        $result = $query->fetchall();
+        return $result;
+    }
+
     public function getAllTagCategory(): array
     {
         $pdo = parent::connectDb();

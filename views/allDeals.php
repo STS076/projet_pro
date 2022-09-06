@@ -9,7 +9,7 @@ require_once '../controllers/allDeals-controller.php';
     <?php include '../elements/header.php' ?>
 
     <div class="container bienvenue d-flex align-items-center flex-column rounded my-5 p-5 border border-dark shadow">
-        <div class="col-lg-8 col-12 text-center fw-bold">
+        <div class="col-lg-12 col-11 text-center fw-bold">
             <div class="table-responsive table-hover">
                 <table class="table">
                     <thead>
@@ -31,7 +31,7 @@ require_once '../controllers/allDeals-controller.php';
                                 <th class="text-center"><?= $value['deals_id'] ?></th>
                                 <th class="text-center"><?= $value['deals_title'] ?></th>
                                 <th class="text-center"><?= $value['tag_arr_name'] ?></th>
-                                <th class="text-center"></th>
+                                <th class="text-center"><?= $value['DealsCatTag'] ?></th>
                                 <td class="text-center"><a class="text-light btn bouton" href="doctorsInfo.php?doctors=<?= $value['deals_id'] ?>"> + d'info</a></td>
                                 <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>
                                     <td class="text-center"><a class="text-light btn bouton" href="doctorsModify.php?doctors=<?= $value['deals_id'] ?>">Modifier</a></td>

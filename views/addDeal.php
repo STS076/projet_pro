@@ -3,7 +3,7 @@
 session_start();
 
 require_once '../controllers/addDeal-controller.php';
-var_dump($_POST['dealTagCat']);
+var_dump($_POST);
 require_once '../elements/top.php' ?>
 
 <body class="d-flex flex-column min-vh-100">
@@ -36,7 +36,6 @@ require_once '../elements/top.php' ?>
                 <div class="d-flex flex-column">
                     <label class="py-2">Price : <span class="text-danger"><?= isset($errors['dealPrice']) ? $errors['dealPrice'] : '' ?></span></label>
                     <input type="text" id="dealPrice" value="<?= isset($_POST['dealPrice']) ? $_POST['dealPrice'] : '' ?>" name="dealPrice">
-
                 </div>
 
                 <div class="d-flex flex-column">

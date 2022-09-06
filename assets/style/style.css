@@ -283,3 +283,8 @@ footer {
 .fontCat{
     font-size: 0.9rem;
 }
+
+.alignement{
+    display: flex;
+    justify-content: center;
+}

@@ -83,7 +83,7 @@ class Deals extends Database
         $this->_deals_validate = $deals_validate;
     }
 
-    public function addDeals(string $deals_title, string $deals_when, string $deals_where, string $deals_price, string $deals_map, string $deals_metro, string $deals_info, $tag_arr_id_TAG_ARR,$users_id_USERS ): int
+    public function addDeals(string $deals_title, string $deals_when, string $deals_where, string $deals_price, string $deals_map, string $deals_metro, string $deals_info, INT $tag_arr_id_TAG_ARR, INT $users_id_USERS)
     {
         $pdo = parent::connectDb();
         $sql = "INSERT INTO `deals` (`deals_title`, `deals_when`, `deals_where`, `deals_price`, `deals_map`, `deals_metro`, `deals_info`,  `tag_arr_id_TAG_ARR`, `users_id_USERS`)
@@ -96,20 +96,24 @@ class Deals extends Database
         $query->bindValue(':deals_where', $deals_where, PDO::PARAM_STR);
         $query->bindValue(':deals_price', $deals_price, PDO::PARAM_STR);
         $query->bindValue(':deals_map', $deals_map, PDO::PARAM_STR);
-        $query->bindValue(':deals_metro',$deals_metro , PDO::PARAM_INT);
+        $query->bindValue(':deals_metro', $deals_metro, PDO::PARAM_STR);
         $query->bindValue(':deals_info', $deals_info, PDO::PARAM_STR);
-        $query->bindValue(':tag_arr_id_TAG_ARR', $tag_arr_id_TAG_ARR, PDO::PARAM_STR);
-        $query->bindValue(':users_id_USERS', $users_id_USERS , PDO::PARAM_STR);
+        $query->bindValue(':tag_arr_id_TAG_ARR', $tag_arr_id_TAG_ARR, PDO::PARAM_INT);
+        $query->bindValue(':users_id_USERS', $users_id_USERS, PDO::PARAM_INT);
 
         $query->execute();
 
-        return $pdo->lastInsertId(); 
+        return $pdo->lastInsertId();
     }
 
     public function getAllDeals(): array
     {
         $pdo = parent::connectDb();
-        $sql = "SELECT * from deals inner join tag_arr on tag_arr_id_TAG_ARR=tag_arr_id";
+        $sql = "SELECT deals_id, deals_title, deals_when, deals_where, deals_price, deals_metro, deals_map, deals_info, group_concat(`tag_categories_name`  SEPARATOR ', ') as DealsCatTag, tag_arr_name  from deals 
+        inner join deals_has_cat on deals_id_DEALS=deals_id 
+        inner join tag_categories on tag_categories_id_TAG_CATEGORIES=tag_categories_id
+        inner join tag_arr on tag_arr_id_TAG_ARR=tag_arr_id
+        group by deals_id";
         $query = $pdo->query($sql);
         $result = $query->fetchall();
         return $result;
