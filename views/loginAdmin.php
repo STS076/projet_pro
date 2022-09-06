@@ -3,8 +3,9 @@
 session_start();
 // var_dump($_POST);
 // var_dump($_SESSION);
-require_once '../controllers/loginAdmin-controller.php';
 
+require_once '../controllers/loginAdmin-controller.php';
+// var_dump($errors);
 require_once '../elements/top.php' ?>
 
 <body class="">

@@ -21,7 +21,7 @@ $allTagsArrArray = $arr->getAllTagArr();
 $category = new Categories();
 $allTagsCategoryArray = $category->getAllTagCategory();
 
-$cat = new DealsHasCat();
+// $cat = new DealsHasCat();
 // $allDealsCatArray = $cat->getDealCategory($allTagsCategoryArray['tag_categories_id']);
 
 $showForm = true;
@@ -95,6 +95,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
+    if (isset($_POST['dealTagCat'])) {
+        if (empty($_POST['dealTagCat'])) {
+            $errors['dealTagCat'] = '*Please select a Category';
+        }
+    }
+
     if (count($errors) == 0) {
         $showForm = false;
         $dealTitle = safeInput($_POST['dealTitle']);
@@ -105,9 +111,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $dealMetro = safeInput($_POST['dealMetro']);
         $dealInfo = safeInput($_POST['dealInfo']);
         $dealTagArr = safeInput($_POST['dealTagArr']);
+        $deakTagCat = $_POST['dealTagCat'];
 
         $dealObj = new Deals();
-        $dealObj->addDeals($dealTitle,$dealWhen,$dealWhere, $dealPrice, $dealMap, $dealMetro, $dealInfo,$dealTagArr, $_SESSION['user']['role_id_ROLE']  ); 
+        $idDeals = $dealObj->addDeals($dealTitle, $dealWhen, $dealWhere, $dealPrice, $dealMap, $dealMetro, $dealInfo, $dealTagArr, $_SESSION['user']['users_id']);
+
+        $cat = new DealsHasCat();
+        $cat->addDealCategory($deakTagCat, $idDeals);
+        foreach ($_POST['dealTagCat'] as $value) {
+            $cat->addDealCategory($deakTagCat, $idDeals);
+        };
+
+        $allcatarray = $cat->getDealCategory($idDeals);
 
         header('location: dashboard-deals.php');
         exit;

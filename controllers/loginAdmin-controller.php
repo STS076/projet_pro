@@ -43,13 +43,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     header('Location: dashboard.php');
                 } else {
                     header('Location: dashboard-deals.php');
+                    exit;
                 }
-                exit;
             } else {
                 $errors['connection'] = "Identifiant ou MDP incorrect";
             }
+        } else {
+            $errors['connection'] = "Identifiant ou MDP incorrect";
         }
-    } else {
-        $errors['connection'] = "Identifiant ou MDP incorrect";
     }
 }
