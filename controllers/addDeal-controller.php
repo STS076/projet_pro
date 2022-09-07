@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
     if (isset($_POST['dealMap'])) {
-        if (empty($_POST['dealMetro'])) {
+        if (empty($_POST['dealMap'])) {
             $errors['dealMap'] = '*Please enter a map';
         }
     }

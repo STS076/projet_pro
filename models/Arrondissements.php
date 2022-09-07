@@ -47,4 +47,20 @@ class Arrondissements extends Database {
 
         return $query->fetchAll();
     }
+
+    public function getOneArrondissement($tag_arr_id): array
+    {
+        $pdo = parent::connectDb();
+
+        $sql = "SELECT * from `tag_arr` where `tag_arr_id`=:tag_arr_id";
+
+        $query = $pdo->prepare($sql);
+
+        $query->bindValue(':tag_arr_id', $tag_arr_id, PDO::PARAM_STR);
+
+        $query->execute();
+
+        $result = $query->fetch();
+        return $result;
+    }
 }

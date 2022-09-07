@@ -26,19 +26,17 @@
                         <?php } ?>
                     </ul>
                 </li>
+
+                
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-black  fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Categories
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="categories.php?choice=beauty">Beauty</a></li>
-                        <li><a class="dropdown-item" href="#">Culture</a></li>
-                        <li><a class="dropdown-item" href="#">Music</a></li>
-                        <li><a class="dropdown-item" href="#">Museums</a></li>
-                        <li><a class="dropdown-item" href="#">Sports</a></li>
-                        <li><a class="dropdown-item" href="#">Cinema and theatre</a></li>
-                        <li><a class="dropdown-item" href="#">Nature</a></li>
-                        <li><a class="dropdown-item" href="#">Restaurants</a></li>
+
+                        <?php foreach ($allTagsCategoryArray as $value) { ?>
+                            <li><a class="dropdown-item" href="categories.php?category=<?= $value['tag_categories_name'] ?>"><?= $value['tag_categories_name'] ?></a></li>
+                        <?php } ?>
                     </ul>
                 </li>
                 <li class="nav-item">

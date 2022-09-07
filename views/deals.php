@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once '../controllers/deals-controller.php';
 $gallerie = scandir('../assets/images/gallery/');
 require_once '../elements/top.php';
 ?>
@@ -10,25 +11,26 @@ require_once '../elements/top.php';
 
     <main>
         <div class="row mx-0 my-5 justify-content-evenly p-0">
-            <h2 class="fst-italic fw-bold text-center mb-5">Jardin des Tuileries</h2>
+            <h2 class="fst-italic fw-bold text-center mb-5"><?= $oneDealArray['deals_title'] ?></h2>
             <div class="col-lg-4 col-11 m-0 p-0">
-                <p><span class="fw-bolder">Good Deal : </span>Walking through history.<br>
-                    Close to the Louvre, Le Jardin des Tuileries is one of the most sought after spot in Paris and from its inhabitants. You can learn all about this place in a free visit by the city of Paris, they will tell you about the key moments of the gardens and the characteristics that made history.
+                <p><span class="fw-bolder">Good Deal : </span><?= $oneDealArray['deals_summary']  ?>
                 </p>
-                <p><span class="fw-bolder">Where : </span>Meeting point at L'arc de triomphe du Carousel du Louvre</p>
-                <p><span class="fw-bolder">When : </span>From the last sunday of september to the last saturday of march : everyday 7h30 - 19h30<br>
-                    From the last sunday of March to the last saturday of September : everyday 7h - 21h
-
-                </p>
-                <p><span class="fw-bolder">Price : </span>Free</p>
+                <p><span class="fw-bolder">Where : </span><?= $oneDealArray['deals_where']  ?></p>
+                <p><span class="fw-bolder">When : </span><?= $oneDealArray['deals_when']  ?></p>
+                <p><span class="fw-bolder">Price : </span><?= $oneDealArray['deals_price']  ?></p>
                 <p><span class="fw-bolder">Contact : </span>01 40 20 90 43</p>
-                <p><span class="fw-bolder">How to get here : </span>Metro Concorde, Tuileries<br>
-                    RER Musée d'orsay
-                </p>
-                <p><span class="fw-bolder">More info : </span>Free toilets on the Concorde entry of the garden</p>
+                <p><span class="fw-bolder">How to get here : </span><?= $oneDealArray['deals_metro']  ?></p>
+                <p><span class="fw-bolder">More info : </span><?= $oneDealArray['deals_info']  ?></p>
                 <p> <span class="fw-bolder">Tags : </span>
-                    <a href="arrondissements.php?choice=1"># 1st Arrondissement</a>
-                    <a href="categories.php?choice=nature"># Nature</a>
+                    <a href="arrondissements.php?choice=<?= $oneDealArray['tag_arr_id_TAG_ARR']  ?>"># <?= $oneDealArray['tag_arr_name']  ?></a>
+
+                    <?php foreach (explode(', ', $oneDealArray['DealsCatTag']) as $value) { ?>
+                        <a href="categories.php?category=<?= $value ?>"># <?= $value ?></a>
+                    <?php }
+                    ?>
+
+
+
                 </p>
             </div>
             <div class="col-lg-5 carte">
@@ -77,15 +79,15 @@ require_once '../elements/top.php';
                 <form action="" method="post" accept-charset="utf-8" class="d-flex justify-content-center">
                     <fieldset>
                         <div>
-                                <label for="rating">Rating : </label>
-                            <div class="rating"> 
-                                <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> 
-                                <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> 
-                                <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> 
-                                <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> 
-                                <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label> 
+                            <label for="rating">Rating : </label>
+                            <div class="rating">
+                                <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
+                                <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
+                                <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
+                                <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
+                                <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
                             </div>
-                            
+
                         </div>
                         <div>
                             <p class="border border-danger">

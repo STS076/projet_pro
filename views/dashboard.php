@@ -25,7 +25,7 @@ require_once '../elements/top.php' ?>
                 <a href="dashboard-tagsArr.php"><button class="text-center text-center rounded text-light  boutons">Tags Arrondissements</button></a>
             </div>
             <div class="col text-center m-3">
-                <a href="rdvList.php"><button class="text-center text-center rounded text-light  boutons">Comments</button></a>
+                <a href="dashboard-comments.php"><button class="text-center text-center rounded text-light  boutons">Comments</button></a>
             </div>
         </div>
         <div class="row align-item">

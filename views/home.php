@@ -34,12 +34,12 @@ require_once '../elements/top.php' ?>
 
         <div class="row mx-0 my-5 justify-content-center">
 
-            <?php foreach ($arrondissements as $value) {
+            <?php foreach ($allTagsArrArray as $value) {
             ?>
                 <div class="col-lg-3 col-11 m-2 p-0">
                     <div class="card cadre m-0 p-0 shadow-sm">
-                        <img class="image m-0 p-0" src="../assets/images/arrondissements/<?= $value['picture'] ?>.jpg">
-                        <p class="arrondissement"><a class="text-white glass text-decoration-none" href="arrondissements.php?choice=<?= $value['id'] ?>"><?= $value['arrondissement'] ?> Arrondissement</a></p>
+                        <img class="image m-0 p-0" src="../assets/images/arrondissements/<?= $value['tag_arr_picture'] ?>.jpg">
+                        <p class="arrondissement"><a class="text-white glass text-decoration-none" href="arrondissements.php?choice=<?= $value['tag_arr_id'] ?>"><?= $value['tag_arr_name'] ?></a></p>
                     </div>
                 </div>
             <?php } ?>

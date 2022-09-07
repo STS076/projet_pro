@@ -51,7 +51,7 @@ class Categories extends Database
 
         $query->execute();
 
-        $result = $query->fetchall();
+        $result = $query->fetch();
         return $result;
     }
 

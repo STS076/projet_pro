@@ -12,11 +12,10 @@ require_once '../models/Users.php';
 
 $arr = new Arrondissements();
 $allTagsArrArray = $arr->getAllTagArr();
-$oneArrondissement = $arr->getOneArrondissement($_GET['choice']);
 
 $category = new Categories();
 $allTagsCategoryArray = $category->getAllTagCategory();
 
-$deals = new Deals();
-$AllDealsArray = $deals->getAllDeals();
-$getDealByArr = $deals->getDealsbyArr($_GET['choice']);
+$deals = new Deals(); 
+$AllDealsArray = $deals->getAllDeals(); 
+$oneDealArray = $deals->getOneDeal($_GET['choice']); 
