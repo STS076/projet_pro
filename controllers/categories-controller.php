@@ -15,7 +15,8 @@ $allTagsArrArray = $arr->getAllTagArr();
 
 $category = new Categories();
 $allTagsCategoryArray = $category->getAllTagCategory();
+$oneCatArray = $category->getOneCategory($_GET['category']); 
 
 $deals = new Deals();
 $AllDealsArray = $deals->getAllDeals();
-$getDealByArr = $deals->getDealsbyArr($_GET['category']);
+$getDealByCat = $deals->getDealsbyCat($_GET['category']);

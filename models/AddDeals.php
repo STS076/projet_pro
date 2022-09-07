@@ -171,7 +171,7 @@ class Deals extends Database
 
         $query = $pdo->prepare($sql);
 
-        $query->bindValue(':tag_categories_name', $tag_categories_name, PDO::PARAM_INT);
+        $query->bindValue(':tag_categories_name', $tag_categories_name, PDO::PARAM_STR);
         $query->execute();
         // $query = $pdo->query($sql);
         $result = $query->fetchAll();
