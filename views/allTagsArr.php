@@ -16,6 +16,7 @@ require_once '../controllers/allTagsArr-controller.php';
                     <tr>
                         <th class="text-center">#</th>
                         <th class="text-center">Arrondissements</th>
+                        <th class="text-center">More info</th>
                         <th class="text-center">Amend</th>
                         <th class="text-center">Delete</th>
                     </tr>
@@ -25,12 +26,13 @@ require_once '../controllers/allTagsArr-controller.php';
                         <tr>
                             <th class="text-center"><?= $value['tag_arr_id'] ?></th>
                             <th class="text-center"><?= $value['tag_arr_name'] ?></th>
-                            <!-- <td class="text-center"><a class="btn bg-warning" href="doctorsInfo.php?doctors=<?= $doctors['doctors_id'] ?>"> + d'info</a></td>
-                            <td class="text-center"><a class="btn bg-warning" href="doctorsModify.php?doctors=<?= $doctors['doctors_id'] ?>">Modifier</a></td>
-                            <td class="text-center"><a class="btn bg-warning" type="button" data-bs-toggle="modal" data-bs-target="#doctors-<?= $doctors['doctors_id'] ?>">Supprimer</a></td> -->
+
+                            <td class="text-center"><a class=" text-white btn bouton" href="tagArrInfo.php?arrInfo=<?= $value['tag_arr_id'] ?>">More info</a></td>
+                            <td class="text-center"><a class=" text-white btn bouton" href="tagArrsModify.php?modify=<?= $value['tag_arr_id'] ?>">Amend</a></td>
+                            <td class="text-center"><a class=" text-white btn bouton" type="button" data-bs-toggle="modal" data-bs-target="#tagArr-<?= $value['tag_arr_id'] ?>">Delete</a></td>
                         </tr>
 
-                        <!-- <div class="modal fade" id="doctors-<?= $doctors['doctors_id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <!-- <div class="modal fade" id="tagArr-<?= $doctors['doctors_id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">

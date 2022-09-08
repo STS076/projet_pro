@@ -73,34 +73,34 @@ require_once '../elements/top.php';
         </div>
 
 
-        <div class="row mx-0 p-0 my-5 bg-light">
+        <div class="row mx-0 p-0 my-5 bg-light justify-content-center">
             <h3 class="fst-italic text-center fw-bold comments pt-3">Reviews</h3>
             <div class="col-lg-8 col-11 d-flex justify-content-center">
-                <form action="" method="post" accept-charset="utf-8" class="d-flex justify-content-center">
-                    <fieldset>
-                        <div>
-                            <label for="rating">Rating : </label>
-                            <div class="rating">
-                                <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
-                                <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
-                                <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
-                                <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
-                                <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
-                            </div>
+                <form action="" method="post">
 
-                        </div>
-                        <div>
-                            <p class="border border-danger">
-                                <label>Your comment :</label>
-                                <textarea name="review" rows="8" cols="40">
-                            </textarea>
-                            </p>
-                        </div>
-                        <p><input type="submit" value="Submit Review"></p>
-                        <input type="hidden" name="product_type" value="actual_product_type" id="product_type">
-                        <input type="hidden" name="product_id" value="actual_product_id" id="product_id">
-                    </fieldset>
+                    <div class="d-flex flex-column">
+                        <label for="rating">Rating : <span class="text-danger"><?= isset($errors['dealRating']) ? $errors['dealRating'] : '' ?></span></label>
+                        <span class="rating">
+                            <input type="radio" name="dealRating" value="<?= isset($_POST['dealRating']) ? $_POST['dealRating'] : '' ?>"><label for="5">☆</label>
+                            <input type="radio" name="dealRating" value="<?= isset($_POST['dealRating']) ? $_POST['dealRating'] : '' ?>"><label for="4">☆</label>
+                            <input type="radio" name="dealRating" value="<?= isset($_POST['dealRating']) ? $_POST['dealRating'] : '' ?>"><label for="3">☆</label>
+                            <input type="radio" name="dealRating" value="<?= isset($_POST['dealRating']) ? $_POST['dealRating'] : '' ?>"><label for="2">☆</label>
+                            <input type="radio" name="dealRating" value="<?= isset($_POST['dealRating']) ? $_POST['dealRating'] : '' ?>"><label for="1">☆</label>
+                        </span>
+
+                    </div>
+                    <div class="d-flex flex-column">
+                        <label>Your comment :<span class="text-danger"><?= isset($errors['dealComment']) ? $errors['dealComment'] : '' ?></span></label>
+                        <textarea rows="8" cols="40" name="dealComment" value="<?= isset($_POST['dealComment']) ? $_POST['dealComment'] : '' ?>"></textarea>
+                    </div>
+                    <div class="my-3 text-center">
+                        <button class="btn bouton text-light" name="submit">Submit review</button>
+                    </div>
+
                 </form>
+
+
+
             </div>
 
         </div>

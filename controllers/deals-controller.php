@@ -16,6 +16,35 @@ $allTagsArrArray = $arr->getAllTagArr();
 $category = new Categories();
 $allTagsCategoryArray = $category->getAllTagCategory();
 
-$deals = new Deals(); 
-$AllDealsArray = $deals->getAllDeals(); 
-$oneDealArray = $deals->getOneDeal($_GET['choice']); 
+$deals = new Deals();
+$AllDealsArray = $deals->getAllDeals();
+$oneDealArray = $deals->getOneDeal($_GET['choice']);
+
+
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    $errors = [];
+
+    if (isset($_POST['dealRating'])) {
+        if (empty($_POST['dealRating'])) {
+            $errors['dealRating'] = '*Please chose a rating';
+        }
+    }
+    if (isset($_POST['dealComment'])) {
+        if (empty($_POST['dealComment'])) {
+            $errors['dealComment'] = '*Please a comment';
+        }
+    }
+
+
+    // if (count($errors) == 0) {
+    //     $date = date('d/m/Y');
+
+    //     $tagArrObj = new Arrondissements();
+    //     $tagArrObj->addTagArr($tagArr, $_POST['tagArrImage'], $_POST['tagArrSummary']);
+
+    //     header('location: dashboard-tagsArr.php');
+    //     exit;
+    // }
+}

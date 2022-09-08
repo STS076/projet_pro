@@ -15,17 +15,15 @@ require_once '../models/Images.php';
 require_once '../models/Role.php';
 require_once '../models/Users.php';
 
+// pour le header, appelle les deux fonctions pour récupérer le nom de toutes les catégories afin de les afficher dans la navbar. 
 $arr = new Arrondissements();
 $allTagsArrArray = $arr->getAllTagArr();
-
 $category = new Categories();
 $allTagsCategoryArray = $category->getAllTagCategory();
 
-// $cat = new DealsHasCat();
-// $allDealsCatArray = $cat->getDealCategory($allTagsCategoryArray['tag_categories_id']);
 
-$showForm = true;
 
+// va faire les vérifications du formulaire, s'il est bien remplis, si aucune erreur. 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $errors = [];
@@ -36,29 +34,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['dealTitle'])) {
         if (empty($_POST['dealTitle'])) {
             $errors['dealTitle'] = '*Please enter a title';
-        } else if (!preg_match($regexName, $_POST['dealTitle'])) {
-            $errors['dealTitle'] = "* Tag not valid";
+        }
+    }
+    if (isset($_POST['dealMiniSummary'])) {
+        if (empty($_POST['dealMiniSummary'])) {
+            $errors['dealMiniSummary'] = '*Please write a mini summary ';
+        }
+    }
+    if (isset($_POST['dealSummary'])) {
+        if (empty($_POST['dealSummary'])) {
+            $errors['dealSummary'] = '*Please write a summary';
         }
     }
     if (isset($_POST['dealWhen'])) {
         if (empty($_POST['dealWhen'])) {
-            $errors['dealWhen'] = '*Please enter an address';
-        } else if (!preg_match($regexName, $_POST['dealWhen'])) {
-            $errors['dealWhen'] = "* Tag not valid";
+            $errors['dealWhen'] = '*Please enter a date';
         }
     }
     if (isset($_POST['dealWhere'])) {
         if (empty($_POST['dealWhere'])) {
-            $errors['dealWhere'] = '*Please enter a date';
-        } else if (!preg_match($regexName, $_POST['dealWhere'])) {
-            $errors['dealWhere'] = "* Tag not valid";
+            $errors['dealWhere'] = '*Please enter an address';
         }
     }
     if (isset($_POST['dealPrice'])) {
         if (empty($_POST['dealPrice'])) {
             $errors['dealPrice'] = '*Please enter a price';
-        } else if (!preg_match($regexName, $_POST['dealPrice'])) {
-            $errors['dealPrice'] = "* Tag not valid";
         }
     }
     if (isset($_POST['dealMap'])) {
@@ -69,24 +69,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['dealMetro'])) {
         if (empty($_POST['dealMetro'])) {
             $errors['dealMetro'] = '*Please enter a metro / RER';
-        } else if (!preg_match($regexName, $_POST['dealMetro'])) {
-            $errors['dealMetro'] = "* Tag not valid";
         }
     }
     if (isset($_POST['dealInfo'])) {
         if (empty($_POST['dealInfo'])) {
             $errors['dealInfo'] = '*Please enter more info';
-        } else if (!preg_match($regexName, $_POST['dealInfo'])) {
-            $errors['dealInfo'] = "* Tag not valid";
         }
     }
-    if (isset($_POST['dealMap'])) {
-        if (empty($_POST['dealMap'])) {
-            $errors['dealMap'] = '*Please enter more info';
-        } else if (!preg_match($regexName, $_POST['dealMap'])) {
-            $errors['dealMap'] = "* Tag not valid";
+    if (isset($_POST['dealContact'])) {
+        if (empty($_POST['dealContact'])) {
+            $errors['dealContact'] = '*Please enter a contact';
         }
     }
+
     if (isset($_POST['dealTagArr'])) {
         if (empty($_POST['dealTagArr'])) {
             $errors['dealTagArr'] = '*Please select an Arrondissement';
@@ -99,6 +94,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
+
     if (count($errors) == 0) {
         $showForm = false;
         $dealTitle = safeInput($_POST['dealTitle']);
@@ -110,26 +106,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $dealInfo = safeInput($_POST['dealInfo']);
         $dealTagArr = safeInput($_POST['dealTagArr']);
 
-
+        // s'il n'y a aucune erreur alors que vais créer un nouveau Deal. va injecter les données du POST dans la méthode
         $dealObj = new Deals();
-        $idDeals = $dealObj->addDeals($dealTitle, $dealWhen, $dealWhere, $dealPrice, $dealMap, $dealMetro, $dealInfo, $dealTagArr, $_SESSION['user']['users_id']);
+        $idDeals = $dealObj->addDeals($dealTitle, $_POST['dealMiniSummary'], $_POST['dealSummary'], $dealWhen, $dealWhere, $dealPrice, $dealMap, $dealMetro, $dealInfo, $_POST['dealContact'], $dealTagArr, $_SESSION['user']['users_id']);
+
 
         $category = new Categories();
         $allTagsCategoryArray = $category->getAllTagCategory();
-        var_dump($_POST);
 
+        // va remplir la table intermédiaire avec les catégories, permet d'avoir plusieurs catégories
         foreach ($_POST['dealTagCat'] as $value) {
             $cat = new DealsHasCat();
             $cat->addDealCategory($value, $idDeals);
         };
 
         $allcatarray = $cat->getDealCategory($idDeals);
-
+        // si tout est bon et que le deal a été créé alors va retourner vers le dashboard deals
         header('location: dashboard-deals.php');
         exit;
     }
 }
 
+// va enlever les espaces inutiles et faire en sorte que les caractères HTML ne soient pas pris en compte
 function safeInput($input)
 {
     $safeInput = trim($input);

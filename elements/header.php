@@ -4,49 +4,46 @@
             <p class="text-center titleMain py-5 bw-bold fs-1">It's always better when it's free</p>
         </a>
     </div>
-    <nav class="d-lg-block d-none navbar navbar-expand-lg shadow-5-strong py-2 navigation">
-        <!-- <a class="navbar-brand " href="#"></a> -->
-        <div class="collapse navbar-collapse " id="navbarSupportedContent">
-            <ul class="navbar-nav  w-100 nav-justified  nav d-flex">
-                <li class="nav-item d-flex">
-                    <a href="home.php" class="nav-link fw-bold text-black">Home</a>
-
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active titre box fw-bold text-black" href="news.php">News</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-black  fw-bold" href=id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="arrondissements.php">
-                        Arrondissements
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-                        <?php foreach ($allTagsArrArray as $value) { ?>
-                            <li><a class="dropdown-item" href="arrondissements.php?choice=<?= $value['tag_arr_id'] ?>"><?= $value['tag_arr_name'] ?></a></li>
-                        <?php } ?>
-                    </ul>
-                </li>
-
-                
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-black  fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Categories
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-                        <?php foreach ($allTagsCategoryArray as $value) { ?>
-                            <li><a class="dropdown-item" href="categories.php?category=<?= $value['tag_categories_name'] ?>"><?= $value['tag_categories_name'] ?></a></li>
-                        <?php } ?>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active titre box fw-bold text-black" href="contact.php">Contact us</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
 </header>
 
+<!-- nav computer  -->
+<nav class="d-lg-block d-none navbar sticky-top navcomputer navbar-expand-lg shadow-5-strong py-2 navigation">
+    <!-- <a class="navbar-brand " href="#"></a> -->
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav  w-100 justify-content-center nav d-flex">
+            <li class="nav-item d-flex">
+                <a href="home.php" class="nav-link fw-bold text-black me-5">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active titre box fw-bold text-black me-5" href="news.php">News</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-black  fw-bold me-5" href=id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="arrondissements.php">
+                    Arrondissements
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <?php foreach ($allTagsArrArray as $value) { ?>
+                        <li><a class="dropdown-item" href="arrondissements.php?choice=<?= $value['tag_arr_id'] ?>"><?= $value['tag_arr_name'] ?></a></li>
+                    <?php } ?>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-black  fw-bold me-5" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Categories
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                    <?php foreach ($allTagsCategoryArray as $value) { ?>
+                        <li><a class="dropdown-item " href="categories.php?category=<?= $value['tag_categories_name'] ?>"><?= $value['tag_categories_name'] ?></a></li>
+                    <?php } ?>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active titre box fw-bold text-black" href="contact.php">Contact us</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
 
 <!-- navbar mobile -->

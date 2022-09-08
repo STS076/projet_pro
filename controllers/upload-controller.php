@@ -23,16 +23,55 @@ $allTagsCategoryArray = $category->getAllTagCategory();
 
 
 
-// si je fais un POST, alors je vais créer un cookie. 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    setcookie('preference', $_POST['preference'], time() + 3600);
-    setcookie('affichage', $_POST['affichage'], time() + 3600);
 
-    // il faut controller si la checkbox est cochée
-    if(isset($_POST['main'])){
-        setcookie('main', $_POST['main'], time() + 3600);
-    } else{
-        setcookie('main', '', time() -3600); 
+    $id = uniqid();
+    $newName = $id . '.webp';
+    $target_dir = "../assets/images/gallery/";
+    $target_file = $target_dir . basename($newName);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+    // $errors = [];
+
+    // Check if image file is a actual image or fake image
+    if (isset($_POST["submit"])) {
+        $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+        if ($check == true) {
+            echo " <p class='p-2'>Ce fichier est une image " . $check['mime'] . "</p>";
+            $uploadOk = 1;
+        } else {
+            echo "<p class='p-2'>Ce fichier n'est pas une image.</p>";
+            $uploadOk = 0;
+        }
     }
-    header('Location: upload.php');
-};
+
+    // Check if file already exists
+    if (file_exists($target_file)) {
+        echo "   <p class='p-2'>Ce fichier existe déjà.</p>";
+        $uploadOk = 0;
+    };
+
+    // Check file size
+    if ($_FILES["fileToUpload"]["size"] > 8000000) {
+        echo "  <p class='p-2'>Votre fichier est trop large.</p>";
+        $uploadOk = 0;
+    };
+
+    // Allow certain file formats
+    if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif"  && $imageFileType != "webp") {
+        echo "  <p class='p-2'>Vous pouvez seulement télécharger des fichiers JPG, JPEG, PNG & GIF.</p>";
+        $uploadOk = 0;
+    };
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        echo " <p class='p-2'>Votre fichier n'a pas été téléchargé.</p>";
+        // <!-- if everything is ok, try to upload file -->
+    } else {
+        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+            echo " <p class='p-2'>Le fichier " . htmlspecialchars($_FILES['fileToUpload']['name']) . "  a bien été téléchargé dans vos documents.</p>";
+        } else {
+            echo " <p class='p-2'>Désolé, il y a eu une erreur dans le téléchargement de votre image.</p>";
+        }
+    }
+}

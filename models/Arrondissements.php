@@ -24,15 +24,17 @@ class Arrondissements extends Database {
     }
 
 
-    public function addTagArr($tag_arr_name)
+    public function addTagArr($tag_arr_name, $tag_arr_picture,$tag_arr_summary )
     {
         $pdo = parent::connectDb();
-        $sql = "INSERT INTO `tag_arr` (`tag_arr_name`)
-        VALUES (:tag_arr_name) ";
+        $sql = "INSERT INTO `tag_arr` (`tag_arr_name`, tag_arr_picture, tag_arr_summary)
+        VALUES (:tag_arr_name, :tag_arr_picture,:tag_arr_summary ) ";
 
         $query = $pdo->prepare($sql);
 
         $query->bindValue(':tag_arr_name', $tag_arr_name, PDO::PARAM_STR);
+        $query->bindValue(':tag_arr_picture', $tag_arr_picture, PDO::PARAM_STR);
+        $query->bindValue(':tag_arr_summary', $tag_arr_summary, PDO::PARAM_STR);
  
         $query->execute();
     }

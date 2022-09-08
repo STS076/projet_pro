@@ -2,22 +2,20 @@
 session_start();
 require_once '../controllers/allTagsCategory-controller.php';
 ?>
-
 <?php include '../elements/top.php' ?>
-
 
 <body class="d-flex flex-column min-vh-100">
     <?php include '../elements/header.php' ?>
 
     <div class="container bienvenue d-flex align-items-center flex-column rounded my-5 p-5 border border-dark shadow">
         <div class="col-lg-8 col-12 text-center fw-bold">
-
             <table class="table table-responsive table-hover">
                 <thead>
                     <tr>
                         <th class="text-center">#</th>
                         <th class="text-center">Category</th>
-                        <th class="text-center">Amend</th>
+                        <th class="text-center">More Info</th>
+                        <th class="text-center">Amends</th>
                         <th class="text-center">Delete</th>
                     </tr>
                 </thead>
@@ -26,12 +24,12 @@ require_once '../controllers/allTagsCategory-controller.php';
                         <tr>
                             <th class="text-center"><?= $value['tag_categories_id'] ?></th>
                             <th class="text-center"><?= $value['tag_categories_name'] ?></th>
-                            <!-- <td class="text-center"><a class="btn bg-warning" href="doctorsInfo.php?doctors=<?= $doctors['doctors_id'] ?>"> + d'info</a></td>
-                            <td class="text-center"><a class="btn bg-warning" href="doctorsModify.php?doctors=<?= $doctors['doctors_id'] ?>">Modifier</a></td>
-                            <td class="text-center"><a class="btn bg-warning" type="button" data-bs-toggle="modal" data-bs-target="#doctors-<?= $doctors['doctors_id'] ?>">Supprimer</a></td> -->
+                            <td class="text-center"><a class="btn bouton text-light" href="tagCatInfo.php?info=<?= $value['tag_categories_id'] ?>"> + d'info</a></td>
+                            <td class="text-center"><a class="btn bouton text-light" href="tagCatModify.php?modify=<?= $value['tag_categories_id'] ?>">Modifier</a></td>
+                            <td class="text-center"><a class="btn bouton text-light" type="button" data-bs-toggle="modal" data-bs-target="#doctors-<?= $value['tag_categories_id'] ?>">Supprimer</a></td>
                         </tr>
 
-                        <!-- <div class="modal fade" id="doctors-<?= $doctors['doctors_id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <!-- <div class="modal fade" id="doctors-<?= $value['tag_categories_id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">

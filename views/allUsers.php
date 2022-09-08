@@ -11,7 +11,6 @@ require_once '../controllers/allUsers-controller.php';
 
     <div class="container bienvenue d-flex align-items-center flex-column rounded my-5 p-5 border border-dark shadow">
         <div class="col-lg-8 col-12 text-center fw-bold">
-
             <table class="table table-responsive table-hover">
                 <thead>
                     <tr>
@@ -57,7 +56,7 @@ require_once '../controllers/allUsers-controller.php';
             </table>
             <div class="mt-5">
 
-                <a class="text-decoration-none" href="dashboard-tagsCategories.php">
+                <a class="text-decoration-none" href="dashboard-users.php">
                     <button class="btn text-white bg-info">back</button>
                 </a>
 

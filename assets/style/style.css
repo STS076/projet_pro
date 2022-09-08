@@ -33,7 +33,7 @@ body {
 /* navbar */
 /*  */
 .navigation {
-    background-color: #ffffff84;
+    background-color: #48cfc4b6;
     color: rgb(0, 0, 77);
     /* position: sticky;
     top: 0;
@@ -52,6 +52,8 @@ body {
     background-size: cover;
     background-blend-mode: darken;
 }
+
+
 
 .welcome {
     font-family: 'Just Another Hand', cursive;
@@ -91,6 +93,14 @@ footer {
 .glass {
     background: rgba(36, 45, 60, 0.15);
     border-radius: 10%;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 0.5REM;
+}
+
+.hoverNav:hover {
+    background-color: #48cfc465;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -223,16 +233,6 @@ footer {
 /*  */
 
 
-
-.form-control:focus {
-    color: #495057;
-    background-color: #fff;
-    border-color: #ffffff;
-    outline: 0;
-    box-shadow: 0 0 0 1px rgb(255, 0, 0) !important
-}
-
-
 .rating {
     display: flex;
     margin-top: -10px;
@@ -249,7 +249,7 @@ footer {
     position: relative;
     width: 19px;
     font-size: 25px;
-    color: #ff0000;
+    color: goldenrod;
     cursor: pointer
 }
 
@@ -273,18 +273,19 @@ footer {
 }
 
 
-/*  */
+/* boutons dashboards */
 .boutons {
     width: 20rem;
     height: 5rem;
     background-color: #242D3C;
 }
 
-.fontCat{
+/* font choix catégories addDeals */
+.fontCat {
     font-size: 0.9rem;
 }
 
-.alignement{
+.alignement {
     display: flex;
     justify-content: center;
 }

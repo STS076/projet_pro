@@ -15,3 +15,6 @@ $allTagsArrArray = $arr->getAllTagArr();
 
 $category = new Categories();
 $allTagsCategoryArray = $category->getAllTagCategory();
+
+$deals = new Deals(); 
+$lastTenDeals = $deals->lastTenDeals(); 

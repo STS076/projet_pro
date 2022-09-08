@@ -38,13 +38,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $errors['tagArr'] = "* Tag not valid";
         }
     }
+    if (isset($_POST['tagArrImage'])) {
+        if (empty($_POST['tagArrImage'])) {
+            $errors['tagArrImage'] = '*Please add an image';
+        }
+    }
+    if (isset($_POST['tagArrSummary'])) {
+        if (empty($_POST['tagArrSummary'])) {
+            $errors['tagArrSummary'] = '*Please write a summary';
+        }
+    }
 
     if (count($errors) == 0) {
         $showForm = false;
         $tagArr = safeInput($_POST['tagArr']);
 
         $tagArrObj = new Arrondissements();
-        $tagArrObj->addTagArr($tagArr);
+        $tagArrObj->addTagArr($tagArr, $_POST['tagArrImage'], $_POST['tagArrSummary']);
 
         header('location: dashboard-tagsArr.php');
         exit;

@@ -32,14 +32,14 @@ require_once '../controllers/allDeals-controller.php';
                                 <th class="text-center"><?= $value['deals_title'] ?></th>
                                 <th class="text-center"><?= $value['tag_arr_name'] ?></th>
                                 <th class="text-center"><?= $value['DealsCatTag'] ?></th>
-                                <td class="text-center"><a class="text-light btn bouton" href="doctorsInfo.php?doctors=<?= $value['deals_id'] ?>"> + d'info</a></td>
+                                <td class="text-center"><a class="text-light btn bouton" href="dealsInfo.php?info=<?= $value['deals_id'] ?>"> + d'info</a></td>
                                 <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>
-                                    <td class="text-center"><a class="text-light btn bouton" href="doctorsModify.php?doctors=<?= $value['deals_id'] ?>">Modifier</a></td>
-                                    <td class="text-center"><a class="text-light btn bouton" type="button" data-bs-toggle="modal" data-bs-target="#doctors-<?= $value['deals_id'] ?>">Supprimer</a></td>
+                                    <td class="text-center"><a class="text-light btn bouton" href="dealsModify.php?modify=<?= $value['deals_id'] ?>">Modifier</a></td>
+                                    <td class="text-center"><a class="text-light btn bouton" type="button" data-bs-toggle="modal" data-bs-target="#deals-<?= $value['deals_id'] ?>">Supprimer</a></td>
                                 <?php } ?>
                             </tr>
 
-                            <!-- <div class="modal fade" id="doctors-<?= $value['doctors_id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <!-- <div class="modal fade" id="deals-<?= $value['doctors_id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
