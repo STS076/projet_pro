@@ -9,6 +9,7 @@ require_once '../models/DealsHasCat.php';
 require_once '../models/Images.php';
 require_once '../models/Role.php';
 require_once '../models/Users.php';
+require_once '../models/Comments.php';
 
 $arr = new Arrondissements();
 $allTagsArrArray = $arr->getAllTagArr();
@@ -19,6 +20,10 @@ $allTagsCategoryArray = $category->getAllTagCategory();
 $deals = new Deals();
 $AllDealsArray = $deals->getAllDeals();
 $oneDealArray = $deals->getOneDeal($_GET['choice']);
+
+$comment = new Comments(); 
+$getCommentByDeal = $comment->getCommentsByDeal($oneDealArray['deals_id']); 
+
 
 
 
@@ -38,13 +43,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
 
-    // if (count($errors) == 0) {
-    //     $date = date('d/m/Y');
+    if (count($errors) == 0) {
+        $date = date('d/m/Y');
+        $deals = new Deals();
+        $oneDealArray = $deals->getOneDeal($_GET['choice']);
+        $comments = new Comments();
+        $comments->addComments($_POST['dealRating'], $_POST['dealComment'], $date, $oneDealArray['deals_id'], $_SESSION['user']['users_id']);
 
-    //     $tagArrObj = new Arrondissements();
-    //     $tagArrObj->addTagArr($tagArr, $_POST['tagArrImage'], $_POST['tagArrSummary']);
-
-    //     header('location: dashboard-tagsArr.php');
-    //     exit;
-    // }
+        header('location: deals.php?choice='.$oneDealArray['deals_title']);
+        exit;
+    }
 }

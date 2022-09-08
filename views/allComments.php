@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../controllers/allDeals-controller.php';
+require_once '../controllers/allComments-controller.php';
 ?>
 <?php include '../elements/top.php' ?>
 
@@ -15,28 +15,27 @@ require_once '../controllers/allDeals-controller.php';
                     <thead>
                         <tr>
                             <th class="text-center">#</th>
-                            <th class="text-center">Title</th>
-                            <th class="text-center">Arrondissement</th>
-                            <th class="text-center">Category</th>
-                            <th class="text-center">More Info</th>
-                            <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>
-                                <th class="text-center">Amend</th>
-                                <th class="text-center">Delete</th>
-                            <?php } ?>
+                            <th class="text-center">User</th>
+                            <th class="text-center">Date</th>
+                            <th class="text-center">Deal</th>
+                            <th class="text-center">Comment</th>
+                            <th class="text-center">Approve</th>
+                            <th class="text-center">Delete</th>
+
+
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($AllDealsArray as $value) { ?>
+                        <?php foreach ($allComments as $value) { ?>
                             <tr>
-                                <th class="text-center"><?= $value['deals_id'] ?></th>
+                                <th class="text-center"><?= $value['comments_id'] ?></th>
+                                <th class="text-center"><?= $value['users_username'] ?></th>
+                                <th class="text-center"><?= $value['comments_date'] ?></th>
                                 <th class="text-center"><?= $value['deals_title'] ?></th>
-                                <th class="text-center"><?= $value['tag_arr_name'] ?></th>
-                                <th class="text-center"><?= $value['DealsCatTag'] ?></th>
-                                <td class="text-center"><a class="text-light btn bouton" href="doctorsInfo.php?doctors=<?= $value['deals_id'] ?>"> + d'info</a></td>
-                                <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>
-                                    <td class="text-center"><a class="text-light btn bouton" href="doctorsModify.php?doctors=<?= $value['deals_id'] ?>">Modifier</a></td>
-                                    <td class="text-center"><a class="text-light btn bouton" type="button" data-bs-toggle="modal" data-bs-target="#doctors-<?= $value['deals_id'] ?>">Supprimer</a></td>
-                                <?php } ?>
+                                <th class="text-center"><?= $value['comments_comment'] ?></th>
+                                <td class="text-center"><a class="text-light btn bg-success">Approve</a></td>
+                                <td class="text-center"><a class="text-light btn bg-danger" type="button" data-bs-toggle="modal" data-bs-target="#doctors-">Delete</a></td>
+
                             </tr>
 
                             <!-- <div class="modal fade" id="doctors-<?= $value['doctors_id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

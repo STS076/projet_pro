@@ -14,7 +14,7 @@ require_once '../elements/top.php' ?>
     <main class="bg-white py-5">
         <div class="row m-0 p-0 justify-content-center">
             <div class="col-lg-8 col-11">
-                <p class="fs-1 text-center welcome ">Welcome</p>
+                <p class=" text-center welcome2 ">Welcome</p>
                 <!-- <p><?= $_SESSION['user']['users_name'] ?></p> -->
                 <p class="fs-6 text-center">You want to visit the most beautiful city in the world, but do not want to get ruined ? Well, you've come to the right place, welcome to <span class="fst-italic">it's always better when it's free</span> where you can learn all about free activities in Paris and other good deals.</p>
             </div>

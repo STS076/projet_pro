@@ -92,4 +92,34 @@ class Comments extends Database
 
         $query->execute();
     }
+
+    public function getAllComments(): array
+    {
+        $pdo = parent::connectDb();
+        $sql = "SELECT * from comments  
+        inner join deals on deals_id_DEALS=deals_id 
+        inner join users on comments.users_id_USERS=users_id";
+        $query = $pdo->query($sql);
+        $result = $query->fetchall();
+        return $result;
+    }
+
+    public function getCommentsByDeal($deals_id): array
+    {
+        $pdo = parent::connectDb();
+        $sql = "SELECT comments_id, comments_rating, comments_comment, comments_date, comments_validate, deals_id_DEALS, comments.users_id_USERS , users_id, users_username, deals_id
+        FROM comments 
+        inner join deals on deals_id_DEALS=deals_id 
+        inner join users on comments.users_id_USERS=users_id
+        where deals_id=:deals_id";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':deals_id', $deals_id, PDO::PARAM_INT);
+        $query->execute();
+        $result = $query->fetchAll();
+        return $result;
+    }
+
+    public function approveComments()
+    {
+    }
 }
