@@ -202,4 +202,6 @@ class Deals extends Database
         $query->bindValue(':deals_id', $deals_id, PDO::PARAM_INPUT_OUTPUT);
         $query->execute();
     }
+
+
 }

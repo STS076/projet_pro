@@ -17,14 +17,20 @@ require_once '../elements/top.php';
             <p class="fw-bold fs-4 fst-italic p-2 text-center"> Welcome <?= $_SESSION['user']['users_name'] ?> </p>
         <?php } ?>
         <div class="row align-item">
-        <div class="col text-center m-3">
+            <div class="col text-center m-3">
                 <a href="allDeals.php"> <button class="text-center text-center text-light  rounded boutons">All of the Deals</button></a>
             </div>
             <div class="col text-center m-3">
                 <a href="addDeal.php"> <button class="text-center text-center text-light rounded  boutons">Add a Deal</button></a>
             </div>
-           
         </div>
+        <div class="row align-item">
+            <div class="col text-center m-3">
+                <a href="validateNewDeals.php"> <button class="text-center text-center text-light rounded  boutons">Validate new deals</button></a>
+            </div>
+        </div>
+
+
 
         <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>
 

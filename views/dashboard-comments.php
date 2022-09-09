@@ -2,7 +2,7 @@
 
 session_start();
 
-// require_once '../controllers/dashboard-deals-controller.php';
+require_once '../controllers/dashboard-comments-controller.php';
 
 require_once '../elements/top.php';
 ?>
