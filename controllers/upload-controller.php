@@ -21,8 +21,6 @@ $allTagsArrArray = $arr->getAllTagArr();
 $category = new Categories();
 $allTagsCategoryArray = $category->getAllTagCategory();
 
-
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $id = uniqid();

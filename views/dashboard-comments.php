@@ -25,25 +25,12 @@ require_once '../elements/top.php';
             </div>
         </div>
 
-        <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>
-
-            <div class="mt-5">
-                <a class="text-decoration-none" href="dashboard.php">
-                    <button class="btn text-white bg-info">back</button>
-                </a>
-            </div>
-        <?php  } else { ?>
-            <div class="text-center py-3">
-                <a class="text-decoration-none" href="logout.php">
-                    <button class="btn text-white bg-info"> DECONNEXION</button>
-                </a>
-            </div>
-        <?php } ?>
-
+        <div class="mt-5">
+            <a class="text-decoration-none" href="dashboard.php">
+                <button class="btn text-white bg-info">back</button>
+            </a>
+        </div>
     </div>
-
-
-
 
 
     <?php require_once '../elements/footer.php' ?>

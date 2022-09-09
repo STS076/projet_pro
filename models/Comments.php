@@ -119,7 +119,13 @@ class Comments extends Database
         return $result;
     }
 
-    public function approveComments()
+    public function approveComments($comments_id)
     {
+        $pdo = parent::connectDb();
+        $sql = "UPDATE comments inner join deals on deals_id_DEALS=deals_id set comments_validate=:comments_validate where comments_id=:comments_id";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':comments_validate', 1, PDO::PARAM_BOOL);
+        $query->bindValue(':comments_id', $comments_id, PDO::PARAM_INPUT_OUTPUT);
+        $query->execute();
     }
 }

@@ -6,7 +6,7 @@ require_once '../controllers/home-controller.php';
 require_once '../data/data.php';
 require_once '../elements/top.php' ?>
 
-<body class="background">
+<body class="d-flex flex-column min-vh-100">
 
     <?php require_once '../elements/header.php' ?>
 

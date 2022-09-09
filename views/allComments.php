@@ -1,6 +1,9 @@
 <?php
 session_start();
 require_once '../controllers/allComments-controller.php';
+// var_dump($_POST);
+// var_dump($allComments);
+
 ?>
 <?php include '../elements/top.php' ?>
 
@@ -19,6 +22,7 @@ require_once '../controllers/allComments-controller.php';
                             <th class="text-center">Date</th>
                             <th class="text-center">Deal</th>
                             <th class="text-center">Comment</th>
+                            <th class="text-center">Rating</th>
                             <th class="text-center">Approve</th>
                             <th class="text-center">Delete</th>
 
@@ -26,23 +30,35 @@ require_once '../controllers/allComments-controller.php';
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($allComments as $value) { ?>
-                            <tr>
-                                <th class="text-center"><?= $value['comments_id'] ?></th>
-                                <th class="text-center"><?= $value['users_username'] ?></th>
-                                <th class="text-center"><?= $value['comments_date'] ?></th>
-                                <th class="text-center"><?= $value['deals_title'] ?></th>
-                                <th class="text-center"><?= $value['comments_comment'] ?></th>
-                                <td class="text-center"><a class="text-light btn bg-success">Approve</a></td>
-                                <td class="text-center"><a class="text-light btn bg-danger" type="button" data-bs-toggle="modal" data-bs-target="#doctors-">Delete</a></td>
+                        <?php
+                        foreach ($allComments as $value) {
+                            if ($value['comments_validate'] != 1) {
+                        ?>
+                                <tr>
+                                    <td class="text-center"><?= $value['comments_id'] ?></td>
+                                    <td class="text-center"><?= $value['users_username'] ?></td>
+                                    <td class="text-center"><?= $value['comments_date'] ?></td>
+                                    <td class="text-center"><?= $value['deals_title'] ?></td>
+                                    <td class="text-center text-truncate" style="max-width: 100px;"><?= $value['comments_comment'] ?></td>
+                                    <td class="text-center text-truncate" style="max-width: 100px;"><?= $value['comments_rating'] ?></td>
+                                    <td class="text-center">
+                                        <form method="POST" action="allComments.php" name="form-<?= $value["comments_id"] ?>">
+                                            <button class="text-light btn bg-success" name="approve" value=<?= $value["comments_id"] ?>>
+                                                Approve
+                                            </button>
+                                        </form>
+                                    </td>
+                                    <form method="POST" action="">
+                                        <td class="text-center"><a class="text-light btn bg-danger" name="delete" data-bs-toggle="modal" data-bs-target="#comments-<?= $value['comments_id'] ?>">Delete</a></td>
+                                    </form>
 
-                            </tr>
+                                </tr>
 
-                            <!-- <div class="modal fade" id="doctors-<?= $value['doctors_id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <!-- <div class="modal fade" id="comments-<?= $value['comments_id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <p class="modal-title fs-4" id="exampleModalLabel"><?= $doctors['doctors_lastname'] ?> <?= $doctors['doctors_name'] ?></p>
+                                        <p class="modal-title fs-4" id="exampleModalLabel">Do you want to delete this comment ?></p>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
@@ -51,20 +67,21 @@ require_once '../controllers/allComments-controller.php';
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
                                         <form action="" method="POST">
-                                            <button class="btn btn-primary" name="delete" value="<?= $doctors['doctors_id'] ?> ">Supprimer</button>
+                                            <button class="btn btn-primary" name="delete" value="<?= $value['comments_id'] ?> ">Supprimer</button>
                                         </form>
                                     </div>
                                 </div>
                             </div>
                         </div> -->
 
-                        <?php } ?>
+                        <?php }
+                        } ?>
                     </tbody>
                 </table>
             </div>
             <div class="mt-5">
 
-                <a class="text-decoration-none" href="dashboard-deals.php">
+                <a class="text-decoration-none" href="dashboard-comments.php">
                     <button class="btn text-white bg-info">back</button>
                 </a>
 

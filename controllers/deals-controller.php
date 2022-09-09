@@ -22,7 +22,7 @@ $AllDealsArray = $deals->getAllDeals();
 $oneDealArray = $deals->getOneDeal($_GET['choice']);
 
 $comment = new Comments(); 
-$getCommentByDeal = $comment->getCommentsByDeal($oneDealArray['deals_id']); 
+$getCommentByDeal = $comment->getCommentsByDeal($_GET['choice']); 
 
 
 
@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $comments = new Comments();
         $comments->addComments($_POST['dealRating'], $_POST['dealComment'], $date, $oneDealArray['deals_id'], $_SESSION['user']['users_id']);
 
-        header('location: deals.php?choice='.$oneDealArray['deals_title']);
+        header('location: deals.php?choice='.$oneDealArray['deals_id']);
         exit;
     }
 }

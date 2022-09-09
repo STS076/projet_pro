@@ -17,5 +17,13 @@ $allTagsArrArray = $arr->getAllTagArr();
 $category = new Categories();
 $allTagsCategoryArray = $category->getAllTagCategory();
 
-$comments = new Comments(); 
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+ 
+    if (isset($_POST['approve'])) {
+        $comments = new Comments();
+        $validateComment = $comments->approveComments($_POST['approve']);
+    }
+}
+$comments = new Comments();
 $allComments = $comments->getAllComments();

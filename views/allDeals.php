@@ -21,6 +21,7 @@ require_once '../controllers/allDeals-controller.php';
                             <th class="text-center">More Info</th>
                             <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>
                                 <th class="text-center">Amend</th>
+                                <th class="text-center">Archive</th>
                                 <th class="text-center">Delete</th>
                             <?php } ?>
                         </tr>
@@ -35,7 +36,8 @@ require_once '../controllers/allDeals-controller.php';
                                 <td class="text-center"><a class="text-light btn bouton" href="dealsInfo.php?info=<?= $value['deals_id'] ?>"> + d'info</a></td>
                                 <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>
                                     <td class="text-center"><a class="text-light btn bouton" href="dealsModify.php?modify=<?= $value['deals_id'] ?>">Modifier</a></td>
-                                    <td class="text-center"><a class="text-light btn bouton" type="button" data-bs-toggle="modal" data-bs-target="#deals-<?= $value['deals_id'] ?>">Supprimer</a></td>
+                                    <td class="text-center"><a class="text-light btn bouton" href="dealsModify.php?modify=<?= $value['deals_id'] ?>">Modifier</a></td>
+                                    <td class="text-center"><a class="text-light btn bg-danger" type="button" data-bs-toggle="modal" data-bs-target="#deals-<?= $value['deals_id'] ?>">Supprimer</a></td>
                                 <?php } ?>
                             </tr>
 

@@ -122,23 +122,21 @@ class Deals extends Database
         return $result;
     }
 
-    public function getOneDeal($deals_title): array
+    public function getOneDeal($deals_id): array
     {
         $pdo = parent::connectDb();
 
-        $sql = "SELECT deals_id, deals_title, deals_summary, deals_mini_summary, deals_when, deals_where, deals_price, deals_metro, deals_map, deals_info, tag_arr_id_TAG_ARR, group_concat(tag_categories_name SEPARATOR ', ') as DealsCatTag, tag_arr_name  from deals 
+        $sql = "SELECT deals_id, deals_title, deals_summary, deals_validate, deals_mini_summary, deals_when, deals_where, deals_price, deals_metro, deals_map, deals_info, tag_arr_id_TAG_ARR, group_concat(tag_categories_name SEPARATOR ', ') as DealsCatTag, tag_arr_name  from deals 
         inner join deals_has_cat on deals_id_DEALS=deals_id 
         inner join tag_categories on tag_categories_id_TAG_CATEGORIES=tag_categories_id
         inner join tag_arr on tag_arr_id_TAG_ARR=tag_arr_id
-        where deals_title=:deals_title
+        where deals_id=:deals_id
         group by deals_id";
 
         $query = $pdo->prepare($sql);
-
-        $query->bindValue(':deals_title', $deals_title, PDO::PARAM_STR);
-
+        $query->bindValue(':deals_id', $deals_id, PDO::PARAM_INT);
         $query->execute();
-
+    
         $result = $query->fetch();
         return $result;
     }
@@ -193,5 +191,15 @@ class Deals extends Database
         $query = $pdo->query($sql);
         $result = $query->fetchall();
         return $result;
+    }
+
+    public function changeDealValidationStatus($deals_validate, $deals_id)
+    {
+        $pdo = parent::connectDb();
+        $sql = "UPDATE deals set deals_validate=:deals_validate where deals_id=:deals_id";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':deals_validate', $deals_validate, PDO::PARAM_BOOL);
+        $query->bindValue(':deals_id', $deals_id, PDO::PARAM_INPUT_OUTPUT);
+        $query->execute();
     }
 }

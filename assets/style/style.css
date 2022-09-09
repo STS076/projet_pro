@@ -33,7 +33,7 @@ body {
 /* navbar */
 /*  */
 .navigation {
-    background-color: #48cfc4b6;
+    background-color:#CBE9EA;
     color: rgb(0, 0, 77);
     /* position: sticky;
     top: 0;
@@ -42,7 +42,7 @@ body {
 }
 
 .navigationMobile {
-    background-color: #242D3C;
+    background-color: #CBE9EA;
 }
 
 .paris {

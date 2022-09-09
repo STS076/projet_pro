@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 require_once '../controllers/upload-controller.php';
 require_once '../elements/top.php' ?>

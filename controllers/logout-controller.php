@@ -18,8 +18,6 @@ require_once '../models/Users.php';
 session_unset();
 session_destroy();
 
-
-
 $arr = new Arrondissements();
 $allTagsArrArray = $arr->getAllTagArr();
 

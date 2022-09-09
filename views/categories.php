@@ -28,7 +28,7 @@ require_once '../elements/top.php';
                             <div class="card-body">
                                 <p class="card-title text-center fw-bold fs-5"><?= $value['deals_title'] ?></p>
                                 <p class="card-text"><?= $value['deals_mini_summary'] ?></p>
-                                <a href="deals.php?choice=<?= $value['deals_title'] ?>" class="links">Explore</a>
+                                <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="links">Explore</a>
                             </div>
                         </div>
                     </div>
