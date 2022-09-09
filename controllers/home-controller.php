@@ -16,7 +16,6 @@ $allTagsArrArray = $arr->getAllTagArr();
 $category = new Categories();
 $allTagsCategoryArray = $category->getAllTagCategory();
 
-
 /*
 Vous pouvez prendre tout le contenu de cette page pour l'insérer là où vous voulez sur votre site, attention à bien mettre ce code dans un page avec l'extension .php pour que le code fonctionne
 */

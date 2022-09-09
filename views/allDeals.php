@@ -27,21 +27,29 @@ require_once '../controllers/allDeals-controller.php';
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($AllDealsArray as $value) { ?>
-                            <tr>
-                                <th class="text-center"><?= $value['deals_id'] ?></th>
-                                <th class="text-center"><?= $value['deals_title'] ?></th>
-                                <th class="text-center"><?= $value['tag_arr_name'] ?></th>
-                                <th class="text-center"><?= $value['DealsCatTag'] ?></th>
-                                <td class="text-center"><a class="text-light btn bouton" href="dealsInfo.php?info=<?= $value['deals_id'] ?>"> + d'info</a></td>
-                                <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>
-                                    <td class="text-center"><a class="text-light btn bouton" href="dealsModify.php?modify=<?= $value['deals_id'] ?>">Modifier</a></td>
-                                    <td class="text-center"><a class="text-light btn bouton" href="dealsModify.php?modify=<?= $value['deals_id'] ?>">Modifier</a></td>
-                                    <td class="text-center"><a class="text-light btn bg-danger" type="button" data-bs-toggle="modal" data-bs-target="#deals-<?= $value['deals_id'] ?>">Supprimer</a></td>
-                                <?php } ?>
-                            </tr>
+                        <?php foreach ($AllDealsArray as $value) {
+                            if ($value['deals_validate'] != 1) { ?>
+                                <tr>
+                                    <th class="text-center"><?= $value['deals_id'] ?></th>
+                                    <th class="text-center"><?= $value['deals_title'] ?></th>
+                                    <th class="text-center"><?= $value['tag_arr_name'] ?></th>
+                                    <th class="text-center"><?= $value['DealsCatTag'] ?></th>
+                                    <td class="text-center"><a class="text-light btn bouton" href="dealsInfo.php?info=<?= $value['deals_id'] ?>"> + d'info</a></td>
+                                    <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>
 
-                            <!-- <div class="modal fade" id="deals-<?= $value['doctors_id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <td class="text-center">
+                                            <form action="allDeals.php" method="POST" name="form-<?= $value["deals_id"] ?>">
+                                                <button class="text-light btn bg-success" name="approve" value=<?= $value["deals_id"] ?>>Approve</button>
+                                            </form>
+                                        </td>
+                                        <td class="text-center"><a class="text-light btn bouton" href="dealsModify.php?modify=<?= $value['deals_id'] ?>">Amend</a></td>
+                                        <td class="text-center"><a class="text-light btn bouton" href="dealsModify.php?modify=<?= $value['deals_id'] ?>">Archive</a></td>
+                                        <td class="text-center"><a class="text-light btn bg-danger" type="button" data-bs-toggle="modal" data-bs-target="#deals-<?= $value['deals_id'] ?>">Supprimer</a></td>
+                                <?php }
+                                } ?>
+                                </tr>
+
+                                <!-- <div class="modal fade" id="deals-<?= $value['doctors_id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -61,7 +69,7 @@ require_once '../controllers/allDeals-controller.php';
                             </div>
                         </div> -->
 
-                        <?php } ?>
+                            <?php } ?>
                     </tbody>
                 </table>
             </div>

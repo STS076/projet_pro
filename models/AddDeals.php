@@ -112,7 +112,7 @@ class Deals extends Database
     public function getAllDeals(): array
     {
         $pdo = parent::connectDb();
-        $sql = "SELECT deals_id, deals_title, deals_when, deals_where, deals_price, deals_metro, deals_map, deals_info, group_concat(`tag_categories_name`  SEPARATOR ', ') as DealsCatTag, tag_arr_name  from deals 
+        $sql = "SELECT deals_id, deals_title, deals_when, deals_where, deals_validate, deals_price, deals_metro, deals_map, deals_info, group_concat(`tag_categories_name`  SEPARATOR ', ') as DealsCatTag, tag_arr_name  from deals 
         inner join deals_has_cat on deals_id_DEALS=deals_id 
         inner join tag_categories on tag_categories_id_TAG_CATEGORIES=tag_categories_id
         inner join tag_arr on tag_arr_id_TAG_ARR=tag_arr_id
@@ -136,7 +136,7 @@ class Deals extends Database
         $query = $pdo->prepare($sql);
         $query->bindValue(':deals_id', $deals_id, PDO::PARAM_INT);
         $query->execute();
-    
+
         $result = $query->fetch();
         return $result;
     }
@@ -144,7 +144,7 @@ class Deals extends Database
     public function getDealsbyArr($tag_arr_id): array
     {
         $pdo = parent::connectDb();
-        $sql = "SELECT deals_id, deals_mini_summary, deals_summary, deals_title, deals_when, deals_where, deals_price, tag_arr_name, tag_arr_id_TAG_ARR, tag_arr_id ,deals_metro, deals_map, deals_info, group_concat(`tag_categories_name`  SEPARATOR ', ') as DealsCatTag from deals 
+        $sql = "SELECT deals_id, deals_mini_summary, deals_summary, deals_title, deals_validate, deals_when, deals_where, deals_price, tag_arr_name, tag_arr_id_TAG_ARR, tag_arr_id ,deals_metro, deals_map, deals_info, group_concat(`tag_categories_name`  SEPARATOR ', ') as DealsCatTag from deals 
         inner join deals_has_cat on deals_id_DEALS=deals_id 
         inner join tag_categories on tag_categories_id_TAG_CATEGORIES=tag_categories_id
         inner join tag_arr on tag_arr_id_TAG_ARR=tag_arr_id
@@ -163,7 +163,7 @@ class Deals extends Database
     public function getDealsbyCat($tag_categories_name): array
     {
         $pdo = parent::connectDb();
-        $sql = "SELECT deals_id, deals_mini_summary, deals_summary, deals_title, deals_when, deals_where, deals_price, tag_arr_name, tag_arr_id_TAG_ARR, tag_arr_id ,deals_metro, deals_map, deals_info, group_concat(`tag_categories_name`  SEPARATOR ', ') as DealsCatTag from deals 
+        $sql = "SELECT deals_id, deals_mini_summary, deals_summary, deals_validate, deals_title, deals_when, deals_where, deals_price, tag_arr_name, tag_arr_id_TAG_ARR, tag_arr_id ,deals_metro, deals_map, deals_info, group_concat(`tag_categories_name`  SEPARATOR ', ') as DealsCatTag from deals 
         inner join deals_has_cat on deals_id_DEALS=deals_id 
         inner join tag_categories on tag_categories_id_TAG_CATEGORIES=tag_categories_id
         inner join tag_arr on tag_arr_id_TAG_ARR=tag_arr_id
@@ -193,12 +193,12 @@ class Deals extends Database
         return $result;
     }
 
-    public function changeDealValidationStatus($deals_validate, $deals_id)
+    public function changeDealValidationStatus($deals_id)
     {
         $pdo = parent::connectDb();
         $sql = "UPDATE deals set deals_validate=:deals_validate where deals_id=:deals_id";
         $query = $pdo->prepare($sql);
-        $query->bindValue(':deals_validate', $deals_validate, PDO::PARAM_BOOL);
+        $query->bindValue(':deals_validate', 1, PDO::PARAM_INT);
         $query->bindValue(':deals_id', $deals_id, PDO::PARAM_INPUT_OUTPUT);
         $query->execute();
     }
