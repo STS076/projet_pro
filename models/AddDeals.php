@@ -207,11 +207,11 @@ class Deals extends Database
     public function getDealByAverageRating()
     {
         $pdo = parent::connectDb();
-        $sql = "SELECT avg(comments_rating) as AverageRating, deals_id from comments 
+        $sql = "SELECT avg(comments_rating) as AverageRating, deals_id, deals_title, deals_mini_summary from comments 
         inner join deals on deals_id_DEALS=deals_id
         group by deals_id_DEALS 
         order by AverageRating desc 
-        limit 5";
+        limit 4";
         $query = $pdo->query($sql);
         $result = $query->fetchall();
         return $result;

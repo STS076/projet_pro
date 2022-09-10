@@ -33,7 +33,7 @@ body {
 /* navbar */
 /*  */
 .navigation {
-    background-color:#CBE9EA;
+    background-color:#cbe9eab2;
     color: rgb(0, 0, 77);
     /* position: sticky;
     top: 0;
@@ -256,4 +256,9 @@ footer {
 
 .rating{
     color: goldenrod;
+}
+
+.hotDeals{
+    background-color: #daeced;
+    border: 1px solid goldenrod;
 }
