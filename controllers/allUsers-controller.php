@@ -20,5 +20,8 @@ $allTagsArrArray = $arr->getAllTagArr();
 $category = new Categories();
 $allTagsCategoryArray = $category->getAllTagCategory();
 
-$users = new Users(); 
+$users = new Users();
 $AllUsersArray = $users->getAllUsers();
+
+$role = new Role();
+$allRoleArray = $role->getAllRole();

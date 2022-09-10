@@ -128,4 +128,6 @@ class Comments extends Database
         $query->bindValue(':comments_id', $comments_id, PDO::PARAM_INPUT_OUTPUT);
         $query->execute();
     }
+
+  
 }

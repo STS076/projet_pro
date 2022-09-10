@@ -20,7 +20,7 @@ require_once '../elements/top.php' ?>
             </div>
         </div>
 
-        <div class="row m-0 pt-5 justify-content-center">
+        <div class="row m-0 pt-5 justify-content-center bg-light">
             <div class="col-lg-8 col-11">
                 <p class="fs-1 text-center welcome">Hot Deals</p>
                 <p class="fs-6 text-center">Find below our most popular deals, and where you should go have fun next.</p>
