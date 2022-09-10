@@ -2,7 +2,7 @@
 
 session_start();
 
-require_once '../controllers/addDeal-controller.php';
+require_once '../controllers/amendDeals-controller.php';
 require_once '../elements/top.php' ?>
 
 <body class="d-flex flex-column min-vh-100">

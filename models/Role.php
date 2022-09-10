@@ -37,17 +37,5 @@ class Role extends Database
         return $query->fetchAll();
     }
 
-    public function changeRoleUser($role_id, $users_id)
-    {
-        $pdo = parent::connectDb();
-        $sql = "UPDATE `role`
-        inner join users 
-        on role_id=role_id_ROLE 
-        set role_id=:role_id 
-        where users_id=:users_id";
-        $query = $pdo->prepare($sql);
-        $query->bindValue(':role_id', $role_id, PDO::PARAM_INT);
-        $query->bindValue(':users_id', $users_id, PDO::PARAM_INPUT_OUTPUT);
-        $query->execute();
-    }
+
 }

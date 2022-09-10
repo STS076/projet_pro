@@ -2,7 +2,7 @@
 
 session_start();
 
-// require_once '../controllers/dashboard-controller.php';
+require_once '../controllers/dashboard-tagCategories-controller.php';
 
 require_once '../elements/top.php' ?>
 

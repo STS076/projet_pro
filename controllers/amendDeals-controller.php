@@ -14,6 +14,7 @@ require_once '../models/DealsHasCat.php';
 require_once '../models/Images.php';
 require_once '../models/Role.php';
 require_once '../models/Users.php';
+require_once '../models/Comments.php';
 
 $arr = new Arrondissements();
 $allTagsArrArray = $arr->getAllTagArr();

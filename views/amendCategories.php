@@ -2,7 +2,7 @@
 
 session_start();
 
-require_once '../controllers/addTagCategory-controller.php';
+require_once '../controllers/amendCategory-controller.php';
 
 require_once '../elements/top.php' ?>
 

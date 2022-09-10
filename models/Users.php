@@ -111,7 +111,6 @@ class Users extends Database
         $query->bindValue(':users_mail', $users_mail, PDO::PARAM_STR);
         $query->execute();
 
-
         $result = $query->fetchAll();
 
         if (count($result) != 0) {
@@ -134,5 +133,19 @@ class Users extends Database
         $result = $query->fetch(PDO::FETCH_ASSOC);
 
         return $result;
+    }
+
+    public function changeRoleUser($role_id_Role, $users_id)
+    {
+        $pdo = parent::connectDb();
+        $sql = "UPDATE `users`
+        inner join role 
+        on role_id=role_id_ROLE 
+        set role_id_Role=:role_id_Role
+        where users_id=:users_id";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':role_id_Role', $role_id_Role, PDO::PARAM_INT);
+        $query->bindValue(':users_id', $users_id, PDO::PARAM_INPUT_OUTPUT);
+        $query->execute();
     }
 }

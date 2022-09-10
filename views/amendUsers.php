@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../controllers/addUser-controller.php';
+require_once '../controllers/amendUsers-controller.php';
 require_once '../elements/top.php' ?>
 
 <body class="d-flex flex-column min-vh-100">
