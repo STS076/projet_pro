@@ -38,16 +38,14 @@ class DealsHasCat extends Database
         $query->execute();
     }
 
-    public function amendDealCat($tag_categories_id_TAG_CATEGORIES, $deals_id_DEALS)
+    public function deleteCatDeal($deals_id_DEALS)
     {
         $pdo = parent::connectDb();
 
-        $sql = "UPDATE deals_has_cat 
-        set tag_categories_id_TAG_CATEGORIES =:tag_categories_id_TAG_CATEGORIES
-        WHERE group_concat(deals_id_DEALS)=:deals_id_DEALS";
+        $sql = "DELETE from deals_has_cat 
+        where deals_id_DEALS=:deals_id_DEALS; ";
 
         $query = $pdo->prepare($sql);
-        $query->bindValue(':tag_categories_id_TAG_CATEGORIES', $tag_categories_id_TAG_CATEGORIES, PDO::PARAM_INT);
         $query->bindValue(':deals_id_DEALS', $deals_id_DEALS, PDO::PARAM_INT);
         $query->execute();
 

@@ -22,9 +22,18 @@ $category = new Categories();
 $allTagsCategoryArray = $category->getAllTagCategory();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if (isset($_POST['approve'])) {
+    if (isset($_POST['archive'])) {
         $deals = new Deals();
-        $validateDeals = $deals->changeDealValidationStatus($_POST['approve']);
+        $archiveDeals = $deals->archiveDeals($_POST['archive']);
+    }
+}
+$deals = new Deals(); 
+$AllDealsArray = $deals->getAllDeals(); 
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['reactivate'])) {
+        $deals = new Deals();
+        $archiveDeals = $deals->changeDealValidationStatus($_POST['reactivate']);
     }
 }
 

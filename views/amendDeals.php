@@ -4,7 +4,8 @@ session_start();
 
 require_once '../controllers/amendDeals-controller.php';
 
-var_dump($oneDealArray);
+// var_dump($oneDealArray);
+// var_dump($_POST);
 require_once '../elements/top.php' ?>
 
 <body class="d-flex flex-column min-vh-100">
@@ -61,26 +62,30 @@ require_once '../elements/top.php' ?>
                 </div>
                 <div class="d-flex flex-column">
                     <label class="py-2">Tag Arrondissement : <span class="text-danger"><?= isset($errors['dealTagArr']) ? $errors['dealTagArr'] : '' ?></label>
+
                     <select id="dealTagArr" value="<?= $oneDealArray['tag_arr_name'] ?>" name="dealTagArr">
                         <option value="">Please select an Arrondissement</option>
-                        <?php foreach ($allTagsArrArray as $value) { ?>
-                            <option value="<?= $value['tag_arr_name'] ?>" 
-                            <?= $value['tag_arr_id'] == $oneDealArray['tag_arr_id_TAG_ARR'] ? 'selected' : '' ?> 
-                            name="dealTagArr[<?= $value['tag_arr_id'] ?>]">
+                        <?php
+                        foreach ($allTagsArrArray as $value) { ?>
+                            <option value="<?= $value['tag_arr_id'] ?>" <?= $value['tag_arr_id'] == $oneDealArray['tag_arr_id_TAG_ARR'] ? 'selected' : '' ?> name="dealTagArr[<?= $value['tag_arr_id'] ?>]">
                                 <?= $value['tag_arr_name'] ?>
                             </option>
                         <?php } ?>
+
                     </select>
                 </div>
 
                 <div class="d-flex flex-column">
                     <label class="py-2">Tag Category : <span class="text-danger"><?= isset($errors['dealTagCat']) ? $errors['dealTagCat'] : '' ?></label>
+
+                    <?php
+                    $DealsCatTagIdArray = explode(', ',  $oneDealArray['DealsCatTagId']);
+                    ?>
+
                     <select id="dealTagCat" multiple value="<?= $oneDealArray['DealsCatTag'] ?>" name="dealTagCat[]">
                         <option value="">Please select a Category</option>
                         <?php foreach ($allTagsCategoryArray as $value) { ?>
-                            <option class="fontCat" value="<?= $value['tag_categories_id'] ?>" 
-                            <?= $value['tag_categories_id'] == $oneDealArray['DealsCatTagId'] ? 'selected' : '' ?> 
-                            name="dealTagCat[<?= $value['tag_categories_id'] ?>]">
+                            <option class="fontCat" value="<?= $value['tag_categories_id'] ?>" <?= in_array($value['tag_categories_id'], $DealsCatTagIdArray) ? 'selected' : '' ?>> 
                                 <?= $value['tag_categories_name'] ?>
                             </option>
                         <?php } ?>

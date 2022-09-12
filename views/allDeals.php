@@ -21,7 +21,7 @@ require_once '../controllers/allDeals-controller.php';
                             <th class="text-center">More Info</th>
                             <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>
                                 <th class="text-center">Amend</th>
-                                <th class="text-center">Archive</th>
+                                <th class="text-center">Status</th>
                                 <th class="text-center">Delete</th>
                             <?php } ?>
                         </tr>
@@ -43,7 +43,22 @@ require_once '../controllers/allDeals-controller.php';
                                         </form>
                                     </td> -->
                                     <td class="text-center"><a class="text-light btn bouton" href="amendDeals.php?amend=<?= $value['deals_id'] ?>">Amend</a></td>
-                                    <td class="text-center"><a class="text-light btn bouton" href="infoDeals.php?info=<?= $value['deals_id'] ?>">More Info</a></td>
+
+                                    <?php if ($value["deals_validate"] != 2) { ?>
+                                        <form method="POST" action="allDeals.php" name="form-<?= $value["deals_id"] ?>">
+                                            <td class="text-center">
+                                                <button class="text-light btn bg-warning" name="archive" value=<?= $value["deals_id"] ?>>Archive</button>
+                                            </td>
+                                        </form>
+                                    <?php } else { ?>
+
+                                        <form method="POST" action="allDeals.php" name="form-<?= $value["deals_id"] ?>">
+                                            <td class="text-center">
+                                                <button class="text-light btn bg-success" name="reactivate" value=<?= $value["deals_id"] ?>>Re Activate</button>
+                                            </td>
+                                        </form>
+
+                                    <?php } ?>
                                     <td class="text-center"><a class="text-light btn bg-danger" type="button" data-bs-toggle="modal" data-bs-target="#deals-<?= $value['deals_id'] ?>">Supprimer</a></td>
                                 <?php }
                                 ?>
@@ -53,7 +68,7 @@ require_once '../controllers/allDeals-controller.php';
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <p class="modal-title fs-4" id="exampleModalLabel"><?= $doctors['doctors_lastname'] ?> <?= $doctors['doctors_name'] ?></p>
+                                        <p class="modal-title fs-4" id="exampleModalLabel"><?= $value['doctors_lastname'] ?> <?= $doctors['doctors_name'] ?></p>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">

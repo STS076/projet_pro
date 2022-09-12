@@ -109,6 +109,33 @@ class Deals extends Database
         return $pdo->lastInsertId();
     }
 
+    public function amendDeals($deals_title, $deals_mini_summary, $deals_summary, $deals_when, $deals_where,  $deals_metro, $deals_price,  $deals_map, $deals_info, $deals_contact, $tag_arr_id_TAG_ARR, $users_id_USERS, $deals_id)
+    {
+        $pdo = parent::connectDb();
+
+        $sql = "UPDATE deals 
+        set deals_title =:deals_title, deals_mini_summary=:deals_mini_summary, deals_summary=:deals_summary, deals_when=:deals_when, deals_where=:deals_where, deals_metro=:deals_metro, deals_price=:deals_price, deals_info=:deals_info, deals_contact=:deals_contact,deals_map=:deals_map, tag_arr_id_TAG_ARR=:tag_arr_id_TAG_ARR, users_id_USERS=:users_id_USERS
+        WHERE deals_id=:deals_id";
+
+        $query = $pdo->prepare($sql);
+
+        $query->bindValue(':deals_title', $deals_title, PDO::PARAM_STR);
+        $query->bindValue(':deals_mini_summary', $deals_mini_summary, PDO::PARAM_STR);
+        $query->bindValue(':deals_summary', $deals_summary, PDO::PARAM_STR);
+        $query->bindValue(':deals_when', $deals_when, PDO::PARAM_STR);
+        $query->bindValue(':deals_where', $deals_where, PDO::PARAM_STR);
+        $query->bindValue(':users_id_USERS', $users_id_USERS, PDO::PARAM_STR);
+        $query->bindValue(':deals_price', $deals_price, PDO::PARAM_STR);
+        $query->bindValue(':deals_metro', $deals_metro, PDO::PARAM_STR);
+        $query->bindValue(':deals_info', $deals_info, PDO::PARAM_STR);
+        $query->bindValue(':deals_contact', $deals_contact, PDO::PARAM_STR);
+        $query->bindValue(':deals_map', $deals_map, PDO::PARAM_STR);
+        $query->bindValue(':tag_arr_id_TAG_ARR', $tag_arr_id_TAG_ARR, PDO::PARAM_STR);
+        $query->bindValue(':deals_id', $deals_id, PDO::PARAM_STR);
+
+        $query->execute();
+    }
+
     public function getAllDeals(): array
     {
         $pdo = parent::connectDb();
@@ -126,7 +153,10 @@ class Deals extends Database
     {
         $pdo = parent::connectDb();
 
-        $sql = "SELECT deals_id, deals_title, deals_summary, deals_mini_summary, deals_contact, deals_validate, deals_mini_summary, users_username, deals_when, deals_where, deals_price, deals_metro, deals_map, deals_info, group_concat(tag_categories_id_TAG_CATEGORIES SEPARATOR ', ') as DealsCatTagId, tag_arr_id_TAG_ARR, group_concat(tag_categories_name SEPARATOR ', ') as DealsCatTag, tag_arr_name  from deals 
+        $sql = "SELECT deals_id, deals_title, deals_summary, deals_mini_summary, deals_contact, deals_validate, deals_mini_summary, users_username, deals_when, deals_where, deals_price, deals_metro, deals_map, deals_info, 
+        group_concat(tag_categories_id_TAG_CATEGORIES SEPARATOR ', ') as DealsCatTagId, 
+        tag_arr_id_TAG_ARR, group_concat(tag_categories_name SEPARATOR ', ') as DealsCatTag, tag_arr_name  
+        from deals 
         inner join deals_has_cat on deals_id_DEALS=deals_id 
         inner join tag_categories on tag_categories_id_TAG_CATEGORIES=tag_categories_id
         inner join tag_arr on tag_arr_id_TAG_ARR=tag_arr_id
@@ -204,6 +234,16 @@ class Deals extends Database
         $query->execute();
     }
 
+    public function archiveDeals($deals_id)
+    {
+        $pdo = parent::connectDb();
+        $sql = "UPDATE deals set deals_validate=:deals_validate where deals_id=:deals_id";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':deals_validate', 2, PDO::PARAM_INT);
+        $query->bindValue(':deals_id', $deals_id, PDO::PARAM_INPUT_OUTPUT);
+        $query->execute();
+    }
+
 
     public function getDealByAverageRating()
     {
@@ -216,32 +256,5 @@ class Deals extends Database
         $query = $pdo->query($sql);
         $result = $query->fetchall();
         return $result;
-    }
-
-    public function amendDeals($deals_title, $deals_mini_summary, $deals_summary, $deals_when, $deals_where, $deals_price, $deals_metro,$deals_info, $deals_contact, $deals_map, $tag_arr_id_TAG_ARR, $deals_id)
-    {
-        $pdo = parent::connectDb();
-
-        $sql = "UPDATE deals 
-        set deals_title =:deals_title, deals_mini_summary=:deals_mini_summary, deals_summary=:deals_summary, deals_when=:deals_when, deals_where=:deals_where, deals_price=:deals_price, deals_metro=:deals_metro, deals_info=:deals_info, deals_contact=:deals_contact,deals_map=:deals_map, tag_arr_id_TAG_ARR=:tag_arr_id_TAG_ARR
-        WHERE deals_id=:deals_id";
-
-        $query = $pdo->prepare($sql);
-
-        $query->bindValue(':deals_title', $deals_title, PDO::PARAM_STR);
-        $query->bindValue(':deals_mini_summary', $deals_mini_summary, PDO::PARAM_STR);
-        $query->bindValue(':deals_summary', $deals_summary, PDO::PARAM_STR);
-        $query->bindValue(':deals_when', $deals_when, PDO::PARAM_STR);
-        $query->bindValue(':deals_where', $deals_where, PDO::PARAM_STR);
-        $query->bindValue(':deals_id', $deals_id, PDO::PARAM_STR);
-        $query->bindValue(':deals_price', $deals_price, PDO::PARAM_STR);
-        $query->bindValue(':deals_metro', $deals_metro, PDO::PARAM_STR);
-        $query->bindValue(':deals_info', $deals_info, PDO::PARAM_STR);
-        $query->bindValue(':deals_contact', $deals_contact, PDO::PARAM_STR);
-        $query->bindValue(':deals_map', $deals_map, PDO::PARAM_STR);
-        $query->bindValue(':tag_arr_id_TAG_ARR', $tag_arr_id_TAG_ARR, PDO::PARAM_STR);
-
-        $query->execute();
-
     }
 }
