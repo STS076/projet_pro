@@ -60,9 +60,9 @@ require_once '../elements/top.php' ?>
                     <label class="py-2">Map : <span class="text-danger"><?= isset($errors['dealMap']) ? $errors['dealMap'] : '' ?></label>
                     <input type="text" id="dealMap" value="<?= $oneDealArray['deals_map'] ?>" name="dealMap">
                 </div>
+                
                 <div class="d-flex flex-column">
                     <label class="py-2">Tag Arrondissement : <span class="text-danger"><?= isset($errors['dealTagArr']) ? $errors['dealTagArr'] : '' ?></label>
-
                     <select id="dealTagArr" value="<?= $oneDealArray['tag_arr_name'] ?>" name="dealTagArr">
                         <option value="">Please select an Arrondissement</option>
                         <?php

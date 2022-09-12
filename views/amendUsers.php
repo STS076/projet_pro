@@ -1,5 +1,7 @@
 <?php
 session_start();
+var_dump($_POST);
+// var_dump($_POST['userRole']);
 require_once '../controllers/amendUsers-controller.php';
 require_once '../elements/top.php' ?>
 
@@ -7,66 +9,64 @@ require_once '../elements/top.php' ?>
 
     <?php require_once '../elements/header.php' ?>
 
+    <div class="row  justify-content-evenly mx-0 py-5">
+
+        <div class="bg-light  border border-dark shadow-sm col-lg-5 py-4 rounded col-11">
+            <p class="text-center fs-5 my-4 fw-bold">Modify an user : </p>
+            <form action="" method="POST">
+
+                <div class=" d-flex flex-column">
+                    <label class="text-dark">Name : </label>
+                    <input class="text-center form-control " placeholder="ex : Sophie" id="firstname" value="<?= $getOneUser['users_name'] ?>" name="firstname">
+                    <p class="text-danger"><?= isset($errors['firstname']) ? $errors['firstname'] : '' ?></p>
+                </div>
+
+                <div class=" d-flex flex-column">
+                    <label class="text-dark">Surname : </label>
+                    <input class="text-center form-control " placeholder="ex : Toussaint" id="surname" value="<?= $getOneUser['users_surname'] ?>" name="surname">
+                    <p class="text-danger"><?= isset($errors['surname']) ? $errors['surname'] : '' ?></p>
+                </div>
+
+                <div class="d-flex flex-column">
+                    <label class="text-dark">Username :</label>
+                    <input class=" text-center form-control" id="username" placeholder="ex : LoveParis75" name="username" value="<?= $getOneUser['users_username'] ?>">
+                    <p class="text-danger"><?= isset($errors['username']) ? $errors['username'] : '' ?></p>
+                </div>
+
+                <div class="d-flex flex-column">
+                    <label class="text-dark">Email Address :</label>
+                    <input type="emailAddress" class=" text-center form-control" id="emailAddress" placeholder="ex : sophie@sophie.com" name="emailAddress" value="<?= $getOneUser['users_mail'] ?>">
+                    <p class="text-danger"><?= isset($errors['emailAddress']) ? $errors['emailAddress'] : '' ?></p>
+                </div>
+
+                <div class="d-flex flex-column">
+                    <label class="py-2">Role : <span class="text-danger">
+                            <?= isset($errors['role_id_ROLE']) ? $errors['role_id_ROLE'] : '' ?>
+                    </label>
+                    <select id="role_id_ROLE" value="<?= $getOneUser['tag_arr_name'] ?>" name="role_id_ROLE">
+                        <option value="">Please select a role</option>
+                        <?php foreach ($allRoleArray as $value) { ?>
+                            <option value="<?= $value['role_id'] ?>" <?= $value['role_id'] == $getOneUser['role_id_ROLE'] ? 'selected' : '' ?> name="role_id_ROLE[<?= $value['role_id'] ?>]">
+                                <?= $value['role_role'] ?>
+                            </option>
+                        <?php } ?>
+
+                    </select>
+                </div>
 
 
+                <div class="my-3 text-center">
+                    <button class="btn bouton border border-dark text-light" id="submit" name="submit">Submit</button>
+                </div>
 
-    <div class="container bg-light  bienvenue rounded my-5 py-3 border border-dark shadow">
-        <div class="row  alignement">
-            <div class="col-lg-12 col-11">
-                <form action="" method="POST">
-                    <div class="text-center">
-                        <p class="fs-4 ms-4 pb-3 text-dark">Add an user : </p>
-                    </div>
-
-                    <div class=" form-group col-lg-6 col-12 my-3 text-center">
-                        <label class="text-dark">Name : </label>
-                        <input class="text-center form-control " placeholder="ex : Sophie" id="firstname" value="<?= isset($_POST['firstname']) ? $_POST['firstname'] : '' ?>" name="firstname">
-                        <p class="text-danger"><?= isset($errors['firstname']) ? $errors['firstname'] : '' ?></p>
-                    </div>
-
-                    <div class=" form-group col-lg-6 col-12 my-3 text-center">
-                        <label class="text-dark">Surname : </label>
-                        <input class="text-center form-control " placeholder="ex : Toussaint" id="surname" value="<?= isset($_POST['surname']) ? $_POST['surname'] : '' ?>" name="surname">
-                        <p class="text-danger"><?= isset($errors['surname']) ? $errors['surname'] : '' ?></p>
-                    </div>
-
-                    <div class="form-group col-lg-6 col-12 my-3 text-center">
-                        <label class="text-dark">Username :</label>
-                        <input class=" text-center form-control" id="username" placeholder="ex : LoveParis75" name="username" value="<?= isset($_POST['username']) ? $_POST['username'] : '' ?>">
-                        <p class="text-danger"><?= isset($errors['username']) ? $errors['username'] : '' ?></p>
-                    </div>
-
-                    <div class="form-group col-lg-6 col-12 my-3 text-center">
-                        <label class="text-dark">Email Address :</label>
-                        <input type="emailAddress" class=" text-center form-control" id="emailAddress" placeholder="ex : sophie@sophie.com" name="emailAddress" value="<?= isset($_POST['emailAddress']) ? $_POST['emailAddress'] : '' ?>">
-                        <p class="text-danger"><?= isset($errors['emailAddress']) ? $errors['emailAddress'] : '' ?></p>
-                    </div>
-
-                    <div class="form-group col-lg-6 col-12 my-3 text-center">
-                        <label class="text-dark">Password:</label>
-                        <input type="password" class=" text-center form-control" id="password" placeholder="Password" name="password" value="<?= isset($_POST['password']) ? $_POST['password'] : '' ?>">
-                        <p class="text-danger"><?= isset($errors['password']) ? $errors['password'] : '' ?></p>
-                    </div>
-
-
-                    <div class="form-group col-lg-6 col-12 my-3 text-center">
-                        <label class="text-dark">Confirm Password : </label>
-                        <input type="password" class=" text-center form-control" id="passwordconfirm" placeholder="Confirm Password" name="passwordconfirm" value="<?= isset($_POST['surname']) ? $_POST['passwordconfirm'] : '' ?>">
-                        <p class="text-danger"><?= isset($errors['passwordconfirm']) ? $errors['passwordconfirm'] : '' ?></p>
-                    </div>
-
-                    <div class="my-3 text-center">
-                        <button class="btn bouton border border-dark text-light" id="submit" name="submit">Submit</button>
-                    </div>
-
-                </form>
-            </div>
+            </form>
         </div>
-        <div class="mt-5 text-center">
-            <a class="text-decoration-none" href="dashboard-users.php">
-                <button class="btn text-white bg-info">back</button>
-            </a>
-        </div>
+    </div>
+    <div class="mt-5 text-center">
+        <a class="text-decoration-none" href="dashboard-users.php">
+            <button class="btn text-white bg-info">back</button>
+        </a>
+    </div>
 
     </div>
 

@@ -26,9 +26,9 @@ require_once '../controllers/allUsers-controller.php';
                         <tr>
                             <th class="text-center"><?= $value['users_id'] ?></th>
                             <th class="text-center"><?= $value['users_username'] ?></th>
-                            <td class="text-center"><a class="btn bg-warning" href="infoUsers.php?doctors=<?= $value['users_id'] ?>"> + d'info</a></td>
-                            <td class="text-center"><a class="btn bg-warning" href="modifyUsers.php?doctors=<?= $doctors['users_id'] ?>">Modifier</a></td>
-                            <td class="text-center"><a class="btn bg-warning" type="button" data-bs-toggle="modal" data-bs-target="#doctors-<?= $value['usersçid'] ?>">Supprimer</a></td>
+                            <td class="text-center"><a class="btn bouton text-white" href="amendUsers.php?infoUsers=<?= $value['users_id'] ?>"> + d'info</a></td>
+                            <td class="text-center"><a class="btn bg-warning" href="amendUsers.php?amend=<?= $value['users_id'] ?>">Modifier</a></td>
+                            <td class="text-center"><a class="btn bg-danger" type="button" data-bs-toggle="modal" data-bs-target="#doctors-<?= $value['users_id'] ?>">Supprimer</a></td>
                         </tr>
 
                         <!-- <div class="modal fade" id="doctors-<?= $doctors['doctors_id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

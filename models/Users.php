@@ -92,6 +92,24 @@ class Users extends Database
         $query->execute();
     }
 
+    public function amendUser($users_username, $users_name, $users_surname, $users_mail, $role_id_ROLE, $users_id)
+    {
+        $pdo = parent::connectDb();
+        $sql = "UPDATE users 
+        set users_username =:users_username, users_name=:users_name, users_surname=:users_surname, users_mail=:users_mail, role_id_ROLE=:role_id_ROLE
+        WHERE users_id=:users_id";
+
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':users_username', $users_username, PDO::PARAM_STR);
+        $query->bindValue(':users_name', $users_name, PDO::PARAM_STR);
+        $query->bindValue(':users_surname', $users_surname, PDO::PARAM_STR);
+        $query->bindValue(':users_mail', $users_mail, PDO::PARAM_STR);
+        $query->bindValue(':role_id_ROLE', $role_id_ROLE, PDO::PARAM_STR);
+        $query->bindValue(':users_id', $users_id, PDO::PARAM_STR);
+
+        $query->execute();
+    }
+
     public function getAllUsers(): array
     {
         $pdo = parent::connectDb();
@@ -102,9 +120,25 @@ class Users extends Database
         return $result;
     }
 
+    public function getOneUser($users_id): array
+    {
+        $pdo = parent::connectDb();
+        $sql = "SELECT * FROM `users` 
+        inner join `role` 
+        on role_id_ROLE=role_id
+        where users_id=:users_id";
+        // $query = $pdo->query($sql);
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':users_id', $users_id, PDO::PARAM_STR);
+        $query->execute();
+
+        $result = $query->fetch();
+        return $result;
+    }
+
+
     public function checkIfMailExists(string $users_mail)
     {
-
         $pdo = parent::connectDb();
         $sql = "SELECT `users_mail` FROM `users` WHERE `users_mail`= :users_mail";
         $query = $pdo->prepare($sql);
@@ -135,17 +169,17 @@ class Users extends Database
         return $result;
     }
 
-    public function changeRoleUser($role_id_Role, $users_id)
-    {
-        $pdo = parent::connectDb();
-        $sql = "UPDATE `users`
-        inner join role 
-        on role_id=role_id_ROLE 
-        set role_id_Role=:role_id_Role
-        where users_id=:users_id";
-        $query = $pdo->prepare($sql);
-        $query->bindValue(':role_id_Role', $role_id_Role, PDO::PARAM_INT);
-        $query->bindValue(':users_id', $users_id, PDO::PARAM_INPUT_OUTPUT);
-        $query->execute();
-    }
+    // public function changeRoleUser($role_id_Role, $users_id)
+    // {
+    //     $pdo = parent::connectDb();
+    //     $sql = "UPDATE `users`
+    //     inner join `role`
+    //     on role_id=role_id_ROLE 
+    //     set role_id_Role=:role_id_Role
+    //     where users_id=:users_id";
+    //     $query = $pdo->prepare($sql);
+    //     $query->bindValue(':role_id_Role', $role_id_Role, PDO::PARAM_INT);
+    //     $query->bindValue(':users_id', $users_id, PDO::PARAM_INPUT_OUTPUT);
+    //     $query->execute();
+    // }
 }
