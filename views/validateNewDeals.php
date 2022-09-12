@@ -42,8 +42,8 @@ require_once '../controllers/allDeals-controller.php';
                                                 <button class="text-light btn bg-success" name="approve" value=<?= $value["deals_id"] ?>>Approve</button>
                                             </form>
                                         </td>
-                                        <td class="text-center"><a class="text-light btn bouton" href="dealsModify.php?modify=<?= $value['deals_id'] ?>">Amend</a></td>
-                                        <!-- <td class="text-center"><a class="text-light btn bouton" href="dealsModify.php?modify=<?= $value['deals_id'] ?>">Archive</a></td> -->
+                                        <td class="text-center"><a class="text-light btn bouton" href="amendDeals.php?modify=<?= $value['deals_id'] ?>">Amend</a></td>
+                                        <td class="text-center"><a class="text-light btn bouton" href="infoDeals.php?modify=<?= $value['deals_id'] ?>">Archive</a></td>
                                         <td class="text-center"><a class="text-light btn bg-danger" type="button" data-bs-toggle="modal" data-bs-target="#deals-<?= $value['deals_id'] ?>">Supprimer</a></td>
                                 <?php }
                                 } ?>

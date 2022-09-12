@@ -34,7 +34,7 @@ require_once '../controllers/allDeals-controller.php';
                                 <td class="text-center"><?= $value['deals_title'] ?></td>
                                 <td class="text-center"><?= $value['tag_arr_name'] ?></td>
                                 <td class="text-center"><?= $value['DealsCatTag'] ?></td>
-                                <td class="text-center"><a class="text-light btn bouton" href="dealsInfo.php?info=<?= $value['deals_id'] ?>"> + d'info</a></td>
+                                <td class="text-center"><a class="text-light btn bouton" href="infoDeals.php?info=<?= $value['deals_id'] ?>"> + d'info</a></td>
                                 <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>
 
                                     <!-- <td class="text-center">
@@ -42,8 +42,8 @@ require_once '../controllers/allDeals-controller.php';
                                             <button class="text-light btn bg-success" name="approve" value=<?= $value["deals_id"] ?>>Approve</button>
                                         </form>
                                     </td> -->
-                                    <td class="text-center"><a class="text-light btn bouton" href="dealsModify.php?modify=<?= $value['deals_id'] ?>">Amend</a></td>
-                                    <td class="text-center"><a class="text-light btn bouton" href="dealsModify.php?modify=<?= $value['deals_id'] ?>">Archive</a></td>
+                                    <td class="text-center"><a class="text-light btn bouton" href="amendDeals.php?amend=<?= $value['deals_id'] ?>">Amend</a></td>
+                                    <td class="text-center"><a class="text-light btn bouton" href="infoDeals.php?info=<?= $value['deals_id'] ?>">More Info</a></td>
                                     <td class="text-center"><a class="text-light btn bg-danger" type="button" data-bs-toggle="modal" data-bs-target="#deals-<?= $value['deals_id'] ?>">Supprimer</a></td>
                                 <?php }
                                 ?>

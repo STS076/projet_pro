@@ -28,12 +28,11 @@ body {
     }
 }
 
-
 /*  */
 /* navbar */
 /*  */
 .navigation {
-    background-color:#cbe9eab2;
+    background-color: #cbe9eab2;
     color: rgb(0, 0, 77);
     /* position: sticky;
     top: 0;
@@ -53,8 +52,6 @@ body {
     background-blend-mode: darken;
 }
 
-
-
 .welcome {
     font-family: 'Just Another Hand', cursive;
 }
@@ -63,6 +60,7 @@ body {
     font-family: 'Just Another Hand', cursive;
     font-size: 4rem;
 }
+
 .MenuBurger {
     color: white;
 }
@@ -118,7 +116,6 @@ footer {
 /* barre de séparation newsletter */
 /*  */
 @media screen and (min-width:600px) {
-
     .newsletter:before,
     .newsletter:after {
         content: '';
@@ -250,15 +247,20 @@ footer {
     justify-content: center;
 }
 
-.links{
+.links {
     color: #48CFC4;
 }
 
-.rating{
+.rating {
     color: goldenrod;
 }
 
-.hotDeals{
+.hotDeals {
     background-color: #daeced;
-    border: 1px solid goldenrod;
+}
+
+.scrollmenu {
+    overflow-x: scroll;
+    /* overflow-y: hidden; */
+    white-space: nowrap;
 }
