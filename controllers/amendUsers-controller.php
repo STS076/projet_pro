@@ -67,19 +67,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     if (isset($_POST['role_id_ROLE'])) {
-        if (empty($_POST['role_id_Role'])) {
+        if ($_POST['role_id_ROLE'] == '') {
             $errors['role_id_ROLE'] = "* Please chose a role";
         }
     }
 
-    if (count($errors) == 30) {
+    if (count($errors) == 0) {
         $prenom = safeInput($_POST['firstname']);
         $nom = safeInput($_POST['surname']);
         $pseudo = safeInput($_POST['username']);
         $adresseEmail = safeInput($_POST['emailAddress']);
       
         $user = new Users();
-        $user->amendUser($pseudo,  $prenom,  $nom,  $adresseEmail, $_POST['role_id_ROLE'], $_POST['amend']  );
+        $user->amendUser($pseudo,  $prenom,  $nom,  $adresseEmail, $_POST['role_id_ROLE'], $_GET['amend']  );
 
         header('location: dashboard-users.php');
         exit;

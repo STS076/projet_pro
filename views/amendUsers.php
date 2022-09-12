@@ -1,8 +1,9 @@
 <?php
 session_start();
-var_dump($_POST);
-// var_dump($_POST['userRole']);
+
+
 require_once '../controllers/amendUsers-controller.php';
+
 require_once '../elements/top.php' ?>
 
 <body class="d-flex flex-column min-vh-100">
@@ -43,8 +44,9 @@ require_once '../elements/top.php' ?>
                     <label class="py-2">Role : <span class="text-danger">
                             <?= isset($errors['role_id_ROLE']) ? $errors['role_id_ROLE'] : '' ?>
                     </label>
-                    <select id="role_id_ROLE" value="<?= $getOneUser['tag_arr_name'] ?>" name="role_id_ROLE">
+                    <select id="role_id_ROLE" value="<?= $getOneUser['role_role'] ?>" name="role_id_ROLE">
                         <option value="">Please select a role</option>
+
                         <?php foreach ($allRoleArray as $value) { ?>
                             <option value="<?= $value['role_id'] ?>" <?= $value['role_id'] == $getOneUser['role_id_ROLE'] ? 'selected' : '' ?> name="role_id_ROLE[<?= $value['role_id'] ?>]">
                                 <?= $value['role_role'] ?>
