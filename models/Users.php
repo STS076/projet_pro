@@ -74,11 +74,11 @@ class Users extends Database
         $this->_role_id_role = $roleId;
     }
 
-    public function addUsers(string $username, string $name, string $surname, string $mail, string $password): void
+    public function addUsers(string $username, string $name, string $surname, string $mail, string $password, string $users_joined): void
     {
         $pdo = parent::connectDb();
-        $sql = "INSERT INTO `users` (`users_username`, `users_name`, `users_surname`, `users_mail`, `users_password`, `role_id_ROLE`)
-        VALUES (:username, :firstname, :surname, :mail, :password, :role) ";
+        $sql = "INSERT INTO `users` (`users_username`, `users_name`, `users_surname`, `users_mail`, `users_password`, `role_id_ROLE`, `users_joined`)
+        VALUES (:username, :firstname, :surname, :mail, :password, :role, :users_joined) ";
 
         $query = $pdo->prepare($sql);
 
@@ -88,6 +88,7 @@ class Users extends Database
         $query->bindValue(':mail', $mail, PDO::PARAM_STR);
         $query->bindValue(':password', $password, PDO::PARAM_STR);
         $query->bindValue(':role', 3, PDO::PARAM_INT);
+        $query->bindValue(':users_joined', $users_joined, PDO::PARAM_STR);
 
         $query->execute();
     }

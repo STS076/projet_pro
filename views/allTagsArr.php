@@ -29,7 +29,7 @@ require_once '../controllers/allTagsArr-controller.php';
 
                             <td class="text-center"><a class=" text-white btn bouton" href="infoArr.php?info=<?= $value['tag_arr_id'] ?>">More info</a></td>
                             <td class="text-center"><a class=" text-white btn bouton" href="amendArr.php?amend=<?= $value['tag_arr_id'] ?>">Amend</a></td>
-                            <td class="text-center"><a class=" text-white btn bouton" type="button" data-bs-toggle="modal" data-bs-target="#tagArr-<?= $value['tag_arr_id'] ?>">Delete</a></td>
+                            <td class="text-center"><a class=" text-white btn bg-danger" type="button" data-bs-toggle="modal" data-bs-target="#tagArr-<?= $value['tag_arr_id'] ?>">Delete</a></td>
                         </tr>
 
                         <!-- <div class="modal fade" id="tagArr-<?= $doctors['doctors_id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

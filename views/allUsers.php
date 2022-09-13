@@ -28,10 +28,10 @@ require_once '../controllers/allUsers-controller.php';
                             <th class="text-center"><?= $value['users_username'] ?></th>
                             <td class="text-center"><a class="btn bouton text-white" href="infoUsers.php?users=<?= $value['users_id'] ?>"> + d'info</a></td>
                             <td class="text-center"><a class="btn bg-warning" href="amendUsers.php?amend=<?= $value['users_id'] ?>">Modifier</a></td>
-                            <td class="text-center"><a class="btn bg-danger" type="button" data-bs-toggle="modal" data-bs-target="#doctors-<?= $value['users_id'] ?>">Supprimer</a></td>
+                            <td class="text-center"><a class="btn bg-danger text-light" type="button" data-bs-toggle="modal" data-bs-target="#users-<?= $value['users_id'] ?>">Supprimer</a></td>
                         </tr>
 
-                        <!-- <div class="modal fade" id="doctors-<?= $doctors['doctors_id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <!-- <div class="modal fade" id="users-<?= $doctors['doctors_id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">

@@ -17,7 +17,7 @@ require_once '../controllers/infoArr-controller.php';
         </div>
         <div class="col-8 mb-3 justify-content-start">
             <?php foreach ($GetDealsfromArr as $value) { ?>
-                <p>Title : <?= $value['deals_title'] ?> <a href="">Go to Deal</a></p>
+                <p>Title : <?= $value['deals_title'] ?> <a href="deals.php?choice=<?= $value['deals_id']?>">Go to Deal</a></p>
             <?php } ?>
         </div>
 

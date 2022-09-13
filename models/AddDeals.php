@@ -83,11 +83,11 @@ class Deals extends Database
         $this->_deals_validate = $deals_validate;
     }
 
-    public function addDeals(string $deals_title, $deals_mini_summary, $deals_summary,  string $deals_when, string $deals_where, string $deals_price, string $deals_map, string $deals_metro, string $deals_info, $deals_contact, INT $tag_arr_id_TAG_ARR, INT $users_id_USERS)
+    public function addDeals(string $deals_title, $deals_mini_summary, $deals_summary,  string $deals_when, string $deals_where, string $deals_price, string $deals_map, string $deals_metro, string $deals_info, $deals_contact, INT $tag_arr_id_TAG_ARR, INT $users_id_USERS, $deals_created)
     {
         $pdo = parent::connectDb();
-        $sql = "INSERT INTO `deals` (`deals_title`, deals_mini_summary, deals_summary, `deals_when`, `deals_where`, `deals_price`, `deals_map`, `deals_metro`, `deals_info`, deals_contact,  `tag_arr_id_TAG_ARR`, `users_id_USERS`)
-        VALUES (:deals_title, :deals_mini_summary, :deals_summary, :deals_when, :deals_where, :deals_price, :deals_map, :deals_metro, :deals_info,:deals_contact, :tag_arr_id_TAG_ARR, :users_id_USERS) ";
+        $sql = "INSERT INTO `deals` (`deals_title`, deals_mini_summary, deals_summary, `deals_when`, `deals_where`, `deals_price`, `deals_map`, `deals_metro`, `deals_info`, deals_contact,  `tag_arr_id_TAG_ARR`, `users_id_USERS`, deals_created)
+        VALUES (:deals_title, :deals_mini_summary, :deals_summary, :deals_when, :deals_where, :deals_price, :deals_map, :deals_metro, :deals_info,:deals_contact, :tag_arr_id_TAG_ARR, :users_id_USERS, :deals_created) ";
 
         $query = $pdo->prepare($sql);
 
@@ -103,6 +103,7 @@ class Deals extends Database
         $query->bindValue(':deals_contact', $deals_contact, PDO::PARAM_STR);
         $query->bindValue(':tag_arr_id_TAG_ARR', $tag_arr_id_TAG_ARR, PDO::PARAM_INT);
         $query->bindValue(':users_id_USERS', $users_id_USERS, PDO::PARAM_INT);
+        $query->bindValue(':deals_created', $deals_created, PDO::PARAM_STR);
 
         $query->execute();
 

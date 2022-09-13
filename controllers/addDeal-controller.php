@@ -96,7 +96,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
     if (count($errors) == 0) {
-        $showForm = false;
         $dealTitle = safeInput($_POST['dealTitle']);
         $dealWhen = safeInput($_POST['dealWhen']);
         $dealWhere = safeInput($_POST['dealWhere']);
@@ -105,10 +104,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $dealMetro = safeInput($_POST['dealMetro']);
         $dealInfo = safeInput($_POST['dealInfo']);
         $dealTagArr = safeInput($_POST['dealTagArr']);
-
+        $date = date('d/m/Y');
         // s'il n'y a aucune erreur alors que vais créer un nouveau Deal. va injecter les données du POST dans la méthode
         $dealObj = new Deals();
-        $idDeals = $dealObj->addDeals($dealTitle, $_POST['dealMiniSummary'], $_POST['dealSummary'], $dealWhen, $dealWhere, $dealPrice, $dealMap, $dealMetro, $dealInfo, $_POST['dealContact'], $dealTagArr, $_SESSION['user']['users_id']);
+        $idDeals = $dealObj->addDeals($dealTitle, $_POST['dealMiniSummary'], $_POST['dealSummary'], $dealWhen, $dealWhere, $dealPrice, $dealMap, $dealMetro, $dealInfo, $_POST['dealContact'], $dealTagArr, $_SESSION['user']['users_id'], $date);
 
 
         $category = new Categories();

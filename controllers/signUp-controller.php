@@ -78,14 +78,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (count($errors) == 0) {
         $showForm = false;
+    
         $prenom = safeInput($_POST['firstname']);
         $nom = safeInput($_POST['surname']);
         $pseudo = safeInput($_POST['username']);
         $adresseEmail = safeInput($_POST['emailAddress']);
         $motDePasse = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        $date = date('d/m/Y');
 
         $usersObj = new Users();
-        $usersObj->addUsers($pseudo,  $prenom,  $nom,  $adresseEmail,  $motDePasse);
+        $usersObj->addUsers($pseudo,  $prenom,  $nom,  $adresseEmail,  $motDePasse, $date);
 
         // header('location: admin.php');
         // exit;

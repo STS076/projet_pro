@@ -21,7 +21,8 @@ $allTagsArrArray = $arr->getAllTagArr();
 $category = new Categories();
 $allTagsCategoryArray = $category->getAllTagCategory();
 
-
+$role = new Role();
+$allRoleArray = $role->getAllRole();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -75,17 +76,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $errors['passwordconfirm'] = "* Please enter an identical password to the one above";
         }
     }
+    if (isset($_POST['role_id'])) {
+        if (empty($_POST['role_id'])) {
+            $errors['role_id'] = "* Please enter a password";
+        }
+    }
 
     if (count($errors) == 0) {
         $showForm = false;
+       
         $prenom = safeInput($_POST['firstname']);
         $nom = safeInput($_POST['surname']);
         $pseudo = safeInput($_POST['username']);
         $adresseEmail = safeInput($_POST['emailAddress']);
         $motDePasse = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        $date = date('d/m/Y');
 
         $usersObj = new Users();
-        $usersObj->addUsers($pseudo,  $prenom,  $nom,  $adresseEmail,  $motDePasse);
+        $usersObj->addUsers($pseudo,  $prenom,  $nom,  $adresseEmail,  $motDePasse, $date);
 
         header('location: dashboard-users.php');
         exit;

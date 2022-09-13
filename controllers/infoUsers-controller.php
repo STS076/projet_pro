@@ -24,3 +24,6 @@ $allTagsCategoryArray = $category->getAllTagCategory();
 
 $user = new Users(); 
 $oneUserArray = $user->getOneUser($_GET['users']);
+
+$role = new Role();
+$allRoleArray = $role->getAllRole();

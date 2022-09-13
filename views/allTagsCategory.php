@@ -26,7 +26,7 @@ require_once '../controllers/allTagsCategory-controller.php';
                             <th class="text-center"><?= $value['tag_categories_name'] ?></th>
                             <td class="text-center"><a class="btn bouton text-light" href="infoCat.php?info=<?= $value['tag_categories_id'] ?>"> + d'info</a></td>
                             <td class="text-center"><a class="btn bouton text-light" href="amendCategories.php?amend=<?= $value['tag_categories_id'] ?>">Modifier</a></td>
-                            <td class="text-center"><a class="btn bouton text-light" type="button" data-bs-toggle="modal" data-bs-target="#doctors-<?= $value['tag_categories_id'] ?>">Supprimer</a></td>
+                            <td class="text-center"><a class="btn bg-danger text-light" type="button" data-bs-toggle="modal" data-bs-target="#doctors-<?= $value['tag_categories_id'] ?>">Supprimer</a></td>
                         </tr>
 
                         <!-- <div class="modal fade" id="doctors-<?= $value['tag_categories_id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
