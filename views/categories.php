@@ -12,7 +12,7 @@ require_once '../elements/top.php';
 
         <h2 class="text-center fst-italic my-5 comments"><?= $oneCatArray['tag_categories_name'] ?></h2>
         <div class="row m-0 justify-content-center">
-            <div class="col-lg-8 col-11 ">
+            <div class="col-lg-8 col-11 text-center">
                 <p><?= $oneCatArray['tag_categories_summary'] ?>
                 </p>
             </div>

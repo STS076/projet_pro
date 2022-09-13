@@ -191,19 +191,19 @@ class Deals extends Database
         return $result;
     }
 
-    public function getDealsbyCat($tag_categories_name): array
+    public function getDealsbyCat($tag_categories_id): array
     {
         $pdo = parent::connectDb();
         $sql = "SELECT deals_id, deals_mini_summary, deals_summary, deals_validate, deals_title, deals_when, deals_where, deals_price, tag_arr_name, tag_arr_id_TAG_ARR, tag_arr_id ,deals_metro, deals_map, deals_info, group_concat(`tag_categories_name`  SEPARATOR ', ') as DealsCatTag from deals 
         inner join deals_has_cat on deals_id_DEALS=deals_id 
         inner join tag_categories on tag_categories_id_TAG_CATEGORIES=tag_categories_id
         inner join tag_arr on tag_arr_id_TAG_ARR=tag_arr_id
-        where tag_categories_name=:tag_categories_name
+        where tag_categories_id=:tag_categories_id
         group by deals_id";
 
         $query = $pdo->prepare($sql);
 
-        $query->bindValue(':tag_categories_name', $tag_categories_name, PDO::PARAM_STR);
+        $query->bindValue(':tag_categories_id', $tag_categories_id, PDO::PARAM_STR);
         $query->execute();
         // $query = $pdo->query($sql);
         $result = $query->fetchAll();

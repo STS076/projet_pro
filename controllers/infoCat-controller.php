@@ -18,11 +18,9 @@ require_once '../models/Comments.php';
 
 $arr = new Arrondissements();
 $allTagsArrArray = $arr->getAllTagArr();
-$oneTagArray = $arr->getOneArrondissement($_GET['info']);
-$GetDealsfromArr = $arr->GetDealsfromArr($_GET['info']); 
-$getNumberofDealsbyArr = $arr->getNumberofDealsbyArr($_GET['info']);
 
 $category = new Categories();
 $allTagsCategoryArray = $category->getAllTagCategory();
-
 $getOneCat = $category->getOneCategory($_GET['info']);
+$getNumberofDealsbyCat = $category->getNumberofDealsbyCat($_GET['info']);
+$getDealsfromCat = $category->getDealsfromCat($_GET['info']); 

@@ -35,7 +35,7 @@ class Categories extends Database
 
         $query->bindValue(':tag_categories_name', $tag_categories_name, PDO::PARAM_STR);
         $query->bindValue(':tag_categories_summary', $tag_categories_summary, PDO::PARAM_STR);
- 
+
 
         $query->execute();
     }
@@ -44,7 +44,7 @@ class Categories extends Database
     {
         $pdo = parent::connectDb();
 
-        $sql = "SELECT * from `tag_categories` where tag_categories_id=:tag_categories_id" ;
+        $sql = "SELECT * from `tag_categories` where tag_categories_id=:tag_categories_id";
 
         $query = $pdo->prepare($sql);
 
@@ -81,5 +81,39 @@ class Categories extends Database
 
 
         $query->execute();
+    }
+
+    public function getNumberofDealsbyCat($tag_categories_id): array
+    {
+        $pdo = parent::connectDb();
+        $sql = "SELECT count(tag_categories_id) 
+        from tag_categories 
+        inner join deals_has_cat 
+        on tag_categories_id_TAG_CATEGORIES=tag_categories_id
+        inner join deals 
+        on deals_id_DEALS=deals_id
+        where tag_categories_id=:tag_categories_id";
+
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':tag_categories_id', $tag_categories_id, PDO::PARAM_INT);
+        $query->execute();
+        $result = $query->fetch();
+        return $result;
+    }
+
+    public function getDealsfromCat($tag_categories_id): array
+    {
+        $pdo = parent::connectDb();
+        $sql = "SELECT * from `tag_categories`
+        inner join deals_has_cat 
+        on tag_categories_id_TAG_CATEGORIES=tag_categories_id
+        inner join deals 
+        on deals_id_DEALS=deals_id
+        where tag_categories_id=:tag_categories_id";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':tag_categories_id', $tag_categories_id, PDO::PARAM_STR);
+        $query->execute();
+        $result = $query->fetchAll();
+        return $result;
     }
 }

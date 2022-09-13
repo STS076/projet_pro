@@ -34,7 +34,7 @@
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                     <?php foreach ($allTagsCategoryArray as $value) { ?>
-                        <li><a class="dropdown-item " href="categories.php?category=<?= $value['tag_categories_name'] ?>"><?= $value['tag_categories_name'] ?></a></li>
+                        <li><a class="dropdown-item " href="categories.php?category=<?= $value['tag_categories_id'] ?>"><?= $value['tag_categories_name'] ?></a></li>
                     <?php } ?>
                 </ul>
             </li>

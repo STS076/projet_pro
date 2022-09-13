@@ -13,10 +13,10 @@ require_once '../controllers/infoCat-controller.php';
         <div class="col-8 mb-3 justify-content-start">
             <p><span class="text-decoration-underline">Name</span> : <?= $getOneCat['tag_categories_name'] ?></p>
             <p><span class="text-decoration-underline">Summary</span> :<br> <?= $getOneCat['tag_categories_summary'] ?></p>
-            <p><span class="text-decoration-underline">Number of deals for the Arrondissement</span> : <?= $getNumberofDealsbyArr['count(tag_arr_id)'] ?></p>
+            <p><span class="text-decoration-underline">Number of deals for the Arrondissement</span> : <?= $getNumberofDealsbyCat['count(tag_categories_id)'] ?></p>
         </div>
         <div class="col-8 mb-3 justify-content-start">
-            <?php foreach ($GetDealsfromArr as $value) { ?>
+            <?php foreach ($getDealsfromCat as $value) { ?>
                 <p>Title : <?= $value['deals_title'] ?> <a href="">Go to Deal</a></p>
             <?php } ?>
         </div>
