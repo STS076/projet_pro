@@ -24,30 +24,31 @@ class Categories extends Database
     }
 
 
-    public function addTagCategory($tag_categories_name)
+    public function addTagCategory($tag_categories_name, $tag_categories_summary)
     {
 
         $pdo = parent::connectDb();
-        $sql = "INSERT INTO `tag_categories` (`tag_categories_name`)
-        VALUES (:tag_categories_name) ";
+        $sql = "INSERT INTO `tag_categories` (`tag_categories_name`, tag_categories_summary)
+        VALUES (:tag_categories_name, :tag_categories_summary) ";
 
         $query = $pdo->prepare($sql);
 
         $query->bindValue(':tag_categories_name', $tag_categories_name, PDO::PARAM_STR);
+        $query->bindValue(':tag_categories_summary', $tag_categories_summary, PDO::PARAM_STR);
  
 
         $query->execute();
     }
 
-    public function getOneCategory($tag_categories_name): array
+    public function getOneCategory($tag_categories_id): array
     {
         $pdo = parent::connectDb();
 
-        $sql = "SELECT * from `tag_categories` where tag_categories_name=:tag_categories_name" ;
+        $sql = "SELECT * from `tag_categories` where tag_categories_id=:tag_categories_id" ;
 
         $query = $pdo->prepare($sql);
 
-        $query->bindValue(':tag_categories_name', $tag_categories_name, PDO::PARAM_STR);
+        $query->bindValue(':tag_categories_id', $tag_categories_id, PDO::PARAM_STR);
 
         $query->execute();
 
@@ -64,5 +65,21 @@ class Categories extends Database
         $query = $pdo->query($sql);
 
         return $query->fetchAll();
+    }
+
+    public function amendCategory($tag_categories_id, $tag_categories_name, $tag_categories_summary)
+    {
+        $pdo = parent::connectDb();
+        $sql = "UPDATE tag_categories 
+        set tag_categories_name=:tag_categories_name, tag_categories_summary=:tag_categories_summary
+        WHERE tag_categories_id=:tag_categories_id";
+
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':tag_categories_id', $tag_categories_id, PDO::PARAM_INT);
+        $query->bindValue(':tag_categories_name', $tag_categories_name, PDO::PARAM_STR);
+        $query->bindValue(':tag_categories_summary', $tag_categories_summary, PDO::PARAM_STR);
+
+
+        $query->execute();
     }
 }

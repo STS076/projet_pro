@@ -7,7 +7,7 @@
 </header>
 
 <!-- nav computer  -->
-<nav class="d-lg-block d-none navbar sticky-top navcomputer navbar-expand-lg shadow-5-strong py-2 navigation">
+<nav class="d-lg-block d-none navbar sticky-top navcomputer navbar-expand-lg shadow-5-strong py-2 navigation bordure shadow">
     <!-- <a class="navbar-brand " href="#"></a> -->
     <div class="collapse navbar-collapse " id="navbarSupportedContent">
         <ul class="navbar-nav  w-100 justify-content-center nav d-flex">

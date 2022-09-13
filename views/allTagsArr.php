@@ -14,7 +14,7 @@ require_once '../controllers/allTagsArr-controller.php';
             <table class="table table-responsive table-hover">
                 <thead>
                     <tr>
-                        <th class="text-center">#</th>
+                        <!-- <th class="text-center">#</th> -->
                         <th class="text-center">Arrondissements</th>
                         <th class="text-center">More info</th>
                         <th class="text-center">Amend</th>
@@ -24,11 +24,11 @@ require_once '../controllers/allTagsArr-controller.php';
                 <tbody>
                     <?php foreach ($allTagsArrArray as $value) { ?>
                         <tr>
-                            <th class="text-center"><?= $value['tag_arr_id'] ?></th>
+                            <!-- <th class="text-center"><?= $value['tag_arr_id'] ?></th> -->
                             <th class="text-center"><?= $value['tag_arr_name'] ?></th>
 
-                            <td class="text-center"><a class=" text-white btn bouton" href="tagArrInfo.php?arrInfo=<?= $value['tag_arr_id'] ?>">More info</a></td>
-                            <td class="text-center"><a class=" text-white btn bouton" href="tagArrsModify.php?modify=<?= $value['tag_arr_id'] ?>">Amend</a></td>
+                            <td class="text-center"><a class=" text-white btn bouton" href="infoArr.php?info=<?= $value['tag_arr_id'] ?>">More info</a></td>
+                            <td class="text-center"><a class=" text-white btn bouton" href="amendArr.php?amend=<?= $value['tag_arr_id'] ?>">Amend</a></td>
                             <td class="text-center"><a class=" text-white btn bouton" type="button" data-bs-toggle="modal" data-bs-target="#tagArr-<?= $value['tag_arr_id'] ?>">Delete</a></td>
                         </tr>
 

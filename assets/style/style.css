@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=BioRhyme:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
 
 body {
@@ -6,7 +6,7 @@ body {
 }
 
 .titleMain {
-    font-family: 'Just Another Hand', cursive;
+    font-family: 'BioRhyme', serif;
     letter-spacing: 0.2rem;
     color: rgb(0, 0, 77);
 }
@@ -40,6 +40,11 @@ body {
     z-index: 1; */
 }
 
+.bordure {
+    border-top: 1px solid rgb(170, 170, 170);
+    border-bottom: 1px solid rgb(170, 170, 170);
+}
+
 .navigationMobile {
     background-color: #CBE9EA;
 }
@@ -53,11 +58,11 @@ body {
 }
 
 .welcome {
-    font-family: 'Just Another Hand', cursive;
+    font-family: 'BioRhyme', serif;
 }
 
 .welcome2 {
-    font-family: 'Just Another Hand', cursive;
+    font-family: 'BioRhyme', serif;
     font-size: 4rem;
 }
 
@@ -79,8 +84,8 @@ footer {
 .cadre {
     position: relative;
     text-align: center;
-    font-family: 'Just Another Hand', cursive;
-    font-size: 2rem;
+    font-family: 'BioRhyme', serif;
+    font-size: 1.5rem;
     color: whitesmoke;
 }
 
@@ -112,10 +117,16 @@ footer {
     height: 15rem;
 }
 
+.backgroundHotDeals{
+    background-color: rgb(116, 203, 174);
+    width: 95%;
+}
+
 /*  */
 /* barre de séparation newsletter */
 /*  */
 @media screen and (min-width:600px) {
+
     .newsletter:before,
     .newsletter:after {
         content: '';
@@ -259,8 +270,14 @@ footer {
     background-color: #daeced;
 }
 
-.scrollmenu {
+/* .scrollmenu {
     overflow-x: scroll;
-    /* overflow-y: hidden; */
+    overflow-y: hidden;
     white-space: nowrap;
+} */
+
+.cardarr:hover {
+    transition: transform .2s;
+    transform: scale(1.1);
 }
+

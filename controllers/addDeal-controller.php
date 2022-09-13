@@ -101,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $dealWhen = safeInput($_POST['dealWhen']);
         $dealWhere = safeInput($_POST['dealWhere']);
         $dealPrice = safeInput($_POST['dealPrice']);
-        $dealMap = safeInput($_POST['dealMap']);
+        $dealMap = $_POST['dealMap'];
         $dealMetro = safeInput($_POST['dealMetro']);
         $dealInfo = safeInput($_POST['dealInfo']);
         $dealTagArr = safeInput($_POST['dealTagArr']);

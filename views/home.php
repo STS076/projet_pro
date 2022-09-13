@@ -20,29 +20,30 @@ require_once '../elements/top.php' ?>
             </div>
         </div>
 
-        <div class="row m-0 py-5 justify-content-center hotDeals shadow rounded">
 
-            <div class="col-lg-8 col-11">
+        <div class="row m-0 justify-content-center">
+            <div class="col-lg-8 col-11 text-center">
                 <p class="fs-1 text-center welcome">Hot Deals</p>
                 <p class="fs-6 text-center">Find below our most popular deals, and where you should go have fun next.</p>
             </div>
-            <!-- <div class="container-fluid  "> -->
-                <div class=" row  row flex-row flex-nowrap m-0 scrollmenu">
-                    <?php foreach ($hotDeals as $value) { ?>
-                        <div class="card col-lg-3 mx-2 p-0">
-                            <img src="../assets/images/header.jpg" class="card-img-top m-0 p-0" alt="..." >
-                            <div class="card-body m-0">
-                                <p class="card-title text-center fw-bold fs-5"><?= $value['deals_title'] ?></p>
-                                <p class="card-text"><?= $value['deals_mini_summary'] ?></p>
-                                <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="links">Explore</a>
-                            </div>
-
-                        </div>
-
-                    <?php } ?>
-                <!-- </div> -->
-            </div>
         </div>
+
+        <div class="container">
+            <?php foreach ($hotDeals as $value) { ?>
+                <div class=" row m-0 my-3 shadow backgroundHotDeals">
+                    <div class="col-md-3 m-0 p-0">
+                        <img src="../assets/images/header.jpg" class="card-img-top m-0 p-0 border border-secondary" alt="...">
+                    </div>
+                    <div class="col-md-7 m-0 p-0">
+                        <p class="fw-bold fs-5 pt-3 ms-2"><?= $value['deals_title'] ?></p>
+                        <p class="ms-2"><?= $value['deals_mini_summary'] ?></p>
+                        <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="text-dark fw-bold ms-2">Explore</a>
+                    </div>
+                </div>
+            <?php } ?>
+        </div>
+
+
         <p class="fs-1 text-center welcome pt-5 comments">Arrondissements</p>
         <div class="row m-0 p-0 justify-content-center">
             <div class="col-lg-8 map">
@@ -54,7 +55,7 @@ require_once '../elements/top.php' ?>
 
             <?php foreach ($allTagsArrArray as $value) {
             ?>
-                <div class="col-lg-3 col-11 m-2 p-0">
+                <div class="col-lg-3 col-11 m-3 p-0 cardarr">
                     <div class="card cadre m-0 p-0 shadow-sm">
                         <img class="image m-0 p-0" src="../assets/images/arrondissements/<?= $value['tag_arr_picture'] ?>.jpg">
                         <p class="arrondissement"><a class="text-white glass hoverNav text-decoration-none" href="arrondissements.php?choice=<?= $value['tag_arr_id'] ?>"><?= $value['tag_arr_name'] ?></a></p>

@@ -15,7 +15,7 @@ require_once '../elements/top.php';
 
     <div class="row mx-0 my-5 justify-content-evenly p-0">
         <h2 class="fst-italic fw-bold text-center mb-5"><?= $oneDealArray['deals_title'] ?></h2>
-        <div class="col-lg-4 col-11 m-0 p-0">
+        <div class="col-lg-4 col-11 mt-3 p-0">
             <p><span class="fw-bolder">Good Deal : </span><?= $oneDealArray['deals_summary']  ?>
             </p>
             <p><span class="fw-bolder">Where : </span><?= $oneDealArray['deals_where']  ?></p>
@@ -34,7 +34,7 @@ require_once '../elements/top.php';
             </p>
         </div>
         <div class="col-lg-5 carte">
-            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.6882148443183!2d2.3228064656745855!3d48.86415552928805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2c30000001%3A0xc219db09e1bfefc7!2sJardin%20des%20Tuileries!5e0!3m2!1sfr!2sfr!4v1658575489794!5m2!1sfr!2sfr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+           <?= $oneDealArray['deals_map'] ?>
         </div>
         <!-- Gellery -->
         <h3 class="fst-italic comments fw-bold text-center p-5">Gallery</h3>

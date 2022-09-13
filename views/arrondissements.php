@@ -20,7 +20,7 @@ require_once '../controllers/arrondissements-controller.php';
         <div class="row justify-content-center mx-0 my-5">
             <?php foreach ($getDealByArr as $value) {
                 if ($value['deals_validate'] == 1) { ?>
-                    <div class="card col-lg-3 col-11 m-2 shadow-sm p-0 hotDeals ">
+                    <div class="card col-lg-3 col-11 m-3 shadow-sm p-0 hotDeals cardarr">
                         <img src="../assets/images/tuileriesDeal.webp" class="m-0 p-0 img-fluid rounded-start" alt="picture Jardin des tuileries">
                         <div class="card-body py-4">
                             <p class="card-title text-center fw-bold fs-3 "><?= $value['deals_title'] ?></p>

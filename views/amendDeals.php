@@ -58,7 +58,7 @@ require_once '../elements/top.php' ?>
                 </div>
                 <div class="d-flex flex-column">
                     <label class="py-2">Map : <span class="text-danger"><?= isset($errors['dealMap']) ? $errors['dealMap'] : '' ?></label>
-                    <input type="text" id="dealMap" value="<?= $oneDealArray['deals_map'] ?>" name="dealMap">
+                    <textarea type="text" id="dealMap" name="dealMap"><?= $oneDealArray['deals_map'] ?></textarea>
                 </div>
                 
                 <div class="d-flex flex-column">

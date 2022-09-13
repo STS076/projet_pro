@@ -39,12 +39,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
+    if (isset($_POST['tagCategorySummary'])) {
+        if (empty($_POST['tagCategorySummary'])) {
+            $errors['tagCategorySummary'] = '*Please enter a summary';
+        }
+    }
+
     if (count($errors) == 0) {
         $showForm = false;
         $tagCategory = safeInput($_POST['tagCategory']);
 
         $tagCatObj = new Categories();
-        $tagCatObj->addTagCategory($tagCategory);
+        $tagCatObj->addTagCategory($tagCategory, $_POST['tagCategorySummary']);
 
         header('location: dashboard-tagsCategories.php');
         exit;

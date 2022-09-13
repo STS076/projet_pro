@@ -20,8 +20,13 @@ require_once '../elements/top.php' ?>
             <form method="POST" action="">
 
                 <div class="d-flex flex-column">
-                    <label class="py-2">Title of the tag : <span class="text-danger"><?= isset($errors['tagCategory']) ? $errors['tagCategory'] : '' ?></span></label>
+                    <label class="py-2">Title of the category : <span class="text-danger"><?= isset($errors['tagCategory']) ? $errors['tagCategory'] : '' ?></span></label>
                     <input type="text" id="tagCategory" value="<?= isset($_POST['tagCategory']) ? $_POST['tagCategory'] : '' ?>" name="tagCategory">
+
+                </div>
+                <div class="d-flex flex-column">
+                    <label class="py-2">Summary : <span class="text-danger"><?= isset($errors['tagCategorySummary']) ? $errors['tagCategorySummary'] : '' ?></span></label>
+                    <textarea type="text" id="tagCategorySummary" value="<?= isset($_POST['tagCategorySummary']) ? $_POST['tagCategorySummary'] : '' ?>" name="tagCategorySummary"></textarea>
 
                 </div>
 
