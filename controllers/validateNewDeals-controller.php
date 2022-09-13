@@ -21,6 +21,7 @@ $allTagsArrArray = $arr->getAllTagArr();
 $category = new Categories();
 $allTagsCategoryArray = $category->getAllTagCategory();
 
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['approve'])) {
         $deals = new Deals();
@@ -29,4 +30,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 $deals = new Deals(); 
+$AllDealsArray = $deals->getAllDeals(); 
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['delete'])) {
+        $deals = new Deals();
+        $deleteDeal = $deals->deleteDeals($_POST['delete']);
+    }
+}
 $AllDealsArray = $deals->getAllDeals(); 

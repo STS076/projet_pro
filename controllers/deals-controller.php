@@ -49,12 +49,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $oneDealArray = $deals->getOneDeal($_GET['choice']);
 
 
-        (!session_start()) ? 4 : $_SESSION['user']['users_id'];
+        
 
         $comments = new Comments();
 
 
-        $comments->addComments($_POST['dealRating'], $_POST['dealComment'], $date, $oneDealArray['deals_id'], $_SESSION['user']['users_id']);
+        $comments->addComments($_POST['dealRating'], $_POST['dealComment'], $date, $oneDealArray['deals_id'], ($_SESSION['user'] ? $_SESSION['user']['users_id']:18 ));
 
         header('location: deals.php?choice=' . $oneDealArray['deals_id']);
         exit;

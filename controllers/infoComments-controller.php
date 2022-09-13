@@ -22,22 +22,11 @@ $allTagsArrArray = $arr->getAllTagArr();
 $category = new Categories();
 $allTagsCategoryArray = $category->getAllTagCategory();
 
+$user = new Users(); 
+$oneUserArray = $user->getOneUser($_GET['users']);
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
- 
-    if (isset($_POST['approve'])) {
-        $comments = new Comments();
-        $validateComment = $comments->approveComments($_POST['approve']);
-    }
-}
-$comments = new Comments();
-$allComments = $comments->getAllComments();
+$role = new Role();
+$allRoleArray = $role->getAllRole();
 
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if (isset($_POST['delete'])) {
-        $deals = new Comments();
-        $deleteDeal = $deals->deleteComments($_POST['delete']);
-    }
-}
-$allComments = $comments->getAllComments();
+$comment = new Comments; 
+$oneComment = $comment->

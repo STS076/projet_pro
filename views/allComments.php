@@ -17,16 +17,14 @@ require_once '../controllers/allComments-controller.php';
                 <table class="table">
                     <thead>
                         <tr>
-                            <th class="text-center">#</th>
                             <th class="text-center">User</th>
                             <th class="text-center">Date</th>
                             <th class="text-center">Deal</th>
                             <th class="text-center">Comment</th>
                             <th class="text-center">Rating</th>
+                            <th class="text-center">More Info</th>
                             <th class="text-center">Approve</th>
                             <th class="text-center">Delete</th>
-
-
                         </tr>
                     </thead>
                     <tbody>
@@ -35,12 +33,12 @@ require_once '../controllers/allComments-controller.php';
                             if ($value['comments_validate'] != 1) {
                         ?>
                                 <tr>
-                                    <td class="text-center"><?= $value['comments_id'] ?></td>
                                     <td class="text-center"><?= $value['users_username'] ?></td>
                                     <td class="text-center"><?= $value['comments_date'] ?></td>
                                     <td class="text-center"><?= $value['deals_title'] ?></td>
                                     <td class="text-center text-truncate" style="max-width: 100px;"><?= $value['comments_comment'] ?></td>
                                     <td class="text-center text-truncate" style="max-width: 100px;"><?= $value['comments_rating'] ?></td>
+                                    <td class="text-center"><a class="text-light btn bouton" href="infoComments.php?info=<?= $value['deals_id'] ?>"> + d'info</a></td>
                                     <td class="text-center">
                                         <form method="POST" action="allComments.php" name="form-<?= $value["comments_id"] ?>">
                                             <button class="text-light btn bg-success" name="approve" value=<?= $value["comments_id"] ?>>
@@ -54,15 +52,15 @@ require_once '../controllers/allComments-controller.php';
 
                                 </tr>
 
-                                <!-- <div class="modal fade" id="comments-<?= $value['comments_id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal fade" id="comments-<?= $value['comments_id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <p class="modal-title fs-4" id="exampleModalLabel">Do you want to delete this comment ?></p>
+                                        <p class="modal-title fs-4" id="exampleModalLabel"><?= $value['comments_id'] ?> </p>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        Voulez vous supprimer le médecin ?
+                                        do you want to delete this comment ?
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
@@ -72,7 +70,7 @@ require_once '../controllers/allComments-controller.php';
                                     </div>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
 
                         <?php }
                         } ?>

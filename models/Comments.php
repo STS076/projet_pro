@@ -129,5 +129,12 @@ class Comments extends Database
         $query->execute();
     }
 
-  
+    public function deleteComments($comments_id)
+    {
+        $pdo = parent::connectDb();
+        $sql = "DELETE from comments where comments_id=:comments_id";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':comments_id', $comments_id, PDO::PARAM_INT);
+        $query->execute();
+    }
 }

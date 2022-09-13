@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../controllers/allDeals-controller.php';
+require_once '../controllers/validateNewDeals-controller.php';
 ?>
 <?php include '../elements/top.php' ?>
 
@@ -34,40 +34,39 @@ require_once '../controllers/allDeals-controller.php';
                                     <th class="text-center"><?= $value['deals_title'] ?></th>
                                     <th class="text-center"><?= $value['tag_arr_name'] ?></th>
                                     <th class="text-center"><?= $value['DealsCatTag'] ?></th>
-                                    <td class="text-center"><a class="text-light btn bouton" href="dealsInfo.php?info=<?= $value['deals_id'] ?>"> + d'info</a></td>
+                                    <td class="text-center"><a class="text-light btn bouton" href="infoDeals.php?info=<?= $value['deals_id'] ?>"> + d'info</a></td>
                                     <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>
 
                                         <td class="text-center">
-                                            <form action="allDeals.php" method="POST" name="form-<?= $value["deals_id"] ?>">
+                                            <form action="validateNewDeals.php" method="POST" name="form-<?= $value["deals_id"] ?>">
                                                 <button class="text-light btn bg-success" name="approve" value=<?= $value["deals_id"] ?>>Approve</button>
                                             </form>
                                         </td>
-                                        <td class="text-center"><a class="text-light btn bouton" href="amendDeals.php?modify=<?= $value['deals_id'] ?>">Amend</a></td>
-                                        <!-- <td class="text-center"><a class="text-light btn bouton" href="infoDeals.php?modify=<?= $value['deals_id'] ?>">Archive</a></td> -->
+                                        <td class="text-center"><a class="text-light btn bouton" href="amendDeals.php?amend=<?= $value['deals_id'] ?>">Amend</a></td>
                                         <td class="text-center"><a class="text-light btn bg-danger" type="button" data-bs-toggle="modal" data-bs-target="#deals-<?= $value['deals_id'] ?>">Supprimer</a></td>
                                 <?php }
                                 } ?>
                                 </tr>
 
-                                <!-- <div class="modal fade" id="deals-<?= $value['doctors_id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <p class="modal-title fs-4" id="exampleModalLabel"><?= $doctors['doctors_lastname'] ?> <?= $doctors['doctors_name'] ?></p>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        Voulez vous supprimer le médecin ?
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                                        <form action="" method="POST">
-                                            <button class="btn btn-primary" name="delete" value="<?= $doctors['doctors_id'] ?> ">Supprimer</button>
-                                        </form>
+                                <div class="modal fade" id="deals-<?= $value['deals_id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <p class="modal-title fs-4" id="exampleModalLabel"><?= $value['deals_title'] ?></p>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Do you want to delete this deal ?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                <form action="" method="POST">
+                                                    <button class="btn btn-primary" name="delete" value="<?= $value['deals_id'] ?> ">Delete</button>
+                                                </form>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div> -->
 
                             <?php } ?>
                     </tbody>
