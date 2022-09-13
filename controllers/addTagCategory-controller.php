@@ -22,7 +22,6 @@ $category = new Categories();
 $allTagsCategoryArray = $category->getAllTagCategory();
 
 
-$showForm = true;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 

@@ -62,8 +62,6 @@ require_once '../elements/top.php' ?>
                     </select>
                 </div>
 
-
-
                 <div class="my-4 text-center">
                     <button class="btn bouton border border-dark text-light" id="submit" name="submit">Submit</button>
                 </div>

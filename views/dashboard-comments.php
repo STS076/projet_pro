@@ -18,11 +18,11 @@ require_once '../elements/top.php';
         <?php } ?>
         <div class="row align-item">
             <div class="col text-center m-3">
-                <a href="allComments.php"> <button class="text-center text-center text-light  rounded boutons">Validate new comments</button></a>
+                <a href="allComments.php"> <button class="text-center text-center text-light  rounded boutons">All commenst</button></a>
             </div>
-            <!-- <div class="col text-center m-3">
+            <div class="col text-center m-3">
                 <a href="validateComments.php"> <button class="text-center text-center text-light rounded  boutons">Validate comments</button></a>
-            </div> -->
+            </div>
         </div>
 
         <div class="mt-5">
