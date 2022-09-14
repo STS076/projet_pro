@@ -20,8 +20,15 @@ $allTagsArrArray = $arr->getAllTagArr();
 $category = new Categories();
 $allTagsCategoryArray = $category->getAllTagCategory();
 
-$users = new Users();
-$AllUsersArray = $users->getAllUsers();
-
 $role = new Role();
 $allRoleArray = $role->getAllRole();
+
+$users = new Users();
+$AllUsersArray = $users->getAllUsers();
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['delete'])) {
+        $deals = new Users();
+        $deleteDeal = $deals->deleteUser($_POST['delete']);
+    }
+}
+$AllUsersArray = $users->getAllUsers();

@@ -22,52 +22,54 @@ require_once '../controllers/allUsers-controller.php';
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($AllUsersArray as $value) { ?>
-                        <tr>
-                            <!-- <td class="text-center"><?= $value['users_id'] ?></td> -->
-                            <td class="text-center"><?= $value['users_username'] ?></td>
-                            <td class="text-center">
-                                <a class="btn bouton text-white" href="infoUsers.php?users=<?= $value['users_id'] ?>">
-                                    + d'info
-                                </a>
-                            </td>
-                            <td class="text-center">
-                                <a class="btn bg-warning" href="amendUsers.php?amend=<?= $value['users_id'] ?>">
-                                    Modifier
-                                </a>
-                            </td>
-                            <td class="text-center">
-                                <a class="btn bg-danger text-light" type="button" data-bs-toggle="modal" data-bs-target="#users-<?= $value['users_id'] ?>">
-                                    Supprimer
-                                </a>
-                            </td>
-                        </tr>
+                    <?php foreach ($AllUsersArray as $value) {
+                        if ($value['users_id'] != 13 && $value['users_id'] != 18) { ?>
+                            <tr>
+                                <!-- <td class="text-center"><?= $value['users_id'] ?></td> -->
+                                <td class="text-center"><?= $value['users_username'] ?></td>
+                                <td class="text-center">
+                                    <a class="btn bouton text-white" href="infoUsers.php?users=<?= $value['users_id'] ?>">
+                                        + d'info
+                                    </a>
+                                </td>
+                                <td class="text-center">
+                                    <a class="btn bg-warning" href="amendUsers.php?amend=<?= $value['users_id'] ?>">
+                                        Modifier
+                                    </a>
+                                </td>
+                                <td class="text-center">
+                                    <a class="btn bg-danger text-light" type="button" data-bs-toggle="modal" data-bs-target="#users-<?= $value['users_id'] ?>">
+                                        Supprimer
+                                    </a>
+                                </td>
+                            </tr>
 
-                        <div class="modal fade" id="users-<?= $value['users_id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <p class="modal-title fs-4" id="exampleModalLabel"><?= $value['users_name'] ?> <?= $value['users_surname'] ?></p>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        Do you want to delete this user ?
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                                            Fermer
-                                        </button>
-                                        <form action="" method="POST">
-                                            <button class="btn btn-primary" name="delete" value="<?= $value['users_id'] ?> ">
-                                                Supprimer
+                            <div class="modal fade" id="users-<?= $value['users_id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <p class="modal-title fs-4" id="exampleModalLabel"><?= $value['users_name'] ?> <?= $value['users_surname'] ?></p>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Do you want to delete this user ?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                Fermer
                                             </button>
-                                        </form>
+                                            <form action="" method="POST">
+                                                <button class="btn btn-primary" name="delete" value="<?= $value['users_id'] ?> ">
+                                                    Supprimer
+                                                </button>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                    <?php } ?>
+                    <?php }
+                    } ?>
                 </tbody>
             </table>
             <div class="mt-5">

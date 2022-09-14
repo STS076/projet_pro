@@ -99,5 +99,21 @@ class Arrondissements extends Database {
         return $result;
     }
 
+    public function amendArr($tag_arr_id, $tag_arr_name, $tag_arr_summary)
+    {
+        $pdo = parent::connectDb();
+        $sql = "UPDATE tag_arr 
+        set tag_arr_name=:tag_arr_name, tag_arr_summary=:tag_arr_summary
+        WHERE tag_arr_id=:tag_arr_id";
+
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':tag_arr_id', $tag_arr_id, PDO::PARAM_INT);
+        $query->bindValue(':tag_arr_name', $tag_arr_name, PDO::PARAM_STR);
+        $query->bindValue(':tag_arr_summary', $tag_arr_summary, PDO::PARAM_STR);
+
+
+        $query->execute();
+    }
+
 
 }

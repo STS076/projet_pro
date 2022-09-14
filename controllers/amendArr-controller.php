@@ -18,6 +18,44 @@ require_once '../models/Comments.php';
 
 $arr = new Arrondissements();
 $allTagsArrArray = $arr->getAllTagArr();
+$getOneArrondissement = $arr->getOneArrondissement($_GET['amend']);
 
 $category = new Categories();
 $allTagsCategoryArray = $category->getAllTagCategory();
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    $errors = [];
+
+    $regexName = "/^[a-zA-Z-0-9-éèëêâäàöôûùüîïç\ ]+$/";
+    // $regexPhoneNumber = "/^[0-9]{10}+$/";
+
+    if (isset($_POST['tagArr'])) {
+        if (empty($_POST['tagArr'])) {
+            $errors['tagArr'] = '*Please enter a tag';
+        } else if (!preg_match($regexName, $_POST['tagArr'])) {
+            $errors['tagArr'] = "* Tag not valid";
+        }
+    }
+    if (isset($_POST['tagArrSummary'])) {
+        if (empty($_POST['tagArrSummary'])) {
+            $errors['tagArrSummary'] = '*Please write a summary';
+        }
+    }
+
+    if (count($errors) == 0) {
+        $tagArr = safeInput($_POST['tagArr']);
+        $tagArrObj = new Arrondissements();
+        $tagArrObj->amendArr($_GET['amend'], $tagArr, $_POST['tagArrSummary'], );
+
+        header('location: allTagsArr.php');
+        exit;
+    }
+}
+
+function safeInput($input)
+{
+    $safeInput = trim($input);
+    $safeInput = htmlspecialchars(($safeInput));
+    return $safeInput;
+}
