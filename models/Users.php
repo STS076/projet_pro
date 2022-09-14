@@ -193,4 +193,6 @@ class Users extends Database
         $query->bindValue(':users_id', $users_id, PDO::PARAM_INT);
         $query->execute();
     }
+
+ 
 }

@@ -17,7 +17,6 @@ class Arrondissements extends Database {
     {
         return $this->_tag_arr_name;
     }
- 
     public function set_tag_arr_name($_tag_arr_name)
     {
         $this->_tag_arr_name = $_tag_arr_name;
@@ -42,26 +41,23 @@ class Arrondissements extends Database {
     public function getAllTagArr(): array
     {
         $pdo = parent::connectDb();
-
-        $sql = "SELECT * FROM `tag_arr`";
-
+        $sql = "SELECT * 
+        FROM `tag_arr`";
         $query = $pdo->query($sql);
-
         return $query->fetchAll();
     }
 
     public function getOneArrondissement($tag_arr_id): array
     {
         $pdo = parent::connectDb();
-
-        $sql = "SELECT * from `tag_arr` inner join deals on tag_arr_id_TAG_ARR=tag_arr_id where `tag_arr_id`=:tag_arr_id";
-
+        $sql = "SELECT * 
+        from `tag_arr` 
+        inner join deals 
+        on tag_arr_id_TAG_ARR=tag_arr_id 
+        where `tag_arr_id`=:tag_arr_id";
         $query = $pdo->prepare($sql);
-
         $query->bindValue(':tag_arr_id', $tag_arr_id, PDO::PARAM_STR);
-
         $query->execute();
-
         $result = $query->fetch();
         return $result;
     }
@@ -70,15 +66,14 @@ class Arrondissements extends Database {
     public function GetDealsfromArr($tag_arr_id): array
     {
         $pdo = parent::connectDb();
-
-        $sql = "SELECT * from `tag_arr` inner join deals on tag_arr_id_TAG_ARR=tag_arr_id where `tag_arr_id`=:tag_arr_id";
-
+        $sql = "SELECT * 
+        from `tag_arr` 
+        inner join deals 
+        on tag_arr_id_TAG_ARR=tag_arr_id 
+        where `tag_arr_id`=:tag_arr_id";
         $query = $pdo->prepare($sql);
-
         $query->bindValue(':tag_arr_id', $tag_arr_id, PDO::PARAM_STR);
-
         $query->execute();
-
         $result = $query->fetchAll();
         return $result;
     }
@@ -86,15 +81,14 @@ class Arrondissements extends Database {
     public function getNumberofDealsbyArr($tag_arr_id): array
     {
         $pdo = parent::connectDb();
-
-        $sql = "SELECT count(tag_arr_id) from tag_arr inner join deals on tag_arr_id_TAG_ARR=tag_arr_id where tag_arr_id=:tag_arr_id";
-
+        $sql = "SELECT count(tag_arr_id) 
+        from tag_arr 
+        inner join deals 
+        on tag_arr_id_TAG_ARR=tag_arr_id 
+        where tag_arr_id=:tag_arr_id";
         $query = $pdo->prepare($sql);
-
         $query->bindValue(':tag_arr_id', $tag_arr_id, PDO::PARAM_STR);
-
         $query->execute();
-
         $result = $query->fetch();
         return $result;
     }
@@ -105,13 +99,20 @@ class Arrondissements extends Database {
         $sql = "UPDATE tag_arr 
         set tag_arr_name=:tag_arr_name, tag_arr_summary=:tag_arr_summary
         WHERE tag_arr_id=:tag_arr_id";
-
         $query = $pdo->prepare($sql);
         $query->bindValue(':tag_arr_id', $tag_arr_id, PDO::PARAM_INT);
         $query->bindValue(':tag_arr_name', $tag_arr_name, PDO::PARAM_STR);
         $query->bindValue(':tag_arr_summary', $tag_arr_summary, PDO::PARAM_STR);
+        $query->execute();
+    }
 
-
+    public function deleteArr($tag_arr_id)
+    {
+        $pdo = parent::connectDb();
+        $sql = "DELETE from tag_arr 
+        where tag_arr_id=:tag_arr_id";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':tag_arr_id', $tag_arr_id, PDO::PARAM_INT);
         $query->execute();
     }
 

@@ -23,7 +23,7 @@ $allTagsCategoryArray = $category->getAllTagCategory();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['delete'])) {
-        $deleteDeal = $deals->deleteComments($_POST['delete']);
+        $deleteArr = $arr->deleteArr($_POST['delete']);
     }
 }
-$allTagsCategoryArray = $category->getAllTagCategory();
+$allTagsArrArray = $arr->getAllTagArr();

@@ -43,9 +43,8 @@ $AllDealsArray = $deals->getAllDeals();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['delete'])) {
-        $specificDoctor = $doctor->getSpecificDoctor($_POST['delete']); 
-        $user->deleteUser($specificDoctor[0]['doctors_mail']);
-        $doctor->deleteDoctor($_POST['delete']);
+        $deals = new Deals();
+        $deleteDeal = $deals->deleteDeals($_POST['delete']);
     }
 }
 $AllDealsArray = $deals->getAllDeals(); 

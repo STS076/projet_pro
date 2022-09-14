@@ -314,4 +314,16 @@ class Deals extends Database
         return $result;
     }
 
+    public function changeDealsToAnonymous($users_id_USERS)
+    {
+        $pdo = parent::connectDb();
+        $sql = "UPDATE deals 
+        set users_id_USERS=18
+        where users_id_USERS=:users_id_USERS";
+        $query = $pdo->prepare($sql);
+
+        $query->bindValue(':users_id_USERS', $users_id_USERS, PDO::PARAM_INT);
+        $query->execute();
+    }
+
 }

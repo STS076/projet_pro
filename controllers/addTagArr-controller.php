@@ -22,7 +22,6 @@ $category = new Categories();
 $allTagsCategoryArray = $category->getAllTagCategory();
 
 
-$showForm = true;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -50,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     if (count($errors) == 0) {
-        $showForm = false;
+
         $tagArr = safeInput($_POST['tagArr']);
 
         $tagArrObj = new Arrondissements();

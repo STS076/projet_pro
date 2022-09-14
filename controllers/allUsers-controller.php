@@ -27,7 +27,10 @@ $users = new Users();
 $AllUsersArray = $users->getAllUsers();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['delete'])) {
-        $deleteDeal = $deals->deleteUser($_POST['delete']);
+        $deal = new Deals;
+        $changeDealsToAnonymous = $deal->changeDealsToAnonymous($_POST['delete']);
+        $users = new Users();
+        $deleteDeal = $users->deleteUser($_POST['delete']);
     }
 }
 $AllUsersArray = $users->getAllUsers();
