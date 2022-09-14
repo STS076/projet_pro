@@ -27,3 +27,11 @@ $oneUserArray = $user->getOneUser($_GET['users']);
 
 $role = new Role();
 $allRoleArray = $role->getAllRole();
+
+$comment = new Comments(); 
+$commentByUser = $comment->getCommentsByUser($_GET['users']);
+$commentsNumberByUser = $comment->getNumberofCommentsByUsers($_GET['users']);
+
+$deal = new Deals(); 
+$getNumberofDealsByUser = $deal->getNumberofDealsByUser($_GET['users']); 
+$getDealsByUser = $deal->getDealsByUser($_GET['users']);

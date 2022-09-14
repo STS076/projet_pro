@@ -156,7 +156,6 @@ class Deals extends Database
     public function getOneDeal($deals_id): array
     {
         $pdo = parent::connectDb();
-
         $sql = "SELECT deals_id, deals_title, deals_summary, deals_mini_summary, deals_contact, deals_validate, deals_mini_summary, users_username, deals_when, deals_where, deals_price, deals_metro, deals_map, deals_info, 
         group_concat(tag_categories_id_TAG_CATEGORIES SEPARATOR ', ') 
         as DealsCatTagId, tag_arr_id_TAG_ARR, group_concat(tag_categories_name SEPARATOR ', ') 
@@ -172,11 +171,9 @@ class Deals extends Database
         on users_id_USERS=users_id
         where deals_id=:deals_id
         group by deals_id";
-
         $query = $pdo->prepare($sql);
         $query->bindValue(':deals_id', $deals_id, PDO::PARAM_INT);
         $query->execute();
-
         $result = $query->fetch();
         return $result;
     }
@@ -193,12 +190,9 @@ class Deals extends Database
         on tag_arr_id_TAG_ARR=tag_arr_id
         where tag_arr_id=:tag_arr_id
         group by deals_id";
-
         $query = $pdo->prepare($sql);
-
         $query->bindValue(':tag_arr_id', $tag_arr_id, PDO::PARAM_INT);
         $query->execute();
-        // $query = $pdo->query($sql);
         $result = $query->fetchAll();
         return $result;
     }
@@ -215,12 +209,9 @@ class Deals extends Database
         on tag_arr_id_TAG_ARR=tag_arr_id
         where tag_categories_id=:tag_categories_id
         group by deals_id";
-
         $query = $pdo->prepare($sql);
-
         $query->bindValue(':tag_categories_id', $tag_categories_id, PDO::PARAM_STR);
         $query->execute();
-        // $query = $pdo->query($sql);
         $result = $query->fetchAll();
         return $result;
     }
@@ -267,7 +258,6 @@ class Deals extends Database
         $query->execute();
     }
 
-
     public function getDealByAverageRating()
     {
         $pdo = parent::connectDb();
@@ -294,9 +284,34 @@ class Deals extends Database
         $query->execute();
     }
 
+    public function getNumberofDealsByUser($users_id)
+    {
+        $pdo = parent::connectDb();
+        $sql = "SELECT count(deals_id) 
+        from deals 
+        inner join users 
+        on users_id_USERS=users_id
+        where users_id=:users_id";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':users_id', $users_id, PDO::PARAM_STR);
+        $query->execute();
+        $result = $query->fetch();
+        return $result;
+    }
 
+    public function getDealsByUser($users_id)
+    {
+        $pdo = parent::connectDb();
+        $sql = "SELECT * 
+        from deals 
+        inner join users 
+        on users_id_USERS=users_id 
+        where users_id=:users_id";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':users_id', $users_id, PDO::PARAM_STR);
+        $query->execute();
+        $result = $query->fetchAll();
+        return $result;
+    }
 
-
-
-    
 }

@@ -10,11 +10,11 @@ require_once '../controllers/allUsers-controller.php';
     <?php include '../elements/header.php' ?>
 
     <div class="container bienvenue d-flex align-items-center flex-column rounded my-5 p-5 border border-dark shadow">
-        <div class="col-lg-8 col-12 text-center fw-bold">
+        <div class="col-lg-10 col-12 text-center">
             <table class="table table-responsive table-hover">
                 <thead>
                     <tr>
-                        <th class="text-center">#</th>
+                        <!-- <th class="text-center">#</th> -->
                         <th class="text-center">Username</th>
                         <th class="text-center">More Info</th>
                         <th class="text-center">Amends</th>
@@ -24,32 +24,48 @@ require_once '../controllers/allUsers-controller.php';
                 <tbody>
                     <?php foreach ($AllUsersArray as $value) { ?>
                         <tr>
-                            <th class="text-center"><?= $value['users_id'] ?></th>
-                            <th class="text-center"><?= $value['users_username'] ?></th>
-                            <td class="text-center"><a class="btn bouton text-white" href="infoUsers.php?users=<?= $value['users_id'] ?>"> + d'info</a></td>
-                            <td class="text-center"><a class="btn bg-warning" href="amendUsers.php?amend=<?= $value['users_id'] ?>">Modifier</a></td>
-                            <td class="text-center"><a class="btn bg-danger text-light" type="button" data-bs-toggle="modal" data-bs-target="#users-<?= $value['users_id'] ?>">Supprimer</a></td>
+                            <!-- <td class="text-center"><?= $value['users_id'] ?></td> -->
+                            <td class="text-center"><?= $value['users_username'] ?></td>
+                            <td class="text-center">
+                                <a class="btn bouton text-white" href="infoUsers.php?users=<?= $value['users_id'] ?>">
+                                    + d'info
+                                </a>
+                            </td>
+                            <td class="text-center">
+                                <a class="btn bg-warning" href="amendUsers.php?amend=<?= $value['users_id'] ?>">
+                                    Modifier
+                                </a>
+                            </td>
+                            <td class="text-center">
+                                <a class="btn bg-danger text-light" type="button" data-bs-toggle="modal" data-bs-target="#users-<?= $value['users_id'] ?>">
+                                    Supprimer
+                                </a>
+                            </td>
                         </tr>
 
-                        <!-- <div class="modal fade" id="users-<?= $doctors['doctors_id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="users-<?= $value['users_id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <p class="modal-title fs-4" id="exampleModalLabel"><?= $doctors['doctors_lastname'] ?> <?= $doctors['doctors_name'] ?></p>
+                                        <p class="modal-title fs-4" id="exampleModalLabel"><?= $value['users_name'] ?> <?= $value['users_surname'] ?></p>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        Voulez vous supprimer le médecin ?
+                                        Do you want to delete this user ?
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                            Fermer
+                                        </button>
                                         <form action="" method="POST">
-                                            <button class="btn btn-primary" name="delete" value="<?= $doctors['doctors_id'] ?> ">Supprimer</button>
+                                            <button class="btn btn-primary" name="delete" value="<?= $value['users_id'] ?> ">
+                                                Supprimer
+                                            </button>
                                         </form>
                                     </div>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
 
                     <?php } ?>
                 </tbody>

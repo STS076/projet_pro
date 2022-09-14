@@ -22,11 +22,8 @@ $allTagsArrArray = $arr->getAllTagArr();
 $category = new Categories();
 $allTagsCategoryArray = $category->getAllTagCategory();
 
-$user = new Users(); 
-$oneUserArray = $user->getOneUser($_GET['users']);
-
 $role = new Role();
 $allRoleArray = $role->getAllRole();
 
 $comment = new Comments; 
-$oneComment = $comment->
+$getOnecomment = $comment->getOnecomment($_GET['info']);

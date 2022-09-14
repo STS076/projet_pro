@@ -39,9 +39,9 @@ require_once '../elements/top.php' ?>
                     <input type="emailAddress" class=" text-center form-control" id="emailAddress" placeholder="ex : sophie@sophie.com" name="emailAddress" value="<?= $getOneUser['users_mail'] ?>">
                     <p class="text-danger"><?= isset($errors['emailAddress']) ? $errors['emailAddress'] : '' ?></p>
                 </div>
-                
+
                 <div class="d-flex flex-column">
-                    <label class="py-2">Role : <span class="text-danger">
+                    <label class="py-2 text-center">Role : <span class="text-danger">
                             <?= isset($errors['role_id_ROLE']) ? $errors['role_id_ROLE'] : '' ?>
                     </label>
                     <select id="role_id_ROLE" value="<?= $getOneUser['role_role'] ?>" name="role_id_ROLE">
@@ -59,17 +59,15 @@ require_once '../elements/top.php' ?>
                     <button class="btn bouton border border-dark text-light" id="submit" name="submit">Submit</button>
                 </div>
             </form>
+            <div class="mt-5 text-center">
+                <a class="text-decoration-none" href="allUsers.php">
+                    <button class="btn text-white bg-info">back</button>
+                </a>
+            </div>
         </div>
-        <div class="mt-5 text-center">
-        <a class="text-decoration-none" href="dashboard-users.php">
-            <button class="btn text-white bg-info">back</button>
-        </a>
-    </div>
-    </div>
-  
+
 
     </div>
-
 
 
 

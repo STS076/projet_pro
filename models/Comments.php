@@ -181,11 +181,31 @@ class Comments extends Database
         from comments 
         inner join users 
         on users_id=users_id_USERS 
-        where users_id_USERS=:users_id_USERS";
+        inner join deals 
+        on deals_id=deals_id_DEALS
+        where comments.users_id_USERS=:users_id_USERS";
         $query = $pdo->prepare($sql);
         $query->bindValue(':users_id_USERS', $users_id_USERS, PDO::PARAM_STR);
         $query->execute();
         $result = $query->fetchAll();
+        return $result;
+    }
+
+    public function getOnecomment($comments_id)
+    {
+        $pdo = parent::connectDb();
+
+        $sql = "SELECT * 
+        from comments 
+        inner join deals 
+        on deals_id_DEALS=deals_id 
+        inner join users 
+        on comments.users_id_USERS=users_id 
+        where comments_id=:comments_id";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':comments_id', $comments_id, PDO::PARAM_STR);
+        $query->execute();
+        $result = $query->fetch();
         return $result;
     }
 }
