@@ -116,4 +116,15 @@ class Categories extends Database
         $result = $query->fetchAll();
         return $result;
     }
+
+    
+    public function deleteCategory($tag_categories_id)
+    {
+        $pdo = parent::connectDb();
+        $sql = "DELETE from tag_categories 
+        where tag_categories_id=:tag_categories_id";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':tag_categories_id', $tag_categories_id, PDO::PARAM_INT);
+        $query->execute();
+    }
 }

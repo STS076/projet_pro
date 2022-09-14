@@ -118,7 +118,7 @@ footer {
 }
 
 .backgroundHotDeals{
-    background-color: rgb(116, 203, 174);
+    background-color: #BBA2DB;
     width: 95%;
 }
 
@@ -267,7 +267,7 @@ footer {
 }
 
 .hotDeals {
-    background-color: #daeced;
+    background-color: goldenrod;
 }
 
 /* .scrollmenu {

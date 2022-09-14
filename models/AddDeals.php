@@ -268,7 +268,7 @@ class Deals extends Database
         on deals_id_DEALS=deals_id
         group by deals_id_DEALS 
         order by AverageRating desc 
-        limit 5";
+        limit 3";
         $query = $pdo->query($sql);
         $result = $query->fetchall();
         return $result;

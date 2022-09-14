@@ -20,29 +20,28 @@ require_once '../elements/top.php' ?>
             </div>
         </div>
 
-
-        <div class="row m-0 justify-content-center">
+        <!-- <div class="row m-0 justify-content-center">
             <div class="col-lg-8 col-11 text-center">
                 <p class="fs-1 text-center welcome">Hot Deals</p>
                 <p class="fs-6 text-center">Find below our most popular deals, and where you should go have fun next.</p>
             </div>
-        </div>
+        </div> -->
 
-        <div class="container">
+        <div class=" row justify-content-evenly mx-0 py-5 bg-light shadow">
+            <div class="col-lg-2 col-11 bg-warning mx-2 my-3 py-5 d-flex align-items-center">
+               <p class="text-light fw-bold fs-2 text-center welcome">Our better rated deals</p>
+            </div>
             <?php foreach ($hotDeals as $value) { ?>
-                <div class=" row m-0 my-3 shadow backgroundHotDeals">
-                    <div class="col-md-3 m-0 p-0">
-                        <img src="../assets/images/header.jpg" class="card-img-top m-0 p-0 border border-secondary" alt="...">
-                    </div>
-                    <div class="col-md-7 m-0 p-0">
-                        <p class="fw-bold fs-5 pt-3 ms-2"><?= $value['deals_title'] ?></p>
-                        <p class="ms-2"><?= $value['deals_mini_summary'] ?></p>
-                        <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="text-dark fw-bold ms-2">Explore</a>
+                <div class="col-lg-2 col-11 bg-light shadow-sm mx-2 my-3 py-3">
+                    <img src="../assets/images/tuileriesDeal.webp" class="m-0 p-0 img-fluid" alt="picture Jardin des tuileries">
+                    <div class="">
+                        <p class="text-center fw-bold fs-5 text-warning my-1"><?= $value['deals_title'] ?></p>
+                        <p class=""><?= $value['deals_mini_summary'] ?></p>
+                        <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="text-warning">Explore</a>
                     </div>
                 </div>
             <?php } ?>
         </div>
-
 
         <p class="fs-1 text-center welcome pt-5 comments">Arrondissements</p>
         <div class="row m-0 p-0 justify-content-center">
