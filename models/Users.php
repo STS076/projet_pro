@@ -170,19 +170,23 @@ class Users extends Database
         return $result;
     }
 
-    // public function changeRoleUser($role_id_Role, $users_id)
-    // {
-    //     $pdo = parent::connectDb();
-    //     $sql = "UPDATE `users`
-    //     inner join `role`
-    //     on role_id=role_id_ROLE 
-    //     set role_id_Role=:role_id_Role
-    //     where users_id=:users_id";
-    //     $query = $pdo->prepare($sql);
-    //     $query->bindValue(':role_id_Role', $role_id_Role, PDO::PARAM_INT);
-    //     $query->bindValue(':users_id', $users_id, PDO::PARAM_INPUT_OUTPUT);
-    //     $query->execute();
-    // }
+
+    public function checkIfUsernameExists(string $users_username)
+    {
+        $pdo = parent::connectDb();
+        $sql = "SELECT `users_username` FROM `users` WHERE `users_username`= :users_username";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':users_username', $users_username, PDO::PARAM_STR);
+        $query->execute();
+
+        $result = $query->fetchAll();
+
+        if (count($result) != 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     public function deleteUser($users_id)
     {

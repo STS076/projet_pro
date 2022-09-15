@@ -48,12 +48,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     if (isset($_POST['username'])) {
+        $user = new Users();
+        $obj = $user->checkIfUsernameExists($_POST['username']);
+        if ($user->checkIfUsernameExists($_POST['username'])) {
+            $errors['username'] = '*This username is already taken';
+        }
         if (($_POST['username']) == '') {
             $errors['username'] = "* Please enter your username";
         }
     }
 
     if (isset($_POST['emailAddress'])) {
+        $user = new Users();
+        $obj = $user->checkIfMailExists($_POST['emailAddress']);
+        if ($user->checkIfMailExists($_POST['emailAddress'])) {
+            $errors['emailAddress'] = '*Cet email existe déjà';
+        }
         if (empty($_POST['emailAddress'])) {
             $errors['emailAddress'] = '*Please enter your email address';
         } else if (!filter_var($_POST['emailAddress'], FILTER_VALIDATE_EMAIL)) { // si ça ne passe pas le filter var : FILTER_VALIDATE_EMAIL
@@ -78,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (count($errors) == 0) {
         $showForm = false;
-    
+
         $prenom = safeInput($_POST['firstname']);
         $nom = safeInput($_POST['surname']);
         $pseudo = safeInput($_POST['username']);
