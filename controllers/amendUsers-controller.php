@@ -31,6 +31,9 @@ $getOneUser = $user->getOneUser($_GET['amend']);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
+    $user = new Users();
+    $getOneUser = $user->getOneUser($_GET['amend']);
+
     $errors = [];
 
     $regexName = "/^[a-zA-Z-éèëêâäàöôûùüîïç]+$/";
@@ -53,16 +56,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     if (isset($_POST['username'])) {
-        if (($_POST['username']) == '') {
-            $errors['username'] = "* Please enter your username";
+        if ($_POST['username'] != $getOneUser['users_username']) {
+            $user = new Users();
+            $obj = $user->checkIfUsernameExists($_POST['username']);
+            if ($user->checkIfUsernameExists($_POST['username'])) {
+                $errors['username'] = '*This username is already taken';
+            }
+            if (($_POST['username']) == '') {
+                $errors['username'] = "* Please enter your username";
+            }
         }
     }
 
     if (isset($_POST['emailAddress'])) {
-        if (empty($_POST['emailAddress'])) {
-            $errors['emailAddress'] = '*Please enter your email address';
-        } else if (!filter_var($_POST['emailAddress'], FILTER_VALIDATE_EMAIL)) { // si ça ne passe pas le filter var : FILTER_VALIDATE_EMAIL
-            $errors['emailAddress'] = '* Email not valid, ex. mail@mail.com';
+        if ($_POST['emailAddress'] != $getOneUser['users_mail']) {
+            $user = new Users();
+            $obj = $user->checkIfMailExists($_POST['emailAddress']);
+            if ($user->checkIfMailExists($_POST['emailAddress'])) {
+                $errors['emailAddress'] = '*Cet email existe déjà';
+            }
+            if (empty($_POST['emailAddress'])) {
+                $errors['emailAddress'] = '*Please enter your email address';
+            } else if (!filter_var($_POST['emailAddress'], FILTER_VALIDATE_EMAIL)) { // si ça ne passe pas le filter var : FILTER_VALIDATE_EMAIL
+                $errors['emailAddress'] = '* Email not valid, ex. mail@mail.com';
+            }
         }
     }
 
@@ -77,9 +94,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $nom = safeInput($_POST['surname']);
         $pseudo = safeInput($_POST['username']);
         $adresseEmail = safeInput($_POST['emailAddress']);
-      
+
         $user = new Users();
-        $user->amendUser($pseudo,  $prenom,  $nom,  $adresseEmail, $_POST['role_id_ROLE'], $_GET['amend']  );
+        $user->amendUser($pseudo,  $prenom,  $nom,  $adresseEmail, $_POST['role_id_ROLE'], $_GET['amend']);
 
         header('location: dashboard-users.php');
         exit;

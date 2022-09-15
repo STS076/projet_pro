@@ -19,9 +19,7 @@ require_once '../controllers/allDeals-controller.php';
                             <option value="<?= $value['tag_arr_id'] ?>" name="dealTagArr[<?= $value['tag_arr_id'] ?>]"><?= $value['tag_arr_name'] ?></option>
                         <?php } ?>
                     </select>
-
-                    <button class="btn " value="connect"><i class="bi bi-check-circle"></i></button>
-
+                    <input type="submit" value="Search">
                 </form>
             </div>
             <div class="col-3 mx-4">
@@ -32,7 +30,7 @@ require_once '../controllers/allDeals-controller.php';
                             <option class="fontCat" value=""><?= $value['tag_categories_name'] ?></option>
                         <?php } ?>
                     </select>
-                    <button class="btn " value="connect"><i class="bi bi-check-circle"></i></button>
+                    <input type="submit" value="Search">
                 </form>
             </div>
         </div>
