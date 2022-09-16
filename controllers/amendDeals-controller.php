@@ -15,6 +15,7 @@ require_once '../models/Images.php';
 require_once '../models/Role.php';
 require_once '../models/Users.php';
 require_once '../models/Comments.php';
+require_once '../models/Form.php'; 
 
 $arr = new Arrondissements();
 $allTagsArrArray = $arr->getAllTagArr();
@@ -137,3 +138,6 @@ function safeInput($input)
     $safeInput = htmlspecialchars(($safeInput));
     return $safeInput;
 }
+
+
+

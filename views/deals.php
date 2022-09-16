@@ -34,20 +34,20 @@ require_once '../elements/top.php';
             </p>
         </div>
         <div class="col-lg-5 carte">
-           <?= $oneDealArray['deals_map'] ?>
+            <?= $oneDealArray['deals_map'] ?>
         </div>
         <!-- Gellery -->
         <h3 class="fst-italic comments fw-bold text-center p-5">Gallery</h3>
         <div class="container px-5">
             <div class="row justify-content-center border border-danger" data-masonry='{ "percentPosition": true }'>
                 <?php
-                foreach ($gallerie as $key => $value) {
+                foreach ($getAllImagesByDeal as $value) {
                     if ($value == '.' || $value == '..') {
                     } else {
                 ?>
                         <div class="col-11 col-lg-4 my-2 gallery border border-info">
                             <div class="">
-                                <a class="example-image-link" href="../assets/images/gallery/<?= $value ?>" data-lightbox="galerie"><img src="../assets/images/gallery/<?= $value ?>" data-lightbox="cozy" class="galleryPicture"></a>
+                                <a class="example-image-link" href="data:image/png;base64,<?= $value['images_name'] ?>" data-lightbox="galerie"><img src="data:image/png;base64,<?= $value['images_name'] ?>" data-lightbox="cozy" class="galleryPicture"></a>
                             </div>
                         </div>
                 <?php }
@@ -112,10 +112,12 @@ require_once '../elements/top.php';
                     </div>
                 </div>
 
-                <div class="col-lg-8 col-11 d-flex justify-content-center">
-                    <div class="d-flex flex-column mt-2">
-                        <label>Your comment :<span class="text-danger"><?= isset($errors['dealComment']) ? $errors['dealComment'] : '' ?></span></label>
-                        <textarea rows="8" cols="40" name="dealComment" value="<?= isset($_POST['dealComment']) ? $_POST['dealComment'] : '' ?>"></textarea>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-11 d-flex ">
+                        <div class="d-flex flex-column mt-2">
+                            <label>Your comment :<span class="text-danger"><?= isset($errors['dealComment']) ? $errors['dealComment'] : '' ?></span></label>
+                            <textarea rows="8" cols="40" name="dealComment" value="<?= isset($_POST['dealComment']) ? $_POST['dealComment'] : '' ?>"></textarea>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-8 col-11 d-flex justify-content-center">
@@ -123,6 +125,7 @@ require_once '../elements/top.php';
                         <button class="btn bouton text-light" name="submit">Submit review</button>
                     </div>
                 </div>
+
             </div>
 
         </form>

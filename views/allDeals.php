@@ -48,7 +48,7 @@ require_once '../controllers/allDeals-controller.php';
                             <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>
                                 <th class="text-center">Amend</th>
                                 <th class="text-center">Status</th>
-                                <!-- <th class="text-center">Delete</th> -->
+                                <th class="text-center">Delete</th>
                             <?php } ?>
                         </tr>
                     </thead>

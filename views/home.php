@@ -32,7 +32,7 @@ require_once '../elements/top.php' ?>
                <p class="text-light fw-bold fs-2 text-center welcome">Our better rated deals</p>
             </div>
             <?php foreach ($hotDeals as $value) { ?>
-                <div class="col-lg-2 col-11 bg-light shadow-sm mx-2 my-3 py-3">
+                <div class="col-lg-2 col-11 bg-light shadow-sm mx-2 my-3 p-0">
                     <img src="../assets/images/tuileriesDeal.webp" class="m-0 p-0 img-fluid" alt="picture Jardin des tuileries">
                     <div class="">
                         <p class="text-center fw-bold fs-5 text-warning my-1"><?= $value['deals_title'] ?></p>

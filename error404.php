@@ -8,7 +8,7 @@ require_once './elements/top.php' ?>
     <?php require_once './elements/header.php' ?>
 
 
-       <img src="./assets/images/error404.jpg" alt="image erreur page 404">
+       <img src="/assets/images/error404.jpg" alt="image erreur page 404">
 
  
     <?php require_once './elements/footer.php' ?>

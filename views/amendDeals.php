@@ -60,7 +60,7 @@ require_once '../elements/top.php' ?>
                     <label class="py-2">Map : <span class="text-danger"><?= isset($errors['dealMap']) ? $errors['dealMap'] : '' ?></label>
                     <textarea type="text" id="dealMap" name="dealMap"><?= $oneDealArray['deals_map'] ?></textarea>
                 </div>
-                
+
                 <div class="d-flex flex-column">
                     <label class="py-2">Tag Arrondissement : <span class="text-danger"><?= isset($errors['dealTagArr']) ? $errors['dealTagArr'] : '' ?></label>
                     <select id="dealTagArr" value="<?= $oneDealArray['tag_arr_name'] ?>" name="dealTagArr">
@@ -85,12 +85,15 @@ require_once '../elements/top.php' ?>
                     <select id="dealTagCat" multiple value="<?= $oneDealArray['DealsCatTag'] ?>" name="dealTagCat[]">
                         <option value="">Please select a Category</option>
                         <?php foreach ($allTagsCategoryArray as $value) { ?>
-                            <option class="fontCat" value="<?= $value['tag_categories_id'] ?>" <?= in_array($value['tag_categories_id'], $DealsCatTagIdArray) ? 'selected' : '' ?>> 
+                            <option class="fontCat" value="<?= $value['tag_categories_id'] ?>" <?= in_array($value['tag_categories_id'], $DealsCatTagIdArray) ? 'selected' : '' ?>>
                                 <?= $value['tag_categories_name'] ?>
                             </option>
                         <?php } ?>
                     </select>
                 </div>
+
+           
+
 
                 <div class="text-center pt-5">
                     <button class="btn bouton text-white" value="amend">Amend</button>

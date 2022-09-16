@@ -10,7 +10,7 @@ require_once '../elements/top.php';
 
     <main>
 
-        <h2 class="text-center fst-italic my-5 comments"><?= $oneCatArray['tag_categories_name'] ?></h2>
+        <h2 class="text-center fst-italic mt-5 mb-2 comments"><?= $oneCatArray['tag_categories_name'] ?></h2>
         <div class="row m-0 justify-content-center">
             <div class="col-lg-8 col-11 text-center">
                 <p><?= $oneCatArray['tag_categories_summary'] ?>
@@ -20,9 +20,9 @@ require_once '../elements/top.php';
         <div class="row justify-content-center mx-0 my-5">
             <?php foreach ($getDealByCat as $value) {
                 if ($value['deals_validate'] == 1) { ?>
-                    <div class="card col-lg-3 col-11 m-3 shadow-sm p-0 hotDeals cardarr">
-                        <img src="../assets/images/tuileriesDeal.webp" class="m-0 p-0 img-fluid rounded-start" alt="picture Jardin des tuileries">
-                        <div class="card-body py-4">
+                     <div class="col-lg-3 col-11 bg-light shadow-sm mx-2 my-3 p-0">
+                        <img src="../assets/images/tuileriesDeal.webp" class=" img-fluid m-0 p-0" alt="picture Jardin des tuileries">
+                        <div class="">
                             <p class="card-title text-center fw-bold fs-5"><?= $value['deals_title'] ?></p>
                             <p class="card-text"><?= $value['deals_mini_summary'] ?></p>
                             <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="links">Explore</a>

@@ -25,9 +25,7 @@ class Form
             $permissionUpload = false;
             $errorMessage = 'Veuillez sélectionner une image à télécharger';
         } else {
-            ////////
-            // maintenant que tout est ok, nous allons faire les vérifications : préparation des contôles :
-            ////////
+
 
             // Nous allons extraire le MIME du fichier à l'aide de la fonction mime_content_type
             $fileMime = mime_content_type($_FILES[$inputName]["tmp_name"]);
@@ -37,9 +35,6 @@ class Form
             $fileName = basename($_FILES[$inputName]["name"]);
             $fileExtension = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
 
-            //////
-            // On lance alors les contrôles :
-            //////
 
             // strpos() pour rechercher le mot 'image' dans le mime, si nous le trouvons pas, nous allons indiquer upload en false et message d'erreur
             if (strpos($fileMime, 'image') === false) {

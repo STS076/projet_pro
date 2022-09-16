@@ -1,4 +1,4 @@
-fileToUpload.addEventListener("change", function () {
+picture.addEventListener("change", function () {
     let input = this;
     let oFReader = new FileReader(); // on créé un nouvel objet FileReader
     oFReader.readAsDataURL(this.files[0]);

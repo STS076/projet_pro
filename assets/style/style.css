@@ -117,7 +117,7 @@ footer {
     height: 15rem;
 }
 
-.backgroundHotDeals{
+.backgroundHotDeals {
     background-color: #BBA2DB;
     width: 95%;
 }
@@ -280,4 +280,5 @@ footer {
     transition: transform .2s;
     transform: scale(1.08);
 }
+
 

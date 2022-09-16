@@ -13,7 +13,7 @@ require_once '../elements/top.php' ?>
     <div class="container rounded d-flex align-items-center flex-column  bg-light border border-dark shadow-sm p-5 my-5 ">
         <div class="row align-item">
             <div class="col text-center m-3">
-                <a href="allTagsArr.php"> <button class="text-center text-center text-light rounded  boutons">All Galleries</button></a>
+                <a href="allGallery.php"> <button class="text-center text-center text-light rounded  boutons">All Galleries</button></a>
             </div>
             <div class="col text-center m-3">
                 <a href="upload.php"> <button class="text-center text-center text-light  rounded boutons">Upload an image</button></a>

@@ -18,7 +18,7 @@ require_once '../elements/top.php' ?>
 
                 <div class=" d-flex flex-column">
                     <label class="text-dark text-center">Name : </label>
-                    <input class="text-center form-control " placeholder="ex : Sophie" id="firstname" value="<?= isset($_POST['firstname']) ? $_POST['firstname'] : '' ?>" name="firstname">
+                    <input class="text-center form-control " placeholder="ex : Sophie" id="firstname" value="<?= isset($_POST['firstname']) ? $_POST['firstname'] : '' ?>" name="firstname" >
                     <p class="text-danger"><?= isset($errors['firstname']) ? $errors['firstname'] : '' ?></p>
                 </div>
 

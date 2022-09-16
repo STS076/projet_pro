@@ -24,7 +24,8 @@ $oneDealArray = $deals->getOneDeal($_GET['choice']);
 $comment = new Comments();
 $getCommentByDeal = $comment->getCommentsByDeal($_GET['choice']);
 
-
+$image = new Images(); 
+$getAllImagesByDeal = $image->getAllImagesByDeal($_GET['choice']); 
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -47,13 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $date = date('d/m/Y');
         $deals = new Deals();
         $oneDealArray = $deals->getOneDeal($_GET['choice']);
-
-
-        
-
         $comments = new Comments();
-
-
         $comments->addComments($_POST['dealRating'], $_POST['dealComment'], $date, $oneDealArray['deals_id'], ($_SESSION['user'] ? $_SESSION['user']['users_id']:18 ));
 
         header('location: deals.php?choice=' . $oneDealArray['deals_id']);
