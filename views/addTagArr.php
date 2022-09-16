@@ -24,11 +24,10 @@ require_once '../elements/top.php' ?>
                     <input type="text" id="tagArr" value="<?= isset($_POST['tagArr']) ? $_POST['tagArr'] : '' ?>" name="tagArr">
 
                 </div>
-                <div class="d-flex flex-column">
+                <!-- <div class="d-flex flex-column">
                     <label class="py-2">Image : <span class="text-danger"><?= isset($errors['tagArrImage']) ? $errors['tagArrImage'] : '' ?></span></label>
                     <input type="text" id="tagArrImage" value="<?= isset($_POST['tagArrImage']) ? $_POST['tagArrImage'] : '' ?>" name="tagArrImage">
-
-                </div>
+                </div> -->
                 <div class="d-flex flex-column">
                     <label class="py-2">Mini Summary : <span class="text-danger"><?= isset($errors['tagArrSummary']) ? $errors['tagArrSummary'] : '' ?></span></label>
                     <textarea type="text" id="tagArrSummary" value="<?= isset($_POST['tagArrSummary']) ? $_POST['tagArrSummary'] : '' ?>" name="tagArrSummary"></textarea>

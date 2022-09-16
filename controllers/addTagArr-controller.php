@@ -37,11 +37,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $errors['tagArr'] = "* Tag not valid";
         }
     }
-    if (isset($_POST['tagArrImage'])) {
-        if (empty($_POST['tagArrImage'])) {
-            $errors['tagArrImage'] = '*Please add an image';
-        }
-    }
+    // if (isset($_POST['tagArrImage'])) {
+    //     if (empty($_POST['tagArrImage'])) {
+    //         $errors['tagArrImage'] = '*Please add an image';
+    //     }
+    // }
     if (isset($_POST['tagArrSummary'])) {
         if (empty($_POST['tagArrSummary'])) {
             $errors['tagArrSummary'] = '*Please write a summary';

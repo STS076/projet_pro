@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 if ($_SESSION['user']['role_id_ROLE'] == 1) {
                     header('Location: dashboard.php');
                 } else {
-                    header('Location: dashboard-deals.php');
+                    header('Location: dashboard.php');
                     exit;
                 }
             } else {
