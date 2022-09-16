@@ -29,7 +29,7 @@ require_once '../elements/top.php' ?>
 
         <div class=" row justify-content-evenly mx-0 py-5 bg-light shadow">
             <div class="col-lg-2 col-11 bg-warning mx-2 my-3 py-5 d-flex align-items-center">
-               <p class="text-light fw-bold fs-2 text-center welcome">Our better rated deals</p>
+                <p class="text-light fw-bold fs-2 text-center welcome">Our better rated deals</p>
             </div>
             <?php foreach ($hotDeals as $value) { ?>
                 <div class="col-lg-2 col-11 bg-light shadow-sm mx-2 my-3 p-0">
@@ -83,6 +83,11 @@ require_once '../elements/top.php' ?>
             </div>
         </div>
     </main>
+
+
+    <button type="button" class="btn bouton btn-floating " id="btn-back-to-top">
+        <i class="bi bi-arrow-up-short text-white"></i>
+    </button>
 
 
     <?php require_once '../elements/footer.php' ?>

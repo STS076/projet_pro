@@ -10,7 +10,7 @@ require_once '../elements/top.php' ?>
 
     <div class="container bg-light border border-dark shadow-sm  my-5 rounded ">
         <div class="row mx-0 py-5 justify-content-center">
-            <p class=" text-center fs-5 my-4 fw-bold">Upload Images for deal <?=$oneDealArray['deals_title'] ?></p>
+            <p class=" text-center fs-5 my-4 fw-bold">Upload Images for deal <?= $oneDealArray['deals_title'] ?></p>
 
 
             <!-- <div class="col-lg-8 col-11 d-flex justify-content-center">
@@ -51,7 +51,7 @@ require_once '../elements/top.php' ?>
     </div>
 
     <?php require_once '../elements/footer.php' ?>
-
+    <script src="../assets/script/upload.js"></script>
 </body>
 
 </html>

@@ -39,13 +39,13 @@ require_once '../elements/top.php';
         <!-- Gellery -->
         <h3 class="fst-italic comments fw-bold text-center p-5">Gallery</h3>
         <div class="container px-5">
-            <div class="row justify-content-center border border-danger" data-masonry='{ "percentPosition": true }'>
+            <div class="row justify-content-center " data-masonry='{ "percentPosition": true }'>
                 <?php
                 foreach ($getAllImagesByDeal as $value) {
                     if ($value == '.' || $value == '..') {
                     } else {
                 ?>
-                        <div class="col-11 col-lg-4 my-2 gallery border border-info">
+                        <div class="col-11 col-lg-4 my-2 gallery ">
                             <div class="">
                                 <a class="example-image-link" href="data:image/png;base64,<?= $value['images_name'] ?>" data-lightbox="galerie"><img src="data:image/png;base64,<?= $value['images_name'] ?>" data-lightbox="cozy" class="galleryPicture"></a>
                             </div>
