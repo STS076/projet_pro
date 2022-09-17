@@ -20,7 +20,7 @@ require_once '../elements/top.php';
         <div class="row justify-content-center mx-0 my-5">
             <?php foreach ($getDealByCat as $value) {
                 if ($value['deals_validate'] == 1) { ?>
-                     <div class="col-lg-3 col-11 bg-light shadow-sm mx-2 my-3 p-0">
+                    <div class="col-lg-3 col-11 bg-light shadow-sm mx-2 my-3 p-0">
                         <img src="../assets/images/tuileriesDeal.webp" class=" img-fluid m-0 p-0" alt="picture Jardin des tuileries">
                         <div class="">
                             <p class="card-title text-center fw-bold fs-5"><?= $value['deals_title'] ?></p>
@@ -33,7 +33,9 @@ require_once '../elements/top.php';
         </div>
     </main>
 
-
+    <button type="button" class="btn bouton btn-floating " id="btn-back-to-top">
+        <i class="bi bi-arrow-up-short text-white"></i>
+    </button>
 
     <?php require_once '../elements/footer.php' ?>
 

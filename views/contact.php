@@ -18,7 +18,7 @@ require_once '../elements/top.php' ?>
                     <div class="form-group col-lg-6 col-12 my-3r">
                         <label for="emailAddress">Your email address:</label>
                         <input class="form-control" id="emailAddress" placeholder="Email" name="emailAddress" value="<?= isset($_POST['emailAddress']) ? $_POST['emailAddress'] : '' ?>">
-                        <p class="text-danger" id="erroremailAddress"><?= isset($errors['emailAddress']) ? $errors['emailAddress'] : '' ?></p>
+                        <span class="text-danger" id="erroremailAddress"><?= isset($errors['emailAddress']) ? $errors['emailAddress'] : '' ?></span>
                     </div>
                     <div class=" form-group col-lg-6 col-11r">
                         <label class="py-2" for="option">Choose an option</label>
@@ -58,7 +58,10 @@ require_once '../elements/top.php' ?>
 
     <?php } ?>
 
+
+    <!-- <script src="../assets/script/script.js"></script> -->
     <?php require_once '../elements/footer.php' ?>
+    <script src="../assets/script/contact.js"></script>
 
 </body>
 

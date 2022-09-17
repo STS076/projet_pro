@@ -17,7 +17,7 @@ require_once '../controllers/infoCat-controller.php';
         </div>
         <div class="col-8 mb-3 justify-content-start">
             <?php foreach ($getDealsfromCat as $value) { ?>
-                <p>Title : <?= $value['deals_title'] ?> <a href="deals.php?choice=<?= $value['deals_id']?>">Go to Deal</a></p>
+                <p>Title : <?= $value['deals_title'] ?> <a href="deals.php?choice=<?= $value['deals_id'] ?>">Go to Deal</a></p>
             <?php } ?>
         </div>
 
@@ -27,6 +27,10 @@ require_once '../controllers/infoCat-controller.php';
             </a>
         </div>
     </div>
+
+    <button type="button" class="btn bouton btn-floating " id="btn-back-to-top">
+        <i class="bi bi-arrow-up-short text-white"></i>
+    </button>
 
     <?php include '../elements/footer.php' ?>
 

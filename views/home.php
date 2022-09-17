@@ -45,9 +45,10 @@ require_once '../elements/top.php' ?>
 
         <p class="fs-1 text-center welcome pt-5 comments">Arrondissements</p>
         <div class="row m-0 p-0 justify-content-center">
-            <div class="col-lg-8 map">
-                <iframe class="map" src="https://www.google.com/maps/d/embed?mid=1zEOpBycFxifCysQPRCzJy8cWFyh2FS0&ehbc=2E312F"></iframe>
-            </div>
+            <!-- <div class="col-lg-11 map justify-content-center"> -->
+                <img src="../assets/images/mapParis.svg" alt="paris map arrondissement clickable" class="carteParis">
+                <!-- <iframe class="map" src="https://www.google.com/maps/d/embed?mid=1zEOpBycFxifCysQPRCzJy8cWFyh2FS0&ehbc=2E312F"></iframe> -->
+            <!-- </div> -->
         </div>
 
         <div class="row mx-0 my-5 justify-content-center">

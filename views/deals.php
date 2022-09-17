@@ -32,9 +32,18 @@ require_once '../elements/top.php';
                 <?php }
                 ?>
             </p>
+
         </div>
         <div class="col-lg-5 carte">
             <?= $oneDealArray['deals_map'] ?>
+        </div>
+
+        <div class="row mx-0 mt-5 p-0 justify-content-evenly">
+            <div class="col-lg-4 col-11 p-0">
+                <p>Share this on social media : <img src="../assets/images/socials/instagram.png" alt="instagram logo" class="logo">
+                <img src="../assets/images/socials/facebook.png" alt="facebook logo" class="logo">
+                <img src="../assets/images/socials/twitter.png" alt="twitter logo" class="logo"></p>
+            </div>
         </div>
         <!-- Gellery -->
         <h3 class="fst-italic comments fw-bold text-center p-5">Gallery</h3>
@@ -113,7 +122,7 @@ require_once '../elements/top.php';
                 </div>
 
                 <div class="row justify-content-center">
-                    <div class="col-lg-8 col-11 d-flex ">
+                    <div class="col-lg-8 col-11 d-flex d-flex justify-content-center">
                         <div class="d-flex flex-column mt-2">
                             <label>Your comment :<span class="text-danger"><?= isset($errors['dealComment']) ? $errors['dealComment'] : '' ?></span></label>
                             <textarea rows="8" cols="40" name="dealComment" value="<?= isset($_POST['dealComment']) ? $_POST['dealComment'] : '' ?>"></textarea>
@@ -131,8 +140,10 @@ require_once '../elements/top.php';
         </form>
 
     </div>
-    </div>
 
+    <button type="button" class="btn bouton btn-floating " id="btn-back-to-top">
+        <i class="bi bi-arrow-up-short text-white"></i>
+    </button>
 
     <?php require_once '../elements/footer.php' ?>
 

@@ -82,6 +82,10 @@ require_once '../controllers/validateNewDeals-controller.php';
         </div>
     </div>
 
+    <button type="button" class="btn bouton btn-floating " id="btn-back-to-top">
+        <i class="bi bi-arrow-up-short text-white"></i>
+    </button>
+
     <?php include '../elements/footer.php' ?>
 
 </body>

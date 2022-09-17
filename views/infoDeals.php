@@ -3,9 +3,6 @@ session_start();
 require_once '../controllers/infoDeals-controller.php';
 $gallerie = scandir('../assets/images/gallery/');
 
-// var_dump($_SESSION);
-// var_dump($oneDealArray);
-
 require_once '../elements/top.php';
 ?>
 
@@ -50,12 +47,9 @@ require_once '../elements/top.php';
 
     </div>
 
-
-
-
-
-
-
+    <button type="button" class="btn bouton btn-floating " id="btn-back-to-top">
+        <i class="bi bi-arrow-up-short text-white"></i>
+    </button>
 
     <?php require_once '../elements/footer.php' ?>
 

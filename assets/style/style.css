@@ -292,3 +292,17 @@ footer {
 #btn-back-to-top:hover{
     background-color: #242D3C;
 }
+
+.carteParis{
+    width: 100%;
+    height: auto;
+}
+
+.logo{
+    height: 2rem;
+    width: auto;
+}
+
+.logo:hover{
+    opacity: 0.5;
+}
