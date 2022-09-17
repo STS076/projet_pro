@@ -30,6 +30,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $regexName = "/^[a-zA-Z-éèëêâäàöôûùüîïç]+$/";
     $regexPhoneNumber = "/^[0-9]{10}+$/";
+    $password = $_POST['password'];
+    $uppercase = preg_match('@[A-Z]@', $password);
+    $lowercase = preg_match('@[a-z]@', $password);
+    $number    = preg_match('@[0-9]@', $password);
+    $specialchars = preg_match('@[^\w]@', $password);
+  
 
     if (isset($_POST['firstname'])) {
         if (empty($_POST['firstname'])) {
@@ -60,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
 
-    
+
 
     if (isset($_POST['emailAddress'])) {
         $user = new Users();
@@ -79,6 +85,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['password'])) {
         if (empty($_POST['password'])) {
             $errors['password'] = "* Please enter a password";
+        } 
+        if(!$uppercase || !$lowercase || !$number || !$specialchars || strlen($password) < 8) {
+            $errors['password'] = "* Password must container an Uppercase, a lowercase, a number, a special character and must have a lenght of 8 mini";
         }
     }
 
@@ -97,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (count($errors) == 0) {
         $showForm = false;
-       
+
         $prenom = safeInput($_POST['firstname']);
         $nom = safeInput($_POST['surname']);
         $pseudo = safeInput($_POST['username']);

@@ -39,6 +39,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $regexName = "/^[a-zA-Z-éèëêâäàöôûùüîïç]+$/";
     $regexPhoneNumber = "/^[0-9]{10}+$/";
 
+  
+
     if (isset($_POST['firstname'])) {
         if (empty($_POST['firstname'])) {
             $errors['firstname'] = '*Please enter you name';
