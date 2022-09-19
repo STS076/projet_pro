@@ -1,5 +1,4 @@
 <?php
-
 if (!isset($_SESSION['user']) ||   $_SESSION['user']['role_id_ROLE'] != 1) {
     header('Location: loginAdmin.php');
     exit;
@@ -22,8 +21,5 @@ $allTagsArrArray = $arr->getAllTagArr();
 $category = new Categories();
 $allTagsCategoryArray = $category->getAllTagCategory();
 
-$role = new Role();
-$allRoleArray = $role->getAllRole();
-
-$comment = new Comments; 
-$getOnecomment = $comment->getOnecomment($_GET['info']);
+$gallery = new Images(); 
+$getOneGallery = $gallery->getOneGallery($_GET['deal']); 

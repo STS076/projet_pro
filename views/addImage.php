@@ -13,7 +13,7 @@ require_once '../elements/top.php' ?>
 
     <!-- <a href="upload.php" class="m-2 text-decoration-none text-dark p-2">upload gallery</a> -->
     <!-- <a href="home.php" class="m-2 text-decoration-none text-dark p-2">retour</a> -->
-    <p class="fw-bold fst-italic fs-3 py-3 text-center">Hello <?= $_SESSION['user']['firstname'] ?> <?= $_SESSION['user']['surname'] ?></p>
+    <!-- <p class="fw-bold fst-italic fs-3 py-3 text-center">Hello <?= $_SESSION['user']['firstname'] ?> <?= $_SESSION['user']['surname'] ?></p> -->
 
 
 

@@ -1,6 +1,6 @@
 <?php
 
-if (!isset($_SESSION['user'])) {
+if (!isset($_SESSION['user']) ||   $_SESSION['user']['role_id_ROLE'] != 1) {
     header('Location: loginAdmin.php');
     exit;
 }
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $tagArrObj = new Arrondissements();
         $tagArrObj->amendArr($_GET['amend'], $tagArr, $_POST['tagArrSummary'], );
 
-        header('location: allTagsArr.php');
+        header('location: amendArr.php?amend=' . $_GET['amend']);
         exit;
     }
 }

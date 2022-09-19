@@ -99,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $user = new Users();
         $user->amendUser($pseudo,  $prenom,  $nom,  $adresseEmail, $_POST['role_id_ROLE'], $_GET['amend']);
 
-        header('location: dashboard-users.php');
+        header('location: amendUsers.php?amend=' . $_GET['amend']);
         exit;
     }
 }

@@ -22,7 +22,7 @@ require_once '../elements/top.php';
                     <?php foreach ($getDealByCat as $value) {
                         if ($value['deals_validate'] == 1) { ?>
 
-                            <div class="col-lg-3 col-11 bg-light shadow-sm mx-2 my-3 py-3">
+                            <div class="col-lg-3 col-11 bg-light shadow-sm mx-2 my-3 p-0">
                                 <img src="../assets/images/tuileriesDeal.webp" class=" img-fluid m-0 p-0" alt="picture Jardin des tuileries">
                                 <div class="">
                                     <p class="card-title text-center fw-bold fs-5"><?= $value['deals_title'] ?></p>

@@ -150,7 +150,9 @@ require_once '../elements/top.php';
 
 
     <?php } else { ?>
-        <p>Ce deal n'existe pas</p>
+        <div class="container bg-light col-lg-8 text-center rounded my-5 py-5 border border-dark shadow">
+            <p>This deal does not exist</p>
+        </div>
     <?php }
     ?>
 

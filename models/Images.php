@@ -58,4 +58,19 @@ class Images extends Database
         $result = $query->fetchAll();
         return $result;
     }
+
+    public function getOneGallery($deals_id_DEALS): array
+    {
+        $pdo = parent::connectDb();
+        $sql = "SELECT * FROM `images` 
+        inner join deals 
+        on deals_id_DEALS=deals_id
+        where deals_id_DEALS=:deals_id_DEALS";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':deals_id_DEALS', $deals_id_DEALS, PDO::PARAM_STR);
+        $query->execute();
+
+        $result = $query->fetchAll();
+        return $result;
+    }
 }

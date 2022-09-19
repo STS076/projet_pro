@@ -196,7 +196,7 @@ footer {
 /*  */
 @media screen and (min-width:600px) {
     .map {
-        width: 600px;
+        width: 700px;
         height: 450px;
     }
 
