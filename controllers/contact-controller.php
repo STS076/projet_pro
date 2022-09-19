@@ -40,14 +40,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    if (isset($_POST['review'])){
-        if (empty($_POST['review'])){
-            $errors['review'] = " * please fill in your message"; 
+    if (isset($_POST['review'])) {
+        if (empty($_POST['review'])) {
+            $errors['review'] = " * please fill in your message";
         }
     }
 
-    if (!isset($_POST['option'])) {
-        $errors['option'] = "* please choose an option";
+    if (isset($_POST['option'])) {
+        if (empty($_POST['option'])) {
+            $errors['option'] = "* please choose an option";
+        }
     }
 
     if (!isset($_POST['checkbox'])) {
@@ -97,4 +99,3 @@ Vous pouvez prendre tout le contenu de cette page pour l'insérer là où vous v
        
 //     }
 // }
-

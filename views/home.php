@@ -45,14 +45,15 @@ require_once '../elements/top.php' ?>
 
         <p class="fs-1 text-center welcome pt-5 comments">Arrondissements</p>
         <div class="row m-0 p-0 justify-content-center">
-            <!-- <div class="col-lg-11 map justify-content-center"> -->
-                <img src="../assets/images/mapParis.svg" alt="paris map arrondissement clickable" class="carteParis">
+
+            <div class="col-12 map justify-content-center">
+                <!-- <img src="../assets/images/mapParis.svg" alt="paris map arrondissement clickable" class="carteParis"> -->
+                <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d68619.27405620199!2d2.2994927448923677!3d48.861985351799326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2sParis!5e0!3m2!1sfr!2sfr!4v1663587238667!5m2!1sfr!2sfr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 <!-- <iframe class="map" src="https://www.google.com/maps/d/embed?mid=1zEOpBycFxifCysQPRCzJy8cWFyh2FS0&ehbc=2E312F"></iframe> -->
-            <!-- </div> -->
+            </div>
         </div>
 
         <div class="row mx-0 my-5 justify-content-center">
-
             <?php foreach ($allTagsArrArray as $value) {
             ?>
                 <div class="col-lg-3 col-11 m-3 p-0 cardarr">
@@ -62,9 +63,7 @@ require_once '../elements/top.php' ?>
                     </div>
                 </div>
             <?php } ?>
-
         </div>
-
     </main>
 
 

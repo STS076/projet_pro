@@ -56,14 +56,13 @@ require_once '../elements/top.php' ?>
                     <button class="btn bouton border border-dark text-light" id="submit" name="submit">Sign Up</button>
                 </div>
                 <div>
-                    <a href="signIn.php" class="text-dark">Log in if you already have an account </a>
+                    <a href="loginAdmin.php" class="text-dark">Log in if you already have an account </a>
                 </div>
 
             </div>
         </form>
 
     <?php } else { ?>
-
 
         <div class="container bg-light col-lg-8  bienvenue d-flex align-items-center flex-column rounded my-5 py-3 border border-dark shadow">
             <p class="text-center fs-6 py-5">Thank you for signing up <?= $_POST['firstname']  ?>, you can now login with your username and passoword. .</p>

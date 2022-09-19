@@ -126,7 +126,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // $allcatarray = $cat->getDealCategory($_GET['amend']);
         // si tout est bon et que le deal a été créé alors va retourner vers le dashboard deals
-        header('location: dashboard-deals.php');
+        header('location: amendDeals.php?amend='. $_GET['amend']);
         exit;
     }
 }

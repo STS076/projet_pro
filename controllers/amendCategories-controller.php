@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $tagCatObj = new Categories();
         $tagCatObj->amendCategory($_GET['amend'], $tagCategory, $_POST['tag_categories_summary']);
 
-        header('location: allTagsCategory.php');
+        header('location: amendCategories.php?amend=' . $_GET['amend']);
         exit;
     }
 }

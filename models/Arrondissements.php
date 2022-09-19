@@ -52,11 +52,11 @@ class Arrondissements extends Database {
         $pdo = parent::connectDb();
         $sql = "SELECT * 
         from `tag_arr` 
-        inner join deals 
-        on tag_arr_id_TAG_ARR=tag_arr_id 
+        -- inner join deals 
+        -- on tag_arr_id_TAG_ARR=tag_arr_id 
         where `tag_arr_id`=:tag_arr_id";
         $query = $pdo->prepare($sql);
-        $query->bindValue(':tag_arr_id', $tag_arr_id, PDO::PARAM_STR);
+        $query->bindValue(':tag_arr_id', $tag_arr_id, PDO::PARAM_INT);
         $query->execute();
         $result = $query->fetch();
         return $result;

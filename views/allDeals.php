@@ -10,34 +10,13 @@ require_once '../controllers/allDeals-controller.php';
 
     <div class="container bienvenue d-flex align-items-center flex-column rounded my-5 p-5 border border-dark shadow">
 
-        <div class="row">
-            <div class="col-3 mx-4">
-                <form method="POST" action="" class="my-4">
-                    <select id="dealTagArr" value="" name="dealTagArr">
-                        <option value="">Filter by Arr</option>
-                        <?php foreach ($allTagsArrArray as $value) { ?>
-                            <option value="<?= $value['tag_arr_id'] ?>" name="dealTagArr[<?= $value['tag_arr_id'] ?>]"><?= $value['tag_arr_name'] ?></option>
-                        <?php } ?>
-                    </select>
-                    <input type="submit" value="Search">
-                </form>
-            </div>
-            <div class="col-3 mx-4">
-                <form method="POST" action="" class="my-4">
-                    <select id="dealTagCat" " name=" dealTagCat[]">
-                        <option value="">Filter by cat</option>
-                        <?php foreach ($allTagsCategoryArray as $value) { ?>
-                            <option class="fontCat" value=""><?= $value['tag_categories_name'] ?></option>
-                        <?php } ?>
-                    </select>
-                    <input type="submit" value="Search">
-                </form>
-            </div>
+        <div class="d-flex justify-content-start">
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for a category..." class="px-5 my-2 shadow-sm myInput">
         </div>
 
         <div class="col-lg-12 col-11 text-center">
             <div class="table-responsive table-hover">
-                <table class="table">
+                <table class="table" id="myTable">
                     <thead>
                         <tr>
                             <!-- <th class="text-center">#</th> -->
@@ -120,6 +99,7 @@ require_once '../controllers/allDeals-controller.php';
     </div>
 
     <?php include '../elements/footer.php' ?>
+    <script src="../assets/script/filter.js"></script>
 
 </body>
 

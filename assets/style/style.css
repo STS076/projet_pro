@@ -187,6 +187,10 @@ footer {
     background-color: #242D3C;
 }
 
+.bouton:hover {
+    background-color: #242D3C;
+}
+
 /*  */
 /* google map */
 /*  */
@@ -289,20 +293,40 @@ footer {
     right: 20px;
     display: none;
 }
-#btn-back-to-top:hover{
+
+#btn-back-to-top:hover {
     background-color: #242D3C;
 }
 
-.carteParis{
+.carteParis {
     width: 100%;
     height: auto;
 }
 
-.logo{
+.logo {
     height: 2rem;
     width: auto;
 }
 
-.logo:hover{
+.logo:hover {
     opacity: 0.5;
+}
+
+#myInput {
+    background-image: url('/css/searchicon.png');
+    /* Add a search icon to input */
+    background-position: 10px 12px;
+    /* Position the search icon */
+    background-repeat: no-repeat;
+    /* Do not repeat the icon image */
+    width: 100%;
+    /* Full-width */
+    font-size: 16px;
+    /* Increase font-size */
+    padding: 12px 20px 12px 40px;
+    /* Add some padding */
+    border: 1px solid #ddd;
+    /* Add a grey border */
+    margin-bottom: 12px;
+    /* Add some space below the input */
 }

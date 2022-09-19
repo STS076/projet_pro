@@ -153,7 +153,7 @@ class Deals extends Database
         return $result;
     }
 
-    public function getOneDeal($deals_id): array
+    public function getOneDeal($deals_id)
     {
         $pdo = parent::connectDb();
         $sql = "SELECT deals_id, deals_title, deals_summary, deals_mini_summary, deals_contact, deals_validate, deals_mini_summary, users_username, deals_when, deals_where, deals_price, deals_metro, deals_map, deals_info, 

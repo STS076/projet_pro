@@ -1,1 +1,4 @@
+Options All -Indexes
+
 ErrorDocument 404 /error404.php
+

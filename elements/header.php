@@ -17,15 +17,10 @@
             <li class="nav-item">
                 <a class="nav-link active titre box fw-bold text-black me-5" href="news.php">News</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-black  fw-bold me-5" href=id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="arrondissements.php">
-                    Arrondissements
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <?php foreach ($allTagsArrArray as $value) { ?>
-                        <li><a class="dropdown-item" href="arrondissements.php?choice=<?= $value['tag_arr_id'] ?>"><?= $value['tag_arr_name'] ?></a></li>
-                    <?php } ?>
-                </ul>
+           
+            <li class="nav-item">
+                <a class="nav-link active titre box fw-bold text-black me-5" href="allArrondissements.php">Arrondissements</a>
+            </li>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-black  fw-bold me-5" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -39,7 +34,10 @@
                 </ul>
             </li>
             <li class="nav-item">
-                <a class="nav-link active titre box fw-bold text-black" href="contact.php">Contact us</a>
+                <a class="nav-link active titre box fw-bold text-black me-5" href="contact.php">Contact us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active titre box fw-bold text-black" href="loginAdmin.php"><i class="bi bi-person-circle"></i></a>
             </li>
         </ul>
     </div>

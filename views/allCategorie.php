@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../controllers/categories-controller.php';
+require_once '../controllers/allCategories-controller.php';
 require_once '../elements/top.php';
 ?>
 

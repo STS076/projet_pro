@@ -18,21 +18,21 @@ require_once '../elements/top.php' ?>
                     <div class="form-group col-lg-6 col-12 my-3r">
                         <label for="emailAddress">Your email address:</label>
                         <input class="form-control" id="emailAddress" placeholder="Email" name="emailAddress" value="<?= isset($_POST['emailAddress']) ? $_POST['emailAddress'] : '' ?>">
-                        <span class="text-danger" id="erroremailAddress"><?= isset($errors['emailAddress']) ? $errors['emailAddress'] : '' ?></span>
+                        <span data-span="error-emailAddress" class="text-danger" id="erroremailAddress"><?= isset($errors['emailAddress']) ? $errors['emailAddress'] : '' ?></span>
                     </div>
                     <div class=" form-group col-lg-6 col-11r">
-                        <label class="py-2" for="option">Choose an option</label>
+                        <label class="py-2" for="option">Reason for contact</label>
                         <select class="form-control" name="option" id="option">
-                            <option value=""></option>
+                            <option value="">Please choose </option>
                             <option value="New Deal">This concerns a new deal</option>
                             <option value="Mistake">There is a mistake in one of our ads</option>
                         </select>
-                        <p class="text-danger" id="erroroption"><?= isset($errors['option']) ? $errors['option'] : '' ?></p>
+                        <span data-span="error-option" class="text-danger" id="erroroption"><?= isset($errors['option']) ? $errors['option'] : '' ?></span>
                     </div>
 
 
                     <div class="form-group col-lg-6 col-12 my-3r">
-                        <label>Your message: <span class="text-danger" id="errorreview"><?= isset($errors['review']) ? $errors['review'] : '' ?></span></label>
+                        <label name="review">Your message: <span data-span="" class="text-danger" id="errorreview"><?= isset($errors['review']) ? $errors['review'] : '' ?></span></label>
                         <textarea class="form-control" name="review" rows="8" cols="40" value="<?= isset($_POST['review']) ? $_POST['review'] : '' ?>"></textarea>
                     </div>
                     <div class="row text-center">
@@ -59,7 +59,7 @@ require_once '../elements/top.php' ?>
     <?php } ?>
 
 
-    <!-- <script src="../assets/script/script.js"></script> -->
+
     <?php require_once '../elements/footer.php' ?>
     <script src="../assets/script/contact.js"></script>
 
