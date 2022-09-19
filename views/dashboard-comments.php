@@ -12,7 +12,7 @@ require_once '../elements/top.php';
     <?php require_once '../elements/header.php' ?>
 
 
-    <div class="container rounded d-flex align-items-center flex-column  bg-light border border-dark shadow-sm p-5 my-5 ">
+    <div class="container  d-flex align-items-center flex-column  bg-light shadow-sm p-5 my-5 ">
         <?php if ($_SESSION['user']['role_id_ROLE'] != 1) { ?>
             <p class="fw-bold fs-4 fst-italic p-2 text-center"> Welcome <?= $_SESSION['user']['users_name'] ?> </p>
         <?php } ?>

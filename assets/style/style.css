@@ -196,8 +196,8 @@ footer {
 /*  */
 @media screen and (min-width:600px) {
     .map {
-        width: 700px;
-        height: 450px;
+        width: 100%;
+        height: auto;
     }
 
 }
@@ -329,4 +329,33 @@ footer {
     /* Add a grey border */
     margin-bottom: 12px;
     /* Add some space below the input */
+}
+
+.back {
+    background-color: #cdfbfd;
+}
+
+.back:hover {
+    background-color: #cdfbfd;
+}
+
+.thankYou {
+    font-size: 0.8rem;
+    color: grey;
+}
+
+.background {
+    background: rgba(0, 0, 0, 0.1) url("../images/arcDeTriomphe.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+}
+
+.backgroundAdmin{
+    background: rgba(0, 0, 0, 0.1) url("../images/backgroundAdmin.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
 }

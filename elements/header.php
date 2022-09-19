@@ -17,7 +17,7 @@
             <li class="nav-item">
                 <a class="nav-link active titre box fw-bold text-black me-5" href="news.php">News</a>
             </li>
-           
+
             <li class="nav-item">
                 <a class="nav-link active titre box fw-bold text-black me-5" href="allArrondissements.php">Arrondissements</a>
             </li>
@@ -37,7 +37,15 @@
                 <a class="nav-link active titre box fw-bold text-black me-5" href="contact.php">Contact us</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active titre box fw-bold text-black" href="loginAdmin.php"><i class="bi bi-person-circle"></i></a>
+                <?php if (!isset($_SESSION)) { ?>
+                    <a class="nav-link active titre box fw-bold text-black" href="loginAdmin.php">
+                        <i class="bi bi-person-circle"></i>
+                    </a>
+                <?php } else { ?>
+                    <a class="nav-link active titre box fw-bold text-black" href="dashboard.php">
+                        <i class="bi bi-person-circle"></i>
+                    </a>
+                <?php } ?>
             </li>
         </ul>
     </div>

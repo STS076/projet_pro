@@ -21,6 +21,7 @@ $allTagsArrArray = $arr->getAllTagArr();
 $category = new Categories();
 $allTagsCategoryArray = $category->getAllTagCategory();
 
+$showForm = true;
 
 
 // va faire les vérifications du formulaire, s'il est bien remplis, si aucune erreur. 
@@ -96,6 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
     if (count($errors) == 0) {
+        $showForm = false;
         $dealTitle = safeInput($_POST['dealTitle']);
         $dealWhen = safeInput($_POST['dealWhen']);
         $dealWhere = safeInput($_POST['dealWhere']);
@@ -121,8 +123,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $allcatarray = $cat->getDealCategory($idDeals);
         // si tout est bon et que le deal a été créé alors va retourner vers le dashboard deals
-        header('location: dashboard-deals.php');
-        exit;
+        // header('location: addDeal.php');
+        // exit;
     }
 }
 

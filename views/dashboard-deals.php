@@ -7,12 +7,12 @@ require_once '../controllers/dashboard-deals-controller.php';
 require_once '../elements/top.php';
 ?>
 
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100 backgroundAdmin">
 
     <?php require_once '../elements/header.php' ?>
 
 
-    <div class="container rounded d-flex align-items-center flex-column  bg-light border border-dark shadow-sm p-5 my-5 ">
+    <div class="container  d-flex align-items-center flex-column  bg-light shadow-sm p-5 my-5 ">
 
         <div class="row align-item">
             <div class="col text-center m-3">
@@ -42,7 +42,7 @@ require_once '../elements/top.php';
         <?php  } else { ?>
             <div class="text-center py-3">
                 <a class="text-decoration-none" href="dashboard.php">
-                    <button class="btn text-white bg-info">Back</button>
+                    <button class="btn text-dark back">Back</button>
                 </a>
             </div>
         <?php } ?>

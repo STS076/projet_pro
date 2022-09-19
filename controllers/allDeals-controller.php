@@ -30,6 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 $deals = new Deals(); 
 $AllDealsArray = $deals->getAllDeals(); 
+$getDealsByUser = $deals->getDealsByUser($_SESSION['user']['users_id']);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['reactivate'])) {

@@ -45,6 +45,15 @@ require_once '../elements/top.php';
 
             <div class="row mx-0 mt-5 p-0 justify-content-evenly">
                 <div class="col-lg-4 col-11 p-0">
+
+
+                    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-632863504688b042"></script>
+
+                    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                    <div class="addthis_inline_share_toolbox"></div>
+
+
                     <p>Share this on social media : <img src="../assets/images/socials/instagram.png" alt="instagram logo" class="logo">
                         <img src="../assets/images/socials/facebook.png" alt="facebook logo" class="logo">
                         <img src="../assets/images/socials/twitter.png" alt="twitter logo" class="logo">
@@ -140,10 +149,12 @@ require_once '../elements/top.php';
                             <button class="btn bouton text-light" name="submit">Submit review</button>
                         </div>
                     </div>
-
                 </div>
-
             </form>
+            <div class="thankYou">
+                Thank you for you comment, please note that in order to avoird spam, your review will be published after validation
+            </div>
+            
 
         </div>
 
