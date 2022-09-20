@@ -82,4 +82,17 @@ class Images extends Database
         $result = $query->fetchAll();
         return $result;
     }
+
+    /**
+     * supprime l'image
+     */
+    public function deleteImage($images_id)
+    {
+        $pdo = parent::connectDb();
+        $sql = "DELETE from images 
+        where images_id=:images_id";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':images_id', $images_id, PDO::PARAM_INT);
+        $query->execute();
+    }
 }

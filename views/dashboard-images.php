@@ -15,9 +15,9 @@ require_once '../elements/top.php' ?>
             <div class="col text-center m-3">
                 <a href="allGallery.php"> <button class="text-center text-center text-light rounded  boutons">Add an image to a gallery</button></a>
             </div>
-            <!-- <div class="col text-center m-3">
-                <a href="galleries.php"> <button class="text-center text-center text-light  rounded boutons">all galleries</button></a>
-            </div> -->
+            <div class="col text-center m-3">
+                <a href="manageGalleries.php"> <button class="text-center text-center text-light  rounded boutons">Manage Galleries</button></a>
+            </div>
         </div>
         <div class="mt-5">
             <a class="text-decoration-none" href="dashboard.php">

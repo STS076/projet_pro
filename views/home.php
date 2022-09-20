@@ -27,17 +27,33 @@ require_once '../elements/top.php' ?>
             </div>
         </div> -->
 
-        <div class=" row justify-content-evenly mx-0 py-5 bg-light shadow">
-            <div class="col-lg-2 col-11 bg-warning mx-2 my-3 py-5 d-flex align-items-center">
+        <div class=" row justify-content-evenly mx-0 my-5 py-5 bg-light shadow">
+            <div class="col-lg-2 col-11 hotDeals mx-1 my-3 py-5 d-flex align-items-center">
                 <p class="text-light fw-bold fs-2 text-center welcome">Our better rated deals</p>
             </div>
             <?php foreach ($hotDeals as $value) { ?>
                 <div class="col-lg-2 col-11 bg-light shadow-sm mx-2 my-3 p-0">
                     <img src="../assets/images/tuileriesDeal.webp" class="m-0 p-0 img-fluid" alt="picture Jardin des tuileries">
                     <div class="">
-                        <p class="text-center fw-bold fs-5 text-warning my-1"><?= $value['deals_title'] ?></p>
+                        <p class="text-center fw-bold fs-5 hotDealsWrite my-1"><?= $value['deals_title'] ?></p>
                         <p class=""><?= $value['deals_mini_summary'] ?></p>
-                        <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="text-warning">Explore</a>
+                        <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="hotDealsWrite">Explore</a>
+                    </div>
+                </div>
+            <?php } ?>
+        </div>
+
+        <div class=" row justify-content-evenly my-5 mx-0 py-5 bg-light shadow">
+            <div class="col-lg-2 col-11 newDeals mx-1 my-3 py-5 d-flex align-items-center">
+                <p class="text-light fw-bold fs-2 text-center welcome">Our brand new deals</p>
+            </div>
+            <?php foreach ($lastTenDeals as $value) { ?>
+                <div class="col-lg-2 col-11 bg-light shadow-sm mx-2 my-3 p-0">
+                    <img src="../assets/images/tuileriesDeal.webp" class="m-0 p-0 img-fluid" alt="picture Jardin des tuileries">
+                    <div class="">
+                        <p class="text-center fw-bold fs-5 newDealsWrite my-1"><?= $value['deals_title'] ?></p>
+                        <p class=""><?= $value['deals_mini_summary'] ?></p>
+                        <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="newDealsWrite">Explore</a>
                     </div>
                 </div>
             <?php } ?>

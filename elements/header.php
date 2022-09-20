@@ -14,9 +14,9 @@
             <li class="nav-item d-flex">
                 <a href="home.php" class="nav-link fw-bold text-black me-5">Home</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link active titre box fw-bold text-black me-5" href="news.php">News</a>
-            </li>
+            </li> -->
 
             <li class="nav-item">
                 <a class="nav-link active titre box fw-bold text-black me-5" href="allArrondissements.php">Arrondissements</a>
@@ -67,11 +67,11 @@
                         <a href="home.php" class="nav-link fw-bold text-dark">Home</a>
 
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link active titre box fw-bold text-dark" href="news.php">News</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
-                        <a class="nav-link active titre box fw-bold text-black me-5" href="allArrondissements.php">Arrondissements</a>
+                        <a class="nav-link active titre box fw-bold text-black me-5 " href="allArrondissements.php">Arrondissements</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-black  fw-bold me-5" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

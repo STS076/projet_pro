@@ -249,7 +249,7 @@ class Deals extends Database
         on tag_arr_id_TAG_ARR=tag_arr_id
         group by deals_id
         ORDER BY deals_id 
-        DESC LIMIT 10";
+        DESC LIMIT 4";
         $query = $pdo->query($sql);
         $result = $query->fetchall();
         return $result;
@@ -298,7 +298,7 @@ class Deals extends Database
         on deals_id_DEALS=deals_id
         group by deals_id_DEALS 
         order by AverageRating desc 
-        limit 3";
+        limit 4";
         $query = $pdo->query($sql);
         $result = $query->fetchall();
         return $result;

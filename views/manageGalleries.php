@@ -21,9 +21,7 @@ require_once '../controllers/allGallery-controller.php';
                         <tr>
                             <!-- <th class="text-center">#</th> -->
                             <th class="text-center">Title</th>
-                            <th class="text-center">Add an Image</th>
-                            <th class="text-center">Gallery</th>
-
+                            <th class="text-center">Delete an Image</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -32,13 +30,8 @@ require_once '../controllers/allGallery-controller.php';
                             <tr>
                                 <td class="text-center"><?= $value['deals_title'] ?></td>
                                 <td class="text-center">
-                                    <a class="text-light btn bouton" href="upload.php?deal=<?= $value['deals_id'] ?>">
-                                        add an imge
-                                    </a>
-                                </td>
-                                <td class="text-center">
-                                    <a class="text-light btn bouton" href="gallery.php?deal=<?= $value['deals_id'] ?>">
-                                        Gallery
+                                    <a class="text-light btn bg-danger" href="deleteImage.php?deal=<?= $value['deals_id'] ?>">
+                                        Delete
                                     </a>
                                 </td>
                             </tr>

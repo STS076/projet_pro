@@ -122,6 +122,22 @@ footer {
     width: 95%;
 }
 
+.newDeals{
+    background-color:rgb(0, 0, 77) ;
+}
+
+.newDealsWrite{
+    color:rgb(0, 0, 77)  ;
+}
+
+.hotDeals {
+    background-color: #FCCF4E;
+}
+
+.hotDealsWrite{
+    color: #FCCF4E;
+}
+
 /* augmenter la taille des card quand hover */
 .cardarr:hover {
     transition: transform .2s;
@@ -277,9 +293,7 @@ footer {
     color: goldenrod;
 }
 
-.hotDeals {
-    background-color: goldenrod;
-}
+
 
 /* back to the top */
 

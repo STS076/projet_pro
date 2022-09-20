@@ -1,4 +1,4 @@
-<footer class="d-flex flex-wrap justify-content-evenly mt-auto py-4 ">
+<footer class="d-flex flex-wrap justify-content-evenly mt-auto py-3 ">
     <div class="">
         <span class="ms-3 text-white">
             <a class="text-decoration-none text-white"> © Sophie Toussaint </a>
@@ -10,7 +10,6 @@
     <div class="text-white">
         <a href="SignUp.php" class=" m-0 p-0 text-white text-decoration-none"> Sign Up</a>
     </div>
-
 </footer>
 
 
@@ -29,5 +28,4 @@
 <script src="../assets/dist/js/lightbox-plus-jquery.js"></script>
 <script src="../assets/dist/js/lightbox-plus-jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-latest.js"></script>
-
 <script src="../assets/script/script.js"></script>
