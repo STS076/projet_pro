@@ -14,7 +14,7 @@ require_once '../elements/top.php' ?>
     <main class="bg-white py-5">
         <div class="row m-0 p-0 justify-content-center">
             <div class="col-lg-8 col-11">
-                <p class=" text-center welcome2 ">Welcome</p>
+                <p class=" text-center welcome2 ">Welcome in Paris</p>
                 <!-- <p><?= $_SESSION['user']['users_name'] ?></p> -->
                 <p class="fs-6 text-center">You want to visit the most beautiful city in the world, but do not want to get ruined ? Well, you've come to the right place, welcome to <span class="fst-italic">it's always better when it's free</span> where you can learn all about free activities in Paris and other good deals.</p>
             </div>
@@ -35,9 +35,11 @@ require_once '../elements/top.php' ?>
                 <div class="col-lg-2 col-11 bg-light shadow-sm mx-2 my-3 p-0">
                     <img src="../assets/images/tuileriesDeal.webp" class="m-0 p-0 img-fluid" alt="picture Jardin des tuileries">
                     <div class="">
-                        <p class="text-center fw-bold fs-5 hotDealsWrite my-1"><?= $value['deals_title'] ?></p>
+                        <p class="text-center fw-bold fs-5 newDealsWrite my-1"><?= $value['deals_title'] ?></p>
                         <p class=""><?= $value['deals_mini_summary'] ?></p>
-                        <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="hotDealsWrite">Explore</a>
+                        <div class="d-flex justify-content-end">
+                            <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="newDealsWrite">Explore</a>
+                        </div>
                     </div>
                 </div>
             <?php } ?>
@@ -53,7 +55,9 @@ require_once '../elements/top.php' ?>
                     <div class="">
                         <p class="text-center fw-bold fs-5 newDealsWrite my-1"><?= $value['deals_title'] ?></p>
                         <p class=""><?= $value['deals_mini_summary'] ?></p>
-                        <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="newDealsWrite">Explore</a>
+                        <div class="d-flex justify-content-end">
+                            <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="newDealsWrite">Explore</a>
+                        </div>
                     </div>
                 </div>
             <?php } ?>

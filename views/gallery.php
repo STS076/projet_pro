@@ -10,7 +10,7 @@ require_once '../controllers/gallery-controller.php';
     <?php include '../elements/header.php' ?>
 
     <main>
-        <h2 class="text-center pt-5 fst-italic comments">Gallery for <?= $getOneGallery[0]['deals_title']?> </h2>
+        <h2 class="text-center pt-5 fst-italic comments">Gallery for <?= $oneDealArray['deals_title']?> </h2>
         <div class="container p-5">
             <div class="row justify-content-center " data-masonry='{ "percentPosition": true }'>
                 <?php

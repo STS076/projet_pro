@@ -95,4 +95,20 @@ class Images extends Database
         $query->bindValue(':images_id', $images_id, PDO::PARAM_INT);
         $query->execute();
     }
+
+    /**
+     * permet de récupérer les roles
+     */
+    public function getDealsWithImages(): array
+    {
+        $pdo = parent::connectDb();
+
+        $sql = "SELECT * FROM `images` 
+        inner join deals 
+        on deals_id_DEALS=deals_id";
+
+        $query = $pdo->query($sql);
+
+        return $query->fetchAll();
+    }
 }

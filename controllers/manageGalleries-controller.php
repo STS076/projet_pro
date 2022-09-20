@@ -1,4 +1,5 @@
 <?php
+
 if (!isset($_SESSION['user']) ||   $_SESSION['user']['role_id_ROLE'] != 1) {
     header('Location: loginAdmin.php');
     exit;
@@ -13,7 +14,6 @@ require_once '../models/DealsHasCat.php';
 require_once '../models/Images.php';
 require_once '../models/Role.php';
 require_once '../models/Users.php';
-require_once '../models/Comments.php';
 
 $arr = new Arrondissements();
 $allTagsArrArray = $arr->getAllTagArr();
@@ -21,9 +21,8 @@ $allTagsArrArray = $arr->getAllTagArr();
 $category = new Categories();
 $allTagsCategoryArray = $category->getAllTagCategory();
 
-$gallery = new Images(); 
-$getOneGallery = $gallery->getOneGallery($_GET['deal']); 
+$deals = new Deals(); 
+$AllDealsArray = $deals->getAllDeals(); 
 
-$deals = new Deals();
-$AllDealsArray = $deals->getAllDeals();
-$oneDealArray = $deals->getOneDeal($_GET['deal']);
+$images = new Images(); 
+$getDealsWithImages = $images->getDealsWithImages();

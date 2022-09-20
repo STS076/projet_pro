@@ -35,7 +35,7 @@ require_once '../elements/top.php' ?>
                                 <?= isset($errors['dealMiniSummary']) ? $errors['dealMiniSummary'] : '' ?>
                             </span>
                         </label>
-                        <textarea type="text" id="dealMiniSummary" placeholder="Summary on cards" value="<?= isset($_POST['dealMiniSummary']) ? $_POST['dealMiniSummary'] : '' ?>" name="dealMiniSummary"></textarea>
+                        <textarea type="text" id="dealMiniSummary" placeholder="Summary on cards" value="" name="dealMiniSummary"><?= isset($_POST['dealMiniSummary']) ? $_POST['dealMiniSummary'] : '' ?></textarea>
                     </div>
                     <div class="d-flex flex-column">
                         <label class="py-2" for="dealSummary">
@@ -44,7 +44,7 @@ require_once '../elements/top.php' ?>
                                 <?= isset($errors['dealSummary']) ? $errors['dealSummary'] : '' ?>
                             </span>
                         </label>
-                        <textarea type="text" id="dealSummary" placeholder="Summary on deal presentation" value="<?= isset($_POST['dealSummary']) ? $_POST['dealSummary'] : '' ?>" name="dealSummary"></textarea>
+                        <textarea type="text" id="dealSummary" placeholder="Summary on deal presentation" value="" name="dealSummary"><?= isset($_POST['dealSummary']) ? $_POST['dealSummary'] : '' ?></textarea>
                     </div>
                     <div class="d-flex flex-column">
                         <label class="py-2" for="dealWhen">
@@ -118,7 +118,8 @@ require_once '../elements/top.php' ?>
                         <select id="dealTagArr" value="<?= isset($_POST['dealTagArr']) ? $_POST['dealTagArr'] : '' ?>" name="dealTagArr">
                             <option value="">Please select an Arrondissement</option>
                             <?php foreach ($allTagsArrArray as $value) { ?>
-                                <option value="<?= $value['tag_arr_id'] ?>" name="dealTagArr[<?= $value['tag_arr_id'] ?>]"><?= $value['tag_arr_name'] ?></option>
+                                <option value="<?= $value['tag_arr_id'] ?>" name="dealTagArr[<?= $value['tag_arr_id'] ?>]">
+                                    <?= $value['tag_arr_name'] ?></option>
                             <?php } ?>
                         </select>
                     </div>
@@ -132,7 +133,8 @@ require_once '../elements/top.php' ?>
                         <select id="dealTagCat" multiple value="<?= isset($_POST['dealTagCat']) ? $_POST['dealTagCat'] : '' ?>" name="dealTagCat[]">
                             <option value="">Please select a Category</option>
                             <?php foreach ($allTagsCategoryArray as $value) { ?>
-                                <option class="fontCat" value="<?= $value['tag_categories_id'] ?>" name="dealTagCat[<?= $value['tag_categories_id'] ?>]"><?= $value['tag_categories_name'] ?></option>
+                                <option class="fontCat" value="<?= $value['tag_categories_id'] ?>" name="dealTagCat[<?= $value['tag_categories_id'] ?>]"><?= $value['tag_categories_name'] ?>
+                                </option>
                             <?php } ?>
                         </select>
 
@@ -145,7 +147,8 @@ require_once '../elements/top.php' ?>
             <?php } else { ?>
 
                 <!-- <div class="container bg-light col-lg-8  bienvenue d-flex align-items-center flex-column rounded my-5 py-3 border border-dark shadow"> -->
-                <p class="text-center fs-6 py-5">Thank you for submitting this deal, our moderation team will review it as soon as they can. </p>
+                <p class="text-center fs-6 py-5">Thank you for submitting this deal, our moderation team will review it as
+                    soon as they can. </p>
                 <!-- </div> -->
             <?php }
             ?>

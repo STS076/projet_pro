@@ -22,10 +22,11 @@ require_once '../elements/top.php';
             <p><span class="fw-bolder">How to get here : </span><?= $oneDealArray['deals_metro']  ?></p>
             <p><span class="fw-bolder">More info : </span><?= $oneDealArray['deals_info']  ?></p>
             <p> <span class="fw-bolder">Tags : </span>
-                <a href="arrondissements.php?choice=<?= $oneDealArray['tag_arr_id_TAG_ARR']  ?>" class="links"># <?= $oneDealArray['tag_arr_name']  ?></a>
-
+                <a class="links"># <?= $oneDealArray['tag_arr_name']  ?></a>
+                <!-- href="arrondissements.php?choice=<?= $oneDealArray['tag_arr_id_TAG_ARR']  ?>" -->
                 <?php foreach (explode(', ', $oneDealArray['DealsCatTag']) as $value) { ?>
-                    <a href="categories.php?category=<?= $value ?>" class="links"># <?= $value ?></a>
+                    <a  class="links"># <?= $value ?></a>
+                    <!-- href="categories.php?category=<?= $value ?>" -->
                 <?php }
                 ?>
             </p>
@@ -39,11 +40,13 @@ require_once '../elements/top.php';
                 <button class="btn text-white bg-info">back</button>
             </a>
         </div>
-        <div class="mt-5 text-center">
-            <a class="text-decoration-none" href="amendDeals.php?amend=<?= $oneDealArray['deals_id'] ?>">
-                <button class="btn text-white bg-info">Amend</button>
-            </a>
-        </div>
+        <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>
+            <div class="mt-5 text-center">
+                <a class="text-decoration-none" href="amendDeals.php?amend=<?= $oneDealArray['deals_id'] ?>">
+                    <button class="btn text-white bg-info">Amend</button>
+                </a>
+            </div>
+        <?php } ?>
 
     </div>
 

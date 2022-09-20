@@ -34,7 +34,7 @@ require_once '../elements/top.php' ?>
 
                         <div class="form-group col-lg-6 col-12 my-3r">
                             <label name="review">Your message: <span data-span="" class="text-danger" id="errorreview"><?= isset($errors['review']) ? $errors['review'] : '' ?></span></label>
-                            <textarea class="form-control" name="review" rows="8" cols="40" value="<?= isset($_POST['review']) ? $_POST['review'] : '' ?>"></textarea>
+                            <textarea class="form-control" name="review" rows="8" cols="40" value=""><?= isset($_POST['review']) ? $_POST['review'] : '' ?></textarea>
                         </div>
                         <div class="row text-center">
                             <div class="col-lg-12 col-12 my-1">

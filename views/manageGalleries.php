@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../controllers/allGallery-controller.php';
+require_once '../controllers/manageGalleries-controller.php';
 ?>
 <?php include '../elements/top.php' ?>
 
@@ -16,7 +16,7 @@ require_once '../controllers/allGallery-controller.php';
 
         <div class="col-lg-10 col-11 text-center">
             <div class="table-responsive table-hover">
-                <table class="table" id="myTable">
+                <table class="table" id="myTable" >
                     <thead>
                         <tr>
                             <!-- <th class="text-center">#</th> -->
@@ -24,8 +24,8 @@ require_once '../controllers/allGallery-controller.php';
                             <th class="text-center">Delete an Image</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <?php foreach ($AllDealsArray as $value) {
+                    <tbody >
+                        <?php foreach ($getDealsWithImages as $value) {
                         ?>
                             <tr>
                                 <td class="text-center"><?= $value['deals_title'] ?></td>
