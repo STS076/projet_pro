@@ -11,8 +11,7 @@ require_once '../elements/top.php';
 
     <?php require_once '../elements/header.php' ?>
 
-
-    <div class="container  d-flex align-items-center flex-column  bg-light shadow-sm p-5 my-5 ">
+    <div class="container d-flex align-items-center flex-column  bg-light shadow-sm p-5 my-5 ">
 
         <div class="row align-item">
             <div class="col text-center m-3">

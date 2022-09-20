@@ -21,6 +21,7 @@ $allTagsArrArray = $arr->getAllTagArr();
 $category = new Categories();
 $allTagsCategoryArray = $category->getAllTagCategory();
 
+// si form est ok, alors va afficher un message de validation
 $showForm = true;
 
 
@@ -108,18 +109,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $dealTagArr = safeInput($_POST['dealTagArr']);
         $date = date('d/m/Y');
 
+        // va créer un nouveau deal 
         $dealObj = new Deals();
         $idDeals = $dealObj->addDeals($dealTitle, $_POST['dealMiniSummary'], $_POST['dealSummary'], $dealWhen, $dealWhere, $dealPrice, $dealMap, $dealMetro, $dealInfo, $_POST['dealContact'], $dealTagArr, $_SESSION['user']['users_id'], $date);
 
+        // $category = new Categories();
+        // $allTagsCategoryArray = $category->getAllTagCategory();
 
-        $category = new Categories();
-        $allTagsCategoryArray = $category->getAllTagCategory();
-
+        // va ajouter l'id des catégories dans la table intermédiaire
         foreach ($_POST['dealTagCat'] as $value) {
             $cat = new DealsHasCat();
             $cat->addDealCategory($value, $idDeals);
         };
-
         $allcatarray = $cat->getDealCategory($idDeals);
     }
 }

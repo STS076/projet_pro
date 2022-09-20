@@ -14,7 +14,7 @@ require_once '../elements/top.php' ?>
     <main>
         <form action="" method="POST">
 
-            <div class="container bg-light col-lg-8  bienvenue d-flex align-items-center flex-column rounded my-5 py-3 border border-dark shadow">
+            <div class="container bg-light col-lg-8  bienvenue d-flex align-items-center flex-column my-5 py-3 shadow">
                 <div>
                     <span class="fs-4 ms-4 pb-3 text-dark">Please enter below information to login : </span>
                 </div>

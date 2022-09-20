@@ -14,55 +14,108 @@ require_once '../elements/top.php' ?>
 
     <div class="row  justify-content-evenly mx-0 py-5">
 
-        <div class="bg-light  border border-dark shadow-sm col-lg-5 py-4 rounded col-11">
+        <div class="bg-light shadow-sm col-lg-5 py-4  col-11">
 
             <p class=" text-center fs-5 my-4 fw-bold">Modify a Deal</p>
             <form method="POST" action="">
 
                 <div class="d-flex flex-column">
-                    <label class="py-2">Title of the Deal : <span class="text-danger"><?= isset($errors['dealTitle']) ? $errors['dealTitle'] : '' ?></span></label>
+                    <label class="py-2" for="dealTitle">
+                        Title of the Deal :
+                        <span class="text-danger" data-span="error-dealTitle">
+                            <?= isset($errors['dealTitle']) ? $errors['dealTitle'] : '' ?>
+                        </span>
+                    </label>
                     <input type="text" id="dealTitle" value="<?= $oneDealArray['deals_title'] ?>" name="dealTitle">
                 </div>
                 <div class="d-flex flex-column">
-                    <label class="py-2">Mini summary : <span class="text-danger"><?= isset($errors['dealMiniSummary']) ? $errors['dealMiniSummary'] : '' ?></span></label>
+                    <label class="py-2" for="dealMiniSummary">
+                        Mini summary :
+                        <span class="text-danger" data-span="error-dealMiniSummary">
+                            <?= isset($errors['dealMiniSummary']) ? $errors['dealMiniSummary'] : '' ?>
+                        </span>
+                    </label>
                     <textarea type="text" id="dealMiniSummary" name="dealMiniSummary"><?= $oneDealArray['deals_mini_summary'] ?></textarea>
                 </div>
                 <div class="d-flex flex-column">
-                    <label class="py-2">Summary : <span class="text-danger"><?= isset($errors['dealSummary']) ? $errors['dealSummary'] : '' ?></span></label>
+                    <label class="py-2" for="dealSummary">
+                        Summary :
+                        <span class="text-danger" data-span="error-dealSummary">
+                            <?= isset($errors['dealSummary']) ? $errors['dealSummary'] : '' ?>
+                        </span>
+                    </label>
                     <textarea type="text" id="dealSummary" name="dealSummary"> <?= $oneDealArray['deals_summary'] ?></textarea>
                 </div>
                 <div class="d-flex flex-column">
-                    <label class="py-2">When : <span class="text-danger"><?= isset($errors['dealWhen']) ? $errors['dealWhen'] : '' ?></span></label>
+                    <label class="py-2" for="dealWhen">
+                        When :
+                        <span class="text-danger" data-span="error-dealWhen">
+                            <?= isset($errors['dealWhen']) ? $errors['dealWhen'] : '' ?>
+                        </span>
+                    </label>
                     <input type="text" id="dealWhen" value="<?= $oneDealArray['deals_when'] ?>" name="dealWhen">
                 </div>
 
                 <div class="d-flex flex-column">
-                    <label class="py-2">Where : <span class="text-danger"><?= isset($errors['dealWhere']) ? $errors['dealWhere'] : '' ?></span></label>
+                    <label class="py-2" for="dealWhere">
+                        Where :
+                        <span class="text-danger" data-span="error-dealWhere">
+                            <?= isset($errors['dealWhere']) ? $errors['dealWhere'] : '' ?>
+                        </span>
+                    </label>
                     <input type="text" id="dealWhere" value="<?= $oneDealArray['deals_where'] ?>" name="dealWhere">
                 </div>
                 <div class="d-flex flex-column">
-                    <label class="py-2">Price : <span class="text-danger"><?= isset($errors['dealPrice']) ? $errors['dealPrice'] : '' ?></span></label>
+                    <label class="py-2">
+                        Price :
+                        <span class="text-danger">
+                            <?= isset($errors['dealPrice']) ? $errors['dealPrice'] : '' ?>
+                        </span>
+                    </label>
                     <input type="text" id="dealPrice" value="<?= $oneDealArray['deals_price'] ?>" name="dealPrice">
                 </div>
                 <div class="d-flex flex-column">
-                    <label class="py-2">How to get there : <span class="text-danger"><?= isset($errors['dealMetro']) ? $errors['dealMetro'] : '' ?></span></label>
+                    <label class="py-2">
+                        How to get there :
+                        <span class="text-danger">
+                            <?= isset($errors['dealMetro']) ? $errors['dealMetro'] : '' ?>
+                        </span>
+                    </label>
                     <input type="text" id="dealMetro" value="<?= $oneDealArray['deals_metro'] ?>" name="dealMetro">
                 </div>
                 <div class="d-flex flex-column">
-                    <label class="py-2">More info : <span class="text-danger"><?= isset($errors['dealInfo']) ? $errors['dealInfo'] : '' ?></span></label>
+                    <label class="py-2">
+                        More info :
+                        <span class="text-danger">
+                            <?= isset($errors['dealInfo']) ? $errors['dealInfo'] : '' ?>
+                        </span>
+                    </label>
                     <input type="text" id="dealInfo" value="<?= $oneDealArray['deals_info'] ?>" name="dealInfo">
                 </div>
                 <div class="d-flex flex-column">
-                    <label class="py-2">Contact : <span class="text-danger"><?= isset($errors['dealContact']) ? $errors['dealContact'] : '' ?></span></label>
+                    <label class="py-2">
+                        Contact :
+                        <span class="text-danger">
+                            <?= isset($errors['dealContact']) ? $errors['dealContact'] : '' ?>
+                        </span>
+                    </label>
                     <input type="text" id="dealContact" value="<?= $oneDealArray['deals_contact'] ?>" name="dealContact">
                 </div>
                 <div class="d-flex flex-column">
-                    <label class="py-2">Map : <span class="text-danger"><?= isset($errors['dealMap']) ? $errors['dealMap'] : '' ?></label>
+                    <label class="py-2">
+                        Map :
+                        <span class="text-danger">
+                            <?= isset($errors['dealMap']) ? $errors['dealMap'] : '' ?>
+                    </label>
                     <textarea type="text" id="dealMap" name="dealMap"><?= $oneDealArray['deals_map'] ?></textarea>
                 </div>
 
                 <div class="d-flex flex-column">
-                    <label class="py-2">Tag Arrondissement : <span class="text-danger"><?= isset($errors['dealTagArr']) ? $errors['dealTagArr'] : '' ?></label>
+                    <label class="py-2">
+                        Tag Arrondissement :
+                        <span class="text-danger">
+                            <?= isset($errors['dealTagArr']) ? $errors['dealTagArr'] : '' ?>
+                    </label>
                     <select id="dealTagArr" value="<?= $oneDealArray['tag_arr_name'] ?>" name="dealTagArr">
                         <option value="">Please select an Arrondissement</option>
                         <?php
@@ -76,7 +129,11 @@ require_once '../elements/top.php' ?>
                 </div>
 
                 <div class="d-flex flex-column">
-                    <label class="py-2">Tag Category : <span class="text-danger"><?= isset($errors['dealTagCat']) ? $errors['dealTagCat'] : '' ?></label>
+                    <label class="py-2">
+                        Tag Category :
+                        <span class="text-danger">
+                            <?= isset($errors['dealTagCat']) ? $errors['dealTagCat'] : '' ?>
+                    </label>
 
                     <?php
                     $DealsCatTagIdArray = explode(', ',  $oneDealArray['DealsCatTagId']);
@@ -92,7 +149,7 @@ require_once '../elements/top.php' ?>
                     </select>
                 </div>
 
-           
+
 
 
                 <div class="text-center pt-5">
@@ -110,7 +167,7 @@ require_once '../elements/top.php' ?>
     </div>
 
     <?php require_once '../elements/footer.php' ?>
-
+    <script src="../assets/script/contact.js"></script>
 </body>
 
 </html>

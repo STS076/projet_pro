@@ -33,7 +33,9 @@ class Images extends Database
         $this->_deals_id_DEALS = $_deals_id_DEALS;
     }
 
-
+    /**
+     * permet d'ajouter des immages à un deal 
+     */
     public function addImage($images_name, $deals_id_DEALS)
     {
         $pdo = parent::connectDb();
@@ -48,10 +50,14 @@ class Images extends Database
         $query->execute();
     }
 
+    /**
+     * récupère les images par deals
+     */
     public function getAllImagesByDeal($deals_id_DEALS): array
     {
         $pdo = parent::connectDb();
-        $sql = "SELECT * from images where deals_id_DEALS=:deals_id_DEALS";
+        $sql = "SELECT * from images 
+        where deals_id_DEALS=:deals_id_DEALS";
         $query = $pdo->prepare($sql);
         $query->bindValue(':deals_id_DEALS', $deals_id_DEALS, PDO::PARAM_INT);
         $query->execute();
@@ -59,6 +65,9 @@ class Images extends Database
         return $result;
     }
 
+    /**
+     * exactement la même fonction mais avec une jointure. 
+     */
     public function getOneGallery($deals_id_DEALS): array
     {
         $pdo = parent::connectDb();

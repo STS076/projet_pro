@@ -12,13 +12,13 @@ require_once '../elements/top.php' ?>
     <div class="row  justify-content-evenly mx-0 py-5">
 
         <div class="bg-light  shadow-sm col-lg-5 py-4  col-11">
-            <p class="text-danger mandatoryInput">Input with an * are mandatory</p>
+
             <p class=" text-center fs-5 my-4 fw-bold">Upload a new deal</p>
             <?php
 
             if ($showForm) { ?>
                 <form method="POST" action="">
-
+                    <p class="text-danger mandatoryInput">Input with an * are mandatory</p>
                     <div class="d-flex flex-column">
                         <label for="dealTitle" class="py-2">
                             * Title of the Deal :
@@ -159,8 +159,12 @@ require_once '../elements/top.php' ?>
         </div>
     </div>
 
-    <?php require_once '../elements/footer.php' ?>
+    <button type="button" class="btn bouton btn-floating " id="btn-back-to-top">
+        <i class="bi bi-arrow-up-short text-white"></i>
+    </button>
     <script src="../assets/script/contact.js"></script>
+    <?php require_once '../elements/footer.php' ?>
+
 
 </body>
 

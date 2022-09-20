@@ -24,9 +24,13 @@ class DealsHasCat extends Database
         $this->_deals_id_DEALS = $_deals_id_DEALS;
     }
 
+    /**
+     * table intermédiaire entre deals et tag_categories et permet de remplir cette table. ajoute l'id des deals et des catégories. 
+     */
     public function addDealCategory($tag_categories_id_TAG_CATEGORIES, $deals_id_DEALS)
     {
         $pdo = parent::connectDb();
+
         $sql = "INSERT INTO `deals_has_cat` (tag_categories_id_TAG_CATEGORIES, deals_id_DEALS)
         VALUES (:tag_categories_id_TAG_CATEGORIES,:deals_id_DEALS) ";
 
@@ -38,6 +42,9 @@ class DealsHasCat extends Database
         $query->execute();
     }
 
+    /**
+     * permet de supprimer les catégories d'un deal si modifie. supprime et ensuite ajoute. 
+     */
     public function deleteCatDeal($deals_id_DEALS)
     {
         $pdo = parent::connectDb();
@@ -51,6 +58,9 @@ class DealsHasCat extends Database
 
     }
 
+    /**
+     * récupère les catégories d'un deal
+     */
     public function getDealCategory()
     {
         $pdo = parent::connectDb();

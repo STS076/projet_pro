@@ -8,7 +8,7 @@ require_once '../elements/top.php' ?>
 
     <?php require_once '../elements/header.php' ?>
 
-    <div class="container bg-light  bienvenue rounded my-5 py-3 border border-dark shadow">
+    <div class="container bg-light  bienvenue my-5 py-3 shadow">
         <p class="text-center py-3 fs-4">Information about <?= $oneUserArray['users_username'] ?></p>
         <div class="row justify-content-evenly">
             <div class="col-lg-4 col-11 ">

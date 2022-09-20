@@ -76,6 +76,9 @@ class Comments extends Database
     }
 
 
+    /**
+     * fonction permettant d'ajouter un commentaire
+     */
     public function addComments($comments_rating, $comments_comment, $comments_date, $deals_id_DEALS, $users_id_USERS)
     {
         $pdo = parent::connectDb();
@@ -93,6 +96,10 @@ class Comments extends Database
         $query->execute();
     }
 
+
+    /**
+     * fonction permettant de récupérer tous les commentaires
+     */
     public function getAllComments(): array
     {
         $pdo = parent::connectDb();
@@ -107,6 +114,10 @@ class Comments extends Database
         return $result;
     }
 
+
+    /**
+     * fonction permettant de récupérer tous les commentaires liés à un deal
+     */
     public function getCommentsByDeal($deals_id): array
     {
         $pdo = parent::connectDb();
@@ -124,6 +135,9 @@ class Comments extends Database
         return $result;
     }
 
+    /**
+     * fonction permettant d'approuver un commentaire en changeant son statut de validation
+     */
     public function approveComments($comments_id)
     {
         $pdo = parent::connectDb();
@@ -136,6 +150,9 @@ class Comments extends Database
         $query->execute();
     }
 
+    /**
+     * fonction permettant d'archiver un commentaire en changeant son statut de validation
+     */
     public function archiveComment($comments_id)
     {
         $pdo = parent::connectDb();
@@ -148,6 +165,9 @@ class Comments extends Database
         $query->execute();
     }
 
+    /**Fonction permettant de supprimer un commentaire 
+     * 
+     */
     public function deleteComments($comments_id)
     {
         $pdo = parent::connectDb();
@@ -158,6 +178,9 @@ class Comments extends Database
         $query->execute();
     }
 
+    /**
+     * permet de récupérer le nombre de commentaires écrit par un utlisateur
+     */
     public function getNumberofCommentsByUsers($users_id_USERS)
     {
         $pdo = parent::connectDb();
@@ -174,6 +197,10 @@ class Comments extends Database
         return $result;
     }
 
+
+    /**
+     * permet de récupérer les commentaires liés à un utilsiateur
+     */
     public function getCommentsByUser($users_id_USERS)
     {
         $pdo = parent::connectDb();
@@ -191,6 +218,9 @@ class Comments extends Database
         return $result;
     }
 
+    /**
+     * permet de récupérer tous les informations d'un commentaire
+     */
     public function getOnecomment($comments_id)
     {
         $pdo = parent::connectDb();

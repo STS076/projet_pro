@@ -26,6 +26,9 @@ class Role extends Database
         return $this;
     }
 
+    /**
+     * permet de récupérer les roles
+     */
     public function getAllRole(): array
     {
         $pdo = parent::connectDb();
@@ -36,6 +39,4 @@ class Role extends Database
 
         return $query->fetchAll();
     }
-
-
 }

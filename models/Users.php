@@ -74,6 +74,9 @@ class Users extends Database
         $this->_role_id_role = $roleId;
     }
 
+    /**
+     * permet d'ajouter un utiliseur 
+     */
     public function addUsers(string $username, string $name, string $surname, string $mail, string $password, string $users_joined): void
     {
         $pdo = parent::connectDb();
@@ -93,6 +96,9 @@ class Users extends Database
         $query->execute();
     }
 
+    /**
+     * permet de modifier les utilisateurs
+     */
     public function amendUser($users_username, $users_name, $users_surname, $users_mail, $role_id_ROLE, $users_id)
     {
         $pdo = parent::connectDb();
@@ -111,6 +117,9 @@ class Users extends Database
         $query->execute();
     }
 
+    /**
+     * permet de récupérer tous les utilisateurs
+     */
     public function getAllUsers(): array
     {
         $pdo = parent::connectDb();
@@ -121,6 +130,9 @@ class Users extends Database
         return $result;
     }
 
+    /**
+     * récupère tous les utlisateurs
+     */
     public function getOneUser($users_id): array
     {
         $pdo = parent::connectDb();
@@ -132,14 +144,16 @@ class Users extends Database
         $query = $pdo->prepare($sql);
 
         $query->bindValue(':users_id', $users_id, PDO::PARAM_INT);
-        
+
         $query->execute();
 
         $result = $query->fetch();
         return $result;
     }
 
-
+    /**regarde si le mail de l'utilisateur existe,
+     * lors de l'identification pour se connecter
+     */
     public function checkIfMailExists(string $users_mail)
     {
         $pdo = parent::connectDb();
@@ -157,6 +171,9 @@ class Users extends Database
         }
     }
 
+    /**
+     * récupérer tous les informations d'un utilisateur
+     */
     public function getInfosUsers(string $users_mail): array
     {
         $pdo = parent::connectDb();
@@ -172,7 +189,9 @@ class Users extends Database
         return $result;
     }
 
-
+    /**
+     * regarde si l'username existe deja
+     */
     public function checkIfUsernameExists(string $users_username)
     {
         $pdo = parent::connectDb();
@@ -190,6 +209,9 @@ class Users extends Database
         }
     }
 
+    /**
+     * supprime l'utilisateur
+     */
     public function deleteUser($users_id)
     {
         $pdo = parent::connectDb();
@@ -199,6 +221,4 @@ class Users extends Database
         $query->bindValue(':users_id', $users_id, PDO::PARAM_INT);
         $query->execute();
     }
-
- 
 }

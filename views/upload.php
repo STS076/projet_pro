@@ -8,7 +8,7 @@ require_once '../elements/top.php' ?>
 
     <?php require_once '../elements/header.php' ?>
 
-    <div class="container bg-light border border-dark shadow-sm  my-5 rounded ">
+    <div class="container bg-light shadow-sm  my-5  ">
         <div class="row mx-0 py-5 justify-content-center">
             <p class=" text-center fs-5 my-4 fw-bold">Upload Images for deal <?= $oneDealArray['deals_title'] ?></p>
 

@@ -24,6 +24,9 @@ class Categories extends Database
     }
 
 
+    /**
+     * fonction permettant d'ajouter une catégorie
+     */
     public function addTagCategory($tag_categories_name, $tag_categories_summary)
     {
 
@@ -40,6 +43,9 @@ class Categories extends Database
         $query->execute();
     }
 
+    /**
+     * fonction permettant de récupérer une seule catégorie
+     */
     public function getOneCategory($tag_categories_id): array
     {
         $pdo = parent::connectDb();
@@ -56,6 +62,9 @@ class Categories extends Database
         return $result;
     }
 
+    /**
+     * fonction permettant de récupérer toutes les catégories
+     */
     public function getAllTagCategory(): array
     {
         $pdo = parent::connectDb();
@@ -67,6 +76,9 @@ class Categories extends Database
         return $query->fetchAll();
     }
 
+    /**
+     * fonction permettant de modifier une catégorie
+     */
     public function amendCategory($tag_categories_id, $tag_categories_name, $tag_categories_summary)
     {
         $pdo = parent::connectDb();
@@ -83,6 +95,9 @@ class Categories extends Database
         $query->execute();
     }
 
+    /**
+     * fonction permettant de récupérer le nombre de deals existant par catégories
+     */
     public function getNumberofDealsbyCat($tag_categories_id): array
     {
         $pdo = parent::connectDb();
@@ -101,6 +116,10 @@ class Categories extends Database
         return $result;
     }
 
+
+    /**
+     * permet de récupérer les deals liés à une catégorie
+     */
     public function getDealsfromCat($tag_categories_id): array
     {
         $pdo = parent::connectDb();
@@ -117,7 +136,10 @@ class Categories extends Database
         return $result;
     }
 
-    
+
+    /**
+     * fonction permettant d'effacer une catégorie
+     */
     public function deleteCategory($tag_categories_id)
     {
         $pdo = parent::connectDb();

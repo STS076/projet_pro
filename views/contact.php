@@ -61,7 +61,7 @@ require_once '../elements/top.php' ?>
 
 
     <?php require_once '../elements/footer.php' ?>
-    <script src="../assets/script/contact.js"></script>
+
 
 </body>
 

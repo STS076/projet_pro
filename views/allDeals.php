@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once '../controllers/allDeals-controller.php';
+// var_dump($getDealsByUser);
 ?>
 <?php include '../elements/top.php' ?>
 
@@ -27,6 +28,9 @@ require_once '../controllers/allDeals-controller.php';
                                 <th class="text-center">Amend</th>
                                 <th class="text-center">Status</th>
                                 <th class="text-center">Delete</th>
+                            <?php } ?>
+                            <?php if ($_SESSION['user']['role_id_ROLE'] != 1) { ?>
+                                <th class="text-center">Status</th>
                             <?php } ?>
                         </tr>
                     </thead>
@@ -97,6 +101,12 @@ require_once '../controllers/allDeals-controller.php';
                                     <td class="text-center"><?= $value['tag_arr_name'] ?></td>
                                     <td class="text-center"><?= $value['DealsCatTag'] ?></td>
                                     <td class="text-center"><a class="text-light btn bouton" href="infoDeals.php?info=<?= $value['deals_id'] ?>"> + d'info</a></td>
+                                    
+                                    <?php if($value['deals_validate'] == 0) {?>
+                                    <td class="text-center text-danger">Submited</td>
+                                    <?php } else if ($value['deals_validate'] == 1) { ?> 
+                                    <td class="text-center text-success">Validated</td>
+                                    <?php } ?>
                                 </tr>
                         <?php }
                         } ?>

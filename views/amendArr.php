@@ -15,12 +15,22 @@ require_once '../elements/top.php' ?>
             <p class=" text-center fs-5 my-4 fw-bold">Modify an arrondissement</p>
             <form method="POST" action="">
                 <div class="d-flex flex-column">
-                    <label class="py-2">Title of the tag : <span class="text-danger"><?= isset($errors['tagArr']) ? $errors['tagArr'] : '' ?></span></label>
+                    <label class="py-2" for="tagArr">
+                        Title of the tag :
+                        <span class="text-danger" >
+                            <?= isset($errors['tagArr']) ? $errors['tagArr'] : '' ?>
+                        </span>
+                    </label>
                     <input type="text" id="tagArr" value="<?= $getOneArrondissement['tag_arr_name'] ?>" name="tagArr">
                 </div>
 
                 <div class="d-flex flex-column">
-                    <label class="py-2">Mini Summary : <span class="text-danger"><?= isset($errors['tagArrSummary']) ? $errors['tagArrSummary'] : '' ?></span></label>
+                    <label class="py-2" for="tagArrSummary">
+                        Mini Summary :
+                        <span class="text-danger" >
+                            <?= isset($errors['tagArrSummary']) ? $errors['tagArrSummary'] : '' ?>
+                        </span>
+                    </label>
                     <textarea type="text" id="tagArrSummary" value="" name="tagArrSummary"><?= $getOneArrondissement['tag_arr_summary'] ?></textarea>
                 </div>
 
@@ -37,6 +47,7 @@ require_once '../elements/top.php' ?>
     </div>
 
     <?php require_once '../elements/footer.php' ?>
+
 
 </body>
 
