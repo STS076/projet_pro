@@ -32,7 +32,7 @@ body {
 /* navbar */
 /*  */
 .navigation {
-    background-color: #cbe9eab2;
+    background-color: #cbe9ead3;
     color: rgb(0, 0, 77);
     /* position: sticky;
     top: 0;
@@ -120,6 +120,12 @@ footer {
 .backgroundHotDeals {
     background-color: #BBA2DB;
     width: 95%;
+}
+
+/* augmenter la taille des card quand hover */
+.cardarr:hover {
+    transition: transform .2s;
+    transform: scale(1.08);
 }
 
 /*  */
@@ -257,6 +263,7 @@ footer {
     font-size: 0.9rem;
 }
 
+
 .alignement {
     display: flex;
     justify-content: center;
@@ -274,23 +281,21 @@ footer {
     background-color: goldenrod;
 }
 
-/* .scrollmenu {
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-} */
-
-.cardarr:hover {
-    transition: transform .2s;
-    transform: scale(1.08);
-}
-
 /* back to the top */
+
+@media screen and (max-width:600px) {
+    #btn-back-to-top {
+        position: fixed;
+        bottom: 15rem;
+        right: 2rem;
+        display: none;
+    }
+}
 
 #btn-back-to-top {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 2rem;
+    right: 2rem;
     display: none;
 }
 
@@ -298,10 +303,21 @@ footer {
     background-color: #242D3C;
 }
 
+/* carte paris  */
+
 .carteParis {
     width: 100%;
     height: auto;
 }
+
+/* deal message en dessousd des commentaires */
+
+.thankYou {
+    font-size: 0.8rem;
+    color: grey;
+}
+
+/* logo réseaux sociaux deals */
 
 .logo {
     height: 2rem;
@@ -311,6 +327,8 @@ footer {
 .logo:hover {
     opacity: 0.5;
 }
+
+/* barre de recherche deals */
 
 #myInput {
     background-image: url('/css/searchicon.png');
@@ -331,6 +349,8 @@ footer {
     /* Add some space below the input */
 }
 
+/* Boutons back admin */
+
 .back {
     background-color: #cdfbfd;
 }
@@ -339,10 +359,8 @@ footer {
     background-color: #cdfbfd;
 }
 
-.thankYou {
-    font-size: 0.8rem;
-    color: grey;
-}
+
+/* images pour le dashboard admin + connexion */
 
 .background {
     background: rgba(0, 0, 0, 0.1) url("../images/arcDeTriomphe.jpg");
@@ -352,7 +370,7 @@ footer {
     background-blend-mode: darken;
 }
 
-.backgroundAdmin{
+.backgroundAdmin {
     background: rgba(0, 0, 0, 0.1) url("../images/backgroundAdmin.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -360,6 +378,7 @@ footer {
     background-blend-mode: darken;
 }
 
-.mandatoryInput{
+/* taille éléments obligatoires dans formulaire deals */
+.mandatoryInput {
     font-size: 0.8REM;
 }

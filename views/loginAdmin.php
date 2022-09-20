@@ -22,13 +22,13 @@ require_once '../elements/top.php' ?>
                 <div class=" form-group col-lg-6 col-12 my-2 text-center">
                     <!-- <label class="text-dark">Email</label> -->
                     <input class="text-center form-control identify" placeholder="Email Address" id="pseudo" value="<?= isset($_POST['pseudo']) ? $_POST['pseudo'] : '' ?>" name="pseudo">
-                    <p class="text-danger"><?= isset($errors['pseudo']) ? $errors['pseudo'] : '' ?></p>
+                    <p data-span="error-pseudo" class="text-danger"><?= isset($errors['pseudo']) ? $errors['pseudo'] : '' ?></p>
                 </div>
 
                 <div class="form-group col-lg-6 col-12 my-2 text-center">
                     <!-- <label class="text-dark">Password:</label> -->
                     <input type="password" class="identify text-center form-control" id="password" placeholder="Password" name="password">
-                    <p class="text-danger"><?= isset($errors['password']) ? $errors['password'] : '' ?></p>
+                    <p data-span="error-password" class="text-danger"><?= isset($errors['password']) ? $errors['password'] : '' ?></p>
                 </div>
 
                 <div class="my-2 text-center">
@@ -49,6 +49,7 @@ require_once '../elements/top.php' ?>
         <i class="bi bi-arrow-up-short text-white"></i>
     </button>
 
+    <script src="../assets/script/contact.js"></script>
     <?php require_once '../elements/footer.php' ?>
 
 </body>
