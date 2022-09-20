@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once '../controllers/allUsers-controller.php';
+var_dump($_SESSION['user']['role_id_ROLE']);
 ?>
 
 <?php include '../elements/top.php' ?>

@@ -107,7 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $dealInfo = safeInput($_POST['dealInfo']);
         $dealTagArr = safeInput($_POST['dealTagArr']);
         $date = date('d/m/Y');
-        // s'il n'y a aucune erreur alors que vais créer un nouveau Deal. va injecter les données du POST dans la méthode
+
         $dealObj = new Deals();
         $idDeals = $dealObj->addDeals($dealTitle, $_POST['dealMiniSummary'], $_POST['dealSummary'], $dealWhen, $dealWhere, $dealPrice, $dealMap, $dealMetro, $dealInfo, $_POST['dealContact'], $dealTagArr, $_SESSION['user']['users_id'], $date);
 
@@ -115,16 +115,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $category = new Categories();
         $allTagsCategoryArray = $category->getAllTagCategory();
 
-        // va remplir la table intermédiaire avec les catégories, permet d'avoir plusieurs catégories
         foreach ($_POST['dealTagCat'] as $value) {
             $cat = new DealsHasCat();
             $cat->addDealCategory($value, $idDeals);
         };
 
         $allcatarray = $cat->getDealCategory($idDeals);
-        // si tout est bon et que le deal a été créé alors va retourner vers le dashboard deals
-        // header('location: addDeal.php');
-        // exit;
     }
 }
 

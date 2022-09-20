@@ -359,3 +359,7 @@ footer {
     background-size: cover;
     background-blend-mode: darken;
 }
+
+.mandatoryInput{
+    font-size: 0.8REM;
+}

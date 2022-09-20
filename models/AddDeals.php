@@ -83,6 +83,8 @@ class Deals extends Database
         $this->_deals_validate = $deals_validate;
     }
 
+
+    /**fonction pour créer un deal  */
     public function addDeals(string $deals_title, $deals_mini_summary, $deals_summary,  string $deals_when, string $deals_where, string $deals_price, string $deals_map, string $deals_metro, string $deals_info, $deals_contact, INT $tag_arr_id_TAG_ARR, INT $users_id_USERS, $deals_created)
     {
         $pdo = parent::connectDb();
@@ -110,6 +112,9 @@ class Deals extends Database
         return $pdo->lastInsertId();
     }
 
+    /**
+     * Fonction pour modifier un deal
+     */
     public function amendDeals($deals_title, $deals_mini_summary, $deals_summary, $deals_when, $deals_where,  $deals_metro, $deals_price,  $deals_map, $deals_info, $deals_contact, $tag_arr_id_TAG_ARR, $users_id_USERS, $deals_id)
     {
         $pdo = parent::connectDb();
@@ -137,6 +142,9 @@ class Deals extends Database
         $query->execute();
     }
 
+    /**
+     * fonction pour aller chercher tous les deals
+     */
     public function getAllDeals(): array
     {
         $pdo = parent::connectDb();
@@ -153,6 +161,9 @@ class Deals extends Database
         return $result;
     }
 
+    /**
+     * fonction pour aller chercher un seul deal, va le chercher par son ID
+     */
     public function getOneDeal($deals_id)
     {
         $pdo = parent::connectDb();
@@ -178,6 +189,9 @@ class Deals extends Database
         return $result;
     }
 
+    /**
+     * fonction pour aller chercher tous les deals liés à un arrondissement 
+     */
     public function getDealsbyArr($tag_arr_id): array
     {
         $pdo = parent::connectDb();
@@ -197,6 +211,9 @@ class Deals extends Database
         return $result;
     }
 
+    /**
+     * fonction pour aller chercher tous les deals liés à une catégorie
+     */
     public function getDealsbyCat($tag_categories_id): array
     {
         $pdo = parent::connectDb();
@@ -216,6 +233,10 @@ class Deals extends Database
         return $result;
     }
 
+
+    /**
+     * fonction pour aller chercher les dix dernier deals ajoutés. 
+     */
     public function lastTenDeals()
     {
         $pdo = parent::connectDb();
@@ -234,6 +255,9 @@ class Deals extends Database
         return $result;
     }
 
+    /**
+     * fonction permettant de changer le statut du deal, de le mettre en statut "validé"
+     */
     public function changeDealValidationStatus($deals_id)
     {
         $pdo = parent::connectDb();
@@ -246,6 +270,9 @@ class Deals extends Database
         $query->execute();
     }
 
+    /**
+     * fonction pour changer le statut des deals et les archiver.
+     */
     public function archiveDeals($deals_id)
     {
         $pdo = parent::connectDb();
@@ -258,6 +285,9 @@ class Deals extends Database
         $query->execute();
     }
 
+    /**
+     * Fonction pour faire la moyenne des notes données par les commnentaires et récupérer les 3 deals les mieux notés. 
+     */
     public function getDealByAverageRating()
     {
         $pdo = parent::connectDb();
@@ -274,6 +304,9 @@ class Deals extends Database
         return $result;
     }
 
+    /**
+     * fonction pour effacer les deals
+     */
     public function deleteDeals($deals_id)
     {
         $pdo = parent::connectDb();
@@ -284,6 +317,9 @@ class Deals extends Database
         $query->execute();
     }
 
+    /**
+     * fonction pour récupérer le nombre de deals créés par un utilisateur.
+     */
     public function getNumberofDealsByUser($users_id)
     {
         $pdo = parent::connectDb();
@@ -299,6 +335,9 @@ class Deals extends Database
         return $result;
     }
 
+    /**
+     * fonction pour afficher les deals pour chaque utilisateur
+     */
     public function getDealsByUser($users_id)
     {
         $pdo = parent::connectDb();
@@ -324,6 +363,9 @@ class Deals extends Database
         return $result;
     }
 
+    /**
+     * fonction permettant de changer l'id de l'user et de passer en anonyme. Utilisé avant d'effacer un utilisateur pour que les deals ne soient pas supprimés. 
+     */
     public function changeDealsToAnonymous($users_id_USERS)
     {
         $pdo = parent::connectDb();
@@ -335,5 +377,4 @@ class Deals extends Database
         $query->bindValue(':users_id_USERS', $users_id_USERS, PDO::PARAM_INT);
         $query->execute();
     }
-
 }

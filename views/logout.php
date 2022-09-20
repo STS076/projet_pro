@@ -9,7 +9,7 @@ require_once '../controllers/logout-controller.php';
 <body class="d-flex flex-column min-vh-100 background">
     <?php include '../elements/header.php' ?>
 
-    <div class="container bienvenue d-flex align-items-center flex-column rounded my-5 p-5 border border-dark shadow">
+    <div class="container bienvenue d-flex align-items-center flex-column bg-light my-5 p-5  shadow">
         <div class="col-lg-8 col-12 text-center fw-bold">
             <p>You have been deconnected from your account.</p>
         </div>

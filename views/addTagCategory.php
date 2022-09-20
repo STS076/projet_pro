@@ -6,7 +6,7 @@ require_once '../controllers/addTagCategory-controller.php';
 
 require_once '../elements/top.php' ?>
 
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100 backgroundAdmin">
 
     <?php require_once '../elements/header.php' ?>
 
@@ -14,18 +14,28 @@ require_once '../elements/top.php' ?>
 
     <div class="row  justify-content-evenly mx-0 py-5">
 
-        <div class="bg-light  border border-dark shadow-sm col-lg-5 py-4 rounded col-11">
+        <div class="bg-light shadow-sm col-lg-5 py-4  col-11">
 
             <p class=" text-center fs-5 my-4 fw-bold">Upload a new deal</p>
             <form method="POST" action="">
 
                 <div class="d-flex flex-column">
-                    <label class="py-2">Title of the category : <span class="text-danger"><?= isset($errors['tagCategory']) ? $errors['tagCategory'] : '' ?></span></label>
+                    <label class="py-2" for="tagCategory">
+                        Title of the category :
+                        <span class="text-danger">
+                            <?= isset($errors['tagCategory']) ? $errors['tagCategory'] : '' ?>
+                        </span>
+                    </label>
                     <input type="text" id="tagCategory" value="<?= isset($_POST['tagCategory']) ? $_POST['tagCategory'] : '' ?>" name="tagCategory">
 
                 </div>
                 <div class="d-flex flex-column">
-                    <label class="py-2">Summary : <span class="text-danger"><?= isset($errors['tagCategorySummary']) ? $errors['tagCategorySummary'] : '' ?></span></label>
+                    <label class="py-2" for="tagCategorySummary">
+                        Summary :
+                        <span class="text-danger">
+                            <?= isset($errors['tagCategorySummary']) ? $errors['tagCategorySummary'] : '' ?>
+                        </span>
+                    </label>
                     <textarea type="text" id="tagCategorySummary" value="<?= isset($_POST['tagCategorySummary']) ? $_POST['tagCategorySummary'] : '' ?>" name="tagCategorySummary"></textarea>
 
                 </div>

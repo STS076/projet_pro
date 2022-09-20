@@ -1,7 +1,7 @@
 <header class=" paris bg-light ">
-    <div class="py-5">
+    <div class="py-4">
         <a href="home.php" class="text-decoration-none">
-            <p class="text-center titleMain py-5 bw-bold fs-1">It's always better when it's free</p>
+            <p class="text-center titleMain py-2 bw-bold fs-1">It's always better when it's free</p>
         </a>
     </div>
 </header>

@@ -39,7 +39,7 @@ require_once '../elements/top.php' ?>
             </div>
         </form>
         <div class="text-center pb-3">
-            <a href="signUp.php" class="text-dark">Sign up if you do not have already an account </a>
+            <a href="signUp.php" class="text-white fw-bold fs-5">Sign up if you do not have already an account </a>
         </div>
 
     </main>

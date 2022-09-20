@@ -128,9 +128,11 @@ class Users extends Database
         inner join `role` 
         on role_id_ROLE=role_id
         where users_id=:users_id";
-        // $query = $pdo->query($sql);
+
         $query = $pdo->prepare($sql);
-        $query->bindValue(':users_id', $users_id, PDO::PARAM_STR);
+
+        $query->bindValue(':users_id', $users_id, PDO::PARAM_INT);
+        
         $query->execute();
 
         $result = $query->fetch();

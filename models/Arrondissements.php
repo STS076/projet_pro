@@ -1,8 +1,9 @@
 <?php
 
-class Arrondissements extends Database {
-    private $_tag_arr_id; 
-    private $_tag_arr_name; 
+class Arrondissements extends Database
+{
+    private $_tag_arr_id;
+    private $_tag_arr_name;
 
     public function get_tag_arr_id()
     {
@@ -22,8 +23,10 @@ class Arrondissements extends Database {
         $this->_tag_arr_name = $_tag_arr_name;
     }
 
-
-    public function addTagArr($tag_arr_name, $tag_arr_picture,$tag_arr_summary )
+    /**
+     * Fonction pour ajouter un arrondissement 
+     */
+    public function addTagArr($tag_arr_name, $tag_arr_picture, $tag_arr_summary)
     {
         $pdo = parent::connectDb();
         $sql = "INSERT INTO `tag_arr` (`tag_arr_name`, tag_arr_picture, tag_arr_summary)
@@ -34,10 +37,14 @@ class Arrondissements extends Database {
         $query->bindValue(':tag_arr_name', $tag_arr_name, PDO::PARAM_STR);
         $query->bindValue(':tag_arr_picture', $tag_arr_picture, PDO::PARAM_STR);
         $query->bindValue(':tag_arr_summary', $tag_arr_summary, PDO::PARAM_STR);
- 
+
         $query->execute();
     }
 
+
+    /**
+     * fonction pour récupérer tous les arrondissements
+     */
     public function getAllTagArr(): array
     {
         $pdo = parent::connectDb();
@@ -47,6 +54,9 @@ class Arrondissements extends Database {
         return $query->fetchAll();
     }
 
+    /**
+     * Fonction pour afficher un seul arrondissement
+     */
     public function getOneArrondissement($tag_arr_id): array
     {
         $pdo = parent::connectDb();
@@ -63,6 +73,9 @@ class Arrondissements extends Database {
     }
 
 
+    /**
+     * Fonction pour récupérer les deals liés à l'arrondissement
+     */
     public function GetDealsfromArr($tag_arr_id): array
     {
         $pdo = parent::connectDb();
@@ -78,6 +91,9 @@ class Arrondissements extends Database {
         return $result;
     }
 
+    /**
+     * fonction pour compter le nombre de deals existant pour chaque arrondissement
+     */
     public function getNumberofDealsbyArr($tag_arr_id): array
     {
         $pdo = parent::connectDb();
@@ -93,6 +109,9 @@ class Arrondissements extends Database {
         return $result;
     }
 
+    /**
+     * fonction permettant de modifier les arrondissements
+     */
     public function amendArr($tag_arr_id, $tag_arr_name, $tag_arr_summary)
     {
         $pdo = parent::connectDb();
@@ -106,6 +125,9 @@ class Arrondissements extends Database {
         $query->execute();
     }
 
+    /**
+     * fonction permettant de supprimer les arrondissements
+     */
     public function deleteArr($tag_arr_id)
     {
         $pdo = parent::connectDb();
@@ -115,6 +137,4 @@ class Arrondissements extends Database {
         $query->bindValue(':tag_arr_id', $tag_arr_id, PDO::PARAM_INT);
         $query->execute();
     }
-
-
 }

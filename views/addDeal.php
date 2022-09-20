@@ -5,14 +5,14 @@ session_start();
 require_once '../controllers/addDeal-controller.php';
 require_once '../elements/top.php' ?>
 
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100 backgroundAdmin">
 
     <?php require_once '../elements/header.php' ?>
 
     <div class="row  justify-content-evenly mx-0 py-5">
 
-        <div class="bg-light  border border-dark shadow-sm col-lg-5 py-4 rounded col-11">
-
+        <div class="bg-light  shadow-sm col-lg-5 py-4  col-11">
+            <p class="text-danger mandatoryInput">Input with an * are mandatory</p>
             <p class=" text-center fs-5 my-4 fw-bold">Upload a new deal</p>
             <?php
 
@@ -20,48 +20,101 @@ require_once '../elements/top.php' ?>
                 <form method="POST" action="">
 
                     <div class="d-flex flex-column">
-                        <label class="py-2">Title of the Deal : <span class="text-danger"><?= isset($errors['dealTitle']) ? $errors['dealTitle'] : '' ?></span></label>
-                        <input  placeholder="Ex : Jardin des Tuileries" type="text" id="dealTitle" value="<?= isset($_POST['dealTitle']) ? $_POST['dealTitle'] : '' ?>" name="dealTitle">
+                        <label for="dealTitle" class="py-2">
+                            * Title of the Deal :
+                            <span data-span="error-dealTitle" class="text-danger">
+                                <?= isset($errors['dealTitle']) ? $errors['dealTitle'] : '' ?>
+                            </span>
+                        </label>
+                        <input placeholder="Ex : Jardin des Tuileries" type="text" id="dealTitle" value="<?= isset($_POST['dealTitle']) ? $_POST['dealTitle'] : '' ?>" name="dealTitle">
                     </div>
                     <div class="d-flex flex-column">
-                        <label class="py-2">Mini summary : <span class="text-danger"><?= isset($errors['dealMiniSummary']) ? $errors['dealMiniSummary'] : '' ?></span></label>
+                        <label class="py-2" for="dealMiniSummary">
+                            * Mini summary :
+                            <span class="text-danger" data-span="error-dealMiniSummary">
+                                <?= isset($errors['dealMiniSummary']) ? $errors['dealMiniSummary'] : '' ?>
+                            </span>
+                        </label>
                         <textarea type="text" id="dealMiniSummary" placeholder="Summary on cards" value="<?= isset($_POST['dealMiniSummary']) ? $_POST['dealMiniSummary'] : '' ?>" name="dealMiniSummary"></textarea>
                     </div>
                     <div class="d-flex flex-column">
-                        <label class="py-2">Summary : <span class="text-danger"><?= isset($errors['dealSummary']) ? $errors['dealSummary'] : '' ?></span></label>
+                        <label class="py-2" for="dealSummary">
+                            * Summary :
+                            <span class="text-danger">
+                                <?= isset($errors['dealSummary']) ? $errors['dealSummary'] : '' ?>
+                            </span>
+                        </label>
                         <textarea type="text" id="dealSummary" placeholder="Summary on deal presentation" value="<?= isset($_POST['dealSummary']) ? $_POST['dealSummary'] : '' ?>" name="dealSummary"></textarea>
                     </div>
                     <div class="d-flex flex-column">
-                        <label class="py-2">When : <span class="text-danger"><?= isset($errors['dealWhen']) ? $errors['dealWhen'] : '' ?></span></label>
+                        <label class="py-2" for="dealWhen">
+                            * When :
+                            <span class="text-danger" data-span="error-dealWhen">
+                                <?= isset($errors['dealWhen']) ? $errors['dealWhen'] : '' ?>
+                            </span>
+                        </label>
                         <input type="text" id="dealWhen" placeholder="Ex : the first week of September" value="<?= isset($_POST['dealWhen']) ? $_POST['dealWhen'] : '' ?>" name="dealWhen">
                     </div>
 
                     <div class="d-flex flex-column">
-                        <label class="py-2">Where : <span class="text-danger"><?= isset($errors['dealWhere']) ? $errors['dealWhere'] : '' ?></span></label>
+                        <label class="py-2" for="dealWhere">
+                            * Where :
+                            <span class="text-danger" data-span="error-dealWhere">
+                                <?= isset($errors['dealWhere']) ? $errors['dealWhere'] : '' ?>
+                            </span>
+                        </label>
                         <input type="text" id="dealWhere" placeholder="Ex : In the Louvre gardens" value="<?= isset($_POST['dealWhere']) ? $_POST['dealWhere'] : '' ?>" name="dealWhere">
                     </div>
                     <div class="d-flex flex-column">
-                        <label class="py-2">Price : <span class="text-danger"><?= isset($errors['dealPrice']) ? $errors['dealPrice'] : '' ?></span></label>
+                        <label class="py-2" for="dealPrice">
+                            * Price :
+                            <span class="text-danger" data-span="error-dealPrice">
+                                <?= isset($errors['dealPrice']) ? $errors['dealPrice'] : '' ?>
+                            </span>
+                        </label>
                         <input type="text" id="dealPrice" placeholder="Ex : Free" value="<?= isset($_POST['dealPrice']) ? $_POST['dealPrice'] : '' ?>" name="dealPrice">
                     </div>
                     <div class="d-flex flex-column">
-                        <label class="py-2">How to get there : <span class="text-danger"><?= isset($errors['dealMetro']) ? $errors['dealMetro'] : '' ?></span></label>
+                        <label class="py-2" for="dealMetro">
+                            * How to get there :
+                            <span class="text-danger" data-span="error-dealMetro">
+                                <?= isset($errors['dealMetro']) ? $errors['dealMetro'] : '' ?>
+                            </span>
+                        </label>
                         <input type="text" id="dealMetro" placeholder="Ex : In the Louvre gardens" value="<?= isset($_POST['dealMetro']) ? $_POST['dealMetro'] : '' ?>" name="dealMetro">
                     </div>
                     <div class="d-flex flex-column">
-                        <label class="py-2">More info : <span class="text-danger"><?= isset($errors['dealInfo']) ? $errors['dealInfo'] : '' ?></span></label>
+                        <label class="py-2" for="dealInfo">
+                            * More info :
+                            <span class="text-danger" data-span="error-dealInfo">
+                                <?= isset($errors['dealInfo']) ? $errors['dealInfo'] : '' ?>
+                            </span>
+                        </label>
                         <input type="text" id="dealInfo" placeholder="Ex : free toilets, only for under 10 years old" value="<?= isset($_POST['dealInfo']) ? $_POST['dealInfo'] : '' ?>" name="dealInfo">
                     </div>
                     <div class="d-flex flex-column">
-                        <label class="py-2">Contact : <span class="text-danger"><?= isset($errors['dealContact']) ? $errors['dealContact'] : '' ?></span></label>
+                        <label class="py-2" for="dealContact">
+                            * Contact :
+                            <span class="text-danger" data-span="error-dealContact">
+                                <?= isset($errors['dealContact']) ? $errors['dealContact'] : '' ?>
+                            </span>
+                        </label>
                         <input type="text" id="dealContact" placeholder="Ex : telephone number of the place" value="<?= isset($_POST['dealContact']) ? $_POST['dealContact'] : '' ?>" name="dealContact">
                     </div>
                     <div class="d-flex flex-column">
-                        <label class="py-2">Map : <span class="text-danger"><?= isset($errors['dealMap']) ? $errors['dealMap'] : '' ?></label>
+                        <label class="py-2" for="dealMap">
+                            * Map :
+                            <span class="text-danger" data-span="error-dealMap">
+                                <?= isset($errors['dealMap']) ? $errors['dealMap'] : '' ?>
+                        </label>
                         <input type="text" id="dealMap" placeholder="google map iframe" value="<?= isset($_POST['dealMap']) ? $_POST['dealMap'] : '' ?>" name="dealMap">
                     </div>
                     <div class="d-flex flex-column">
-                        <label class="py-2">Tag Arrondissement : <span class="text-danger"><?= isset($errors['dealTagArr']) ? $errors['dealTagArr'] : '' ?></label>
+                        <label class="py-2" for="dealTagArr">
+                            * Tag Arrondissement :
+                            <span class="text-danger" data-span="error-dealTagArr">
+                                <?= isset($errors['dealTagArr']) ? $errors['dealTagArr'] : '' ?>
+                        </label>
                         <select id="dealTagArr" value="<?= isset($_POST['dealTagArr']) ? $_POST['dealTagArr'] : '' ?>" name="dealTagArr">
                             <option value="">Please select an Arrondissement</option>
                             <?php foreach ($allTagsArrArray as $value) { ?>
@@ -71,8 +124,11 @@ require_once '../elements/top.php' ?>
                     </div>
 
                     <div class="d-flex flex-column">
-                        <label class="py-2">Tag Category : <span class="text-danger"><?= isset($errors['dealTagCat']) ? $errors['dealTagCat'] : '' ?></label>
-
+                        <label class="py-2" for="dealTagCat">
+                            * Tag Category :
+                            <span class="text-danger" data-span="dealTagCat">
+                                <?= isset($errors['dealTagCat']) ? $errors['dealTagCat'] : '' ?>
+                        </label>
                         <select id="dealTagCat" multiple value="<?= isset($_POST['dealTagCat']) ? $_POST['dealTagCat'] : '' ?>" name="dealTagCat[]">
                             <option value="">Please select a Category</option>
                             <?php foreach ($allTagsCategoryArray as $value) { ?>
@@ -104,6 +160,7 @@ require_once '../elements/top.php' ?>
     </div>
 
     <?php require_once '../elements/footer.php' ?>
+    <script src="../assets/script/contact.js"></script>
 
 </body>
 

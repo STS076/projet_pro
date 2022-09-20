@@ -6,7 +6,7 @@
 
     <main class="pt-4">
         <div class="container  my-5">
-            <div class="row justif-content-center m-0 p-0">
+            <div class="row justif-content-center m-0 p-0 bg-light">
                 <div class="col-lg-8 col-11 mentions">
 
                     <h2 class="mt-5">Définitions</h2>

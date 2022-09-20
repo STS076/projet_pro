@@ -10,7 +10,7 @@ require_once '../elements/top.php' ?>
     <?php if ($showForm) { ?>
         <form action="" method="POST">
 
-            <div class="container bg-light col-lg-8  bienvenue d-flex align-items-center flex-column rounded my-5 py-3 border border-dark shadow">
+            <div class="container bg-light col-lg-8  bienvenue d-flex align-items-center flex-column  my-5 py-3  shadow">
                 <div>
                     <span class="fs-4 ms-4 mb-3 text-dark">Please enter below information to Sign Up : </span>
                 </div>
@@ -56,7 +56,7 @@ require_once '../elements/top.php' ?>
                     <button class="btn bouton border border-dark text-light" id="submit" name="submit">Sign Up</button>
                 </div>
                 <div>
-                    <a href="loginAdmin.php" class="text-dark">Log in if you already have an account </a>
+                    <a href="loginAdmin.php" class="text-white fw-bold">Log in if you already have an account </a>
                 </div>
 
             </div>
