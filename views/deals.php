@@ -1,18 +1,14 @@
 <?php
 session_start();
 require_once '../controllers/deals-controller.php';
-// var_dump($oneDealArray);
-// var_dump($oneDealArray['DealsCatTagId']);
-
-// $gallerie = scandir('../assets/images/gallery/');
-
+// $gallerie = scandir('../assets/images/gallery/');-+
 require_once '../elements/top.php';
 ?>
 
 <body class="d-flex flex-column min-vh-100 backgroundAdmin">
 
     <?php require_once '../elements/header.php' ?>
-    <main class="container bg-light">
+    <main class="bg-white py-5 container px-0">
         <?php
         if ($oneDealArray) {
         ?>
@@ -23,8 +19,6 @@ require_once '../elements/top.php';
                 </li>
                 <li class="filAriane"><?= $oneDealArray['deals_title'] ?></li>
             </ul>
-
-
 
             <div class="row mx-0 my-5 justify-content-evenly p-0">
                 <h2 class="fst-italic fw-bold text-center mb-5"><?= $oneDealArray['deals_title'] ?></h2>
@@ -45,24 +39,13 @@ require_once '../elements/top.php';
                         <?php }
                         ?>
                     </p>
-
                 </div>
                 <div class="col-lg-5 carte">
                     <?= $oneDealArray['deals_map'] ?>
                 </div>
 
-
                 <div class="row mx-0 mt-5 p-0 justify-content-evenly">
                     <div class="col-lg-4 col-11 p-0">
-
-
-                        <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-632863504688b042"></script>
-
-                        <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                        <div class="addthis_inline_share_toolbox"></div>
-
-
                         <p>Share this on social media : <img src="../assets/images/socials/instagram.png" alt="instagram logo" class="logo">
                             <img src="../assets/images/socials/facebook.png" alt="facebook logo" class="logo">
                             <img src="../assets/images/socials/twitter.png" alt="twitter logo" class="logo">
@@ -128,8 +111,6 @@ require_once '../elements/top.php';
                 <?php }
                 } ?>
 
-
-
                 <form action="deals.php?choice=<?= $oneDealArray['deals_id'] ?>#reviews" method="post">
                     <div class="row mx-0 p-0 my-5 bg-light justify-content-center">
                         <div class="col-lg-8 col-11 d-flex justify-content-center">
@@ -145,7 +126,6 @@ require_once '../elements/top.php';
                                 </select>
                             </div>
                         </div>
-
                         <div class="row justify-content-center">
                             <div class="col-lg-8 col-11 d-flex d-flex justify-content-center">
                                 <div class="d-flex flex-column mt-2">
@@ -164,12 +144,7 @@ require_once '../elements/top.php';
                 <div class="thankYou">
                     Thank you for you comment, please note that in order to avoird spam, your review will be published after validation
                 </div>
-
-
             </div>
-
-
-
         <?php } else { ?>
             <div class="container bg-light col-lg-8 text-center rounded my-5 py-5 border border-dark shadow">
                 <p>This deal does not exist</p>
@@ -184,8 +159,6 @@ require_once '../elements/top.php';
     </button>
 
     <?php require_once '../elements/footer.php' ?>
-
-
 
 </body>
 

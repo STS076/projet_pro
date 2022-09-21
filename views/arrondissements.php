@@ -7,11 +7,11 @@ require_once '../elements/top.php';
 // var_dump($exploreColor); 
 ?>
 
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100 backgroundAdmin">
 
     <?php require_once '../elements/header.php' ?>
 
-    <main>
+    <main class="bg-white py-5 container px-0">
 
         <h2 class="fs-2 text-center welcome pt-5 comments"><?= $oneArrondissement['tag_arr_name'] ?></h2>
         <div class="row m-0 justify-content-center">

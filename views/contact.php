@@ -22,7 +22,7 @@ require_once '../elements/top.php' ?>
                             <span data-span="error-emailAddress" class="text-danger" id="erroremailAddress"><?= isset($errors['emailAddress']) ? $errors['emailAddress'] : '' ?></span>
                         </div>
                         <div class=" form-group col-lg-6 col-11r">
-                            <label class="py-2" for="option">Reason for contact</label>
+                            <label class="py-2" for="option">Object</label>
                             <select class="form-control" name="option" id="option">
                                 <option value="">Please choose </option>
                                 <option value="New Deal">This concerns a new deal</option>

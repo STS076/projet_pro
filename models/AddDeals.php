@@ -84,7 +84,9 @@ class Deals extends Database
     }
 
 
-    /**fonction pour créer un deal  */
+    /**fonction pour créer un deal  
+     * 
+     */
     public function addDeals(string $deals_title, $deals_mini_summary, $deals_summary,  string $deals_when, string $deals_where, string $deals_price, string $deals_map, string $deals_metro, string $deals_info, $deals_contact, INT $tag_arr_id_TAG_ARR, INT $users_id_USERS, $deals_created)
     {
         $pdo = parent::connectDb();

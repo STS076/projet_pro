@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $regexName = "/^[a-zA-Z-éèëêâäàöôûùüîïç]+$/";
     $regexPhoneNumber = "/^[0-9]{10}+$/";
 
-  
+
     if (isset($_POST['firstname'])) {
         if (empty($_POST['firstname'])) {
             $errors['firstname'] = '*Please enter you name';
@@ -95,17 +95,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $nom = safeInput($_POST['surname']);
         $pseudo = safeInput($_POST['username']);
         $adresseEmail = safeInput($_POST['emailAddress']);
-        if($_SESSION['user']['role_id_ROLE'] != 1){
-            $role = 3; 
+        if ($_SESSION['user']['role_id_ROLE'] != 1) {
+            $role = 3;
         } else {
-            $role =  $_POST['role_id_ROLE']; 
+            $role =  $_POST['role_id_ROLE'];
         }
 
         $user = new Users();
-        $user->amendUser($pseudo,  $prenom,  $nom,  $adresseEmail, $role , $_GET['amend']);
+        $user->amendUser($pseudo,  $prenom,  $nom,  $adresseEmail, $role, $_GET['amend']);
 
-        header('location: amendUsers.php?amend=' . $_GET['amend']);
-        exit;
+        // creation d'une variable de session swal
+        $_SESSION['swal'] = [
+            'icon' => 'success',
+            'title' => 'Modify User',
+            'text' => 'You have successfully modified your profile ! '
+        ];
+
+        if ($_SESSION['user']['role_id_ROLE'] == 1) {
+            header('location: amendUsers.php?amend=' . $_GET['amend']);
+            exit;
+        }
     }
 }
 

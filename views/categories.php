@@ -4,11 +4,11 @@ require_once '../controllers/categories-controller.php';
 require_once '../elements/top.php';
 ?>
 
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100 backgroundAdmin">
 
     <?php require_once '../elements/header.php' ?>
 
-    <main>
+    <main class="bg-white py-5 container px-0">
         <section>
             <h2 class="fs-2 text-center welcome pt-5 comments"><?= $oneCatArray['tag_categories_name'] ?></h2>
             <div class="row m-0 justify-content-center">

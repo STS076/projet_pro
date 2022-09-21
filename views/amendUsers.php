@@ -11,7 +11,7 @@ require_once '../elements/top.php' ?>
 
     <div class="row  justify-content-evenly mx-0 py-5">
         <?php if ($_SESSION['user']['role_id_ROLE'] != 1 && $_SESSION['user']['users_id'] == $_GET['amend'] || $_SESSION['user']['role_id_ROLE'] == 1) { ?>
-            <div class="bg-light  border border-dark shadow-sm col-lg-5 py-4 rounded col-11">
+            <div class="bg-light   shadow-sm col-lg-5 py-4  col-11">
 
                 <p class="text-center fs-5 my-4 fw-bold">Modify your profile : </p>
                 <form action="" method="POST">
@@ -92,6 +92,18 @@ require_once '../elements/top.php' ?>
         ?>
 
     </div>
+
+    <?php if (isset($_SESSION['swal'])) { ?>
+        <script>
+            Swal.fire({
+                icon: '<?= $_SESSION['swal']['icon'] ?>',
+                title: '<?= $_SESSION['swal']['title'] ?>',
+                text: '<?= $_SESSION['swal']['text'] ?>'
+            })
+        </script>
+    <?php
+        unset($_SESSION['swal']);
+    } ?>
 
 
 
