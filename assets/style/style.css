@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=BioRhyme:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
 body {
     font-family: 'Lato', sans-serif;
 }
 
 .titleMain {
-    font-family: 'BioRhyme', serif;
-    letter-spacing: 0.2rem;
+    font-family: 'Courgette', cursive;
+    /* letter-spacing: 0.1rem; */
     color: rgb(0, 0, 77);
 }
 
@@ -32,7 +33,7 @@ body {
 /* navbar */
 /*  */
 .navigation {
-    background-color: #cbe9ead3;
+    background-color: #cbe9eaee;
     color: rgb(0, 0, 77);
     /* position: sticky;
     top: 0;
@@ -58,12 +59,12 @@ body {
 }
 
 .welcome {
-    font-family: 'BioRhyme', serif;
+    font-family: 'Courgette', cursive;
 }
 
 .welcome2 {
-    font-family: 'BioRhyme', serif;
-    font-size: 4rem;
+    font-family: 'Courgette', cursive;
+    font-size: 2.5rem;
 }
 
 .MenuBurger {
@@ -84,7 +85,7 @@ footer {
 .cadre {
     position: relative;
     text-align: center;
-    font-family: 'BioRhyme', serif;
+    font-family: 'Courgette', cursive;
     font-size: 1.5rem;
     color: whitesmoke;
 }
@@ -122,19 +123,19 @@ footer {
     width: 95%;
 }
 
-.newDeals{
-    background-color:rgb(0, 0, 77) ;
+.newDeals {
+    background-color: rgb(0, 0, 77);
 }
 
-.newDealsWrite{
-    color:rgb(0, 0, 77)  ;
+.newDealsWrite {
+    color: rgb(0, 0, 77);
 }
 
 .hotDeals {
     background-color: #FCCF4E;
 }
 
-.hotDealsWrite{
+.hotDealsWrite {
     color: #FCCF4E;
 }
 

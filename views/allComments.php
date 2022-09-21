@@ -8,12 +8,18 @@ require_once '../controllers/allComments-controller.php';
 <?php include '../elements/top.php' ?>
 
 
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100 backgroundAdmin">
     <?php include '../elements/header.php' ?>
-    <div class="container bienvenue d-flex align-items-center flex-column rounded my-5 p-5 border border-dark shadow">
+    <div class="container bienvenue d-flex align-items-center flex-column  my-5 p-5  bg-light shadow">
+
+
+        <div class="d-flex justify-content-start">
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for an user ..." class="px-5 my-2 shadow-sm myInput">
+        </div>
+
         <div class="col-lg-10 col-11 text-center ">
             <div class="table-responsive table-hover">
-                <table class="table">
+                <table class="table" id="myTable">
                     <thead>
                         <tr>
                             <th class="text-center">User</th>
@@ -70,6 +76,7 @@ require_once '../controllers/allComments-controller.php';
     </div>
 
     <?php include '../elements/footer.php' ?>
+    <script src="../assets/script/filterImages.js"></script>
 
 </body>
 

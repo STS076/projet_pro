@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once '../controllers/contact-controller.php';
 require_once '../elements/top.php' ?>
 
@@ -11,7 +11,7 @@ require_once '../elements/top.php' ?>
     <?php if ($showForm) { ?>
         <main>
             <div class="container bg-light my-5">
-                <h2 class="py-3 text-center fst-italics comments">Contact us</h2>
+                <h2 class="py-3 text-center welcome comments">Contact us</h2>
                 <p class="text-center">You noticed a mistake in one of our ads ? Or you want to make us aware of a new deal ? Please let us know below.</p>
 
                 <form action="" method="POST">

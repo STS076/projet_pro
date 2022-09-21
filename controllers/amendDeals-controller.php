@@ -15,7 +15,7 @@ require_once '../models/Images.php';
 require_once '../models/Role.php';
 require_once '../models/Users.php';
 require_once '../models/Comments.php';
-require_once '../models/Form.php'; 
+require_once '../models/Form.php';
 
 $arr = new Arrondissements();
 $allTagsArrArray = $arr->getAllTagArr();
@@ -124,9 +124,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $cat->addDealCategory($value, $_GET['amend']);
         };
 
+        // creation d'une variable de session swal
+        $_SESSION['swal'] = [
+            'icon' => 'success',
+            'title' => 'Modify Deal',
+            'text' => 'You have successfully amended this deal ! '
+        ];
+
         // $allcatarray = $cat->getDealCategory($_GET['amend']);
         // si tout est bon et que le deal a été créé alors va retourner vers le dashboard deals
-        header('location: amendDeals.php?amend='. $_GET['amend']);
+        header('location: allDeals.php');
         exit;
     }
 }
@@ -138,6 +145,3 @@ function safeInput($input)
     $safeInput = htmlspecialchars(($safeInput));
     return $safeInput;
 }
-
-
-

@@ -5,15 +5,15 @@ require_once '../controllers/amendUsers-controller.php';
 
 require_once '../elements/top.php' ?>
 
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100 backgroundAdmin">
 
     <?php require_once '../elements/header.php' ?>
 
     <div class="row  justify-content-evenly mx-0 py-5">
-        <?php if ($_SESSION['user']['role_id_ROLE'] != 1 && $_SESSION['user']['users_id'] == $_GET['amend'] ||$_SESSION['user']['role_id_ROLE'] == 1 ) { ?>
+        <?php if ($_SESSION['user']['role_id_ROLE'] != 1 && $_SESSION['user']['users_id'] == $_GET['amend'] || $_SESSION['user']['role_id_ROLE'] == 1) { ?>
             <div class="bg-light  border border-dark shadow-sm col-lg-5 py-4 rounded col-11">
 
-                <p class="text-center fs-5 my-4 fw-bold">Modify an user : </p>
+                <p class="text-center fs-5 my-4 fw-bold">Modify your profile : </p>
                 <form action="" method="POST">
 
                     <div class=" d-flex flex-column">
@@ -56,16 +56,25 @@ require_once '../elements/top.php' ?>
                             </select>
                         </div>
                     <?php } ?>
-                    
+
                     <div class="my-3 text-center">
                         <button class="btn bouton border border-dark text-light" id="submit" name="submit">Submit</button>
                     </div>
                 </form>
-                <div class="mt-5 text-center">
-                    <a class="text-decoration-none" href="allUsers.php">
-                        <button class="btn text-white bg-info">back</button>
-                    </a>
-                </div>
+
+                <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>
+                    <div class="mt-5 text-center">
+                        <a class="text-decoration-none" href="allUsers.php">
+                            <button class="btn text-white bg-info">back</button>
+                        </a>
+                    </div>
+                <?php } else { ?>
+                    <div class="mt-5 text-center">
+                        <a class="text-decoration-none" href="dashboard.php">
+                            <button class="btn text-white bg-info">back</button>
+                        </a>
+                    </div>
+                <?php } ?>
             </div>
 
         <?php } else { ?>

@@ -6,10 +6,10 @@ require_once '../controllers/allDeals-controller.php';
 <?php include '../elements/top.php' ?>
 
 
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100 backgroundAdmin">
     <?php include '../elements/header.php' ?>
 
-    <div class="container bienvenue d-flex align-items-center flex-column rounded my-5 p-5 border border-dark shadow">
+    <div class="container bienvenue d-flex align-items-center flex-column bg-light my-5 p-5 shadow">
 
         <div class="d-flex justify-content-start">
             <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for a category ..." class="px-5 my-2 shadow-sm myInput">
@@ -101,11 +101,11 @@ require_once '../controllers/allDeals-controller.php';
                                     <td class="text-center"><?= $value['tag_arr_name'] ?></td>
                                     <td class="text-center"><?= $value['DealsCatTag'] ?></td>
                                     <td class="text-center"><a class="text-light btn bouton" href="infoDeals.php?info=<?= $value['deals_id'] ?>"> + d'info</a></td>
-                                    
-                                    <?php if($value['deals_validate'] == 0) {?>
-                                    <td class="text-center text-danger">Submited</td>
-                                    <?php } else if ($value['deals_validate'] == 1) { ?> 
-                                    <td class="text-center text-success">Validated</td>
+
+                                    <?php if ($value['deals_validate'] == 0) { ?>
+                                        <td class="text-center text-danger">Submited</td>
+                                    <?php } else if ($value['deals_validate'] == 1) { ?>
+                                        <td class="text-center text-success">Validated</td>
                                     <?php } ?>
                                 </tr>
                         <?php }
@@ -124,6 +124,20 @@ require_once '../controllers/allDeals-controller.php';
             </div>
         </div>
     </div>
+
+
+    <?php if (isset($_SESSION['swal'])) { ?>
+        <script>
+            Swal.fire({
+                icon: '<?= $_SESSION['swal']['icon'] ?>',
+                title: '<?= $_SESSION['swal']['title'] ?>',
+                text: '<?= $_SESSION['swal']['text'] ?>'
+            })
+        </script>
+    <?php
+        unset($_SESSION['swal']);
+    } ?>
+
 
     <?php include '../elements/footer.php' ?>
     <script src="../assets/script/filter.js"></script>

@@ -10,7 +10,7 @@ require_once '../controllers/arrondissements-controller.php';
 
     <main>
 
-        <h2 class="text-center fst-italic mt-5 mb-2 comments"><?= $oneArrondissement['tag_arr_name'] ?></h2>
+        <h2 class="fs-2 text-center welcome pt-5 comments"><?= $oneArrondissement['tag_arr_name'] ?></h2>
         <div class="row m-0 justify-content-center">
             <div class="col-lg-8 col-11 p-3">
                 <p><?= $oneArrondissement['tag_arr_summary'] ?>

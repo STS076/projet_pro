@@ -122,6 +122,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $cat->addDealCategory($value, $idDeals);
         };
         $allcatarray = $cat->getDealCategory($idDeals);
+
+        $_SESSION['swal'] = [
+            'icon' => 'success',
+            'title' => 'Add a Deal',
+            'text' => 'Thank you for submitting this deal, our moderation team will review it as
+            soon as they can.'
+        ];
+
+        // header('Location: allDeals.php');
+        // exit;
     }
 }
 

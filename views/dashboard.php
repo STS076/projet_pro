@@ -47,11 +47,11 @@ require_once '../elements/top.php' ?>
                 </div>
             </div>
         <?php } ?>
-        <div class="mt-5">
+        <!-- <div class="mt-5">
             <a class="text-decoration-none" href="logout.php">
-                <button class="btn text-white bg-info"> Log Out</button>
+                <button class="btn text-dark shadow-sm"><i class="bi bi-box-arrow-left me-3"></i> Log Out</button>
             </a>
-        </div>
+        </div> -->
     </div>
 
 

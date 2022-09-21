@@ -5,10 +5,10 @@ require_once '../controllers/validateNewDeals-controller.php';
 <?php include '../elements/top.php' ?>
 
 
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100 backgroundAdmin">
     <?php include '../elements/header.php' ?>
 
-    <div class="container bienvenue d-flex align-items-center flex-column  my-5 p-5  shadow">
+    <div class="container bienvenue d-flex align-items-center flex-column bg-light my-5 p-5  shadow">
         <div class="col-lg-12 col-11 text-center fw-bold">
             <div class="table-responsive table-hover">
                 <table class="table">

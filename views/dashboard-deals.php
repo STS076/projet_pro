@@ -14,11 +14,17 @@ require_once '../elements/top.php';
     <div class="container d-flex align-items-center flex-column  bg-light shadow-sm p-5 my-5 ">
 
         <div class="row align-item">
+            <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>
+                <div class="col text-center m-3">
+                    <a href="allDeals.php"> <button class="text-center text-center text-light  rounded boutons">All of the Deals</button></a>
+                </div>
+            <?php } else { ?>
+                <div class="col text-center m-3">
+                    <a href="allDeals.php"> <button class="text-center text-center text-light  rounded boutons">My Deals</button></a>
+                </div>
+            <?php } ?>
             <div class="col text-center m-3">
-                <a href="allDeals.php"> <button class="text-center text-center text-light  rounded boutons">All of the Deals</button></a>
-            </div>
-            <div class="col text-center m-3">
-                <a href="addDeal.php"> <button class="text-center text-center text-light rounded  boutons">Add a Deal</button></a>
+                <a href="addDeal.php"> <button class="text-center text-center text-light rounded  boutons">Submit a new deal</button></a>
             </div>
         </div>
         <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>
@@ -30,9 +36,7 @@ require_once '../elements/top.php';
         <?php } ?>
 
 
-
         <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>
-
             <div class="mt-5">
                 <a class="text-decoration-none" href="dashboard.php">
                     <button class="btn text-white bg-info">back</button>
@@ -41,7 +45,7 @@ require_once '../elements/top.php';
         <?php  } else { ?>
             <div class="text-center py-3">
                 <a class="text-decoration-none" href="dashboard.php">
-                    <button class="btn text-dark back">Back</button>
+                    <button class="btn text-dark back shadow-sm">Back</button>
                 </a>
             </div>
         <?php } ?>

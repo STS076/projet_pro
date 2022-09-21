@@ -10,7 +10,7 @@ require_once '../controllers/allArrondissements-controller.php';
 
     <main>
 
-        <p class="fs-1 text-center welcome pt-5 comments">Arrondissements</p>
+        <p class="fs-2 text-center welcome pt-5 comments">Arrondissements</p>
 
         <div class="row mx-0 my-5 justify-content-center">
 

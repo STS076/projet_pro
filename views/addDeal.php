@@ -14,9 +14,10 @@ require_once '../elements/top.php' ?>
         <div class="bg-light  shadow-sm col-lg-5 py-4  col-11">
 
             <p class=" text-center fs-5 my-4 fw-bold">Upload a new deal</p>
-            <?php
 
+            <?php
             if ($showForm) { ?>
+
                 <form method="POST" action="">
                     <p class="text-danger mandatoryInput">Input with an * are mandatory</p>
                     <div class="d-flex flex-column">
@@ -81,7 +82,7 @@ require_once '../elements/top.php' ?>
                                 <?= isset($errors['dealMetro']) ? $errors['dealMetro'] : '' ?>
                             </span>
                         </label>
-                        <input type="text" id="dealMetro" placeholder="Ex : In the Louvre gardens" value="<?= isset($_POST['dealMetro']) ? $_POST['dealMetro'] : '' ?>" name="dealMetro">
+                        <input type="text" id="dealMetro" placeholder="Ex : Metro 2" value="<?= isset($_POST['dealMetro']) ? $_POST['dealMetro'] : '' ?>" name="dealMetro">
                     </div>
                     <div class="d-flex flex-column">
                         <label class="py-2" for="dealInfo">
@@ -153,11 +154,13 @@ require_once '../elements/top.php' ?>
             <?php }
             ?>
 
+
             <div class="mt-5 text-center">
-                <a class="text-decoration-none" href="dashboard-deals.php">
+                <a class="text-decoration-none" href="allDeals.php">
                     <button class="btn text-white bg-info">back</button>
                 </a>
             </div>
+
 
         </div>
     </div>

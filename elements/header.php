@@ -37,16 +37,23 @@
                 <a class="nav-link active titre box fw-bold text-black me-5" href="contact.php">Contact us</a>
             </li>
             <li class="nav-item">
-                <?php if (!isset($_SESSION)) { ?>
-                    <a class="nav-link active titre box fw-bold text-black" href="loginAdmin.php">
-                        <i class="bi bi-person-circle"></i>
+                <?php if (!isset($_SESSION['user'])) { ?>
+                    <a class="nav-link active titre box fw-bold text-black me-5" href="loginAdmin.php">
+                        <i class="bi bi-person-circle me-2"></i>Login
                     </a>
                 <?php } else { ?>
-                    <a class="nav-link active titre box fw-bold text-black" href="dashboard.php">
-                        <i class="bi bi-person-circle"></i>
+                    <a class="nav-link active titre box fw-bold text-black me-5" href="dashboard.php">
+                        <i class="bi bi-person-circle me-2"></i>Dashboard
                     </a>
                 <?php } ?>
             </li>
+            <?php if (isset($_SESSION['user'])) { ?>
+                <li class="nav-item">
+                    <a class="nav-link active titre box fw-bold text-black" href="logout.php">
+                        <i class="bi bi-box-arrow-left me-2"></i>Log Out
+                    </a>
+                </li>
+            <?php } ?>
         </ul>
     </div>
 </nav>
@@ -87,6 +94,24 @@
                     <li class="nav-item">
                         <a class="nav-link active titre box fw-bold text-dark" href="contact.php">Contact us</a>
                     </li>
+                    <li class="nav-item">
+                        <?php if (!isset($_SESSION['user'])) { ?>
+                            <a class="nav-link active titre box fw-bold text-black me-5" href="loginAdmin.php">
+                                <i class="bi bi-person-circle me-2"></i>Login
+                            </a>
+                        <?php } else { ?>
+                            <a class="nav-link active titre box fw-bold text-black me-5" href="dashboard.php">
+                                <i class="bi bi-person-circle me-2"></i>Dashboard
+                            </a>
+                        <?php } ?>
+                    </li>
+                    <?php if (isset($_SESSION['user'])) { ?>
+                        <li class="nav-item">
+                            <a class="nav-link active titre box fw-bold text-black" href="logout.php">
+                                <i class="bi bi-box-arrow-left me-2"></i>Log Out
+                            </a>
+                        </li>
+                    <?php } ?>
                 </ul>
             </div>
         </div>

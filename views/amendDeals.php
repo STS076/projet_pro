@@ -8,7 +8,7 @@ require_once '../controllers/amendDeals-controller.php';
 // var_dump($_POST);
 require_once '../elements/top.php' ?>
 
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100 backgroundAdmin">
 
     <?php require_once '../elements/header.php' ?>
 
@@ -31,8 +31,7 @@ require_once '../elements/top.php' ?>
                 <div class="d-flex flex-column">
                     <label class="py-2" for="dealMiniSummary">
                         Mini summary :
-                        <span class="text-danger" data-span="error-dealMiniSummary">
-                            <?= isset($errors['dealMiniSummary']) ? $errors['dealMiniSummary'] : '' ?>
+                        <span class="text-danger" data-span="error-dealMiniSummary"><?= isset($errors['dealMiniSummary']) ? $errors['dealMiniSummary'] : '' ?>
                         </span>
                     </label>
                     <textarea type="text" id="dealMiniSummary" name="dealMiniSummary"><?= $oneDealArray['deals_mini_summary'] ?></textarea>
@@ -40,8 +39,7 @@ require_once '../elements/top.php' ?>
                 <div class="d-flex flex-column">
                     <label class="py-2" for="dealSummary">
                         Summary :
-                        <span class="text-danger" data-span="error-dealSummary">
-                            <?= isset($errors['dealSummary']) ? $errors['dealSummary'] : '' ?>
+                        <span class="text-danger" data-span="error-dealSummary"><?= isset($errors['dealSummary']) ? $errors['dealSummary'] : '' ?>
                         </span>
                     </label>
                     <textarea type="text" id="dealSummary" name="dealSummary"> <?= $oneDealArray['deals_summary'] ?></textarea>
