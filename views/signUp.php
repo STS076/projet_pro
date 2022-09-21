@@ -55,9 +55,7 @@ require_once '../elements/top.php' ?>
                 <div class="my-1 text-center">
                     <button class="btn bouton border border-dark text-light" id="submit" name="submit">Sign Up</button>
                 </div>
-                <div>
-                    <a href="loginAdmin.php" class="text-white fw-bold">Log in if you already have an account </a>
-                </div>
+                <p class="filAriane">*Password need a lowercase, an uppercase, a number, a special character and minimum 8 characters</p>
 
             </div>
         </form>

@@ -167,7 +167,7 @@ class Deals extends Database
     public function getOneDeal($deals_id)
     {
         $pdo = parent::connectDb();
-        $sql = "SELECT deals_id, deals_title, deals_summary, deals_mini_summary, deals_contact, deals_validate, deals_mini_summary, users_username, deals_when, deals_where, deals_price, deals_metro, deals_map, deals_info, 
+        $sql = "SELECT deals_id, deals_title, deals_summary, tag_arr_id_TAG_ARR, deals_mini_summary, deals_created, deals_contact, deals_validate, deals_mini_summary, users_username, deals_when, deals_where, deals_price, deals_metro, deals_map, deals_info, 
         group_concat(tag_categories_id_TAG_CATEGORIES SEPARATOR ', ') 
         as DealsCatTagId, tag_arr_id_TAG_ARR, group_concat(tag_categories_name SEPARATOR ', ') 
         as DealsCatTag, tag_arr_name  

@@ -11,14 +11,19 @@ require_once '../elements/top.php' ?>
     <?php require_once '../elements/header.php' ?>
 
     <div class="container  d-flex align-items-center flex-column  bg-light  shadow-sm p-5 my-5 ">
-        <p class="fw-bold fs-4 fst-italic p-2 text-center"> Welcome <?= $_SESSION['user']['users_name'] ?> </p>
+        <h2 class="fs-2 text-center welcome "> Welcome <?= $_SESSION['user']['users_name'] ?> </h2>
         <div class="row align-item">
             <div class="col text-center m-3">
-                <a href="dashboard-deals.php"> <button class="text-center text-center text-light rounded  boutons">Deals</button></a>
+                <a href="dashboard-deals.php"> <button class="text-center text-center text-light rounded  boutons">Manage deals</button></a>
             </div>
             <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>
                 <div class="col text-center m-3">
                     <a href="dashboard-tagsCategories.php"> <button class="text-center text-center text-light  rounded boutons">Tags Categories</button></a>
+                </div>
+            <?php } ?>
+            <?php if ($_SESSION['user']['role_id_ROLE'] != 1) { ?>
+                <div class="col text-center m-3">
+                    <a href="amendUsers.php?amend=<?= $_SESSION['user']['users_id'] ?>"> <button class="text-center text-center rounded text-light  boutons">Modify your profile</button></a>
                 </div>
             <?php } ?>
         </div>
@@ -40,13 +45,7 @@ require_once '../elements/top.php' ?>
                 </div>
             </div>
         <?php } ?>
-        <?php if ($_SESSION['user']['role_id_ROLE'] != 1) { ?>
-            <div class="row align-item">
-                <div class="col text-center m-3">
-                    <a  href="amendUsers.php?amend=<?= $_SESSION['user']['users_id'] ?>"> <button class="text-center text-center rounded text-light  boutons">Modify your profile</button></a>
-                </div>
-            </div>
-        <?php } ?>
+
         <!-- <div class="mt-5">
             <a class="text-decoration-none" href="logout.php">
                 <button class="btn text-dark shadow-sm"><i class="bi bi-box-arrow-left me-3"></i> Log Out</button>

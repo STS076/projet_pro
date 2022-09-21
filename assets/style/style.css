@@ -33,7 +33,7 @@ body {
 /* navbar */
 /*  */
 .navigation {
-    background-color: #cbe9eaee;
+    background-color: rgb(188, 188, 188);
     color: rgb(0, 0, 77);
     /* position: sticky;
     top: 0;
@@ -47,7 +47,7 @@ body {
 }
 
 .navigationMobile {
-    background-color: #CBE9EA;
+    background-color: rgb(188, 188, 188);
 }
 
 .paris {
@@ -220,7 +220,7 @@ footer {
 @media screen and (min-width:600px) {
     .map {
         width: 100%;
-        height: auto;
+        height: 20rem;
     }
 
 }
@@ -380,20 +380,40 @@ footer {
 .background {
     background: rgba(0, 0, 0, 0.1) url("../images/arcDeTriomphe.jpg");
     background-position: center;
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode: darken;
 }
 
-.backgroundAdmin {
-    background: rgba(0, 0, 0, 0.1) url("../images/backgroundAdmin.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-blend-mode: darken;
+@media screen and (min-width:600px) {
+    .backgroundAdmin {
+        background: rgba(0, 0, 0, 0.1) url("../images/backgroundAdmin.jpg");
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-blend-mode: darken;
+    }
 }
 
 /* taille éléments obligatoires dans formulaire deals */
 .mandatoryInput {
     font-size: 0.8REM;
+}
+
+/* Deals */
+
+.breadcrumb-navigation>li {
+    display: inline;
+}
+
+.breadcrumb-navigation li+li:before {
+    padding: 0.5REM;
+    /* content: "<i class='bi bi-caret-right-fill'></i>"; */
+}
+
+.filAriane {
+    color: grey;
+    font-size: 0.8rem;
 }

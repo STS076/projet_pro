@@ -11,6 +11,9 @@ require_once '../controllers/allDeals-controller.php';
 
     <div class="container bienvenue d-flex align-items-center flex-column bg-light my-5 p-5 shadow">
 
+        <?php if ($_SESSION['user']['role_id_ROLE'] != 1) { ?>
+            <h2 class="fs-2 text-center welcome ">Deals submited by <?=$_SESSION['user']['users_username'] ?></h2>
+        <?php } ?>
         <div class="d-flex justify-content-start">
             <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for a category ..." class="px-5 my-2 shadow-sm myInput">
         </div>

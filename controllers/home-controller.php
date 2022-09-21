@@ -18,7 +18,16 @@ $allTagsCategoryArray = $category->getAllTagCategory();
 
 $deal = new Deals();
 $hotDeals = $deal->getDealByAverageRating();
-$lastTenDeals = $deal->lastTenDeals(); 
+$lastTenDeals = $deal->lastTenDeals();
+
+
+$exploreColor = [
+    'Nature' => 'green',
+    'Beauty' => 'pink',
+    'Museum' => 'blue',
+];
+
+
 
 /*
 Vous pouvez prendre tout le contenu de cette page pour l'insérer là où vous voulez sur votre site, attention à bien mettre ce code dans un page avec l'extension .php pour que le code fonctionne

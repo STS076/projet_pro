@@ -16,11 +16,9 @@ require_once '../controllers/allArrondissements-controller.php';
 
             <?php foreach ($allTagsArrArray as $value) {
             ?>
-                <div class="col-lg-3 col-11 m-3 p-0 cardarr">
-                    <div class="card cadre m-0 p-0 shadow-sm">
+                <div class="col-lg-3 col-11 m-3 p-0 cardarr shadow-sm card cadre m-0 p-0 ">
                         <img class="image m-0 p-0" src="../assets/images/arrondissements/<?= $value['tag_arr_picture'] ?>.jpg">
                         <p class="arrondissement"><a class="text-white glass hoverNav text-decoration-none" href="arrondissements.php?choice=<?= $value['tag_arr_id'] ?>"><?= $value['tag_arr_name'] ?></a></p>
-                    </div>
                 </div>
             <?php } ?>
 

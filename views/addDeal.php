@@ -13,7 +13,7 @@ require_once '../elements/top.php' ?>
 
         <div class="bg-light  shadow-sm col-lg-5 py-4  col-11">
 
-            <p class=" text-center fs-5 my-4 fw-bold">Upload a new deal</p>
+            <h2 class="fs-2 text-center welcome ">Upload a new deal</h2>
 
             <?php
             if ($showForm) { ?>
@@ -86,7 +86,7 @@ require_once '../elements/top.php' ?>
                     </div>
                     <div class="d-flex flex-column">
                         <label class="py-2" for="dealInfo">
-                            * More info :
+                            More info :
                             <span class="text-danger" data-span="error-dealInfo">
                                 <?= isset($errors['dealInfo']) ? $errors['dealInfo'] : '' ?>
                             </span>

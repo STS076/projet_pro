@@ -13,6 +13,10 @@ require_once '../elements/top.php';
 
     <div class="container d-flex align-items-center flex-column  bg-light shadow-sm p-5 my-5 ">
 
+        <?php if ($_SESSION['user']['role_id_ROLE'] != 1) { ?>
+            <h2 class="fs-2 text-center welcome ">Dashboard Deals
+            </h2>
+        <?php } ?>
         <div class="row align-item">
             <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>
                 <div class="col text-center m-3">

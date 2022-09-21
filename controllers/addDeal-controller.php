@@ -73,11 +73,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $errors['dealMetro'] = '*Please enter a metro / RER';
         }
     }
-    if (isset($_POST['dealInfo'])) {
-        if (empty($_POST['dealInfo'])) {
-            $errors['dealInfo'] = '*Please enter more info';
-        }
-    }
+    // if (isset($_POST['dealInfo'])) {
+    //     if (empty($_POST['dealInfo'])) {
+    //         $errors['dealInfo'] = '*Please enter more info';
+    //     }
+    // }
+
     if (isset($_POST['dealContact'])) {
         if (empty($_POST['dealContact'])) {
             $errors['dealContact'] = '*Please enter a contact';

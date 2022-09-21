@@ -6,12 +6,10 @@ require_once '../controllers/home-controller.php';
 require_once '../data/data.php';
 require_once '../elements/top.php' ?>
 
-<body class="d-flex flex-column min-vh-100">
-
+<body class="d-flex flex-column min-vh-100 backgroundAdmin">
     <?php require_once '../elements/header.php' ?>
 
-
-    <main class="bg-white py-5">
+    <main class="bg-white py-5 container">
         <div class="row m-0 p-0 justify-content-center">
             <div class="col-lg-8 col-11">
                 <p class=" text-center welcome2 ">Welcome To Paris</p>
@@ -20,14 +18,7 @@ require_once '../elements/top.php' ?>
             </div>
         </div>
 
-        <!-- <div class="row m-0 justify-content-center">
-            <div class="col-lg-8 col-11 text-center">
-                <p class="fs-1 text-center welcome">Hot Deals</p>
-                <p class="fs-6 text-center">Find below our most popular deals, and where you should go have fun next.</p>
-            </div>
-        </div> -->
-
-        <div class=" row justify-content-evenly mx-0 my-5 py-5 bg-light shadow">
+        <div class=" row justify-content-evenly mx-0 my-5 py-5 bg-light">
             <div class="col-lg-2 col-11 hotDeals mx-1 my-3 py-5 d-flex align-items-center">
                 <p class="text-light fw-bold fs-2 text-center welcome">Our better rated deals</p>
             </div>
@@ -38,8 +29,8 @@ require_once '../elements/top.php' ?>
                         <div class="">
                             <p class="text-center fw-bold fs-5 newDealsWrite my-1"><?= $value['deals_title'] ?></p>
                             <p class=""><?= $value['deals_mini_summary'] ?></p>
-                            <div class="d-flex justify-content-end">
-                                <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="newDealsWrite">Explore</a>
+                            <div class="d-flex justify-content-end p-2">
+                                <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="">Explore</a>
                             </div>
                         </div>
                     </div>
@@ -47,76 +38,59 @@ require_once '../elements/top.php' ?>
             } ?>
         </div>
 
-        <div class=" row justify-content-evenly my-5 mx-0 py-5 bg-light shadow">
-            <div class="col-lg-2 col-11 newDeals mx-1 my-3 py-5 d-flex align-items-center">
-                <p class="text-light fw-bold fs-2 text-center welcome">Our brand new deals</p>
+
+        <section class="bg-white">
+            <div class="row m-0 p-0 justify-content-center">
+                <div class="col-lg-8 col-11">
+                    <p class="fs-5 text-center fw-bold newsletter">Sign up to our newsletter</p>
+                    <p class="text-center">You never want to miss any good deal ? Well, sign up to our newsletter to keep up with Paris' best deals.</p>
+                    <form method="post" class="d-flex justify-content-center">
+                        <div class="form-group m-0 p-0">
+                            <input class="m-0 p-0" type="text" name="mail" placeholder="Your email" />
+                            <input class="m-0 p-0" type="submit" value="Sign up" />
+                            <p class="text-danger" id="errorsurname"><?= isset($erreurs['mail']) ? $erreurs['mail'] : '' ?></p>
+                        </div>
+                    </form>
+                </div>
             </div>
+        </section>
+
+        <div class="row m-0 p-0 justify-content-center">
+            <div class="col-12 text-center">
+                <p>You would like to join our community and help us to add new deals and keep everything up to date ? <a href="SignUp.php" class="text-dark text-decoration-none fw-bold">Join us</a> </p>
+            </div>
+        </div>
+
+        <div class=" row justify-content-evenly my-4 mx-0 bg-light">
+            <p class="fs-1 text-center welcome pt-5">What to do today in Paris ?</p>
             <?php foreach ($lastTenDeals as $value) {
                 if ($value['deals_validate'] == 1) { ?>
-                    <div class="col-lg-2 col-11 bg-light shadow-sm mx-2 my-3 p-0">
+                    <div class="col-lg-2 col-11 bg-light shadow-sm mx-2 my-3 p-0 order-sm-<?= $value['deals_id'] ?>">
                         <img src="../assets/images/tuileriesDeal.webp" class="m-0 p-0 img-fluid" alt="picture Jardin des tuileries">
                         <div class="">
                             <p class="text-center fw-bold fs-5 newDealsWrite my-1"><?= $value['deals_title'] ?></p>
                             <p class=""><?= $value['deals_mini_summary'] ?></p>
-                            <div class="d-flex justify-content-end">
+                            <div class="d-flex justify-content-end p-2">
                                 <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="newDealsWrite">Explore</a>
                             </div>
                         </div>
                     </div>
             <?php }
             } ?>
+            <div class="col-lg-2 col-11 newDeals mx-1 my-3 py-5 d-flex align-items-center order-sm-1">
+                <p class="text-light fw-bold fs-2 text-center welcome">Our brand new deals</p>
+            </div>
         </div>
 
-        <p class="fs-1 text-center welcome pt-5 comments">Arrondissements</p>
-        <div class="row m-0 p-0 justify-content-center">
-
-            <div class="col-12  justify-content-center">
-
-                <!-- Image Map Generated by http://www.image-map.net/ -->
-                <svg version="1.1" baseProfile="full">
+        <p class="fs-1 text-center welcome comments">Arrondissements</p>
+        <div class="row m-0 p-0 d-flex justify-content-center">
+            <div class="col-12">
+                <svg version="1.1" class="text-center" baseProfile="full">
                     <img usemap="#image-map" src="../assets/images/Land cover map of the city and department of Paris, France, equirectangular projection.svg">
                 </svg>
-
-                <map name="image-map">
-                    <area target="" alt="1st arrondissement" title="1st arrondissement" href="arrondissements.php?choice=1" coords="603,406,620,382,633,342,540,309,528,294,517,297,498,344,571,376" shape="poly">
-                </map>
-                <!-- <img src="../assets/images/mapParis.svg" alt="paris map arrondissement clickable" class="carteParis"> -->
-                <!-- <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d68619.27405620199!2d2.2994927448923677!3d48.861985351799326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2sParis!5e0!3m2!1sfr!2sfr!4v1663587238667!5m2!1sfr!2sfr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
-                <!-- <iframe class="map" src="https://www.google.com/maps/d/embed?mid=1zEOpBycFxifCysQPRCzJy8cWFyh2FS0&ehbc=2E312F"></iframe> -->
-            </div>
-        </div>
-
-        <!-- <div class="row mx-0 my-5 justify-content-center">
-            <?php foreach ($allTagsArrArray as $value) {
-            ?>
-                <div class="col-lg-3 col-11 m-3 p-0 cardarr">
-                    <div class="card cadre m-0 p-0 shadow-sm">
-                        <img class="image m-0 p-0" src="../assets/images/arrondissements/<?= $value['tag_arr_picture'] ?>.jpg">
-                        <p class="arrondissement"><a class="text-white glass hoverNav text-decoration-none" href="arrondissements.php?choice=<?= $value['tag_arr_id'] ?>"><?= $value['tag_arr_name'] ?></a></p>
-                    </div>
-                </div>
-            <?php } ?>
-        </div> -->
-    </main>
-
-
-
-    <main class="bg-white py-5">
-        <div class="row m-0 p-0 justify-content-center">
-            <div class="col-lg-8 col-11">
-                <p class="fs-5 text-center fw-bold newsletter">Sign up to our newsletter</p>
-                <p class="text-center">You never want to miss any good deal ? Well, sign up to our newsletter to keep up with Paris' best deals.</p>
-                <form method="post" class="d-flex justify-content-center">
-                    <div class="form-group m-0 p-0">
-                        <input class="m-0 p-0" type="text" name="mail" placeholder="Your email" />
-                        <input class="m-0 p-0" type="submit" value="Sign up" />
-                        <p class="text-danger" id="errorsurname"><?= isset($erreurs['mail']) ? $erreurs['mail'] : '' ?></p>
-                    </div>
-                </form>
             </div>
         </div>
     </main>
-
 
     <button type="button" class="btn bouton btn-floating " id="btn-back-to-top">
         <i class="bi bi-arrow-up-short text-white"></i>

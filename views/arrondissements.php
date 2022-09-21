@@ -1,7 +1,10 @@
 <?php
 session_start();
-require_once '../elements/top.php';
 require_once '../controllers/arrondissements-controller.php';
+require_once '../elements/top.php';
+
+
+// var_dump($exploreColor); 
 ?>
 
 <body class="d-flex flex-column min-vh-100">
@@ -26,7 +29,9 @@ require_once '../controllers/arrondissements-controller.php';
                         <div class="">
                             <p class="card-title text-center fw-bold fs-3 "><?= $value['deals_title'] ?></p>
                             <p class="card-text"><?= $value['deals_mini_summary'] ?></p>
-                            <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="links">Explore</a>
+                            <div class="d-flex justify-content-end p-2">
+                                <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="links">Explore</a>
+                            </div>
                         </div>
                     </div>
             <?php }

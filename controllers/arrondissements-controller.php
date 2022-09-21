@@ -20,3 +20,9 @@ $allTagsCategoryArray = $category->getAllTagCategory();
 $deals = new Deals();
 $AllDealsArray = $deals->getAllDeals();
 $getDealByArr = $deals->getDealsbyArr($_GET['choice']);
+
+$exploreColor = [
+    'Nature' => 'green',
+    'Beauty' => 'pink',
+    'Museum' => 'blue',
+];
