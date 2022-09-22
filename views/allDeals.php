@@ -30,6 +30,7 @@ require_once '../controllers/allDeals-controller.php';
                             <th class="text-center">More Info</th>
                             <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>
                                 <th class="text-center">Amend</th>
+                                <th class="text-center">Images</th>
                                 <th class="text-center">Status</th>
                                 <th class="text-center">Delete</th>
                             <?php } ?>
@@ -54,6 +55,7 @@ require_once '../controllers/allDeals-controller.php';
                                     <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>
 
                                         <td class="text-center"><a class="text-light btn bouton" href="amendDeals.php?amend=<?= $value['deals_id'] ?>">Amend</a></td>
+                                        <td class="text-center"><a class="text-light btn bouton" href="amendDeals.php?amend=<?= $value['deals_id'] ?>">Images</a></td>
                                         <?php if ($value["deals_validate"] != 2) { ?>
                                             <form method="POST" action="" name="form-<?= $value["deals_id"] ?>">
                                                 <td class="text-center">

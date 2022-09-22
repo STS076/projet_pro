@@ -1,5 +1,5 @@
 <header class=" paris bg-light ">
-    <div class="py-4">
+    <div class="py-2">
         <a href="home.php" class="text-decoration-none">
             <p class="text-center titleMain py-2 bw-bold fs-1">It's always better when it's free</p>
         </a>
@@ -7,7 +7,7 @@
 </header>
 
 <!-- nav computer  -->
-<nav class="d-lg-block d-none navbar sticky-top navcomputer navbar-expand-lg shadow-5-strong py-1 navigation bordure shadow">
+<nav class="d-lg-block d-none navbar sticky-top navcomputer navbar-expand-lg shadow-5-strong py-1 navigation ">
     <!-- <a class="navbar-brand " href="#"></a> -->
     <div class="collapse navbar-collapse " id="navbarSupportedContent">
         <ul class="navbar-nav  w-100 justify-content-center nav d-flex">
@@ -51,6 +51,13 @@
                 <li class="nav-item">
                     <a class="nav-link active titre box fw-bold text-black" href="logout.php">
                         <i class="bi bi-box-arrow-left me-2"></i>Log Out
+                    </a>
+                </li>
+            <?php } ?>
+            <?php if (!isset($_SESSION['user'])) { ?>
+                <li class="nav-item">
+                    <a class="nav-link active titre box fw-bold text-black" href="signUp.php">
+                        Sign Up
                     </a>
                 </li>
             <?php } ?>

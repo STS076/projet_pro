@@ -10,10 +10,10 @@ require_once '../elements/top.php' ?>
     <?php if ($showForm) { ?>
         <form action="" method="POST">
 
-            <div class="container bg-light col-lg-8  bienvenue d-flex align-items-center flex-column  my-5 py-3  shadow">
-                <div>
-                    <span class="fs-4  text-dark">Please enter below information to Sign Up : </span>
-                </div>
+            <div class="container bg-white col-lg-8  bienvenue d-flex align-items-center flex-column  my-5 py-3  shadow">
+               
+                    <h2 class="fs-4 ms-4 pb-3  my-2 welcome text-dark">Please enter below information to Sign Up : </h2>
+            
 
                 <div class=" form-group col-lg-6 col-12 my-1 text-center">
                     <!-- <label class="text-dark">Name : </label> -->

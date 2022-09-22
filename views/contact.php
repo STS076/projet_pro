@@ -10,29 +10,38 @@ require_once '../elements/top.php' ?>
 
     <?php if ($showForm) { ?>
         <main>
-            <div class="container bg-light my-5">
-                <h2 class="py-3 text-center welcome comments">Contact us</h2>
-                <p class="text-center">You noticed a mistake in one of our ads ? Or you want to make us aware of a new deal ? Please let us know below.</p>
+            <div class="row  justify-content-evenly mx-0 py-5" id="page">
+                <div class="bg-white  shadow-sm col-lg-8 p-4 col-11">
+                    <h2 class="py-3 text-center welcome comments">Contact us</h2>
+                    <p class="text-center">You noticed a mistake in one of our ads ? Or you want to make us aware of a new deal ? Please let us know below.</p>
 
-                <form action="" method="POST">
-                    <div class="container d-flex align-items-center flex-column  subway py-3 " id="page">
-                        <div class="form-group col-lg-6 col-12 my-3r">
-                            <label for="emailAddress">Your email address:</label>
+                    <form action="" method="POST">
+
+                        <div class="d-flex flex-column">
+                            <label for="emailAddress">
+                                Your email address:
+                                <span data-span="error-emailAddress" class="text-danger" id="erroremailAddress">
+                                    <?= isset($errors['emailAddress']) ? $errors['emailAddress'] : '' ?>
+                                </span>
+                            </label>
                             <input class="form-control" id="emailAddress" placeholder="Email" name="emailAddress" value="<?= isset($_POST['emailAddress']) ? $_POST['emailAddress'] : '' ?>">
-                            <span data-span="error-emailAddress" class="text-danger" id="erroremailAddress"><?= isset($errors['emailAddress']) ? $errors['emailAddress'] : '' ?></span>
+
                         </div>
-                        <div class=" form-group col-lg-6 col-11r">
-                            <label class="py-2" for="option">Object</label>
+                        <div class="d-flex flex-column">
+                            <label class="py-2" for="option">
+                                Object :
+                                <span data-span="error-option" class="text-danger" id="erroroption">
+                                    <?= isset($errors['option']) ? $errors['option'] : '' ?>
+                                </span>
+                            </label>
                             <select class="form-control" name="option" id="option">
                                 <option value="">Please choose </option>
                                 <option value="New Deal">This concerns a new deal</option>
                                 <option value="Mistake">There is a mistake in one of our ads</option>
                             </select>
-                            <span data-span="error-option" class="text-danger" id="erroroption"><?= isset($errors['option']) ? $errors['option'] : '' ?></span>
+
                         </div>
-
-
-                        <div class="form-group col-lg-6 col-12 my-3r">
+                        <div class="d-flex flex-column">
                             <label name="review">Your message: <span data-span="" class="text-danger" id="errorreview"><?= isset($errors['review']) ? $errors['review'] : '' ?></span></label>
                             <textarea class="form-control" name="review" rows="8" cols="40" value=""><?= isset($_POST['review']) ? $_POST['review'] : '' ?></textarea>
                         </div>
@@ -46,8 +55,9 @@ require_once '../elements/top.php' ?>
                             <button class="btn bouton text-white" id="submit" name="submit">Submit</button>
                         </div>
 
-                    </div>
-                </form>
+
+                    </form>
+                </div>
             </div>
         </main>
 

@@ -64,10 +64,10 @@ require_once '../elements/top.php';
                 <a class="col-2 text-decoration-none" href="amendDeals.php?amend=<?= $oneDealArray['deals_id'] ?>">
                     <button class="btn text-white bg-info">Modify Deal</button>
                 </a>
-                <a class="col-2 text-decoration-none" href="amendDeals.php?amend=<?= $oneDealArray['deals_id'] ?>">
+                <a class="col-2 text-decoration-none"  href="upload.php?deal=<?=$oneDealArray['deals_id']  ?>">
                     <button class="btn text-white bg-info">Add an Image</button>
                 </a>
-                <a class="col-2 text-decoration-none" href="amendDeals.php?amend=<?= $oneDealArray['deals_id'] ?>">
+                <a class="col-2 text-decoration-none"  href="deleteImage.php?deal=<?= $oneDealArray['deals_id'] ?>">
                     <button class="btn text-white bg-info">Delete an image</button>
                 </a>
             </div>

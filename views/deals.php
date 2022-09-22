@@ -13,15 +13,29 @@ require_once '../elements/top.php';
         if ($oneDealArray) {
         ?>
             <ul class="breadcrumb-navigation px-5 my-3">
-                <li><a href="home.php" class="filAriane">Home</a><i class='bi bi-caret-right-fill links mx-2'></i></li>
-                <li><a href="arrondissements.php?choice=<?= $oneDealArray['tag_arr_id_TAG_ARR'] ?>" class="filAriane"><?= $oneDealArray['tag_arr_name'] ?></a><i class='bi bi-caret-right-fill links mx-2'></i></li>
-                <li class="filAriane"><?= $oneDealArray['DealsCatTag'] ?><i class='bi bi-caret-right-fill links mx-2'></i>
+                <li>
+                    <a href="home.php" class="filAriane">
+                        Home
+                    </a>
+                    <i class='bi bi-caret-right-fill links mx-2'></i>
                 </li>
-                <li class="filAriane"><?= $oneDealArray['deals_title'] ?></li>
+                <li>
+                    <a href="arrondissements.php?choice=<?= $oneDealArray['tag_arr_id_TAG_ARR'] ?>" class="filAriane">
+                        <?= $oneDealArray['tag_arr_name'] ?>
+                    </a>
+                    <i class='bi bi-caret-right-fill links mx-2'></i>
+                </li>
+                <li class="filAriane">
+                    <?= $oneDealArray['DealsCatTag'] ?>
+                    <i class='bi bi-caret-right-fill links mx-2'></i>
+                </li>
+                <li class="filAriane">
+                    <?= $oneDealArray['deals_title'] ?>
+                </li>
             </ul>
 
             <div class="row mx-0 my-5 justify-content-evenly p-0">
-                <h2 class="fst-italic fw-bold text-center mb-5"><?= $oneDealArray['deals_title'] ?></h2>
+                <h2 class="fst-italic welcome fw-bold text-center mb-5"><?= $oneDealArray['deals_title'] ?></h2>
                 <div class="col-lg-4 col-11 mt-3 p-0">
                     <p><span class="fw-bolder">Good Deal : </span><?= $oneDealArray['deals_summary']  ?>
                     </p>
@@ -113,7 +127,7 @@ require_once '../elements/top.php';
                 } ?>
 
                 <form action="deals.php?choice=<?= $oneDealArray['deals_id'] ?>#reviews" method="post">
-                    <div class="row mx-0 p-0 my-5 bg-light justify-content-center">
+                    <div class="row mx-0 p-0 my-2 bg-light justify-content-center">
                         <div class="col-lg-8 col-11 d-flex justify-content-center">
                             <div class="d-flex flex-column">
                                 <label for="rating">Rating : <span class="text-danger"><?= isset($errors['dealRating']) ? $errors['dealRating'] : '' ?></span></label>
@@ -136,13 +150,13 @@ require_once '../elements/top.php';
                             </div>
                         </div>
                         <div class="col-lg-8 col-11 d-flex justify-content-center">
-                            <div class="my-3 text-center">
+                            <div class="my-1 text-center">
                                 <button class="btn bouton text-light" name="submit">Submit review</button>
                             </div>
                         </div>
                     </div>
                 </form>
-                <div class="thankYou">
+                <div class="thankYou pb-2">
                     Thank you for you comment, please note that in order to avoird spam, your review will be published after validation
                 </div>
             </div>

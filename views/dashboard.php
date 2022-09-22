@@ -40,9 +40,9 @@ require_once '../elements/top.php' ?>
                 <div class="col text-center m-3">
                     <a href="dashboard-users.php"> <button class="text-center text-center rounded text-light  boutons">Users</button></a>
                 </div>
-                <div class="col text-center m-3">
+                <!-- <div class="col text-center m-3">
                     <a href="dashboard-images.php"> <button class="text-center text-center rounded text-light  boutons">Images</button></a>
-                </div>
+                </div> -->
             </div>
         <?php } ?>
 

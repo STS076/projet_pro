@@ -33,7 +33,7 @@ body {
 /* navbar */
 /*  */
 .navigation {
-    background-color: rgb(188, 188, 188);
+    background-color: white;
     color: rgb(0, 0, 77);
     /* position: sticky;
     top: 0;
@@ -41,17 +41,17 @@ body {
     z-index: 1; */
 }
 
-.bordure {
+/* .bordure {
     border-top: 1px solid rgb(170, 170, 170);
     border-bottom: 1px solid rgb(170, 170, 170);
-}
+} */
 
 .navigationMobile {
-    background-color: rgb(188, 188, 188);
+    background-color: white;
 }
 
 .paris {
-    background: rgba(0, 0, 0, 0.1) url("../images/header.jpg");
+    background: rgba(0, 0, 0, 0.1) url("../images/finn-Mam_2T4Z_xY-unsplash.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -378,7 +378,7 @@ footer {
 /* images pour le dashboard admin + connexion */
 
 .background {
-    background: rgba(0, 0, 0, 0.1) url("../images/arcDeTriomphe.jpg");
+    background: rgba(0, 0, 0, 0.1) url("../images/pexels-lina-kivaka-3989820.jpg");
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -388,7 +388,7 @@ footer {
 
 @media screen and (min-width:600px) {
     .backgroundAdmin {
-        background: rgba(0, 0, 0, 0.1) url("../images/backgroundAdmin.jpg");
+        background: rgba(0, 0, 0, 0.1) url("../images/pexels-lina-kivaka-3989820.jpg");
         background-position: center;
         background-attachment: fixed;
         background-repeat: no-repeat;
@@ -421,4 +421,8 @@ footer {
 .imgCard{
     width: 100%;
     height: 40%;
+}
+
+.lineHeight{
+    line-height: 2rem;
 }
