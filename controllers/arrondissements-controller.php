@@ -26,3 +26,6 @@ $exploreColor = [
     'Beauty' => 'pink',
     'Museum' => 'blue',
 ];
+
+$image = new Images(); 
+

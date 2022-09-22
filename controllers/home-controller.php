@@ -20,6 +20,8 @@ $deal = new Deals();
 $hotDeals = $deal->getDealByAverageRating();
 $lastTenDeals = $deal->lastTenDeals();
 
+$image = new Images(); 
+
 
 $exploreColor = [
     'Nature' => 'green',

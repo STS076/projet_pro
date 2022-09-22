@@ -14,7 +14,7 @@ require_once '../controllers/validateNewDeals-controller.php';
                 <table class="table">
                     <thead>
                         <tr>
-                            <th class="text-center">#</th>
+                            <!-- <th class="text-center">#</th> -->
                             <th class="text-center">Title</th>
                             <th class="text-center">Arrondissement</th>
                             <th class="text-center">Category</th>
@@ -30,7 +30,7 @@ require_once '../controllers/validateNewDeals-controller.php';
                         <?php foreach ($AllDealsArray as $value) {
                             if ($value['deals_validate'] != 1) { ?>
                                 <tr>
-                                    <th class="text-center"><?= $value['deals_id'] ?></th>
+                                    <!-- <th class="text-center"><?= $value['deals_id'] ?></th> -->
                                     <th class="text-center"><?= $value['deals_title'] ?></th>
                                     <th class="text-center"><?= $value['tag_arr_name'] ?></th>
                                     <th class="text-center"><?= $value['DealsCatTag'] ?></th>

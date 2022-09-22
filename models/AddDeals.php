@@ -197,7 +197,7 @@ class Deals extends Database
     public function getDealsbyArr($tag_arr_id): array
     {
         $pdo = parent::connectDb();
-        $sql = "SELECT deals_id, deals_mini_summary, deals_summary, deals_title, deals_validate, deals_when, deals_where, deals_price, tag_arr_name, tag_arr_id_TAG_ARR, tag_arr_id ,deals_metro, deals_map, deals_info, group_concat(`tag_categories_name`  SEPARATOR ', ') as DealsCatTag from deals 
+        $sql = "SELECT deals_id, deals_mini_summary , deals_summary, deals_title, deals_validate, deals_when, deals_where, deals_price, tag_arr_name, tag_arr_id_TAG_ARR, tag_arr_id ,deals_metro, deals_map, deals_info, group_concat(`tag_categories_name`  SEPARATOR ', ') as DealsCatTag from deals 
         inner join deals_has_cat 
         on deals_id_DEALS=deals_id 
         inner join tag_categories 
@@ -303,6 +303,8 @@ class Deals extends Database
         ON tag_categories_id_TAG_CATEGORIES=tag_categories_id
         INNER JOIN tag_arr 
         ON tag_arr_id_TAG_ARR=tag_arr_id
+        INNER JOIN images 
+        on images.deals_id_DEALS=deals_id
         left join 
         (
         SELECT avg(comments_rating) 

@@ -24,7 +24,10 @@ require_once '../elements/top.php' ?>
             <?php foreach ($hotDeals as $value) {
                 if ($value['deals_validate'] == 1) { ?>
                     <div class="col-lg-2 col-11 bg-light shadow-sm mx-2 my-3 p-0">
-                        <img src="../assets/images/tuileriesDeal.webp" class="m-0 p-0 img-fluid" alt="picture Jardin des tuileries">
+                        <?php
+                        $images = $image->getOneGallery($value['deals_id']);
+                        ?>
+                        <img src="data:image/png;base64,<?= $images[0]['images_name'] ?>" class="m-0 p-0 img-fluid " alt="<?= $value['deals_title'] ?>">
                         <div class="">
                             <p class="text-center fw-bold fs-5 newDealsWrite my-1"><?= $value['deals_title'] ?></p>
                             <p class="p-2"><?= $value['deals_mini_summary'] ?></p>
@@ -69,7 +72,10 @@ require_once '../elements/top.php' ?>
             <?php foreach ($lastTenDeals as $value) {
                 if ($value['deals_validate'] == 1) { ?>
                     <div class="col-lg-2 col-11 bg-light shadow-sm mx-2 my-3 p-0 order-sm-<?= $value['deals_id'] ?>">
-                        <img src="../assets/images/tuileriesDeal.webp" class="m-0 p-0 img-fluid" alt="picture Jardin des tuileries">
+                        <?php
+                        $images = $image->getOneGallery($value['deals_id']);
+                        ?>
+                        <img src="data:image/png;base64,<?= $images[0]['images_name'] ?>" class="m-0 p-0 image" alt="<?= $value['deals_title'] ?>">
                         <div class="">
                             <p class="text-center fw-bold fs-5 newDealsWrite my-1"><?= $value['deals_title'] ?></p>
                             <p class="p-2"><?= $value['deals_mini_summary'] ?></p>

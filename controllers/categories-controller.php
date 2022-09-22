@@ -20,3 +20,5 @@ $oneCatArray = $category->getOneCategory($_GET['category']);
 $deals = new Deals();
 $AllDealsArray = $deals->getAllDeals();
 $getDealByCat = $deals->getDealsbyCat($_GET['category']);
+
+$image = new Images(); 

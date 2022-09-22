@@ -25,7 +25,14 @@ require_once '../elements/top.php';
                         if ($value['deals_validate'] == 1) {
                     ?>
                             <div class="col-lg-3 col-11 bg-light shadow-sm mx-2 my-2 p-0">
-                                <img src="../assets/images/tuileriesDeal.webp" class="img-fluid m-0 p-0" alt="picture Jardin des tuileries">
+
+                                <?php
+                                $images = $image->getOneGallery($value['deals_id']);
+                                ?>
+                                
+                                <img src="data:image/png;base64,<?= $images[0]['images_name'] ?>" class="m-0 p-0 img-fluid " alt="<?= $value['deals_title'] ?>">
+
+
                                 <div class="
                                 <?= ($oneCatArray['tag_categories_name'] == 'Museums' ? 'bg-info' : ($oneCatArray['tag_categories_name'] == 'Beauty'  ? 'bg-danger' : ($oneCatArray['tag_categories_name'] == 'Nature' ? 'bg-success' : ''))) ?> 
                                 ">

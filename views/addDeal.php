@@ -108,7 +108,7 @@ require_once '../elements/top.php' ?>
                             <span class="text-danger" data-span="error-dealMap">
                                 <?= isset($errors['dealMap']) ? $errors['dealMap'] : '' ?>
                         </label>
-                        <input type="text" id="dealMap" placeholder="google map iframe" value="<?= isset($_POST['dealMap']) ? $_POST['dealMap'] : '' ?>" name="dealMap">
+                        <textarea type="text" id="dealMap" placeholder="google map iframe" value="" name="dealMap"><?= isset($_POST['dealMap']) ? $_POST['dealMap'] : '' ?></textarea>
                     </div>
                     <div class="d-flex flex-column">
                         <label class="py-2" for="dealTagArr">

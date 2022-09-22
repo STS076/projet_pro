@@ -41,6 +41,7 @@ require_once '../elements/top.php';
                     </p>
                 </div>
                 <div class="col-lg-5 carte">
+                    <!-- ajouter classe map sur carte -->
                     <?= $oneDealArray['deals_map'] ?>
                 </div>
 

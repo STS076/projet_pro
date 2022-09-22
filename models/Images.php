@@ -76,7 +76,7 @@ class Images extends Database
         on deals_id_DEALS=deals_id
         where deals_id_DEALS=:deals_id_DEALS";
         $query = $pdo->prepare($sql);
-        $query->bindValue(':deals_id_DEALS', $deals_id_DEALS, PDO::PARAM_STR);
+        $query->bindValue(':deals_id_DEALS', $deals_id_DEALS, PDO::PARAM_INT);
         $query->execute();
 
         $result = $query->fetchAll();
