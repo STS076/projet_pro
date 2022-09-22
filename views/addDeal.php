@@ -18,7 +18,7 @@ require_once '../elements/top.php' ?>
             <?php
             if ($showForm) { ?>
 
-                <form method="POST" action="">
+                <form method="POST" action="" enctype="multipart/form-data">
                     <p class="text-danger mandatoryInput">Input with an * are mandatory</p>
                     <div class="d-flex flex-column">
                         <label for="dealTitle" class="py-2">
@@ -138,8 +138,18 @@ require_once '../elements/top.php' ?>
                                 </option>
                             <?php } ?>
                         </select>
-
                     </div>
+
+
+                    <div class="d-flex justify-content-center p-3">
+                        <img id="imgPreview">
+                    </div>
+                    <label for="picture"><i class="bi bi-camera-fill"></i> Picture
+                        <span data-span="error-picture" class="text-danger fst-italic span-error"><?= isset($errors['picture']) ? $errors['picture'] : '' ?></span>
+                    </label>
+                    <!-- Mise en place de l'opérateur de coalescence pour afficher oui ou non la valeur de $_POST -->
+                    <input type="file" id="picture" name="picture" class="text-truncate">
+                    <!-- <button type="submit" class="btn border text-white border-dark bouton p-1 m-1"><i class="bi bi-person-plus-fill"></i> Add an image</button> -->
 
                     <div class="text-center pt-5">
                         <button class="btn bouton text-white" value="connect">Add</button>
@@ -170,7 +180,7 @@ require_once '../elements/top.php' ?>
     </button>
     <script src="../assets/script/contact.js"></script>
     <?php require_once '../elements/footer.php' ?>
-
+    <script src="../assets/script/upload.js"></script>
 
 </body>
 

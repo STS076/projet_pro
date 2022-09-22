@@ -25,3 +25,6 @@ $allTagsCategoryArray = $category->getAllTagCategory();
 $deals = new Deals();
 $AllDealsArray = $deals->getAllDeals();
 $oneDealArray = $deals->getOneDeal($_GET['info']);
+
+$image = new Images(); 
+$getAllImagesByDeal = $image->getAllImagesByDeal($_GET['info']); 

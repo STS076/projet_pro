@@ -14,6 +14,7 @@ require_once '../models/DealsHasCat.php';
 require_once '../models/Images.php';
 require_once '../models/Role.php';
 require_once '../models/Users.php';
+require_once '../models/Form.php';
 
 // pour le header, appelle les deux fonctions pour récupérer le nom de toutes les catégories afin de les afficher dans la navbar. 
 $arr = new Arrondissements();
@@ -27,6 +28,16 @@ $showForm = true;
 
 // va faire les vérifications du formulaire, s'il est bien remplis, si aucune erreur. 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    $paramUpload = [
+        'size' => 4000000,
+        'extension' => ['jpeg', 'jpg', 'webp', 'png'],
+        'directory' => '../assets/images/gallery/',
+        'extend' => 'png'
+    ];
+
+    $resultVerifyImg = Form::verifyImg('picture', $paramUpload);
+
 
     $errors = [];
 
@@ -97,6 +108,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
+    if ($resultVerifyImg['permissionToUpload'] === false) {
+        $errors['picture'] = $resultVerifyImg['errorMessage'];
+    }
 
     if (count($errors) == 0) {
         $showForm = false;
@@ -110,6 +124,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $dealTagArr = safeInput($_POST['dealTagArr']);
         $date = date('d/m/Y');
 
+
+
         // va créer un nouveau deal 
         $dealObj = new Deals();
         $idDeals = $dealObj->addDeals($dealTitle, $_POST['dealMiniSummary'], $_POST['dealSummary'], $dealWhen, $dealWhere, $dealPrice, $dealMap, $dealMetro, $dealInfo, $_POST['dealContact'], $dealTagArr, $_SESSION['user']['users_id'], $date);
@@ -118,7 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $allTagsCategoryArray = $category->getAllTagCategory();
 
 
-        var_dump($_POST['dealTagCat']);
+
         // va ajouter l'id des catégories dans la table intermédiaire
         foreach ($_POST['dealTagCat'] as $value) {
             $cat = new DealsHasCat();
@@ -126,12 +142,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         };
         $allcatarray = $cat->getDealCategory($idDeals);
 
-   
+        $resultUploadImage = Form::uploadImage('picture', $paramUpload);
+
+        if ($resultUploadImage['success'] === true) {
+            $picture = Form::convertImagetoBase64($paramUpload['directory'] . $resultUploadImage['imageName']);
+            var_dump($picture);
+
+            $image = new Images();
+            $addImage = $image->addImage($picture,$idDeals);
+
+            // header('Location: upload.php?deal=' . $_GET['deal']);
+        } else {
+            $errors['picture'] = $resultUploadImage['messageError'];
+        }
 
         // header('Location: allDeals.php');
         // exit;
     }
 }
+
+
+
 
 // va enlever les espaces inutiles et faire en sorte que les caractères HTML ne soient pas pris en compte
 function safeInput($input)

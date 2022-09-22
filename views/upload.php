@@ -12,18 +12,6 @@ require_once '../elements/top.php' ?>
         <div class="row mx-0 py-5 justify-content-center">
             <p class=" text-center fs-5 my-4 fw-bold">Upload Images for deal <?= $oneDealArray['deals_title'] ?></p>
 
-
-            <!-- <div class="col-lg-8 col-11 d-flex justify-content-center">
-                <form action="upload.php" method="post" enctype="multipart/form-data">
-                    <label for="file">File <i class="ms-1 bi bi-cloud-arrow-up"></i></label>
-                    <div class="d-flex justify-content-center p-3">
-                        <img id="imgPreview" id="fileToUpload">
-                    </div>
-                    <input type="file" name="fileToUpload" id="fileToUpload">
-                    <button type="submit" class="btn border text-white border-dark bouton p-1 m-1">Save</button>
-                    <p class="text-danger"><?= isset($errors['uploadErrors']) ? $errors['uploadErrors'] : '' ?></p>
-                </form>
-            </div> -->
             <div class="col-lg-8 col-11 d-flex justify-content-center">
                 <form method="POST" action="" enctype="multipart/form-data">
                     <div class="d-flex justify-content-center p-3">
