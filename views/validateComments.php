@@ -39,19 +39,29 @@ require_once '../controllers/validatecomments-controller.php';
                                     <td class="text-center text-truncate" style="max-width: 100px;"><?= $value['comments_comment'] ?></td>
                                     <td class="text-center text-truncate" style="max-width: 100px;"><?= $value['comments_rating'] ?></td>
                                     <td class="text-center"><a class="text-light btn bouton" href="infoComments.php?info=<?= $value['deals_id'] ?>"> + d'info</a></td>
-                                    <td class="text-center">
-                                        <form method="POST" action="allComments.php" name="form-<?= $value["comments_id"] ?>">
+
+                                    <!-- bouton approve -->
+                                    <form method="POST" action="" name="form-<?= $value["comments_id"] ?>">
+                                        <td class="text-center">
                                             <button class="text-light btn bg-success" name="approve" value=<?= $value["comments_id"] ?>>
                                                 Approve
                                             </button>
-                                        </form>
-                                    </td>
-                                    <form method="POST" action="">
-                                        <td class="text-center"><a class="text-light btn bg-danger" name="delete" data-bs-toggle="modal" data-bs-target="#comments-<?= $value['comments_id'] ?>">Delete</a></td>
+                                        </td>
                                     </form>
+                                    <!-- fin bouton approve -->
 
+                                    <!-- bouton delete -->
+                                    <form method="POST" action="">
+                                        <td class="text-center">
+                                            <a class="text-light btn bg-danger" name="delete" data-bs-toggle="modal" data-bs-target="#comments-<?= $value['comments_id'] ?>">
+                                                Delete
+                                            </a>
+                                        </td>
+                                    </form>
+                                    <!-- fin bouton delete -->
                                 </tr>
 
+                                <!-- MODALE DELELTE -->
                                 <div class="modal fade" id="comments-<?= $value['comments_id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
@@ -71,6 +81,7 @@ require_once '../controllers/validatecomments-controller.php';
                                         </div>
                                     </div>
                                 </div>
+                                <!-- FIN MODALE DELETE -->
 
                         <?php }
                         } ?>

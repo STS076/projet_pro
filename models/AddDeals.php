@@ -294,13 +294,30 @@ class Deals extends Database
     public function getDealByAverageRating()
     {
         $pdo = parent::connectDb();
-        $sql = "SELECT avg(comments_rating) 
-        as AverageRating, deals_id, deals_title, deals_mini_summary, deals_validate
-        from comments 
-        inner join deals 
-        on deals_id_DEALS=deals_id
-        where deals_validate=1
-        group by deals_id_DEALS 
+        $sql = "SELECT AverageRating, deals_id, deals_title, deals_mini_summary, deals_when, deals_where, deals_validate, deals_price, deals_metro, deals_map, deals_info, GROUP_CONCAT(`tag_categories_name`  SEPARATOR ', ') 
+        AS DealsCatTag, tag_arr_name  
+        FROM deals 
+        INNER JOIN deals_has_cat 
+        ON deals_id_DEALS=deals_id 
+        INNER JOIN tag_categories 
+        ON tag_categories_id_TAG_CATEGORIES=tag_categories_id
+        INNER JOIN tag_arr 
+        ON tag_arr_id_TAG_ARR=tag_arr_id
+        left join 
+        (
+        SELECT avg(comments_rating) 
+        as AverageRating, deals_id 
+        as Average
+        from deals 
+        inner join comments 
+        on comments.deals_id_DEALS=deals_id
+        where deals_validate=1 
+        and comments_validate=1
+        group by deals_id
+        ) 
+        as HotDeals 
+        on deals.deals_id=HotDeals.Average
+        GROUP BY deals_id
         order by AverageRating desc 
         limit 4";
         $query = $pdo->query($sql);

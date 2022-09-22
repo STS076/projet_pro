@@ -1,9 +1,8 @@
 <?php
-
 session_start();
-// var_dump($_SESSION);
 require_once '../controllers/home-controller.php';
-require_once '../data/data.php';
+// var_dump($exploreColor);
+// require_once '../data/data.php';
 require_once '../elements/top.php' ?>
 
 <body class="d-flex flex-column min-vh-100 backgroundAdmin p-0 m-0">
@@ -30,6 +29,7 @@ require_once '../elements/top.php' ?>
                             <p class="text-center fw-bold fs-5 newDealsWrite my-1"><?= $value['deals_title'] ?></p>
                             <p class=""><?= $value['deals_mini_summary'] ?></p>
                             <div class="d-flex justify-content-end p-2">
+                                <p><?= $value['DealsCatTag'] ?></p>
                                 <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="">Explore</a>
                             </div>
                         </div>
@@ -71,6 +71,7 @@ require_once '../elements/top.php' ?>
                             <p class="text-center fw-bold fs-5 newDealsWrite my-1"><?= $value['deals_title'] ?></p>
                             <p class=""><?= $value['deals_mini_summary'] ?></p>
                             <div class="d-flex justify-content-end p-2">
+                                <p><?= $value['DealsCatTag'] ?></p>
                                 <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="newDealsWrite">Explore</a>
                             </div>
                         </div>

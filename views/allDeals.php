@@ -12,7 +12,7 @@ require_once '../controllers/allDeals-controller.php';
     <div class="container bienvenue d-flex align-items-center flex-column bg-light my-5 p-5 shadow">
 
         <?php if ($_SESSION['user']['role_id_ROLE'] != 1) { ?>
-            <h2 class="fs-2 text-center welcome ">Deals submited by <?=$_SESSION['user']['users_username'] ?></h2>
+            <h2 class="fs-2 text-center welcome ">Deals submited by <?= $_SESSION['user']['users_username'] ?></h2>
         <?php } ?>
         <div class="d-flex justify-content-start">
             <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for a category ..." class="px-5 my-2 shadow-sm myInput">
@@ -23,6 +23,7 @@ require_once '../controllers/allDeals-controller.php';
                 <table class="table" id="myTable">
                     <thead>
                         <tr>
+                            <th class="text-center">ID</th>
                             <th class="text-center">Title</th>
                             <th class="text-center">Arrondissement</th>
                             <th class="text-center">Category</th>
@@ -44,6 +45,7 @@ require_once '../controllers/allDeals-controller.php';
                         ?>
 
                                 <tr>
+                                    <td class="text-center"><?= $value['deals_id'] ?></td>
                                     <td class="text-center"><?= $value['deals_title'] ?></td>
                                     <td class="text-center"><?= $value['tag_arr_name'] ?></td>
                                     <td class="text-center"><?= $value['DealsCatTag'] ?></td>
@@ -53,13 +55,13 @@ require_once '../controllers/allDeals-controller.php';
 
                                         <td class="text-center"><a class="text-light btn bouton" href="amendDeals.php?amend=<?= $value['deals_id'] ?>">Amend</a></td>
                                         <?php if ($value["deals_validate"] != 2) { ?>
-                                            <form method="POST" action="allDeals.php" name="form-<?= $value["deals_id"] ?>">
+                                            <form method="POST" action="" name="form-<?= $value["deals_id"] ?>">
                                                 <td class="text-center">
                                                     <button class="text-light btn bg-warning" name="archive" value=<?= $value["deals_id"] ?>>Archive</button>
                                                 </td>
                                             </form>
                                         <?php } else { ?>
-                                            <form method="POST" action="allDeals.php" name="form-<?= $value["deals_id"] ?>">
+                                            <form method="POST" action="" name="form-<?= $value["deals_id"] ?>">
                                                 <td class="text-center">
                                                     <button class="text-light btn bg-success" name="reactivate" value=<?= $value["deals_id"] ?>>Re Activate</button>
                                                 </td>

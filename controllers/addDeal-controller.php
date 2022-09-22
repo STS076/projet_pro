@@ -114,9 +114,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $dealObj = new Deals();
         $idDeals = $dealObj->addDeals($dealTitle, $_POST['dealMiniSummary'], $_POST['dealSummary'], $dealWhen, $dealWhere, $dealPrice, $dealMap, $dealMetro, $dealInfo, $_POST['dealContact'], $dealTagArr, $_SESSION['user']['users_id'], $date);
 
-        // $category = new Categories();
-        // $allTagsCategoryArray = $category->getAllTagCategory();
+        $category = new Categories();
+        $allTagsCategoryArray = $category->getAllTagCategory();
 
+
+        var_dump($_POST['dealTagCat']);
         // va ajouter l'id des catégories dans la table intermédiaire
         foreach ($_POST['dealTagCat'] as $value) {
             $cat = new DealsHasCat();
@@ -124,12 +126,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         };
         $allcatarray = $cat->getDealCategory($idDeals);
 
-        $_SESSION['swal'] = [
-            'icon' => 'success',
-            'title' => 'Add a Deal',
-            'text' => 'Thank you for submitting this deal, our moderation team will review it as
-            soon as they can.'
-        ];
+   
 
         // header('Location: allDeals.php');
         // exit;

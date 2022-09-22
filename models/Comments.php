@@ -145,8 +145,8 @@ class Comments extends Database
         set comments_validate=:comments_validate 
         where comments_id=:comments_id";
         $query = $pdo->prepare($sql);
-        $query->bindValue(':comments_validate', 1, PDO::PARAM_BOOL);
-        $query->bindValue(':comments_id', $comments_id, PDO::PARAM_INPUT_OUTPUT);
+        $query->bindValue(':comments_validate', 1, PDO::PARAM_INT);
+        $query->bindValue(':comments_id', $comments_id, PDO::PARAM_INT);
         $query->execute();
     }
 
@@ -160,8 +160,8 @@ class Comments extends Database
         set comments_validate=:comments_validate 
         where comments_id=:comments_id";
         $query = $pdo->prepare($sql);
-        $query->bindValue(':comments_validate', 2, PDO::PARAM_BOOL);
-        $query->bindValue(':comments_id', $comments_id, PDO::PARAM_INPUT_OUTPUT);
+        $query->bindValue(':comments_validate', 2, PDO::PARAM_INT);
+        $query->bindValue(':comments_id', $comments_id, PDO::PARAM_INT);
         $query->execute();
     }
 
