@@ -5,13 +5,15 @@ require_once '../controllers/allTagsArr-controller.php';
 <?php include '../elements/top.php' ?>
 
 
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100 backgroundAdmin">
     <?php include '../elements/header.php' ?>
 
-    <div class="container bienvenue d-flex align-items-center flex-column rounded my-5 p-5 border border-dark shadow">
-        <div class="col-lg-8 col-12 text-center ">
+    <div class="container bienvenue d-flex align-items-center flex-column  my-5 p-5 bg-light shadow">
+        <h2 class="fs-2 text-center welcome py-2">All Arrondissement
+        </h2>
+        <div class="table-responsive col-lg-8 col-12 text-center ">
 
-            <table class="table table-responsive table-hover">
+            <table class="table  table-hover">
                 <thead>
                     <tr>
                         <th class="text-center">Arrondissements</th>
@@ -75,6 +77,19 @@ require_once '../controllers/allTagsArr-controller.php';
             </div>
         </div>
     </div>
+
+    <?php if (isset($_SESSION['swal'])) { ?>
+        <script>
+            Swal.fire({
+                icon: '<?= $_SESSION['swal']['icon'] ?>',
+                title: '<?= $_SESSION['swal']['title'] ?>',
+                text: '<?= $_SESSION['swal']['text'] ?>'
+            })
+        </script>
+    <?php
+        unset($_SESSION['swal']);
+    } ?>
+
 
     <?php include '../elements/footer.php' ?>
 

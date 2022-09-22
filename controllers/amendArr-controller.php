@@ -46,9 +46,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (count($errors) == 0) {
         $tagArr = safeInput($_POST['tagArr']);
         $tagArrObj = new Arrondissements();
-        $tagArrObj->amendArr($_GET['amend'], $tagArr, $_POST['tagArrSummary'], );
+        $tagArrObj->amendArr($_GET['amend'], $tagArr, $_POST['tagArrSummary'],);
 
-        header('location: amendArr.php?amend=' . $_GET['amend']);
+
+        // creation d'une variable de session swal
+        $_SESSION['swal'] = [
+            'icon' => 'success',
+            'title' => 'Modify Arrondissement',
+            'text' => 'You have successfully modified ' . $_POST['tagArr'] . ' ! '
+        ];
+
+        header('location: allTagsArr.php');
         exit;
     }
 }

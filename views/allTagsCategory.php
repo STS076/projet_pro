@@ -4,15 +4,14 @@ require_once '../controllers/allTagsCategory-controller.php';
 ?>
 <?php include '../elements/top.php' ?>
 
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100 backgroundAdmin">
     <?php include '../elements/header.php' ?>
 
-    <div class="container bienvenue d-flex align-items-center flex-column rounded my-5 p-5 border border-dark shadow">
+    <div class="container bienvenue d-flex bg-light align-items-center flex-column my-5 p-5  shadow">
         <div class="col-lg-8 col-12 text-center ">
             <table class="table table-responsive table-hover">
                 <thead>
                     <tr>
-                        <!-- <th class="text-center">#</th> -->
                         <th class="text-center">Category</th>
                         <th class="text-center">More Info</th>
                         <th class="text-center">Amend</th>
@@ -40,7 +39,6 @@ require_once '../controllers/allTagsCategory-controller.php';
                                 </a>
                             </td>
                         </tr>
-
                         <div class="modal fade" id="categories-<?= $value['tag_categories_id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -54,7 +52,6 @@ require_once '../controllers/allTagsCategory-controller.php';
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                                             Fermer
-
                                         </button>
                                         <form action="" method="POST">
                                             <button class="btn btn-primary" name="delete" value="<?= $value['tag_categories_id'] ?> ">
@@ -65,19 +62,28 @@ require_once '../controllers/allTagsCategory-controller.php';
                                 </div>
                             </div>
                         </div>
-
                     <?php } ?>
                 </tbody>
             </table>
             <div class="mt-5">
-
                 <a class="text-decoration-none" href="dashboard-tagsCategories.php">
                     <button class="btn text-white bg-info">back</button>
                 </a>
-
             </div>
         </div>
     </div>
+
+    <?php if (isset($_SESSION['swal'])) { ?>
+        <script>
+            Swal.fire({
+                icon: '<?= $_SESSION['swal']['icon'] ?>',
+                title: '<?= $_SESSION['swal']['title'] ?>',
+                text: '<?= $_SESSION['swal']['text'] ?>'
+            })
+        </script>
+    <?php
+        unset($_SESSION['swal']);
+    } ?>
 
     <?php include '../elements/footer.php' ?>
 

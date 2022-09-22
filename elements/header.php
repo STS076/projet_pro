@@ -43,7 +43,7 @@
                     </a>
                 <?php } else { ?>
                     <a class="nav-link active titre box fw-bold text-black me-5" href="dashboard.php">
-                        <i class="bi bi-person-circle me-2"></i>Dashboard
+                    <i class="bi bi-person-circle me-2"></i><?= $_SESSION['user']['users_username'] ?>
                     </a>
                 <?php } ?>
             </li>
@@ -101,7 +101,7 @@
                             </a>
                         <?php } else { ?>
                             <a class="nav-link active titre box fw-bold text-black me-5" href="dashboard.php">
-                                <i class="bi bi-person-circle me-2"></i>Dashboard
+                                <i class="bi bi-person-circle me-2"></i><?= $_SESSION['user']['users_username'] ?>
                             </a>
                         <?php } ?>
                     </li>

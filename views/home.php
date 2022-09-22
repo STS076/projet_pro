@@ -17,8 +17,8 @@ require_once '../elements/top.php' ?>
             </div>
         </div>
 
-        <div class=" row justify-content-evenly mx-0 my-5 py-5 bg-light">
-            <div class="col-lg-2 col-11 hotDeals mx-1 my-3 py-5 d-flex align-items-center">
+        <div class=" row justify-content-evenly mx-0 p-0  bg-light">
+            <div class="col-lg-2 col-11 hotDeals py-5 d-flex align-items-center">
                 <p class="text-light fw-bold fs-2 text-center welcome">Our better rated deals</p>
             </div>
             <?php foreach ($hotDeals as $value) {
@@ -27,10 +27,10 @@ require_once '../elements/top.php' ?>
                         <img src="../assets/images/tuileriesDeal.webp" class="m-0 p-0 img-fluid" alt="picture Jardin des tuileries">
                         <div class="">
                             <p class="text-center fw-bold fs-5 newDealsWrite my-1"><?= $value['deals_title'] ?></p>
-                            <p class=""><?= $value['deals_mini_summary'] ?></p>
-                            <div class="d-flex justify-content-end p-2">
+                            <p class="p-2"><?= $value['deals_mini_summary'] ?></p>
+                            <div class="d-flex justify-content-evenly p-2">
                                 <p><?= $value['DealsCatTag'] ?></p>
-                                <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="">Explore</a>
+                                <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="newDealsWrite">Explore</a>
                             </div>
                         </div>
                     </div>
@@ -61,16 +61,19 @@ require_once '../elements/top.php' ?>
             </div>
         </div>
 
-        <div class=" row justify-content-evenly my-4 mx-0 bg-light">
-            <p class="fs-1 text-center welcome pt-5">What to do today in Paris ?</p>
+
+
+
+        <p class="fs-1 text-center welcome pt-5">What to do today in Paris ?</p>
+        <div class="row justify-content-evenly p-0 mx-0 bg-light">
             <?php foreach ($lastTenDeals as $value) {
                 if ($value['deals_validate'] == 1) { ?>
                     <div class="col-lg-2 col-11 bg-light shadow-sm mx-2 my-3 p-0 order-sm-<?= $value['deals_id'] ?>">
                         <img src="../assets/images/tuileriesDeal.webp" class="m-0 p-0 img-fluid" alt="picture Jardin des tuileries">
                         <div class="">
                             <p class="text-center fw-bold fs-5 newDealsWrite my-1"><?= $value['deals_title'] ?></p>
-                            <p class=""><?= $value['deals_mini_summary'] ?></p>
-                            <div class="d-flex justify-content-end p-2">
+                            <p class="p-2"><?= $value['deals_mini_summary'] ?></p>
+                            <div class="d-flex justify-content-evenly p-2">
                                 <p><?= $value['DealsCatTag'] ?></p>
                                 <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="newDealsWrite">Explore</a>
                             </div>
@@ -78,7 +81,8 @@ require_once '../elements/top.php' ?>
                     </div>
             <?php }
             } ?>
-            <div class="col-lg-2 col-11 newDeals mx-1 my-3 py-5 d-flex align-items-center order-sm-1">
+
+            <div class="col-lg-2 col-11 newDeals py-5 d-flex align-items-center">
                 <p class="text-light fw-bold fs-2 text-center welcome">Our brand new deals</p>
             </div>
         </div>

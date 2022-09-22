@@ -48,7 +48,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $tagCatObj = new Categories();
         $tagCatObj->amendCategory($_GET['amend'], $tagCategory, $_POST['tag_categories_summary']);
 
-        header('location: amendCategories.php?amend=' . $_GET['amend']);
+
+     // creation d'une variable de session swal
+     $_SESSION['swal'] = [
+        'icon' => 'success',
+        'title' => 'Modify Category',
+        'text' => 'You have successfully modified category ' . $_POST['tag_categories_name'] . ' ! '
+    ];
+
+        header('location: allTagsCategory.php');
         exit;
     }
 }

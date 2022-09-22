@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once '../controllers/categories-controller.php';
+
 require_once '../elements/top.php';
 ?>
 
@@ -8,34 +9,36 @@ require_once '../elements/top.php';
 
     <?php require_once '../elements/header.php' ?>
 
-    <main class="bg-white py-5 container px-0">
-        <section>
+    <main class="bg-white py-5 container  px-0 min-vh-100">
+        <section class="">
             <h2 class="fs-2 text-center welcome pt-5 comments"><?= $oneCatArray['tag_categories_name'] ?></h2>
-            <div class="row m-0 justify-content-center">
-                <div class="col-lg-8 col-11 text-center">
+            <div class="row m-0 p-0 justify-content-center">
+                <div class="col-lg-8 col-11 ">
                     <p><?= $oneCatArray['tag_categories_summary'] ?>
                     </p>
                 </div>
             </div>
             <article>
-                <div class="row justify-content-center mx-0 my-5">
-                    <?php foreach ($getDealByCat as $value) {
-                        if ($value['deals_validate'] == 1) { ?>
-
-                            <div class="col-lg-3 col-11 bg-light shadow-sm mx-2 my-3 p-0">
-                                <img src="../assets/images/tuileriesDeal.webp" class=" img-fluid m-0 p-0" alt="picture Jardin des tuileries">
-                                <div class="">
+                <div class="row justify-content-evenly mx-0 my-5 p-0">
+                    <?php
+                    foreach ($getDealByCat as $value) {
+                        if ($value['deals_validate'] == 1) {
+                    ?>
+                            <div class="col-lg-3 col-11 bg-light shadow-sm mx-2 my-2 p-0">
+                                <img src="../assets/images/tuileriesDeal.webp" class="img-fluid m-0 p-0" alt="picture Jardin des tuileries">
+                                <div class="
+                                <?= ($oneCatArray['tag_categories_name'] == 'Museums' ? 'bg-info' : ($oneCatArray['tag_categories_name'] == 'Beauty'  ? 'bg-danger' : ($oneCatArray['tag_categories_name'] == 'Nature' ? 'bg-success' : ''))) ?> 
+                                ">
                                     <p class="card-title text-center fw-bold fs-5"><?= $value['deals_title'] ?></p>
-                                    <p class="card-text"><?= $value['deals_mini_summary'] ?></p>
+                                    <p class="p-2 card-text"><?= $value['deals_mini_summary'] ?></p>
                                     <div class="d-flex justify-content-end p-2">
-                                        <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="links">Explore</a>
+                                        <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="newDealsWrite">Explore</a>
                                     </div>
                                 </div>
                             </div>
-
                     <?php }
-                    } ?>
-
+                    }
+                    ?>
                 </div>
             </article>
         </section>

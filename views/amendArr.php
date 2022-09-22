@@ -6,12 +6,12 @@ require_once '../controllers/amendArr-controller.php';
 // var_dump($getOneArrondissement);
 require_once '../elements/top.php' ?>
 
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100 backgroundAdmin">
 
     <?php require_once '../elements/header.php' ?>
 
-    <div class="row  justify-content-evenly mx-0 py-5">
-        <div class="bg-light  border border-dark shadow-sm col-lg-5 py-4 rounded col-11">
+    <div class="row bienvenue d-flex align-items-center flex-column my-5 mx-0 p-5">
+        <div class=" col-lg-5 py-4  col-11 bg-light shadow">
             <p class=" text-center fs-5 my-4 fw-bold">Modify an arrondissement</p>
             <form method="POST" action="">
                 <div class="d-flex flex-column">

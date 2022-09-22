@@ -23,21 +23,23 @@ require_once '../elements/top.php';
                         if ($value['deals_validate'] == 1) { ?>
 
                             <div class="col-lg-3 col-11 bg-light shadow-sm mx-2 my-3 py-3">
-                                <img src="../assets/images/tuileriesDeal.webp" class=" img-fluid m-0 p-0" alt="picture Jardin des tuileries">
-                                <div class="">
-                                    <p class="card-title text-center fw-bold fs-5"><?= $value['deals_title'] ?></p>
-                                    <p class="card-text"><?= $value['deals_mini_summary'] ?></p>
-                                    <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="links">Explore</a>
-                                </div>
+                                <!-- <img src="data:image/png;base64,<?= $value['images_name'] ?>" data-lightbox="cozy" class="galleryPicture" class=" img-fluid m-0 p-0" alt="picture Jardin des tuileries">
+                                <div class=""> -->
+                                <p class="card-title text-center fw-bold fs-5"><?= $value['deals_title'] ?></p>
+                                <p class="card-text"><?= $value['deals_mini_summary'] ?></p>
+                                <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="links">Explore</a>
                             </div>
+                </div>
 
-                    <?php }
+        <?php }
                     } ?>
 
-                </div>
+        </div>
             </article>
         </section>
     </main>
+
+
 
     <button type="button" class="btn bouton btn-floating " id="btn-back-to-top">
         <i class="bi bi-arrow-up-short text-white"></i>
