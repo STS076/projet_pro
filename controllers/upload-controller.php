@@ -14,7 +14,7 @@ require_once '../models/DealsHasCat.php';
 require_once '../models/Images.php';
 require_once '../models/Role.php';
 require_once '../models/Users.php';
-require_once '../models/Form.php'; 
+require_once '../models/Form.php';
 
 $arr = new Arrondissements();
 $allTagsArrArray = $arr->getAllTagArr();
@@ -51,10 +51,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $picture = Form::convertImagetoBase64($paramUpload['directory'] . $resultUploadImage['imageName']);
             var_dump($picture);
 
-            $image = new Images(); 
-            $addImage = $image->addImage($picture, $_GET['deal']); 
+            $image = new Images();
+            $addImage = $image->addImage($picture, $_GET['deal']);
 
-            header('Location: upload.php?deal=' . $_GET['deal']);
+            // creation d'une variable de session swal
+            $_SESSION['swal'] = [
+                'icon' => 'success',
+                'title' => 'Add an image',
+                'text' => 'You have successfully added an image ! '
+            ];
+
+            header('Location:gallery.php?deal=' . $_GET['deal']);
         } else {
             $errors['picture'] = $resultUploadImage['messageError'];
         }

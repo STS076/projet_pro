@@ -142,14 +142,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         };
         $allcatarray = $cat->getDealCategory($idDeals);
 
+        // téléchargement de la photo
         $resultUploadImage = Form::uploadImage('picture', $paramUpload);
 
         if ($resultUploadImage['success'] === true) {
             $picture = Form::convertImagetoBase64($paramUpload['directory'] . $resultUploadImage['imageName']);
             var_dump($picture);
-
+            // va enregistrer la photo dans la BDD et récupère l'id du deal 
             $image = new Images();
-            $addImage = $image->addImage($picture,$idDeals);
+            $addImage = $image->addImage($picture, $idDeals);
 
             // header('Location: upload.php?deal=' . $_GET['deal']);
         } else {

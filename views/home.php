@@ -5,15 +5,18 @@ require_once '../controllers/home-controller.php';
 // require_once '../data/data.php';
 require_once '../elements/top.php' ?>
 
-<body class="mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg container justify-content-center">
+<body class="mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg justify-content-center">
     <?php require_once '../elements/header.php' ?>
 
     <main class="bg-white py-5  px-0">
         <div class="row m-0 p-0 justify-content-center">
-            <div class="col-lg-11 col-11">
+            <div class="col-lg-9 col-11 py-2">
                 <p class=" text-center welcome2 ">Welcome To Paris</p>
                 <!-- <p><?= $_SESSION['user']['users_name'] ?></p> -->
-                <p class="fs-6 text-center">You want to visit the most beautiful city in the world, but do not want to get ruined ? Well, you've come to the right place, welcome to <span class="fst-italic">it's always better when it's free</span> where you can learn all about free activities in Paris and other good deals. Our team picked the best activities to do alone or with friends and family. you will be able to find free deals and deals for less than 20 €</p>
+                <p class="fs-6 text-center">
+                    Paradise for museums, concerts and exxibitions connoisseurs, Paris can be hell when it come to you wallet, that cannot follow all of your adventures. And no one want to give up the pleasure of visiting the city of lights because of an empty wallet. Thankfully, the city is more generous than we would expect for people with small means, you just have to know the good deals and free treasure than it can offer. <br>
+                    There is a myriad of time slot where museums are free,
+                </p>
             </div>
         </div>
 
@@ -24,17 +27,22 @@ require_once '../elements/top.php' ?>
             <?php foreach ($hotDeals as $value) {
                 if ($value['deals_validate'] == 1) { ?>
                     <div class="col-lg-2 col-11 bg-light shadow-sm mx-2 my-3 p-0">
-                        <?php
-                        $images = $image->getOneGallery($value['deals_id']);
-                        ?>
-                        <img src="data:image/png;base64,<?= $images[0]['images_name'] ?>" class="m-0 p-0 img-fluid imgCard" alt="<?= $value['deals_title'] ?>">
-                        <div class="">
-                            <p class="text-center fw-bold fs-5 newDealsWrite my-1"><?= $value['deals_title'] ?></p>
-                            <p class="p-2"><?= $value['deals_mini_summary'] ?></p>
-                            <div class="d-flex justify-content-evenly p-2">
-                                <p><?= $value['DealsCatTag'] ?></p>
-                                <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="newDealsWrite">Explore</a>
+                        <div class="d-flex flex-column justify-content-between">
+                            <div class="col border border-danger ">
+                                <?php
+                                $images = $image->getOneGallery($value['deals_id']);
+                                ?>
+                                <img src="data:image/png;base64,<?= $images[0]['images_name'] ?>" class="m-0 p-0 img-fluid imgCard" alt="<?= $value['deals_title'] ?>">
+                                <p class="card-title text-center fw-bold welcome fs-4 newDealsWrite p-2"><?= $value['deals_title'] ?></p>
+                                <p class="p-2 "><?= $value['deals_mini_summary'] ?></p>
                             </div>
+                            <div class="col border border-info">
+                                <div class="d-flex justify-content-evenly p-2">
+                                    <p><?= $value['DealsCatTag'] ?></p>
+                                    <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="newDealsWrite">Explore</a>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
             <?php }
@@ -44,7 +52,7 @@ require_once '../elements/top.php' ?>
 
         <section class="bg-white">
             <div class="row m-0 p-0 justify-content-center">
-                <div class="col-lg-8 col-11">
+                <div class="col-lg-8 col-11 py-4 my-4">
                     <p class="fs-5 text-center fw-bold newsletter">Sign up to our newsletter</p>
                     <p class="text-center">You never want to miss any good deal ? Well, sign up to our newsletter to keep up with Paris' best deals.</p>
                     <form method="post" class="d-flex justify-content-center">
@@ -76,13 +84,11 @@ require_once '../elements/top.php' ?>
                         $images = $image->getOneGallery($value['deals_id']);
                         ?>
                         <img src="data:image/png;base64,<?= $images[0]['images_name'] ?>" class="m-0 p-0 img-fluid imgCard" alt="<?= $value['deals_title'] ?>">
-                        <div class="">
-                            <p class="text-center fw-bold fs-5 newDealsWrite my-1"><?= $value['deals_title'] ?></p>
-                            <p class="p-2"><?= $value['deals_mini_summary'] ?></p>
-                            <div class="d-flex justify-content-evenly p-2">
-                                <p><?= $value['DealsCatTag'] ?></p>
-                                <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="newDealsWrite">Explore</a>
-                            </div>
+                        <p class="card-title text-center fw-bold welcome fs-4 newDealsWrite p-2"><?= $value['deals_title'] ?></p>
+                        <p class="p-2"><?= $value['deals_mini_summary'] ?></p>
+                        <div class="d-flex justify-content-evenly p-2">
+                            <p><?= $value['DealsCatTag'] ?></p>
+                            <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="newDealsWrite">Explore</a>
                         </div>
                     </div>
             <?php }
@@ -93,7 +99,7 @@ require_once '../elements/top.php' ?>
             </div>
         </div>
 
-        <p class="fs-1 text-center welcome comments">Arrondissements</p>
+        <p class="fs-1 text-center welcome comments pt-5 pb-3 mt-2">Arrondissements</p>
         <div class="row m-0 p-0 d-flex justify-content-center">
             <div class="col-12">
                 <svg version="1.1" class="text-center" baseProfile="full">

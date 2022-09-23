@@ -24,17 +24,17 @@ require_once '../elements/top.php';
         <div class="row justify-content-center mx-0 my-5">
             <?php foreach ($getDealByArr as $value) {
                 if ($value['deals_validate'] == 1) { ?>
-                    <div class="col-lg-3 col-11 bg-light shadow-sm mx-2 my-3 p-0">
+                    <div class="col-lg-3 col-11 bg-light shadow-sm mx-3 my-3 p-0">
                         <?php
                         $images = $image->getOneGallery($value['deals_id']);
                         ?>
                         <img src="data:image/png;base64,<?= $images[0]['images_name'] ?>" class="m-0 p-0 img-fluid imgArrCat" alt="<?= $value['deals_title'] ?>">
 
                         <div class="">
-                            <p class="card-title text-center fw-bold fs-3 "><?= $value['deals_title'] ?></p>
+                            <p class="card-title text-center fw-bold welcome fs-4 py-2"><?= $value['deals_title'] ?></p>
                             <p class="card-text"><?= $value['deals_mini_summary'] ?></p>
                             <div class="d-flex justify-content-end p-2">
-                                <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="links">Explore</a>
+                                <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="newDealsWrite">Explore</a>
                             </div>
                         </div>
                     </div>

@@ -5,11 +5,15 @@ require_once '../controllers/validateNewDeals-controller.php';
 <?php include '../elements/top.php' ?>
 
 
-<body class="mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg container justify-content-center">
+<body class="d-flex flex-column  mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg container justify-content-center">
     <?php include '../elements/header.php' ?>
 
-    <div class="container bienvenue d-flex align-items-center flex-column bg-light my-5 p-5  shadow">
-        <div class="col-lg-12 col-11 text-center fw-bold">
+    <div class="row  justify-content-center mx-0 py-5 my-5" id="page">
+        <div class="bg-white  shadow-sm col-lg-12 p-5 col-11">
+            <a class="fs-6 text-secondary  my-3" href="dashboard-deals.php">
+                <i class='bi bi-caret-left-fill links mx-2'></i> back
+            </a>
+            <h2 class="text-center p-5 fst-italic welcome">New deals validation</h2>
             <div class="table-responsive table-hover">
                 <table class="table">
                     <thead>
@@ -72,12 +76,10 @@ require_once '../controllers/validateNewDeals-controller.php';
                     </tbody>
                 </table>
             </div>
-            <div class="mt-5">
-
-                <a class="text-decoration-none" href="dashboard-deals.php">
-                    <button class="btn text-white bg-info">back</button>
+            <div class="mt-5 text-center">
+                <a class="text-decoration-none " href="dashboard-deals.php">
+                    <button class="btn text-white bg-info ">back</button>
                 </a>
-
             </div>
         </div>
     </div>

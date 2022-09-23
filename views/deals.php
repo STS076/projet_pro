@@ -5,10 +5,10 @@ require_once '../controllers/deals-controller.php';
 require_once '../elements/top.php';
 ?>
 
-<body class="mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg container justify-content-center">
+<body class="mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg  justify-content-center">
 
     <?php require_once '../elements/header.php' ?>
-    <main class="bg-white py-5 container px-0">
+    <main class="bg-white py-5  px-0">
         <?php
         if ($oneDealArray) {
         ?>
@@ -46,12 +46,14 @@ require_once '../elements/top.php';
                     <p><span class="fw-bolder">How to get here : </span><?= $oneDealArray['deals_metro']  ?></p>
                     <p><span class="fw-bolder">More info : </span><?= $oneDealArray['deals_info']  ?></p>
                     <p> <span class="fw-bolder">Tags : </span>
-                        <a href="arrondissements.php?choice=<?= $oneDealArray['tag_arr_id_TAG_ARR']  ?>" class="links"># <?= $oneDealArray['tag_arr_name']  ?></a>
-
-                        <?php foreach (explode(', ', $oneDealArray['DealsCatTag']) as $value) { ?>
-                            <a href="categories.php?category=<?= $value ?>" class="links"># <?= $value ?></a>
-                        <?php }
-                        ?>
+                        <a href="arrondissements.php?choice=<?= $oneDealArray['tag_arr_id_TAG_ARR']  ?>" class="links">
+                            # <?= $oneDealArray['tag_arr_name']  ?>
+                        </a>
+                        <?php foreach (explode(', ', $oneDealArray['DealsCatTagId']) as $value) { ?>
+                            <a href="categories.php?category=<?= $value ?>" class="links"> <?php } ?>
+                            <?php foreach (explode(', ', $oneDealArray['DealsCatTag']) as $value) { ?>
+                                # <?= $value ?></a>
+                        <?php } ?>
                     </p>
                 </div>
                 <div class="col-lg-5 carte">

@@ -30,5 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $gallery = new Images(); 
         $deleteImage = $gallery->deleteImage($_POST['delete']);
     }
+    header('Location:gallery.php?deal=' . $_GET['deal']);
 }
 $getOneGallery = $gallery->getOneGallery($_GET['deal']); 

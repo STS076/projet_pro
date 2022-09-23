@@ -6,12 +6,13 @@ require_once '../controllers/dashboard-controller.php';
 
 require_once '../elements/top.php' ?>
 
-<body class="d-flex flex-column min-vh-100 backgroundAdmin">
+<body class="d-flex flex-column  mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg container justify-content-center">
+
 
     <?php require_once '../elements/header.php' ?>
 
-    <div class="row  justify-content-center mx-0 py-5" id="page">
-        <div class="bg-white  shadow-sm col-lg-6 p-4 col-11">
+    <div class="row  justify-content-center mx-0 my-5" id="page">
+        <div class="bg-white  shadow-sm col-lg-8 p-4 col-11">
             <h2 class="fs-2 text-center welcome "> Welcome <?= $_SESSION['user']['users_name'] ?> </h2>
             <div class="row align-item">
                 <div class="col text-center m-3">

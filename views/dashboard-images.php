@@ -6,11 +6,11 @@ require_once '../controllers/dashboard-images-controller.php';
 
 require_once '../elements/top.php' ?>
 
-<body class="mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg container justify-content-center">
+<body class="d-flex flex-column  mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg container justify-content-center">
 
     <?php require_once '../elements/header.php' ?>
 
-    <div class="container d-flex align-items-center flex-column  bg-light shadow-sm p-5 my-5 ">
+    <div class=" d-flex align-items-center flex-column  bg-light shadow-sm p-5 my-5 ">
         <div class="row align-item">
             <div class="col text-center m-3">
                 <a href="allGallery.php"> <button class="text-center text-center text-light rounded  boutons">Add an image to a gallery</button></a>

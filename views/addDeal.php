@@ -5,15 +5,17 @@ session_start();
 require_once '../controllers/addDeal-controller.php';
 require_once '../elements/top.php' ?>
 
-<body class="mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg container justify-content-center">
+<body class="d-flex flex-column  mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg container justify-content-center">
 
     <?php require_once '../elements/header.php' ?>
 
     <div class="row  justify-content-evenly mx-0 py-5">
 
-        <div class="bg-light  shadow-sm col-lg-5 py-4  col-11">
-
-            <h2 class="fs-2 text-center welcome ">Upload a new deal</h2>
+        <div class="bg-light  shadow-sm col-lg-6 p-5  col-11">
+            <a class="fs-6 text-secondary  my-3" href="dashboard-deals.php">
+                <i class='bi bi-caret-left-fill links mx-2'></i> back
+            </a>
+            <h2 class="fs-2 py-2 text-center welcome ">Upload a new deal</h2>
 
             <?php
             if ($showForm) { ?>
@@ -165,12 +167,7 @@ require_once '../elements/top.php' ?>
             ?>
 
 
-            <div class="mt-5 text-center">
-                <a class="text-decoration-none" href="allDeals.php">
-                    <button class="btn text-white bg-info">back</button>
-                </a>
-            </div>
-
+          
 
         </div>
     </div>

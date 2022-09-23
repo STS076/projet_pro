@@ -51,7 +51,7 @@ body {
 }
 
 .paris {
-    background: rgba(0, 0, 0, 0.1) url("../images/vector-illustration-dessin-de-la-tour-eiffel-paris-france-monument-de-paris-paysage-panoramique-avec-la-tour-eiffel-et-le-pont-alexandre-iii-vie-txaen0.jpg");
+    background: rgba(0, 0, 0, 0.1) url("../images/header.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -403,7 +403,6 @@ footer {
 }
 
 /* Deals */
-
 .breadcrumb-navigation>li {
     display: inline;
 }
@@ -420,7 +419,7 @@ footer {
 
 .imgCard {
     width: 100%;
-    height: 15rem;
+    height: 10rem;
 }
 
 .lineHeight {
@@ -452,7 +451,7 @@ footer {
 .yellow {
     background-color: #F4F590;
 }
-
+/* Taille des images cards */
 .imgArrCat{
     width: 100%;
     height: 20rem;

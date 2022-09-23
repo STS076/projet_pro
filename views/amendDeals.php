@@ -12,11 +12,14 @@ require_once '../elements/top.php' ?>
 
     <?php require_once '../elements/header.php' ?>
 
-    <div class="row  justify-content-evenly mx-0 py-5">
+    <div class="row justify-content-evenly mx-0 my-5">
 
-        <div class="bg-light shadow-sm col-lg-5 py-4  col-11">
+        <div class="bg-light shadow-sm col-lg-6 p-5  col-11">
+            <a class="fs-6 text-secondary  my-3" href="allDeals.php">
+                <i class='bi bi-caret-left-fill links mx-2'></i> back
+            </a>
 
-            <p class=" text-center fs-5 my-4 fw-bold">Modify a Deal</p>
+            <h2 class="text-center py-3 fst-italic welcome">Amend deal <?= $oneDealArray['deals_title'] ?> </h2>
             <form method="POST" action="">
 
                 <div class="d-flex flex-column">
@@ -147,22 +150,17 @@ require_once '../elements/top.php' ?>
                     </select>
                 </div>
 
-
-
-
                 <div class="text-center pt-5">
                     <button class="btn bouton text-white" value="amend">Amend</button>
                 </div>
             </form>
 
-            <div class="mt-5 text-center">
-                <a class="text-decoration-none" href="allDeals.php">
-                    <button class="btn text-white bg-info">back</button>
-                </a>
-            </div>
 
         </div>
     </div>
+    <button type="button" class="btn bouton btn-floating " id="btn-back-to-top">
+        <i class="bi bi-arrow-up-short text-white"></i>
+    </button>
 
     <?php require_once '../elements/footer.php' ?>
     <script src="../assets/script/contact.js"></script>

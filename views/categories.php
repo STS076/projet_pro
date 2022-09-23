@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once '../controllers/categories-controller.php';
-
+// var_dump($oneCatArray['tag_categories_name']);
 require_once '../elements/top.php';
 ?>
 
@@ -24,19 +24,15 @@ require_once '../elements/top.php';
                     foreach ($getDealByCat as $value) {
                         if ($value['deals_validate'] == 1) {
                     ?>
-                            <div class="col-lg-3 col-11 shadow-sm mx-2 my-2 p-0">
-
+                            <div class="col-lg-3 col-11 shadow-sm  my-2 p-0  <?= $cardColors[$oneCatArray['tag_categories_name']]  ?> ">
                                 <?php
                                 $images = $image->getOneGallery($value['deals_id']);
                                 ?>
-
                                 <img src="data:image/png;base64,<?= $images[0]['images_name'] ?>" class="m-0 p-0 img-fluid imgArrCat" alt="<?= $value['deals_title'] ?>">
-
-
                                 <div class="
-                                <?= $cardColors[$oneCatArray['tag_categories_name']]  ?> 
+                               
                                 ">
-                                    <p class="card-title text-center fw-bold fs-5"><?= $value['deals_title'] ?></p>
+                                    <p class="card-title text-center fw-bold welcome fs-4"><?= $value['deals_title'] ?></p>
                                     <p class="p-2 card-text"><?= $value['deals_mini_summary'] ?></p>
                                     <div class="d-flex justify-content-end p-2">
                                         <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="newDealsWrite">Explore</a>
