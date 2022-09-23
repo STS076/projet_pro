@@ -51,7 +51,7 @@ body {
 }
 
 .paris {
-    background: rgba(0, 0, 0, 0.1) url("../images/finn-Mam_2T4Z_xY-unsplash.jpg");
+    background: rgba(0, 0, 0, 0.1) url("../images/vector-illustration-dessin-de-la-tour-eiffel-paris-france-monument-de-paris-paysage-panoramique-avec-la-tour-eiffel-et-le-pont-alexandre-iii-vie-txaen0.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -418,11 +418,42 @@ footer {
     font-size: 0.8rem;
 }
 
-.imgCard{
+.imgCard {
     width: 100%;
-    height: 40%;
+    height: 15rem;
 }
 
-.lineHeight{
+.lineHeight {
     line-height: 2rem;
+}
+
+
+/* couleurs cards catégories */
+.beige {
+    background-color: beige;
+}
+
+.pink {
+    background-color: pink;
+}
+
+.green {
+    background-color: #D9EDDD;
+}
+
+.blue {
+    background-color: #C5DEEA;
+}
+
+.purple {
+    background-color: #BDABDA;
+}
+
+.yellow {
+    background-color: #F4F590;
+}
+
+.imgArrCat{
+    width: 100%;
+    height: 20rem;
 }

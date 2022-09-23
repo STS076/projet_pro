@@ -7,11 +7,11 @@ require_once '../elements/top.php';
 // var_dump($exploreColor); 
 ?>
 
-<body class="d-flex flex-column min-vh-100 backgroundAdmin">
+<body class="mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg container justify-content-center">
 
     <?php require_once '../elements/header.php' ?>
 
-    <main class="bg-white py-5 container px-0 min-vh-100">
+    <main class="bg-white py-5 px-0 min-vh-100">
 
         <h2 class="fs-2 text-center welcome pt-5 comments"><?= $oneArrondissement['tag_arr_name'] ?></h2>
         <div class="row m-0 justify-content-center">
@@ -28,7 +28,7 @@ require_once '../elements/top.php';
                         <?php
                         $images = $image->getOneGallery($value['deals_id']);
                         ?>
-                        <img src="data:image/png;base64,<?= $images[0]['images_name'] ?>" class="m-0 p-0 img-fluid " alt="<?= $value['deals_title'] ?>">
+                        <img src="data:image/png;base64,<?= $images[0]['images_name'] ?>" class="m-0 p-0 img-fluid imgArrCat" alt="<?= $value['deals_title'] ?>">
 
                         <div class="">
                             <p class="card-title text-center fw-bold fs-3 "><?= $value['deals_title'] ?></p>

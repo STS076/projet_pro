@@ -4,11 +4,11 @@ require_once '../elements/top.php';
 require_once '../controllers/allArrondissements-controller.php';
 ?>
 
-<body class="d-flex flex-column min-vh-100 backgroundAdmin">
+<body class="mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg container justify-content-center">
 
     <?php require_once '../elements/header.php' ?>
 
-    <main class="bg-white py-5 container px-0">
+    <main class="bg-white py-5  px-0">
 
         <p class="fs-2 text-center welcome pt-5 comments">Arrondissements</p>
 

@@ -15,10 +15,19 @@ $allTagsArrArray = $arr->getAllTagArr();
 
 $category = new Categories();
 $allTagsCategoryArray = $category->getAllTagCategory();
-$oneCatArray = $category->getOneCategory($_GET['category']); 
+$oneCatArray = $category->getOneCategory($_GET['category']);
 
 $deals = new Deals();
 $AllDealsArray = $deals->getAllDeals();
 $getDealByCat = $deals->getDealsbyCat($_GET['category']);
 
-$image = new Images(); 
+$image = new Images();
+
+$cardColors = [
+    'Museums' => 'beige',
+    'Beauty' => 'pink',
+    'Nature' => 'green',
+    'Music' => 'blue',
+    'Restaurant' => 'purple',
+    'Sport' => 'yellow'
+];

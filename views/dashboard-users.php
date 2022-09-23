@@ -6,7 +6,7 @@ require_once '../controllers/dashboard-controller.php';
 
 require_once '../elements/top.php' ?>
 
-<body class="d-flex flex-column min-vh-100 backgroundAdmin">
+<body class="mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg container justify-content-center">
 
     <?php require_once '../elements/header.php' ?>
 

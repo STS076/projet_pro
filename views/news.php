@@ -4,7 +4,7 @@
 
 <?php require_once '../elements/top.php' ?>
 
-<body class="d-flex flex-column min-vh-100">
+<body class="mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg container justify-content-center">
     <?php include '../elements/header.php' ?>
 
     <main>

@@ -3,7 +3,7 @@ session_start();
 require_once '../controllers/contact-controller.php';
 require_once '../elements/top.php' ?>
 
-<body class="d-flex flex-column min-vh-100 background">
+<body class="d-flex flex-column  mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg container justify-content-center">
 
     <?php require_once '../elements/header.php' ?>
 
@@ -11,7 +11,7 @@ require_once '../elements/top.php' ?>
     <?php if ($showForm) { ?>
         <main>
             <div class="row  justify-content-evenly mx-0 py-5" id="page">
-                <div class="bg-white  shadow-sm col-lg-8 p-4 col-11">
+                <div class="bg-white  shadow-sm col-lg-6 p-4 col-11">
                     <h2 class="py-3 text-center welcome comments">Contact us</h2>
                     <p class="text-center">You noticed a mistake in one of our ads ? Or you want to make us aware of a new deal ? Please let us know below.</p>
 

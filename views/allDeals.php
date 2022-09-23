@@ -6,7 +6,7 @@ require_once '../controllers/allDeals-controller.php';
 <?php include '../elements/top.php' ?>
 
 
-<body class="d-flex flex-column min-vh-100 backgroundAdmin">
+<body class="mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg container justify-content-center">
     <?php include '../elements/header.php' ?>
 
     <div class="container bienvenue d-flex align-items-center flex-column bg-light my-5 p-5 shadow">

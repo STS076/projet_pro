@@ -5,12 +5,11 @@ require_once '../controllers/logout-controller.php';
 
 <?php include '../elements/top.php' ?>
 
-<body class="d-flex flex-column min-vh-100 background">
+<body class="d-flex flex-column  mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg container justify-content-center">
     <?php include '../elements/header.php' ?>
-
-    <div class="container bienvenue d-flex align-items-center flex-column bg-light my-5 p-5  shadow">
-        <div class="col-lg-8 col-12 text-center ">
-            <p>You have been deconnected from your account.</p>
+    <div class="row  align-item-center  py-5" id="page">
+        <div class="bg-white shadow-sm col-lg-6 p-4 col-11 mx-auto">
+            <p class="text-center fs-4">You have been deconnected from your account.</p>
         </div>
     </div>
 

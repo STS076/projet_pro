@@ -5,7 +5,7 @@ require_once '../controllers/categories-controller.php';
 require_once '../elements/top.php';
 ?>
 
-<body class="d-flex flex-column min-vh-100 backgroundAdmin">
+<body class="mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg container justify-content-center">
 
     <?php require_once '../elements/header.php' ?>
 
@@ -24,17 +24,17 @@ require_once '../elements/top.php';
                     foreach ($getDealByCat as $value) {
                         if ($value['deals_validate'] == 1) {
                     ?>
-                            <div class="col-lg-3 col-11 bg-light shadow-sm mx-2 my-2 p-0">
+                            <div class="col-lg-3 col-11 shadow-sm mx-2 my-2 p-0">
 
                                 <?php
                                 $images = $image->getOneGallery($value['deals_id']);
                                 ?>
-                                
-                                <img src="data:image/png;base64,<?= $images[0]['images_name'] ?>" class="m-0 p-0 img-fluid " alt="<?= $value['deals_title'] ?>">
+
+                                <img src="data:image/png;base64,<?= $images[0]['images_name'] ?>" class="m-0 p-0 img-fluid imgArrCat" alt="<?= $value['deals_title'] ?>">
 
 
                                 <div class="
-                                <?= ($oneCatArray['tag_categories_name'] == 'Museums' ? 'bg-info' : ($oneCatArray['tag_categories_name'] == 'Beauty'  ? 'bg-danger' : ($oneCatArray['tag_categories_name'] == 'Nature' ? 'bg-success' : ''))) ?> 
+                                <?= $cardColors[$oneCatArray['tag_categories_name']]  ?> 
                                 ">
                                     <p class="card-title text-center fw-bold fs-5"><?= $value['deals_title'] ?></p>
                                     <p class="p-2 card-text"><?= $value['deals_mini_summary'] ?></p>
