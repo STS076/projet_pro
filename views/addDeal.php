@@ -3,6 +3,7 @@
 session_start();
 
 require_once '../controllers/addDeal-controller.php';
+
 require_once '../elements/top.php' ?>
 
 <body class="d-flex flex-column  mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg  justify-content-center">
@@ -133,7 +134,7 @@ require_once '../elements/top.php' ?>
                             <span class="text-danger" data-span="dealTagCat">
                                 <?= isset($errors['dealTagCat']) ? $errors['dealTagCat'] : '' ?>
                         </label>
-                        <select id="dealTagCat" multiple value="<?= isset($_POST['dealTagCat']) ? $_POST['dealTagCat'] : '' ?>" name="dealTagCat[]">
+                        <select id="dealTagCat" multiple name="dealTagCat[]">
                             <option value="">Please select a Category</option>
                             <?php foreach ($allTagsCategoryArray as $value) { ?>
                                 <option class="fontCat" value="<?= $value['tag_categories_id'] ?>" name="dealTagCat[<?= $value['tag_categories_id'] ?>]"><?= $value['tag_categories_name'] ?>

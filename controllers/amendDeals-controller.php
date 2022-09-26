@@ -107,8 +107,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $dealTagArr = safeInput($_POST['dealTagArr']);
 
         // s'il n'y a aucune erreur alors que vais créer un nouveau Deal. va injecter les données du POST dans la méthode
-        $dealObj = new Deals();
-        $idDeals = $dealObj->amendDeals($dealTitle, $_POST['dealMiniSummary'], $_POST['dealSummary'], $dealWhen, $dealWhere,  $dealMetro, $dealPrice, $dealMap, $dealInfo, $_POST['dealContact'], $dealTagArr, $_SESSION['user']['users_id'], $_GET['amend']);
+        $deal = new Deals();
+        $amendDeals = $deal->amendDeals($dealTitle, $_POST['dealMiniSummary'], $_POST['dealSummary'], $dealWhen, $dealWhere,  $dealMetro, $dealPrice, $dealMap, $dealInfo, $_POST['dealContact'], $dealTagArr, $_GET['amend']);
         $oneDealArray = $deals->getOneDeal($_GET['amend']);
 
         $cat = new DealsHasCat();

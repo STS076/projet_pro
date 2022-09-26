@@ -127,8 +127,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
         // va créer un nouveau deal 
-        $dealObj = new Deals();
-        $idDeals = $dealObj->addDeals($dealTitle, $_POST['dealMiniSummary'], $_POST['dealSummary'], $dealWhen, $dealWhere, $dealPrice, $dealMap, $dealMetro, $dealInfo, $_POST['dealContact'], $dealTagArr, $_SESSION['user']['users_id'], $date);
+        $deal = new Deals();
+        $idDeals = $deal->addDeals($dealTitle, $_POST['dealMiniSummary'], $_POST['dealSummary'], $dealWhen, $dealWhere, $dealPrice, $dealMap, $dealMetro, $dealInfo, $_POST['dealContact'], $dealTagArr, $_SESSION['user']['users_id'], $date);
 
         $category = new Categories();
         $allTagsCategoryArray = $category->getAllTagCategory();

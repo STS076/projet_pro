@@ -8,7 +8,7 @@ require_once '../controllers/amendDeals-controller.php';
 // var_dump($_POST);
 require_once '../elements/top.php' ?>
 
-<body class="mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg container justify-content-center">
+<body class="mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg justify-content-center">
 
     <?php require_once '../elements/header.php' ?>
 

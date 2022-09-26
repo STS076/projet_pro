@@ -117,22 +117,20 @@ class Deals extends Database
     /**
      * Fonction pour modifier un deal
      */
-    public function amendDeals($deals_title, $deals_mini_summary, $deals_summary, $deals_when, $deals_where,  $deals_metro, $deals_price,  $deals_map, $deals_info, $deals_contact, $tag_arr_id_TAG_ARR, $users_id_USERS, $deals_id)
+    public function amendDeals($deals_title, $deals_mini_summary, $deals_summary, $deals_when, $deals_where,  $deals_metro, $deals_price,  $deals_map, $deals_info, $deals_contact, $tag_arr_id_TAG_ARR, $deals_id)
     {
         $pdo = parent::connectDb();
 
         $sql = "UPDATE deals 
-        set deals_title =:deals_title, deals_mini_summary=:deals_mini_summary, deals_summary=:deals_summary, deals_when=:deals_when, deals_where=:deals_where, deals_metro=:deals_metro, deals_price=:deals_price, deals_info=:deals_info, deals_contact=:deals_contact,deals_map=:deals_map, tag_arr_id_TAG_ARR=:tag_arr_id_TAG_ARR, users_id_USERS=:users_id_USERS
+        set deals_title =:deals_title, deals_mini_summary=:deals_mini_summary, deals_summary=:deals_summary, deals_when=:deals_when, deals_where=:deals_where, deals_metro=:deals_metro, deals_price=:deals_price, deals_info=:deals_info, deals_contact=:deals_contact,deals_map=:deals_map, tag_arr_id_TAG_ARR=:tag_arr_id_TAG_ARR 
         WHERE deals_id=:deals_id";
 
         $query = $pdo->prepare($sql);
-
         $query->bindValue(':deals_title', $deals_title, PDO::PARAM_STR);
         $query->bindValue(':deals_mini_summary', $deals_mini_summary, PDO::PARAM_STR);
         $query->bindValue(':deals_summary', $deals_summary, PDO::PARAM_STR);
         $query->bindValue(':deals_when', $deals_when, PDO::PARAM_STR);
         $query->bindValue(':deals_where', $deals_where, PDO::PARAM_STR);
-        $query->bindValue(':users_id_USERS', $users_id_USERS, PDO::PARAM_STR);
         $query->bindValue(':deals_price', $deals_price, PDO::PARAM_STR);
         $query->bindValue(':deals_metro', $deals_metro, PDO::PARAM_STR);
         $query->bindValue(':deals_info', $deals_info, PDO::PARAM_STR);
