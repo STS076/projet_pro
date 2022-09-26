@@ -12,9 +12,15 @@ require_once '../controllers/allComments-controller.php';
     <?php include '../elements/header.php' ?>
 
     <div class="row bg-white justify-content-center mx-0 py-5 my-5" id="page">
-        <a class="fs-6 text-secondary px-5 my-3" href="dashboard-comments.php">
-            <i class='bi bi-caret-left-fill links mx-2'></i> back
-        </a>
+        <?php if ($_SESSION['user']['role_id_ROLE'] == 3) { ?>
+            <a class="fs-6 text-secondary px-5 my-3" href="dashboard.php">
+                <i class='bi bi-caret-left-fill links mx-2'></i> back
+            </a>
+        <?php } else { ?>
+            <a class="fs-6 text-secondary px-5 my-3" href="dashboard-comments.php">
+                <i class='bi bi-caret-left-fill links mx-2'></i> back
+            </a>
+        <?php } ?>
         <div class="col-lg-12 col-11">
             <?php if ($_SESSION['user']['role_id_ROLE'] != 1 && $_SESSION['user']['role_id_ROLE'] != 2) { ?>
                 <h2 class="fs-2 text-center welcome ">Comments submited by <?= $_SESSION['user']['users_username'] ?></h2>

@@ -1,17 +1,18 @@
 <?php
 session_start();
 require_once '../controllers/allUsers-controller.php';
-var_dump($_SESSION['user']['role_id_ROLE']);
+// var_dump($_SESSION['user']['role_id_ROLE']);
 ?>
 
 <?php include '../elements/top.php' ?>
 
 
-<body class="mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg container justify-content-center">
+<body class="d-flex flex-column  mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg justify-content-center">
     <?php include '../elements/header.php' ?>
 
-    <div class="container bienvenue d-flex align-items-center flex-column rounded my-5 p-5 border border-dark shadow">
+    <div class="row bienvenue d-flex align-items-center flex-column mx-0 my-5 p-5  bg-white shadow">
         <div class="col-lg-10 col-12 text-center">
+          <h2 class="fs-2 text-center welcome ">All Users</h2>
             <table class="table table-responsive table-hover">
                 <thead>
                     <tr>

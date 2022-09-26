@@ -7,7 +7,7 @@ require_once '../elements/top.php';
 // var_dump($exploreColor); 
 ?>
 
-<body class="mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg  justify-content-center">
+<body class="mx-auto min-vh-100 background p-0 shadow-lg  justify-content-center container">
 
     <?php require_once '../elements/header.php' ?>
 

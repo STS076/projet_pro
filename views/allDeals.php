@@ -107,7 +107,7 @@ require_once '../controllers/allDeals-controller.php';
                             } ?>
 
                             <?php
-                            if ($_SESSION['user']['role_id_ROLE'] != 1) {
+                            if ($_SESSION['user']['role_id_ROLE'] == 3) {
                                 foreach ($getDealsByUser as $value) {
                             ?>
                                     <tr>

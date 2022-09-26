@@ -5,26 +5,31 @@ require_once '../controllers/home-controller.php';
 // require_once '../data/data.php';
 require_once '../elements/top.php' ?>
 
-<body class="mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg justify-content-center">
+<body class="mx-auto min-vh-100 background p-0 shadow-lg justify-content-center container">
     <?php require_once '../elements/header.php' ?>
 
-    <main class="bg-white py-5  px-0">
-        <div class="row m-0 p-0 justify-content-center">
-            <div class="col-lg-9 col-11 py-2">
-                <p class=" text-center welcome2 ">Welcome To Paris</p>
-                <!-- <p><?= $_SESSION['user']['users_name'] ?></p> -->
-                <p class="fs-6 text-center">
-                    Paradise for museums, concerts and exxibitions connoisseurs, Paris can be hell when it come to you wallet, that cannot follow all of your adventures. And no one want to give up the pleasure of visiting the city of lights because of an empty wallet. Thankfully, the city is more generous than we would expect for people with small means, you just have to know the good deals and free treasure than it can offer. <br>
+    <main class="bg-white py-5  px-0 container-fluid">
+        <p class=" text-center welcome2 py-2">Welcome To Paris</p>
+        <div class="row m-0 p-0 justify-content-center bg-light">
+
+            <div class="col-lg-5 col-11  mx-1 d-flex align-items-center justify-content-center">
+                <p class="fs-6">
+                    Paradise for museums, concerts and exibitions connoisseurs, Paris can be hell when it come to your wallet that cannot follow all of your adventures. And no one want to give up the pleasure of visiting the city of lights because of an empty purse. Thankfully, the city is more generous than we would expect for people with small means, you just have to know the good deals and free treasure than it can offer. <br>
                     There is a myriad of time slot where museums are free,
                 </p>
             </div>
+            <div class="col-lg-6 col-11 text-center d-lg-block d-none mx-1">
+
+                <img src="../assets/images/images/adobestock-264549883-960x640.jpeg" alt="image paris sunset" class="imageHome">
+            </div>
         </div>
 
-        <div class="text-center">
+
+        <div class="text-center py-5">
             <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1OkLNPaeSeYtR3EM-UlL16JUNNjzlPHA&ehbc=2E312F" class="goodDealsMap" scrolling="NO"></iframe>
         </div>
 
-        <div class=" row justify-content-evenly mx-0 p-0  mt-5 bg-light">
+        <div class=" row justify-content-evenly mx-0 p-0  mt-3 bg-light">
             <div class="col-lg-2 col-11 hotDeals py-5 d-flex align-items-center">
                 <p class="text-light fw-bold fs-2 text-center welcome">Our better rated deals</p>
             </div>
@@ -32,7 +37,7 @@ require_once '../elements/top.php' ?>
                 if ($value['deals_validate'] == 1) { ?>
                     <div class="col-lg-2 col-11 bg-light shadow-sm mx-2 my-3 p-0">
                         <div class="d-flex flex-column justify-content-between">
-                            <div class="col border border-danger ">
+                            <div class="col  ">
                                 <?php
                                 $images = $image->getOneGallery($value['deals_id']);
                                 ?>
@@ -40,7 +45,7 @@ require_once '../elements/top.php' ?>
                                 <p class="card-title text-center fw-bold welcome fs-4 newDealsWrite p-2"><?= $value['deals_title'] ?></p>
                                 <p class="p-2 "><?= $value['deals_mini_summary'] ?></p>
                             </div>
-                            <div class="col border border-info">
+                            <div class="col">
                                 <div class="d-flex justify-content-evenly p-2">
                                     <p><?= $value['DealsCatTag'] ?></p>
                                     <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="newDealsWrite">Explore</a>

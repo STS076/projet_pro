@@ -4,7 +4,7 @@ require_once '../controllers/allCategories-controller.php';
 require_once '../elements/top.php';
 ?>
 
-<body class="mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg container justify-content-center">
+<body class="mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg container justify-content-center container">
 
     <?php require_once '../elements/header.php' ?>
 
