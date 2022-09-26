@@ -7,13 +7,13 @@ require_once '../elements/top.php';
 // var_dump($exploreColor); 
 ?>
 
-<body class="mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg container justify-content-center">
+<body class="mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg  justify-content-center">
 
     <?php require_once '../elements/header.php' ?>
 
     <main class="bg-white py-5 px-0 min-vh-100">
 
-        <h2 class="fs-2 text-center welcome pt-5 comments"><?= $oneArrondissement['tag_arr_name'] ?></h2>
+        <h2 class="fs-2 text-center welcome pt-1 comments"><?= $oneArrondissement['tag_arr_name'] ?></h2>
         <div class="row m-0 justify-content-center">
             <div class="col-lg-8 col-11 p-3 lineHeight text-center">
                 <p><?= $oneArrondissement['tag_arr_summary'] ?>
@@ -21,10 +21,10 @@ require_once '../elements/top.php';
             </div>
         </div>
         <!-- <article> -->
-        <div class="row justify-content-center mx-0 my-5">
+        <div class="row justify-content-center mx-0 my-3">
             <?php foreach ($getDealByArr as $value) {
                 if ($value['deals_validate'] == 1) { ?>
-                    <div class="col-lg-3 col-11 bg-light shadow-sm mx-3 my-3 p-0">
+                    <div class="col-lg-3 col-11 bg-light shadow-sm mx-4 my-3 p-0">
                         <?php
                         $images = $image->getOneGallery($value['deals_id']);
                         ?>

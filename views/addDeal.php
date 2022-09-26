@@ -5,7 +5,7 @@ session_start();
 require_once '../controllers/addDeal-controller.php';
 require_once '../elements/top.php' ?>
 
-<body class="d-flex flex-column  mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg container justify-content-center">
+<body class="d-flex flex-column  mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg  justify-content-center">
 
     <?php require_once '../elements/header.php' ?>
 

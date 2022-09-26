@@ -6,7 +6,7 @@ require_once '../controllers/allDeals-controller.php';
 <?php include '../elements/top.php' ?>
 
 
-<body class="d-flex flex-column  mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg container justify-content-center">
+<body class="d-flex flex-column  mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg justify-content-center">
     <?php include '../elements/header.php' ?>
 
     <div class="row bg-white justify-content-center mx-0 py-5 my-5" id="page">
@@ -15,7 +15,7 @@ require_once '../controllers/allDeals-controller.php';
         </a>
         <div class="col-lg-12 col-11">
 
-            <?php if ($_SESSION['user']['role_id_ROLE'] != 1) { ?>
+            <?php if ($_SESSION['user']['role_id_ROLE'] != 1 && $_SESSION['user']['role_id_ROLE'] != 2) { ?>
                 <h2 class="fs-2 text-center welcome ">Deals submited by <?= $_SESSION['user']['users_username'] ?></h2>
             <?php } else { ?>
                 <h2 class="fs-2 text-center welcome ">All Deals</h2>
@@ -35,20 +35,20 @@ require_once '../controllers/allDeals-controller.php';
                                 <th class="text-center">Arrondissement</th>
                                 <th class="text-center">Category</th>
                                 <th class="text-center">More Info</th>
-                                <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>
+                                <?php if ($_SESSION['user']['role_id_ROLE'] == 1 || $_SESSION['user']['role_id_ROLE'] == 2) { ?>
                                     <th class="text-center">Amend</th>
                                     <th class="text-center">Images</th>
                                     <th class="text-center">Status</th>
                                     <th class="text-center">Delete</th>
                                 <?php } ?>
-                                <?php if ($_SESSION['user']['role_id_ROLE'] != 1) { ?>
+                                <?php if ($_SESSION['user']['role_id_ROLE'] == 3) { ?>
                                     <th class="text-center">Status</th>
                                 <?php } ?>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                            if ($_SESSION['user']['role_id_ROLE'] == 1) {
+                            if ($_SESSION['user']['role_id_ROLE'] == 1 || $_SESSION['user']['role_id_ROLE'] == 2) {
                                 foreach ($AllDealsArray as $value) {
                             ?>
 
@@ -59,7 +59,7 @@ require_once '../controllers/allDeals-controller.php';
                                         <td class="text-center"><?= $value['DealsCatTag'] ?></td>
                                         <td class="text-center"><a class="text-light btn bouton" href="infoDeals.php?info=<?= $value['deals_id'] ?>"> + d'info</a></td>
 
-                                        <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>
+                                        <?php if ($_SESSION['user']['role_id_ROLE'] == 1 || $_SESSION['user']['role_id_ROLE'] == 2) { ?>
 
                                             <td class="text-center"><a class="text-light btn bouton" href="amendDeals.php?amend=<?= $value['deals_id'] ?>">Amend</a></td>
                                             <td class="text-center"><a class="text-light btn bouton" href="gallery.php?deal=<?= $value['deals_id'] ?>">Images</a></td>

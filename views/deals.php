@@ -5,13 +5,14 @@ require_once '../controllers/deals-controller.php';
 require_once '../elements/top.php';
 ?>
 
-<body class="mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg  justify-content-center">
+<body class="d-flex flex-column  mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg  justify-content-center">
 
     <?php require_once '../elements/header.php' ?>
-    <main class="bg-white py-5  px-0">
-        <?php
-        if ($oneDealArray) {
-        ?>
+    <?php
+    if ($oneDealArray) {
+    ?>
+
+        <main class="bg-white py-5  px-0">
             <ul class="breadcrumb-navigation px-5 my-3">
                 <li>
                     <a href="home.php" class="filAriane">
@@ -162,13 +163,14 @@ require_once '../elements/top.php';
                     Thank you for you comment, please note that in order to avoird spam, your review will be published after validation
                 </div>
             </div>
-        <?php } else { ?>
-            <div class="container bg-light col-lg-8 text-center rounded my-5 py-5 border border-dark shadow">
-                <p>This deal does not exist</p>
-            </div>
-        <?php }
-        ?>
-    </main>
+        </main>
+    <?php } else { ?>
+        <div class="container bg-white col-lg-8 text-center my-5 py-5  shadow">
+            <p class="p-5">This deal does not exist, you can go back to our <a href="home.php" class="text-decoration-none text-black fw-bold">homepage</a></p>
+        </div>
+    <?php }
+    ?>
+
 
 
     <button type="button" class="btn bouton btn-floating " id="btn-back-to-top">

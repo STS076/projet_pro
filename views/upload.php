@@ -4,7 +4,7 @@ require_once '../controllers/upload-controller.php';
 // var_dump($oneDealArray);
 require_once '../elements/top.php' ?>
 
-<body class="d-flex flex-column mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg container justify-content-center">
+<body class="d-flex flex-column mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg justify-content-center">
     <?php require_once '../elements/header.php' ?>
 
     <div class="row mx-0 justify-content-center my-5 py-5 bg-white">

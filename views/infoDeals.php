@@ -1,19 +1,26 @@
 <?php
 session_start();
 require_once '../controllers/infoDeals-controller.php';
-$gallerie = scandir('../assets/images/gallery/');
+var_dump($oneDealArray);
 
 require_once '../elements/top.php';
 ?>
 
-<body class="mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg container justify-content-center">
+<body class="mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg justify-content-center">
 
     <?php require_once '../elements/header.php' ?>
 
     <div class="bg-white my-5 p-5">
         <a class="fs-6 text-secondary px-5 my-3" href="allDeals.php">
-            <i class='bi bi-caret-left-fill links mx-2'></i> back
+            <i class='bi bi-caret-left-fill links mx-2'></i> back all Deals
         </a>
+        <br>
+        <?php if ($_SESSION['user']['role_id_ROLE'] != 3) { ?>
+            <a class="fs-6 text-secondary px-5 my-3" href="validateNewDeals.php">
+                <i class='bi bi-caret-left-fill links mx-2'></i> back validation
+            </a>
+        <?php } ?>
+
         <div class="row mx-0 justify-content-evenly p-0">
             <h2 class="fst-italic fw-bold text-center mb-5"><?= $oneDealArray['deals_title'] ?> by <?= $oneDealArray['users_username'] ?></h2>
             <div class="col-lg-4 col-11 m-0 p-0">

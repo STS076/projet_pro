@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $paramUpload = [
         'size' => 4000000,
         'extension' => ['jpeg', 'jpg', 'webp', 'png'],
-        'directory' => '../assets/images/gallery/',
+        'directory' => '../assets/images/images/',
         'extend' => 'png'
     ];
 

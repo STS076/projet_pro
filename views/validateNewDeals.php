@@ -5,7 +5,7 @@ require_once '../controllers/validateNewDeals-controller.php';
 <?php include '../elements/top.php' ?>
 
 
-<body class="d-flex flex-column  mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg container justify-content-center">
+<body class="d-flex flex-column  mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg  justify-content-center">
     <?php include '../elements/header.php' ?>
 
     <div class="row  justify-content-center mx-0 py-5 my-5" id="page">

@@ -8,7 +8,7 @@ require_once '../controllers/loginAdmin-controller.php';
 // var_dump($errors);
 require_once '../elements/top.php' ?>
 
-<body class="d-flex flex-column  mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg container justify-content-center">
+<body class="d-flex flex-column  mx-auto min-vh-100 backgroundAdmin p-0  justify-content-center">
 
     <?php require_once '../elements/header.php' ?>
     <main>

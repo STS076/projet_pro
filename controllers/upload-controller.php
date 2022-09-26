@@ -1,6 +1,6 @@
 <?php
 
-if (!isset($_SESSION['user'])) {
+if (!isset($_SESSION['user']) || $_SESSION['user']['role_id_ROLE'] != 1 && $_SESSION['user']['role_id_ROLE'] != 2) {
     header('Location: loginAdmin.php');
     exit;
 }
@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $paramUpload = [
         'size' => 4000000,
         'extension' => ['jpeg', 'jpg', 'webp', 'png'],
-        'directory' => '../assets/images/gallery/',
+        'directory' => '../assets/images/images/',
         'extend' => 'png'
     ];
 

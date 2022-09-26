@@ -1,6 +1,6 @@
 <?php
 
-if (!isset($_SESSION['user']) ||   $_SESSION['user']['role_id_ROLE'] != 1) {
+if (!isset($_SESSION['user'])) {
     header('Location: loginAdmin.php');
     exit;
 }
@@ -32,6 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 $comments = new Comments();
 $allComments = $comments->getAllComments();
+$getCommentsByUser = $comments->getCommentsByUser($_SESSION['user']['users_id']);
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

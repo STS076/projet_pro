@@ -51,7 +51,7 @@ body {
 }
 
 .paris {
-    background: rgba(0, 0, 0, 0.1) url("../images/header.jpg");
+    background: rgba(0, 0, 0, 0.1) url("../images/images/header.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -378,7 +378,7 @@ footer {
 /* images pour le dashboard admin + connexion */
 
 .background {
-    background: rgba(0, 0, 0, 0.1) url("../images/pexels-lina-kivaka-3989820.jpg");
+    background: rgba(0, 0, 0, 0.1) url("../images/images/pexels-lina-kivaka-3989820.jpg");
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -388,7 +388,7 @@ footer {
 
 @media screen and (min-width:600px) {
     .backgroundAdmin {
-        background: rgba(0, 0, 0, 0.1) url("../images/pexels-lina-kivaka-3989820.jpg");
+        background: rgba(0, 0, 0, 0.1) url("../images/images/pexels-lina-kivaka-3989820.jpg");
         background-position: center;
         background-attachment: fixed;
         background-repeat: no-repeat;
@@ -451,8 +451,19 @@ footer {
 .yellow {
     background-color: #F4F590;
 }
+
+.red{
+    background-color: #F7665F;
+}
+
 /* Taille des images cards */
-.imgArrCat{
+.imgArrCat {
     width: 100%;
     height: 20rem;
+}
+
+/* Taille map home */
+.goodDealsMap {
+    width: 90%;
+    height: 40rem;
 }

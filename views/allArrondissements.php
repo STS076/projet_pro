@@ -4,15 +4,15 @@ require_once '../elements/top.php';
 require_once '../controllers/allArrondissements-controller.php';
 ?>
 
-<body class="mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg container justify-content-center">
+<body class="mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg  justify-content-center">
 
     <?php require_once '../elements/header.php' ?>
 
     <main class="bg-white py-5  px-0">
 
-        <p class="fs-2 text-center welcome pt-5 comments">Arrondissements</p>
+        <p class="fs-2 text-center welcome pt-1 comments">Arrondissements</p>
 
-        <div class="row mx-0 my-5 justify-content-center">
+        <div class="row mx-0 my-3 justify-content-center">
 
             <?php foreach ($allTagsArrArray as $value) {
             ?>

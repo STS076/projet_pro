@@ -3,7 +3,7 @@ session_start();
 require_once '../controllers/contact-controller.php';
 require_once '../elements/top.php' ?>
 
-<body class="d-flex flex-column  mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg container justify-content-center">
+<body class="d-flex flex-column  mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg  justify-content-center">
 
     <?php require_once '../elements/header.php' ?>
 
@@ -13,7 +13,7 @@ require_once '../elements/top.php' ?>
             <div class="row  justify-content-evenly mx-0 py-5" id="page">
                 <div class="bg-white  shadow-sm col-lg-6 p-4 col-11">
                     <h2 class="py-3 text-center welcome comments">Contact us</h2>
-                    <p class="text-center">You noticed a mistake in one of our ads ? Or you want to make us aware of a new deal ? Please let us know below.</p>
+                    <p class="text-center">You noticed a mistake in one of our deals ? Please let us know below.</p>
 
                     <form action="" method="POST">
 
@@ -27,6 +27,7 @@ require_once '../elements/top.php' ?>
                             <input class="form-control" id="emailAddress" placeholder="Email" name="emailAddress" value="<?= isset($_POST['emailAddress']) ? $_POST['emailAddress'] : '' ?>">
 
                         </div>
+<!-- 
                         <div class="d-flex flex-column">
                             <label class="py-2" for="option">
                                 Object :
@@ -36,11 +37,11 @@ require_once '../elements/top.php' ?>
                             </label>
                             <select class="form-control" name="option" id="option">
                                 <option value="">Please choose </option>
-                                <option value="New Deal">This concerns a new deal</option>
-                                <option value="Mistake">There is a mistake in one of our ads</option>
+                                <option value="New Deal" >This concerns a new deal</option>
+                                <option value="Mistake" selected>I noticed a mistake in one of the deal</option>
                             </select>
+                        </div> -->
 
-                        </div>
                         <div class="d-flex flex-column">
                             <label name="review">Your message: <span data-span="" class="text-danger" id="errorreview"><?= isset($errors['review']) ? $errors['review'] : '' ?></span></label>
                             <textarea class="form-control" name="review" rows="8" cols="40" value=""><?= isset($_POST['review']) ? $_POST['review'] : '' ?></textarea>

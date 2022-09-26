@@ -18,7 +18,7 @@
     <!-- Sweet Alert -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/eiffel.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/images/eiffel.png">
 
     <title>Paris for free</title>
 </head>

@@ -1,6 +1,6 @@
 <?php
 
-if (!isset($_SESSION['user']) ||   $_SESSION['user']['role_id_ROLE'] != 1) {
+if (!isset($_SESSION['user'])) {
     header('Location: loginAdmin.php');
     exit;
 }

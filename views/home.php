@@ -20,7 +20,11 @@ require_once '../elements/top.php' ?>
             </div>
         </div>
 
-        <div class=" row justify-content-evenly mx-0 p-0  bg-light">
+        <div class="text-center">
+            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1OkLNPaeSeYtR3EM-UlL16JUNNjzlPHA&ehbc=2E312F" class="goodDealsMap" scrolling="NO"></iframe>
+        </div>
+
+        <div class=" row justify-content-evenly mx-0 p-0  mt-5 bg-light">
             <div class="col-lg-2 col-11 hotDeals py-5 d-flex align-items-center">
                 <p class="text-light fw-bold fs-2 text-center welcome">Our better rated deals</p>
             </div>
@@ -99,14 +103,14 @@ require_once '../elements/top.php' ?>
             </div>
         </div>
 
-        <p class="fs-1 text-center welcome comments pt-5 pb-3 mt-2">Arrondissements</p>
+        <!-- <p class="fs-1 text-center welcome comments pt-5 pb-3 mt-2">Arrondissements</p>
         <div class="row m-0 p-0 d-flex justify-content-center">
             <div class="col-12">
                 <svg version="1.1" class="text-center" baseProfile="full">
-                    <img usemap="#image-map" src="../assets/images/Land cover map of the city and department of Paris, France, equirectangular projection.svg">
+                    <img usemap="#image-map" src="../assets/images/images/Land cover map of the city and department of Paris, France, equirectangular projection.svg">
                 </svg>
             </div>
-        </div>
+        </div> -->
     </main>
 
     <button type="button" class="btn bouton btn-floating " id="btn-back-to-top">
