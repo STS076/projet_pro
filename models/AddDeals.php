@@ -398,4 +398,20 @@ class Deals extends Database
         $query->bindValue(':users_id_USERS', $users_id_USERS, PDO::PARAM_INT);
         $query->execute();
     }
+
+    /**
+     * fonction pour compter le nombre de nouveaux deals
+     */
+    public function numberofDealsToValidate():array
+    {
+        $pdo = parent::connectDb();
+
+        $sql = "SELECT count(deals_id) 
+        from deals 
+        where deals_validate=0";
+
+        $query = $pdo->query($sql);
+        $result = $query->fetch();
+        return $result;
+    }
 }

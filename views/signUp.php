@@ -8,9 +8,9 @@ require_once '../elements/top.php' ?>
     <?php require_once '../elements/header.php' ?>
 
     <?php if ($showForm) { ?>
-        <main>
-            <div class="row  justify-content-center mx-0 py-5" id="page">
-                <div class="bg-white  shadow-sm col-lg-5 p-4 col-11">
+        <main class="bg-white py-5  px-0 container-fluid">
+            <div class="row  justify-content-center m-0" id="page">
+                <div class=" col-lg-5 p-4 col-11">
                     <h2 class="py-3 text-center welcome ">Please enter below information to Sign Up : </h2>
                     <form action="" method="POST">
 

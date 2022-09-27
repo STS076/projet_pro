@@ -12,7 +12,7 @@ require_once '../elements/top.php';
     <?php require_once '../elements/header.php' ?>
     <main class="container-fluid bg-white py-5">
         <div class="row d-flex align-items-center flex-column py-4  m-0  ">
-            <div class="col-lg-7 col-11 bg-white p-4">
+            <div class="col-lg-7 col-11 bg-white ">
                 <a class="fs-6 text-secondary px-5 my-3" href="dashboard.php">
                     <i class='bi bi-caret-left-fill links mx-2'></i> back
                 </a>

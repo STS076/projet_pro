@@ -47,7 +47,7 @@ body {
 } */
 
 .navigationMobile {
-    background-color: white;
+    background-color: #5C5B7E;
 }
 
 .paris {
@@ -301,7 +301,7 @@ footer {
 @media screen and (max-width:600px) {
     #btn-back-to-top {
         position: fixed;
-        bottom: 15rem;
+        bottom: 20rem;
         right: 2rem;
         display: none;
     }

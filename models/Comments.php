@@ -238,4 +238,23 @@ class Comments extends Database
         $result = $query->fetch();
         return $result;
     }
+
+    
+    /**
+     * fonction pour compter le nombre de nouveaux deals
+     */
+    public function numberofNewComments():array
+    {
+        $pdo = parent::connectDb();
+
+        $sql = "SELECT count(comments_id) 
+        from comments 
+        inner join deals 
+        on deals_id=deals_id_DEALS
+        where comments_validate=0";
+
+        $query = $pdo->query($sql);
+        $result = $query->fetch();
+        return $result;
+    }
 }
