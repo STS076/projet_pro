@@ -8,12 +8,12 @@ require_once '../controllers/loginAdmin-controller.php';
 // var_dump($errors);
 require_once '../elements/top.php' ?>
 
-<body class="d-flex flex-column  mx-auto min-vh-100 backgroundAdmin p-0  justify-content-center">
+<body class="d-flex flex-column  mx-auto min-vh-100 background container p-0  container  justify-content-center">
 
     <?php require_once '../elements/header.php' ?>
-    <main>
-        <div class="row  justify-content-center mx-0 py-5" id="page">
-            <div class="bg-white  shadow-sm col-lg-6 p-4 col-11">
+    <main class="bg-white ">
+        <div class="row  justify-content-center mx-0 my-5 py-4" id="page">
+            <div class="bg-white  col-lg-6 p-4 col-11">
                 <h2 class="py-3 text-center welcome ">Please enter below information to login : </h2>
                 <form action="" method="POST">
 
@@ -24,9 +24,10 @@ require_once '../elements/top.php' ?>
                         <p data-span="error-pseudo" class="text-danger"><?= isset($errors['pseudo']) ? $errors['pseudo'] : '' ?></p>
                     </div>
 
-                    <div class="d-flex flex-column">
+                    <div class="input-group  rounded mb-3">
                         <!-- <label class="text-dark">Password:</label> -->
                         <input type="password" class="identify text-center form-control" id="password" placeholder="Password" name="password">
+                        <span class="input-group-text" id=""><i class="bi bi-eye-slash" id="togglePassword"></i></span>
                         <p data-span="error-password" class="text-danger"><?= isset($errors['password']) ? $errors['password'] : '' ?></p>
                     </div>
 
@@ -51,6 +52,7 @@ require_once '../elements/top.php' ?>
     </button>
 
     <script src="../assets/script/contact.js"></script>
+    <script src="../assets/script/password.js"></script>
     <?php require_once '../elements/footer.php' ?>
 
 </body>

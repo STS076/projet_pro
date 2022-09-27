@@ -28,7 +28,8 @@ $cardColors = [
     'Beauty' => 'pink',
     'Nature' => 'green',
     'Music' => 'blue',
-    'Restaurant' => 'purple',
+    'Restaurants and Bars' => 'purple',
     'Sport' => 'yellow',
-    'Cinema and Theatre' => 'red'
+    'Cinema and Theatre' => 'red', 
+    'Culture' => 'orange'
 ];

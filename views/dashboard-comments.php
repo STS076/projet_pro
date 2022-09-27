@@ -7,7 +7,7 @@ require_once '../controllers/dashboard-comments-controller.php';
 require_once '../elements/top.php';
 ?>
 
-<body class="d-flex flex-column  mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg justify-content-center">
+<body class="d-flex flex-column  mx-auto min-vh-100 background container p-0 shadow-lg justify-content-center">
 
     <?php require_once '../elements/header.php' ?>
 

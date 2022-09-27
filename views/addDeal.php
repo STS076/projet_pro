@@ -6,13 +6,13 @@ require_once '../controllers/addDeal-controller.php';
 
 require_once '../elements/top.php' ?>
 
-<body class="d-flex flex-column  mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg  justify-content-center container">
+<body class="d-flex flex-column  mx-auto min-vh-100 background container p-0 shadow-lg  justify-content-center container">
 
     <?php require_once '../elements/header.php' ?>
 
     <div class="row  justify-content-evenly mx-0 py-5">
 
-        <div class="bg-light  shadow-sm col-lg-6 p-5  col-11">
+        <div class="bg-white  shadow-sm col-lg-6 p-5  col-11">
             <a class="fs-6 text-secondary  my-3" href="dashboard-deals.php">
                 <i class='bi bi-caret-left-fill links mx-2'></i> back
             </a>

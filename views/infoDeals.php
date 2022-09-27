@@ -6,11 +6,11 @@ require_once '../controllers/infoDeals-controller.php';
 require_once '../elements/top.php';
 ?>
 
-<body class="mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg justify-content-center">
+<body class="mx-auto min-vh-100 background container p-0 shadow-lg justify-content-center">
 
     <?php require_once '../elements/header.php' ?>
 
-    <div class="bg-white my-5 p-5">
+    <main class="bg-white py-5  px-0 container-fluid">
         <a class="fs-6 text-secondary px-5 my-3" href="allDeals.php">
             <i class='bi bi-caret-left-fill links mx-2'></i> back all Deals
         </a>
@@ -72,14 +72,17 @@ require_once '../elements/top.php';
                     <a class="col-2 text-decoration-none" href="upload.php?deal=<?= $oneDealArray['deals_id']  ?>">
                         <button class="btn text-white bg-info">Add an Image</button>
                     </a>
-                    <a class="col-2 text-decoration-none" href="deleteImage.php?deal=<?= $oneDealArray['deals_id'] ?>">
-                        <button class="btn text-white bg-info">Delete an image</button>
-                    </a>
+
+                    <?php if (!empty($getOneGallery[1])) { ?>
+                        <a class="col-2 text-decoration-none" href="deleteimage.php?deal=<?= $oneDealArray['deals_id']  ?>">
+                            <button class="btn text-white bg-danger">Delete an image</button>
+                        </a>
+                    <?php } ?>
                 </div>
             <?php } ?>
 
         </div>
-    </div>
+    </main>
     <button type="button" class="btn bouton btn-floating " id="btn-back-to-top">
         <i class="bi bi-arrow-up-short text-white"></i>
     </button>

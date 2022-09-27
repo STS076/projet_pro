@@ -1,7 +1,7 @@
 <header class="paris bg-light ">
     <div class="py-5">
         <a href="home.php" class="text-decoration-none">
-            <p class="text-center titleMain py-2 bw-bold fs-1">It's always better when it's free</p>
+            <p class="text-center titleMain py-2 bw-bold fs-1 ms-5">It's always better when it's free</p>
         </a>
     </div>
 </header>
@@ -10,20 +10,20 @@
 <nav class="d-lg-block d-none navbar sticky-top navcomputer navbar-expand-lg shadow-5-strong py-1 shadow navigation ">
     <!-- <a class="navbar-brand " href="#"></a> -->
     <div class="collapse navbar-collapse " id="navbarSupportedContent">
-        <ul class="navbar-nav  w-100 justify-content-center nav d-flex">
+        <ul class="navbar-nav  w-100 justify-content-evenly nav d-flex">
             <li class="nav-item d-flex">
-                <a href="home.php" class="nav-link fw-bold text-black me-5">Home</a>
+                <a href="home.php" class="nav-link fw-bold text-black ">Home</a>
             </li>
             <!-- <li class="nav-item">
-                <a class="nav-link active titre box fw-bold text-black me-5" href="news.php">News</a>
+                <a class="nav-link active titre box fw-bold text-black " href="news.php">News</a>
             </li> -->
 
             <li class="nav-item">
-                <a class="nav-link active titre box fw-bold text-black me-5" href="allArrondissements.php">Arrondissements</a>
+                <a class="nav-link active titre box fw-bold text-black " href="allArrondissements.php">Arrondissements</a>
             </li>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-black  fw-bold me-5" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle text-black  fw-bold " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Categories
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -34,15 +34,15 @@
                 </ul>
             </li>
             <li class="nav-item">
-                <a class="nav-link active titre box fw-bold text-black me-5" href="contact.php">Contact us</a>
+                <a class="nav-link active titre box fw-bold text-black " href="contact.php">Contact us</a>
             </li>
             <li class="nav-item">
-                <?php if (!isset($_SESSION['user'])) { ?>
-                    <a class="nav-link active titre box fw-bold text-black me-5" href="loginAdmin.php">
+                <?php if (!isset($_SESSION['user'])){ ?>
+                    <a class="nav-link active titre box fw-bold text-black " href="loginAdmin.php">
                         <i class="bi bi-person-circle me-2"></i>Login
                     </a>
                 <?php } else { ?>
-                    <a class="nav-link active titre box fw-bold text-black me-5" href="dashboard.php">
+                    <a class="nav-link active titre box fw-bold text-black " href="dashboard.php">
                     <i class="bi bi-person-circle me-2"></i><?= $_SESSION['user']['users_username'] ?>
                     </a>
                 <?php } ?>

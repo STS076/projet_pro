@@ -129,39 +129,47 @@ require_once '../elements/top.php';
                 <?php }
                 } ?>
 
-                <form action="deals.php?choice=<?= $oneDealArray['deals_id'] ?>#reviews" method="post">
-                    <div class="row mx-0 p-0 my-2 bg-light justify-content-center">
-                        <div class="col-lg-8 col-11 d-flex justify-content-center">
-                            <div class="d-flex flex-column">
-                                <label for="rating">Rating : <span class="text-danger"><?= isset($errors['dealRating']) ? $errors['dealRating'] : '' ?></span></label>
-                                <select id="dealRating" value="<?= isset($_POST['dealRating']) ? $_POST['dealRating'] : '' ?>" name="dealRating">
-                                    <option value="">☆ Please select a rating ☆</option>
-                                    <option type="radio" class="rating" name="dealRating" value="1">☆</option>
-                                    <option type="radio" class="rating" name="dealRating" value="2">☆☆</option>
-                                    <option type="radio" class="rating" name="dealRating" value="3">☆☆☆</option>
-                                    <option type="radio" class="rating" name="dealRating" value="4">☆☆☆☆</option>
-                                    <option type="radio" class="rating" name="dealRating" value="5">☆☆☆☆☆</option>
-                                </select>
+
+                <?php if (isset($_SESSION['user'])) { ?>
+                    <form action="deals.php?choice=<?= $oneDealArray['deals_id'] ?>#reviews" method="post">
+                        <div class="row mx-0 p-0 my-2 bg-light justify-content-center">
+                            <div class="col-lg-8 col-11 d-flex justify-content-center">
+                                <div class="d-flex flex-column">
+                                    <label for="rating">Rating : <span class="text-danger"><?= isset($errors['dealRating']) ? $errors['dealRating'] : '' ?></span></label>
+                                    <select id="dealRating" value="<?= isset($_POST['dealRating']) ? $_POST['dealRating'] : '' ?>" name="dealRating">
+                                        <option value="">☆ Please select a rating ☆</option>
+                                        <option type="radio" class="rating" name="dealRating" value="1">☆</option>
+                                        <option type="radio" class="rating" name="dealRating" value="2">☆☆</option>
+                                        <option type="radio" class="rating" name="dealRating" value="3">☆☆☆</option>
+                                        <option type="radio" class="rating" name="dealRating" value="4">☆☆☆☆</option>
+                                        <option type="radio" class="rating" name="dealRating" value="5">☆☆☆☆☆</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8 col-11 d-flex d-flex justify-content-center">
-                                <div class="d-flex flex-column mt-2">
-                                    <label>Your comment :<span class="text-danger"><?= isset($errors['dealComment']) ? $errors['dealComment'] : '' ?></span></label>
-                                    <textarea rows="8" cols="40" name="dealComment" value="<?= isset($_POST['dealComment']) ? $_POST['dealComment'] : '' ?>"></textarea>
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8 col-11 d-flex d-flex justify-content-center">
+                                    <div class="d-flex flex-column mt-2">
+                                        <label>Your comment :<span class="text-danger"><?= isset($errors['dealComment']) ? $errors['dealComment'] : '' ?></span></label>
+                                        <textarea rows="8" cols="40" name="dealComment" value="<?= isset($_POST['dealComment']) ? $_POST['dealComment'] : '' ?>"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-8 col-11 d-flex justify-content-center">
+                                <div class="my-1 text-center">
+                                    <button class="btn bouton text-light" name="submit">Submit review</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-8 col-11 d-flex justify-content-center">
-                            <div class="my-1 text-center">
-                                <button class="btn bouton text-light" name="submit">Submit review</button>
-                            </div>
-                        </div>
+                    </form>
+                    <div class="thankYou pb-2">
+                        Thank you for you comment, please note that in order to avoird spam, your review will be published after validation
                     </div>
-                </form>
-                <div class="thankYou pb-2">
-                    Thank you for you comment, please note that in order to avoird spam, your review will be published after validation
-                </div>
+                <?php } else { ?>
+                    <div class="text-secondary p-2">
+                        Please <a href="loginAdmin.php" class="text-decoration-none fw-bold text-secondary">login</a> or <a href="signUp.php" class="text-decoration-none fw-bold text-secondary">signup</a> to leave a review
+                    </div>
+                <?php } ?>
+
             </div>
         </main>
     <?php } else { ?>

@@ -8,13 +8,13 @@ require_once '../controllers/amendDeals-controller.php';
 // var_dump($_POST);
 require_once '../elements/top.php' ?>
 
-<body class="mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg justify-content-center">
+<body class="mx-auto min-vh-100 background container  p-0 justify-content-center">
 
     <?php require_once '../elements/header.php' ?>
 
     <div class="row justify-content-evenly mx-0 my-5">
 
-        <div class="bg-light shadow-sm col-lg-6 p-5  col-11">
+        <div class="bg-light col-lg-6 p-5  col-11">
             <a class="fs-6 text-secondary  my-3" href="allDeals.php">
                 <i class='bi bi-caret-left-fill links mx-2'></i> back
             </a>
@@ -29,7 +29,7 @@ require_once '../elements/top.php' ?>
                             <?= isset($errors['dealTitle']) ? $errors['dealTitle'] : '' ?>
                         </span>
                     </label>
-                    <input type="text" id="dealTitle" value="<?= $oneDealArray['deals_title'] ?>" name="dealTitle">
+                    <input type="text" name="dealTitle" id="dealTitle" value="<?= isset($_POST['dealTitle']) && !empty($_POST['dealTitle']) ? $_POST['dealTitle'] : $oneDealArray['deals_title'] ?>">
                 </div>
                 <div class="d-flex flex-column">
                     <label class="py-2" for="dealMiniSummary">
@@ -37,7 +37,7 @@ require_once '../elements/top.php' ?>
                         <span class="text-danger" data-span="error-dealMiniSummary"><?= isset($errors['dealMiniSummary']) ? $errors['dealMiniSummary'] : '' ?>
                         </span>
                     </label>
-                    <textarea type="text" id="dealMiniSummary" name="dealMiniSummary"><?= $oneDealArray['deals_mini_summary'] ?></textarea>
+                    <textarea type="text" id="dealMiniSummary" name="dealMiniSummary"><?= isset($_POST['dealMiniSummary']) ? $_POST['dealMiniSummary'] : $oneDealArray['deals_mini_summary'] ?></textarea>
                 </div>
                 <div class="d-flex flex-column">
                     <label class="py-2" for="dealSummary">
@@ -45,7 +45,7 @@ require_once '../elements/top.php' ?>
                         <span class="text-danger" data-span="error-dealSummary"><?= isset($errors['dealSummary']) ? $errors['dealSummary'] : '' ?>
                         </span>
                     </label>
-                    <textarea type="text" id="dealSummary" name="dealSummary"> <?= $oneDealArray['deals_summary'] ?></textarea>
+                    <textarea type="text" id="dealSummary" name="dealSummary"><?= isset($_POST['dealSummary']) ? $_POST['dealSummary'] : $oneDealArray['deals_summary'] ?></textarea>
                 </div>
                 <div class="d-flex flex-column">
                     <label class="py-2" for="dealWhen">
@@ -54,7 +54,7 @@ require_once '../elements/top.php' ?>
                             <?= isset($errors['dealWhen']) ? $errors['dealWhen'] : '' ?>
                         </span>
                     </label>
-                    <input type="text" id="dealWhen" value="<?= $oneDealArray['deals_when'] ?>" name="dealWhen">
+                    <input type="text" id="dealWhen" value="<?= isset($_POST['dealWhen']) ? $_POST['dealWhen'] : $oneDealArray['deals_when'] ?>" name="dealWhen">
                 </div>
 
                 <div class="d-flex flex-column">
@@ -64,7 +64,7 @@ require_once '../elements/top.php' ?>
                             <?= isset($errors['dealWhere']) ? $errors['dealWhere'] : '' ?>
                         </span>
                     </label>
-                    <input type="text" id="dealWhere" value="<?= $oneDealArray['deals_where'] ?>" name="dealWhere">
+                    <input type="text" id="dealWhere" value="<?= isset($_POST['dealWhere']) ? $_POST['dealWhere'] : $oneDealArray['deals_where'] ?>" name="dealWhere">
                 </div>
                 <div class="d-flex flex-column">
                     <label class="py-2">
@@ -73,7 +73,7 @@ require_once '../elements/top.php' ?>
                             <?= isset($errors['dealPrice']) ? $errors['dealPrice'] : '' ?>
                         </span>
                     </label>
-                    <input type="text" id="dealPrice" value="<?= $oneDealArray['deals_price'] ?>" name="dealPrice">
+                    <input type="text" id="dealPrice" value="<?= isset($_POST['dealPrice']) ? $_POST['dealPrice'] : $oneDealArray['deals_price'] ?>" name="dealPrice">
                 </div>
                 <div class="d-flex flex-column">
                     <label class="py-2">
@@ -82,7 +82,7 @@ require_once '../elements/top.php' ?>
                             <?= isset($errors['dealMetro']) ? $errors['dealMetro'] : '' ?>
                         </span>
                     </label>
-                    <input type="text" id="dealMetro" value="<?= $oneDealArray['deals_metro'] ?>" name="dealMetro">
+                    <input type="text" id="dealMetro" value="<?= isset($_POST['dealMetro']) ? $_POST['dealMetro'] : $oneDealArray['deals_metro'] ?>" name="dealMetro">
                 </div>
                 <div class="d-flex flex-column">
                     <label class="py-2">
@@ -91,7 +91,7 @@ require_once '../elements/top.php' ?>
                             <?= isset($errors['dealInfo']) ? $errors['dealInfo'] : '' ?>
                         </span>
                     </label>
-                    <input type="text" id="dealInfo" value="<?= $oneDealArray['deals_info'] ?>" name="dealInfo">
+                    <input type="text" id="dealInfo" value="<?= isset($_POST['dealInfo']) ? $_POST['dealInfo'] : $oneDealArray['deals_info'] ?>" name="dealInfo">
                 </div>
                 <div class="d-flex flex-column">
                     <label class="py-2">
@@ -100,7 +100,7 @@ require_once '../elements/top.php' ?>
                             <?= isset($errors['dealContact']) ? $errors['dealContact'] : '' ?>
                         </span>
                     </label>
-                    <input type="text" id="dealContact" value="<?= $oneDealArray['deals_contact'] ?>" name="dealContact">
+                    <input type="text" id="dealContact" value="<?= isset($_POST['dealContact']) ? $_POST['dealContact'] : $oneDealArray['deals_contact'] ?>" name="dealContact">
                 </div>
                 <div class="d-flex flex-column">
                     <label class="py-2">
@@ -108,7 +108,7 @@ require_once '../elements/top.php' ?>
                         <span class="text-danger">
                             <?= isset($errors['dealMap']) ? $errors['dealMap'] : '' ?>
                     </label>
-                    <textarea type="text" id="dealMap" name="dealMap"><?= $oneDealArray['deals_map'] ?></textarea>
+                    <textarea type="text" id="dealMap" name="dealMap"><?= isset($_POST['dealMap']) ? $_POST['dealMap'] : $oneDealArray['deals_map'] ?></textarea>
                 </div>
 
                 <div class="d-flex flex-column">

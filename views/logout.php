@@ -5,7 +5,7 @@ require_once '../controllers/logout-controller.php';
 
 <?php include '../elements/top.php' ?>
 
-<body class="d-flex flex-column  mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg justify-content-center">
+<body class="d-flex flex-column  mx-auto min-vh-100 container backgroundAdmin p-0 shadow-lg justify-content-center">
     <?php include '../elements/header.php' ?>
     <div class="row  mx-0 align-item-center  py-5 my-5" id="page">
         <div class="bg-white shadow-sm col-lg-6 p-4 col-11 mx-auto">

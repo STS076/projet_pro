@@ -24,7 +24,7 @@ require_once '../elements/top.php';
                     foreach ($getDealByCat as $value) {
                         if ($value['deals_validate'] == 1) {
                     ?>
-                            <div class="col-lg-3 col-11 shadow-sm  my-2 p-0  <?= $cardColors[$oneCatArray['tag_categories_name']]  ?> ">
+                            <div class="col-lg-3 col-11 shadow-sm  mx-4 my-3 p-0  <?= $cardColors[$oneCatArray['tag_categories_name']]  ?> ">
                                 <?php
                                 $images = $image->getOneGallery($value['deals_id']);
                                 ?>
