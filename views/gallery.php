@@ -6,15 +6,16 @@ require_once '../controllers/gallery-controller.php';
 
 <?php require_once '../elements/top.php' ?>
 
-<body class="d-flex flex-column  mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg justify-content-center">
+<body class="mx-auto min-vh-100 background container p-0 shadow-lg justify-content-center">
     <?php include '../elements/header.php' ?>
+    <main class="bg-white px-0 m-0 container-fluid">
+        <div class="row bg-white justify-content-center m-0" id="page">
+            <a class="fs-6 text-secondary my-3" href="allDeals.php">
+                <i class='bi bi-caret-left-fill links mx-2'></i> back
+            </a>
 
-    <main>
-        <div class="row justify-content-center mx-0 py-5 my-5" id="page">
             <div class="bg-white  shadow-sm col-lg-12 p-4 col-11">
-                <a class="fs-6 text-secondary px-5 my-3" href="allDeals.php">
-                    <i class='bi bi-caret-left-fill links mx-2'></i> back
-                </a>
+
                 <?php if (empty($getOneGallery)) { ?>
                     <h2 class="text-center pt-5 fst-italic welcome">This gallery is empty</h2>
                 <?php } else { ?>
@@ -42,7 +43,7 @@ require_once '../controllers/gallery-controller.php';
                     <a class="col-2 text-decoration-none" href="upload.php?deal=<?= $oneDealArray['deals_id']  ?>">
                         <button class="btn text-white bouton">Add an Image</button>
                     </a>
-                    <?php if (!empty($getOneGallery[1]) ) { ?>
+                    <?php if (!empty($getOneGallery[1])) { ?>
                         <a class="col-2 text-decoration-none" href="deleteimage.php?deal=<?= $oneDealArray['deals_id']  ?>">
                             <button class="btn text-white bg-danger">Delete an image</button>
                         </a>

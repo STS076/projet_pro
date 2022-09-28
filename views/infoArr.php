@@ -6,29 +6,28 @@ require_once '../controllers/infoArr-controller.php';
 <?php include '../elements/top.php' ?>
 
 
-<body class="mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg container justify-content-center">
+<body class="mx-auto min-vh-100 background p-0 shadow-lg container justify-content-center">
 
     <?php require_once '../elements/header.php' ?>
-
-    <div class="row bienvenue d-flex align-items-center flex-column my-5 mx-0 p-5">
-        <div class="col-8 mb-3 py-5 justify-content-start bg-light">
-            <p><span class="text-decoration-underline">Name</span> : <?= $oneTagArray['tag_arr_name'] ?></p>
-            <p><span class="text-decoration-underline">Summary</span> :<br> <?= $oneTagArray['tag_arr_summary'] ?></p>
-            <p><span class="text-decoration-underline">Number of deals for the Arrondissement</span> : <?= $getNumberofDealsbyArr['count(tag_arr_id)'] ?></p>
-        </div>
-        <div class="col-8 mb-3 justify-content-start">
-            <?php foreach ($GetDealsfromArr as $value) { ?>
-                <p>Title : <?= $value['deals_title'] ?> <a href="deals.php?choice=<?= $value['deals_id'] ?>">Go to Deal</a></p>
-            <?php } ?>
-        </div>
-
-        <div class="mt-5 text-center">
-            <a class="text-decoration-none" href="allTagsArr.php">
-                <button class="btn text-white bg-info">back</button>
+    <main class="bg-white p-0 m-0 container-fluid">
+        <div class="row bg-white justify-content-center m-0 p-0 pb-5" id="page">
+            <a class="fs-6 text-secondary my-3 " href="allTagsArr.php">
+                <i class='bi bi-caret-left-fill links mx-2'></i> back
             </a>
-        </div>
-    </div>
+            <div class="col-lg-8 col-11 justify-content-start ">
+                <p><span class="text-decoration-underline">Name</span> : <?= $oneTagArray['tag_arr_name'] ?></p>
+                <p><span class="text-decoration-underline">Summary</span> :<br> <?= $oneTagArray['tag_arr_summary'] ?></p>
+                <p><span class="text-decoration-underline">Number of deals for the Arrondissement</span> : <?= $getNumberofDealsbyArr['count(tag_arr_id)'] ?></p>
+            </div>
+            <div class="col-lg-8 col-11 mb-3 justify-content-start">
+                <?php foreach ($GetDealsfromArr as $value) { ?>
+                    <p><?= $value['deals_title'] ?> <a href="deals.php?choice=<?= $value['deals_id'] ?>">Go to Deal</a></p>
+                <?php } ?>
+            </div>
 
+ 
+        </div>
+    </main>
     <button type="button" class="btn bouton btn-floating " id="btn-back-to-top">
         <i class="bi bi-arrow-up-short text-white"></i>
     </button>

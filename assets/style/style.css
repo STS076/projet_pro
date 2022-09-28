@@ -33,7 +33,7 @@ body {
 /* navbar */
 /*  */
 .navigation {
-    background-color: white;
+    background-color: #5C5B7E;
     color: rgb(0, 0, 77);
     /* position: sticky;
     top: 0;
@@ -41,10 +41,7 @@ body {
     z-index: 1; */
 }
 
-/* .bordure {
-    border-top: 1px solid rgb(170, 170, 170);
-    border-bottom: 1px solid rgb(170, 170, 170);
-} */
+
 
 .navigationMobile {
     background-color: #5C5B7E;
@@ -135,9 +132,6 @@ footer {
     background-color: #FCCF4E;
 }
 
-.hotDealsWrite {
-    color: #FCCF4E;
-}
 
 /* augmenter la taille des card quand hover */
 .cardarr:hover {
@@ -270,9 +264,14 @@ footer {
 
 /* boutons dashboards */
 .boutons {
-    width: 20rem;
+    width: 15rem;
     height: 5rem;
-    background-color: #242D3C;
+    background-color:#2E3F5D;
+    ;
+}
+
+.boutons:hover {
+    background-color: #5C5B7E;
 }
 
 /* font choix catégories addDeals */
@@ -452,11 +451,11 @@ footer {
     background-color: #F4F590;
 }
 
-.red{
+.red {
     background-color: #F7665F;
 }
 
-.orange{
+.orange {
     background-color: #F0C7B4;
 }
 
@@ -472,7 +471,15 @@ footer {
     height: 40rem;
 }
 
-.imageHome{
-    width: 40rem;
+.imageHome {
+    width: 85%;
     height: auto;
+}
+
+.archive {
+    background-color: burlywood;
+}
+
+.activated {
+    background-color: #a5d2af;
 }

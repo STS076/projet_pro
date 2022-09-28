@@ -12,7 +12,7 @@ require_once '../elements/top.php';
     if ($oneDealArray) {
     ?>
 
-        <main class="bg-white py-5  px-0">
+        <main class="bg-white py-5  px-0 mx-auto">
             <ul class="breadcrumb-navigation px-5 my-3">
                 <li>
                     <a href="home.php" class="filAriane">

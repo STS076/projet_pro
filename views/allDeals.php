@@ -8,25 +8,26 @@ require_once '../controllers/allDeals-controller.php';
 
 <body class="d-flex flex-column  mx-auto min-vh-100 background container p-0 shadow-lg justify-content-center">
     <?php include '../elements/header.php' ?>
-    <main class="bg-white py-5 px-0 container-fluid">
-        <div class="row bg-white justify-content-center mx-0 m-0" id="page">
-            <a class="fs-6 text-secondary px-5 my-3" href="dashboard-deals.php">
+    <main class="bg-white px-0 m-0 container-fluid">
+        <div class="row bg-white justify-content-center m-0" id="page">
+
+            <a class="fs-6 text-secondary my-3" href="dashboard-deals.php">
                 <i class='bi bi-caret-left-fill links mx-2'></i> back
             </a>
-            <div class="col-lg-12 col-11">
 
-                <?php if ($_SESSION['user']['role_id_ROLE'] != 1 && $_SESSION['user']['role_id_ROLE'] != 2) { ?>
-                    <h2 class="fs-2 text-center welcome ">Deals submited by <?= $_SESSION['user']['users_username'] ?></h2>
-                <?php } else { ?>
-                    <h2 class="fs-2 text-center welcome ">All Deals</h2>
-                <?php } ?>
+            <?php if ($_SESSION['user']['role_id_ROLE'] != 1 && $_SESSION['user']['role_id_ROLE'] != 2) { ?>
+                <h2 class="fs-2 text-center welcome ">Deals submited by <?= $_SESSION['user']['users_username'] ?></h2>
+            <?php } else { ?>
+                <h2 class="fs-2 text-center welcome ">All Deals</h2>
+            <?php } ?>
 
+            <div class="col-lg-12 col-11 py-4">
                 <div class="col-lg-8 col-11 mx-auto">
                     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for a category ..." class="px-5 my-2 shadow-sm myInput">
                 </div>
 
-                <div class="col-lg-12 col-11 text-center pt-5">
-                    <div class="table-responsive table-hover">
+                <div class="col-lg-12 col-11 text-center pt-5 table-responsive">
+                    <div class=" table-hover">
                         <table class="table" id="myTable">
                             <thead>
                                 <tr>
@@ -39,6 +40,8 @@ require_once '../controllers/allDeals-controller.php';
                                         <th class="text-center">Amend</th>
                                         <th class="text-center">Images</th>
                                         <th class="text-center">Status</th>
+                                    <?php } ?>
+                                    <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>
                                         <th class="text-center">Delete</th>
                                     <?php } ?>
                                     <?php if ($_SESSION['user']['role_id_ROLE'] == 3) { ?>
@@ -66,17 +69,24 @@ require_once '../controllers/allDeals-controller.php';
                                                 <?php if ($value["deals_validate"] != 2) { ?>
                                                     <form method="POST" action="" name="form-<?= $value["deals_id"] ?>">
                                                         <td class="text-center">
-                                                            <button class="text-light btn bg-warning" name="archive" value=<?= $value["deals_id"] ?>>Archive</button>
+                                                            <button class="text-light btn activated" name="archive" value=<?= $value["deals_id"] ?>>Activated</button>
                                                         </td>
                                                     </form>
                                                 <?php } else { ?>
                                                     <form method="POST" action="" name="form-<?= $value["deals_id"] ?>">
                                                         <td class="text-center">
-                                                            <button class="text-light btn bg-success" name="reactivate" value=<?= $value["deals_id"] ?>>Re Activate</button>
+                                                            <button class="text-light btn archive" name="reactivate" value=<?= $value["deals_id"] ?>>Achived</button>
                                                         </td>
                                                     </form>
                                                 <?php } ?>
-                                                <td class="text-center"><a class="text-light btn bg-danger" type="button" data-bs-toggle="modal" data-bs-target="#deals-<?= $value['deals_id'] ?>">Delete</a></td>
+                                            <?php }
+                                            ?>
+                                            <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>
+                                                <td class="text-center">
+                                                    <a class="text-light btn bg-danger" type="button" data-bs-toggle="modal" data-bs-target="#deals-<?= $value['deals_id'] ?>">
+                                                        Delete
+                                                    </a>
+                                                </td>
                                             <?php }
                                             ?>
                                         </tr>
@@ -89,7 +99,7 @@ require_once '../controllers/allDeals-controller.php';
                                                         <p class="modal-title fs-4" id="exampleModalLabel"><?= $value['deals_title'] ?></p>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
-                                                    <div class="modal-body">
+                                                    <div class="modal-body my-2">
                                                         Do you want to delete this deal ?
                                                     </div>
                                                     <div class="modal-footer">
@@ -146,6 +156,9 @@ require_once '../controllers/allDeals-controller.php';
         unset($_SESSION['swal']);
     } ?>
 
+    <button type="button" class="btn bouton btn-floating " id="btn-back-to-top">
+        <i class="bi bi-arrow-up-short text-white"></i>
+    </button>
 
     <?php include '../elements/footer.php' ?>
     <script src="../assets/script/filter.js"></script>

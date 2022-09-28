@@ -8,15 +8,14 @@ require_once '../controllers/loginAdmin-controller.php';
 // var_dump($errors);
 require_once '../elements/top.php' ?>
 
-<body class="d-flex flex-column  mx-auto min-vh-100 background container p-0  container  justify-content-center">
+<body class="d-flex flex-column min-vh-100 mx-auto  background container p-0  container  justify-content-center">
 
     <?php require_once '../elements/header.php' ?>
-    <main class="bg-white ">
-        <div class="row  justify-content-center mx-0 my-5 py-4" id="page">
-            <div class="bg-white  col-lg-6 p-4 col-11">
-                <h2 class="py-3 text-center welcome ">Please enter below information to login : </h2>
+    <main class="bg-white py-5">
+        <div class="row  justify-content-center m-0 py-5" id="page">
+            <div class="bg-white  col-lg-6 col-11">
+                <h2 class="py-4 text-center welcome ">Please enter below information to login : </h2>
                 <form action="" method="POST">
-
 
                     <div class="d-flex flex-column">
                         <!-- <label class="text-dark">Email</label> -->
@@ -42,7 +41,6 @@ require_once '../elements/top.php' ?>
                     <a href="signUp.php" class="text-dark fw-bold filAriane">Sign up if you do not have already an account </a>
                 </div>
             </div>
-
         </div>
     </main>
 

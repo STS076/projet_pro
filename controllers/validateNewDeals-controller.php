@@ -1,6 +1,6 @@
 <?php
 
-if (!isset($_SESSION['user']) || $_SESSION['user']['role_id_ROLE'] != 1 && $_SESSION['user']['role_id_ROLE'] != 2)  {
+if (!isset($_SESSION['user']) || $_SESSION['user']['role_id_ROLE'] != 1 && $_SESSION['user']['role_id_ROLE'] != 2) {
     header('Location: loginAdmin.php');
     exit;
 }
@@ -22,6 +22,10 @@ $category = new Categories();
 $allTagsCategoryArray = $category->getAllTagCategory();
 
 
+$deals = new Deals();
+$numberofDealsToValidate = $deals->numberofDealsToValidate();
+
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['approve'])) {
         $deals = new Deals();
@@ -29,8 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
-$deals = new Deals(); 
-$AllDealsArray = $deals->getAllDeals(); 
+$deals = new Deals();
+$AllDealsArray = $deals->getAllDeals();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['delete'])) {
@@ -38,4 +42,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $deleteDeal = $deals->deleteDeals($_POST['delete']);
     }
 }
-$AllDealsArray = $deals->getAllDeals(); 
+$AllDealsArray = $deals->getAllDeals();

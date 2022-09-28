@@ -241,7 +241,7 @@ class Comments extends Database
 
     
     /**
-     * fonction pour compter le nombre de nouveaux deals
+     * fonction pour compter le nombre de nouveaux commentaires
      */
     public function numberofNewComments():array
     {
