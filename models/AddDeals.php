@@ -292,32 +292,40 @@ class Deals extends Database
     public function getDealByAverageRating()
     {
         $pdo = parent::connectDb();
-        $sql = "SELECT AverageRating, deals_id, deals_title, deals_mini_summary, deals_when, deals_where, deals_validate, deals_price, deals_metro, deals_map, deals_info, GROUP_CONCAT(`tag_categories_name`  SEPARATOR ', ') 
+        $sql = "SELECT AverageRating, deals.deals_id, deals.deals_title, deals.deals_mini_summary, deals.deals_when, deals.deals_where, 
+        deals.deals_validate, deals.deals_price, deals.deals_metro, deals.deals_map, deals.deals_info, 
+        GROUP_CONCAT(`tag_categories_name`  SEPARATOR ', ') 
         AS DealsCatTag, tag_arr_name  
         FROM deals 
         INNER JOIN deals_has_cat 
-        ON deals_id_DEALS=deals_id 
+        ON deals_has_cat.deals_id_DEALS=deals.deals_id 
         INNER JOIN tag_categories 
         ON tag_categories_id_TAG_CATEGORIES=tag_categories_id
         INNER JOIN tag_arr 
         ON tag_arr_id_TAG_ARR=tag_arr_id
-        INNER JOIN images 
-        on images.deals_id_DEALS=deals_id
         left join 
-        (
-        SELECT avg(comments_rating) 
-        as AverageRating, deals_id 
-        as Average
-        from deals 
-        inner join comments 
-        on comments.deals_id_DEALS=deals_id
-        where deals_validate=1 
-        and comments_validate=1
-        group by deals_id
-        ) 
-        as HotDeals 
-        on deals.deals_id=HotDeals.Average
-        GROUP BY deals_id
+                (
+                SELECT avg(comments_rating) 
+                as AverageRating, deals.deals_id 
+                as Average
+                from comments 
+                inner join deals 
+                on comments.deals_id_DEALS=deals.deals_id
+                where deals_validate=1 
+                and comments_validate=1
+                group by deals.deals_id
+                ) 
+        AS HotDeals 
+        ON deals.deals_id=HotDeals.Average
+        inner join 
+                (
+                select images_id, images_name from images 
+                inner join deals 
+                on deals.deals_id=images.deals_id_DEALS
+                limit 1
+                )
+        as pictures
+        GROUP BY deals.deals_id
         order by AverageRating desc 
         limit 4";
         $query = $pdo->query($sql);
@@ -402,7 +410,7 @@ class Deals extends Database
     /**
      * fonction pour compter le nombre de nouveaux deals
      */
-    public function numberofDealsToValidate():array
+    public function numberofDealsToValidate(): array
     {
         $pdo = parent::connectDb();
 
@@ -415,3 +423,33 @@ class Deals extends Database
         return $result;
     }
 }
+
+
+// SELECT AverageRating, deals_id, deals_title, deals_mini_summary, deals_when, deals_where, deals_validate, deals_price, deals_metro, deals_map, deals_info, GROUP_CONCAT(`tag_categories_name`  SEPARATOR ', ') 
+//         AS DealsCatTag, tag_arr_name  
+//         FROM deals 
+//         INNER JOIN deals_has_cat 
+//         ON deals_id_DEALS=deals_id 
+//         INNER JOIN tag_categories 
+//         ON tag_categories_id_TAG_CATEGORIES=tag_categories_id
+//         INNER JOIN tag_arr 
+//         ON tag_arr_id_TAG_ARR=tag_arr_id
+//         INNER JOIN images 
+//         on images.deals_id_DEALS=deals_id
+//         left join 
+//         (
+//         SELECT avg(comments_rating) 
+//         as AverageRating, deals_id 
+//         as Average
+//         from deals 
+//         inner join comments 
+//         on comments.deals_id_DEALS=deals_id
+//         where deals_validate=1 
+//         and comments_validate=1
+//         group by deals_id
+//         ) 
+//         as HotDeals 
+//         on deals.deals_id=HotDeals.Average
+//         GROUP BY deals_id
+//         order by AverageRating desc 
+//         limit 4

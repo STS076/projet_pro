@@ -6,24 +6,21 @@ require_once '../controllers/gallery-controller.php';
 
 <?php require_once '../elements/top.php' ?>
 
-<body class="mx-auto min-vh-100 background container p-0 shadow-lg justify-content-center">
+<body class="d-flex flex-column  mx-auto min-vh-100 background p-0 shadow-lg container justify-content-center">
     <?php include '../elements/header.php' ?>
     <main class="bg-white px-0 m-0 container-fluid">
         <div class="row bg-white justify-content-center m-0" id="page">
             <a class="fs-6 text-secondary my-3" href="allDeals.php">
                 <i class='bi bi-caret-left-fill links mx-2'></i> back
             </a>
+            <?php if (empty($getOneGallery)) { ?>
+                <h2 class="text-center pt-5 fst-italic welcome">This gallery is empty</h2>
+            <?php } else { ?>
+                <h2 class="text-center pt-5 fst-italic welcome">Gallery for <?= $oneDealArray['deals_title'] ?> </h2>
+            <?php } ?>
 
-            <div class="bg-white  shadow-sm col-lg-12 p-4 col-11">
-
-                <?php if (empty($getOneGallery)) { ?>
-                    <h2 class="text-center pt-5 fst-italic welcome">This gallery is empty</h2>
-                <?php } else { ?>
-                    <h2 class="text-center pt-5 fst-italic welcome">Gallery for <?= $oneDealArray['deals_title'] ?> </h2>
-                <?php } ?>
-
-
-                <div class="row justify-content-center mx-auto py-3" data-masonry='{ "percentPosition": true }'>
+            <div class="container mx-auto">
+                <div class="row justify-content-center mx-auto" data-masonry='{ "percentPosition": true }'>
 
                     <?php
                     foreach ($getOneGallery as $value) {
@@ -39,7 +36,7 @@ require_once '../controllers/gallery-controller.php';
                     }
                     ?>
                 </div>
-                <div class="text-center mt-5">
+                <div class="text-center my-5">
                     <a class="col-2 text-decoration-none" href="upload.php?deal=<?= $oneDealArray['deals_id']  ?>">
                         <button class="btn text-white bouton">Add an Image</button>
                     </a>

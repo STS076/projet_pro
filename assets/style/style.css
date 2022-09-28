@@ -101,11 +101,11 @@ footer {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    padding: 0.5REM;
+    padding: 0.2REM;
 }
 
 .hoverNav:hover {
-    background-color: #48cfc465;
+    background-color: #5c5b7e85;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -113,6 +113,7 @@ footer {
 
 .image {
     height: 15rem;
+    width: 100%;
 }
 
 .backgroundHotDeals {
@@ -136,7 +137,7 @@ footer {
 /* augmenter la taille des card quand hover */
 .cardarr:hover {
     transition: transform .2s;
-    transform: scale(1.08);
+    transform: scale(1.05);
 }
 
 /*  */
@@ -428,7 +429,7 @@ footer {
 
 /* couleurs cards catégories */
 .beige {
-    background-color: beige;
+    background-color: bisque;
 }
 
 .pink {

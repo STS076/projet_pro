@@ -7,7 +7,7 @@ require_once '../elements/top.php';
 // var_dump($exploreColor); 
 ?>
 
-<body class="mx-auto min-vh-100 background p-0 shadow-lg  justify-content-center container">
+<body class="d-flex flex-column  mx-auto min-vh-100 background container p-0 shadow-lg  justify-content-center container">
 
     <?php require_once '../elements/header.php' ?>
 
@@ -15,7 +15,7 @@ require_once '../elements/top.php';
 
         <h2 class="fs-2 text-center welcome pt-1 comments"><?= $oneArrondissement['tag_arr_name'] ?></h2>
         <div class="row m-0 justify-content-center">
-            <div class="col-lg-8 col-11 p-3 lineHeight text-center">
+            <div class="col-lg-8 col-12 py-3 lineHeight text-center">
                 <p><?= $oneArrondissement['tag_arr_summary'] ?>
                 </p>
             </div>
