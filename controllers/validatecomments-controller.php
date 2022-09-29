@@ -32,8 +32,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $validateComment = $comments->approveComments($_POST['approve']);
     }
 }
-$allComments = $comments->getAllComments();
 
+$comments = new Comments();
+$allComments = $comments->getAllComments();
+$getCommentsByUser = $comments->getCommentsByUser($_SESSION['user']['users_id']);
+
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['archive'])) {
+        $comments = new Comments();
+        $archiveComment = $comments->archiveComment($_POST['archive']);
+    }
+}
+$comments = new Comments();
+$allComments = $comments->getAllComments();
+$getCommentsByUser = $comments->getCommentsByUser($_SESSION['user']['users_id']);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['delete'])) {
@@ -41,4 +54,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $deleteDeal = $deals->deleteComments($_POST['delete']);
     }
 }
+$comments = new Comments();
 $allComments = $comments->getAllComments();
+$getCommentsByUser = $comments->getCommentsByUser($_SESSION['user']['users_id']);

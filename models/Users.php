@@ -1,6 +1,5 @@
 <?php
 
-// users est un enfant de Database 
 class Users extends Database
 {
     private int $_users_id;
@@ -75,7 +74,13 @@ class Users extends Database
     }
 
     /**
-     * permet d'ajouter un utiliseur 
+     *  Méthode permettant de créer un utilisateur
+     *  @param string $username
+     *  @param string $name
+     *  @param string $surname
+     *  @param string $mail
+     *  @param string $password
+     *  @param string $users_joined
      */
     public function addUsers(string $username, string $name, string $surname, string $mail, string $password, string $users_joined): void
     {
@@ -97,9 +102,16 @@ class Users extends Database
     }
 
     /**
-     * permet de modifier les utilisateurs
+     * Methode permettant de modifier les utilisateurs
+     * @param string
+     * @param string
+     * @param string
+     * @param string
+     * @param int
+     * @param int
+     * 
      */
-    public function amendUser($users_username, $users_name, $users_surname, $users_mail, $role_id_ROLE, $users_id)
+    public function amendUser(string $users_username, string $users_name, string $users_surname, string $users_mail, int $role_id_ROLE, int $users_id)
     {
         $pdo = parent::connectDb();
         $sql = "UPDATE users 
@@ -111,8 +123,8 @@ class Users extends Database
         $query->bindValue(':users_name', $users_name, PDO::PARAM_STR);
         $query->bindValue(':users_surname', $users_surname, PDO::PARAM_STR);
         $query->bindValue(':users_mail', $users_mail, PDO::PARAM_STR);
-        $query->bindValue(':role_id_ROLE', $role_id_ROLE, PDO::PARAM_STR);
-        $query->bindValue(':users_id', $users_id, PDO::PARAM_STR);
+        $query->bindValue(':role_id_ROLE', $role_id_ROLE, PDO::PARAM_INT);
+        $query->bindValue(':users_id', $users_id, PDO::PARAM_INT);
 
         $query->execute();
     }
@@ -131,7 +143,8 @@ class Users extends Database
     }
 
     /**
-     * récupère tous les utlisateurs
+     * récupère un seul utilisateur
+     * @param int $users_id
      */
     public function getOneUser($users_id): array
     {
@@ -140,13 +153,9 @@ class Users extends Database
         inner join `role` 
         on role_id_ROLE=role_id
         where users_id=:users_id";
-
         $query = $pdo->prepare($sql);
-
         $query->bindValue(':users_id', $users_id, PDO::PARAM_INT);
-
         $query->execute();
-
         $result = $query->fetch();
         return $result;
     }
@@ -210,7 +219,8 @@ class Users extends Database
     }
 
     /**
-     * supprime l'utilisateur
+     * Méthode permettant de supprimer un user
+     * @param int $users_id
      */
     public function deleteUser($users_id)
     {

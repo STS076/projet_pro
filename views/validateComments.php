@@ -10,7 +10,7 @@ require_once '../controllers/validatecomments-controller.php';
 
 <body class="d-flex flex-column  mx-auto min-vh-100 background container p-0 shadow-lg  justify-content-center">
     <?php include '../elements/header.php' ?>
-    
+
     <main class="bg-white p-0 m-0 container-fluid">
         <div class="row bg-white justify-content-center m-0 p-0 pb-5" id="page">
             <a class="fs-6 text-secondary  my-3" href="dashboard-comments.php">
@@ -34,13 +34,14 @@ require_once '../controllers/validatecomments-controller.php';
                                     <th class="text-center">Rating</th>
                                     <th class="text-center">More Info</th>
                                     <th class="text-center">Approve</th>
+                                    <th class="text-center">Archive</th>
                                     <th class="text-center">Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
                                 foreach ($allComments as $value) {
-                                    if ($value['comments_validate'] != 1) {
+                                    if ($value['comments_validate'] == 0) {
                                 ?>
                                         <tr>
                                             <td class="text-center"><?= $value['users_username'] ?></td>
@@ -59,6 +60,16 @@ require_once '../controllers/validatecomments-controller.php';
                                                 </td>
                                             </form>
                                             <!-- fin bouton approve -->
+
+                                            <!-- Bonton archiver -->
+                                            <form method="POST" action="" name="archive-<?= $value["comments_id"] ?>">
+                                                <td class="text-center">
+                                                    <button class="text-light btn activated" name="archive" value=<?= $value["comments_id"] ?>>
+                                                        Archive
+                                                    </button>
+                                                </td>
+                                            </form>
+                                            <!-- fin bouton archiver -->
 
                                             <!-- bouton delete -->
                                             <form method="POST" action="">

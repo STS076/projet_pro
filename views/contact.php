@@ -8,9 +8,10 @@ require_once '../elements/top.php' ?>
     <?php require_once '../elements/header.php' ?>
 
 
-    <?php if ($showForm) { ?>
-        <main class="bg-white py-5 px-0 container-fluid">
-            <div class="row  mo-0 justify-content-evenly" id="page">
+
+    <main class="bg-white p-0 m-0 container-fluid">
+        <?php if ($showForm) { ?>
+            <div class="row bg-white justify-content-center m-0 p-0">
                 <div class="col-lg-7 col-11">
                     <h2 class="pb-3 text-center welcome comments">Contact us</h2>
                     <p class="text-center">You noticed a mistake in one of our deals ? Please let us know below.</p>
@@ -59,16 +60,17 @@ require_once '../elements/top.php' ?>
                     </form>
                 </div>
             </div>
-        </main>
-
-    <?php } else { ?>
+        <?php } else { ?>
 
 
-        <div class="container bg-light col-lg-8  bienvenue d-flex align-items-center flex-column rounded my-5 py-3  shadow">
-            <p class="text-center fs-4 py-5">Thank you for contacting us, we will review your message as soon as possible.</p>
-        </div>
+            <div class="container bg-light col-lg-8  bienvenue d-flex align-items-center flex-column rounded my-5 py-3  shadow">
+                <p class="text-center fs-4 py-5">Thank you for contacting us, we will review your message as soon as possible.</p>
+            </div>
 
-    <?php } ?>
+        <?php } ?>
+
+    </main>
+
 
     <button type="button" class="btn bouton btn-floating " id="btn-back-to-top">
         <i class="bi bi-arrow-up-short text-white"></i>

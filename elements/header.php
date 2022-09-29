@@ -8,7 +8,9 @@
 
 <!-- nav computer  -->
 <nav class="d-lg-block d-none navbar sticky-top navcomputer navbar-expand-lg shadow-5-strong py-1 shadow navigation ">
-    <!-- <a class="navbar-brand " href="#"></a> -->
+    <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupported" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse " id="navbarSupportedContent">
         <ul class="navbar-nav  w-100 justify-content-evenly nav d-flex">
             <li class="nav-item d-flex">
@@ -79,9 +81,7 @@
                 <li class="nav-item d-flex">
                     <a href="home.php" class="nav-link fw-bold text-dark">Home</a>
                 </li>
-                <!-- <li class="nav-item">
-                        <a class="nav-link active titre box fw-bold text-dark" href="news.php">News</a>
-                    </li> -->
+             
                 <li class="nav-item">
                     <a class="nav-link active titre box fw-bold text-black me-5 " href="allArrondissements.php">Arrondissements</a>
                 </li>

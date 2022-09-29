@@ -45,7 +45,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-
     if (isset($_POST['surname'])) {
         if (empty($_POST['surname'])) {
             $errors['surname'] = '*Please enter your surname';
@@ -64,9 +63,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $errors['username'] = "* Please enter your username";
         }
     }
-
-
-
 
     if (isset($_POST['emailAddress'])) {
         $user = new Users();

@@ -25,6 +25,8 @@ $allRoleArray = $role->getAllRole();
 
 $users = new Users();
 $AllUsersArray = $users->getAllUsers();
+
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['delete'])) {
         $deal = new Deals;

@@ -28,8 +28,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
-$deals = new Deals(); 
-$AllDealsArray = $deals->getAllDeals(); 
+$deals = new Deals();
+$AllDealsArray = $deals->getAllDeals();
 $getDealsByUser = $deals->getDealsByUser($_SESSION['user']['users_id']);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -39,8 +39,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
-$deals = new Deals(); 
-$AllDealsArray = $deals->getAllDeals(); 
+$deals = new Deals();
+$AllDealsArray = $deals->getAllDeals();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['delete'])) {
@@ -48,5 +48,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $deleteDeal = $deals->deleteDeals($_POST['delete']);
     }
 }
-$AllDealsArray = $deals->getAllDeals(); 
-
+$AllDealsArray = $deals->getAllDeals();

@@ -11,10 +11,10 @@ require_once '../elements/top.php' ?>
 
     <?php require_once '../elements/header.php' ?>
 
-    <main class="container-fluid bg-white mx-auto py-5">
-        <div class="row justify-content-center m-0 py-4">
+    <main class="container-fluid bg-white mx-auto  min-vh-100">
+        <div class="row justify-content-center align items-center m-0 min-vh-100">
             <div class=" col-lg-6 col-11">
-                <h2 class="fs-2 text-center welcome py-3"> Welcome <?= $_SESSION['user']['users_name'] ?> </h2>
+                <h2 class="fs-2 text-center welcome py-5"> Welcome <?= $_SESSION['user']['users_name'] ?> </h2>
                 <div class="row align-item-center m-0">
                     <div class="col text-center  mx-auto mt-2">
                         <a href="dashboard-deals.php">
@@ -42,9 +42,9 @@ require_once '../elements/top.php' ?>
                     <?php } ?>
                     <?php if ($_SESSION['user']['role_id_ROLE'] != 1) { ?>
                         <div class="col text-center  mx-auto mt-2">
-                            <a href="amendUsers.php?amend=<?= $_SESSION['user']['users_id'] ?>">
+                            <a  href="infoUsers.php?users=<?= $_SESSION['user']['users_id'] ?>">
                                 <button class="text-center text-center rounded text-light  boutons">
-                                    Modify your profile
+                                    Your profile
                                 </button>
                             </a>
                         </div>

@@ -10,18 +10,15 @@ require_once '../elements/top.php';
 <body class="d-flex flex-column  container mx-auto min-vh-100 background p-0 shadow-lg justify-content-center">
 
     <?php require_once '../elements/header.php' ?>
-    <main class="bg-white p-0 m-0 container-fluid">
+    <main class="bg-white p-0 m-0 container-fluid min-vh-100">
         <div class="row bg-white justify-content-center m-0 p-0" id="page">
 
             <a class="fs-6 text-secondary my-3" href="dashboard.php">
                 <i class='bi bi-caret-left-fill links  mx-2'></i> back
             </a>
-
-            <div class="col-lg-7 col-11 mx-auto py-5">
-
+            <div class="col-lg-7 col-11 mx-auto">
                 <h2 class="fs-2 text-center welcome ">Dashboard Deals</h2>
-
-                <div class="row align-item m-0 py-4">
+                <div class="row align-item m-0 ">
                     <?php if ($_SESSION['user']['role_id_ROLE'] == 1 || $_SESSION['user']['role_id_ROLE'] == 2) { ?>
                         <div class="col text-center mx-auto my-2">
                             <a href="allDeals.php">
@@ -42,9 +39,8 @@ require_once '../elements/top.php';
                             </button>
                         </a>
                     </div>
-                </div>
-                <?php if ($_SESSION['user']['role_id_ROLE'] != 3) { ?>
-                    <div class="row align-item m-0 p-0">
+                    <?php if ($_SESSION['user']['role_id_ROLE'] != 3) { ?>
+
                         <div class="col text-center mx-auto my-2">
                             <a href="validateNewDeals.php">
                                 <button class="text-center text-center text-light rounded  boutons">
@@ -52,8 +48,10 @@ require_once '../elements/top.php';
                                 </button>
                             </a>
                         </div>
-                    </div>
-                <?php } ?>
+
+                    <?php } ?>
+
+                </div>
 
 
             </div>

@@ -18,7 +18,7 @@ require_once '../elements/top.php' ?>
                     <i class='bi bi-caret-left-fill links mx-2'></i> back
                 </a>
             <?php } else { ?>
-                <a class="fs-6 text-secondary  my-3" href="dashboard.php">
+                <a class="fs-6 text-secondary  my-3"  href="infoUsers.php?users=<?= $_SESSION['user']['users_id'] ?>">
                     <i class='bi bi-caret-left-fill links mx-2'></i> back
                 </a>
             <?php } ?>

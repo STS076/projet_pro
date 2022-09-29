@@ -346,7 +346,7 @@ footer {
 /* barre de recherche deals */
 
 #myInput {
-    background-image: url('/css/searchicon.png');
+    background-image: url('../images/images/search.svg');
     /* Add a search icon to input */
     background-position: 10px 12px;
     /* Position the search icon */

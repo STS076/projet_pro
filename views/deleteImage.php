@@ -6,26 +6,28 @@ require_once '../controllers/deleteImage-controller.php';
 
 <?php require_once '../elements/top.php' ?>
 
-<body class="d-flex flex-column  mx-auto min-vh-100 backgroundAdmin p-0 shadow-lg justify-content-center">
+<body class="d-flex flex-column  container mx-auto min-vh-100 background p-0 shadow-lg justify-content-center">
 
     <?php include '../elements/header.php' ?>
 
-    <main class="">
-        <div class="row  justify-content-center my-5 py-5" id="page">
-            <div class="bg-white  shadow-sm col-lg-9 p-5 col-11">
-                <a class="fs-6 text-secondary px-5 my-3" href="gallery.php?deal=<?=$getOneGallery[0]['deals_id'] ?>">
-                    <i class='bi bi-caret-left-fill links mx-2'></i> back
-                </a>
+    <main class="bg-white p-0 m-0 container-fluid min-vh-100">
+        <div class="row bg-white justify-content-center m-0 p-0" id="page">
+            <a class="fs-6 text-secondary my-3" href="gallery.php?deal=<?= $getOneGallery[0]['deals_id'] ?>">
+                <i class='bi bi-caret-left-fill links mx-2'></i> back
+            </a>
+            <?php if (empty($getOneGallery)) { ?>
+                <h2 class="text-center p-5 fst-italic welcome">
+                    This Gallery is empty
+                </h2>
+            <?php } else { ?>
+                <h2 class="text-center pt-5 fst-italic welcome">
+                    Delete an image <?= $getOneGallery[0]['deals_title'] ?>
+                </h2>
+            <?php } ?>
+            <div class=" col-lg-9 p-5 col-11">
 
-                <?php if (empty($getOneGallery)) { ?>
-                    <h2 class="text-center p-5 fst-italic welcome">
-                        This Gallery is empty
-                    </h2>
-                <?php } else { ?>
-                    <h2 class="text-center pt-5 fst-italic welcome">
-                        Delete an image <?= $getOneGallery[0]['deals_title'] ?>
-                    </h2>
-                <?php } ?>
+
+
 
                 <?php
                 foreach ($getOneGallery as $value) {

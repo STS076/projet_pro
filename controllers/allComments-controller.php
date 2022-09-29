@@ -22,17 +22,29 @@ $allTagsArrArray = $arr->getAllTagArr();
 $category = new Categories();
 $allTagsCategoryArray = $category->getAllTagCategory();
 
+$comments = new Comments(); 
+
+
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
- 
-    if (isset($_POST['approve'])) {
-        $comments = new Comments();
-        $validateComment = $comments->approveComments($_POST['approve']);
+    if (isset($_POST['archive'])) {
+        $comments = new Comments(); 
+        $archiveComment = $comments->archiveComment($_POST['archive']);
     }
 }
 $comments = new Comments();
 $allComments = $comments->getAllComments();
 $getCommentsByUser = $comments->getCommentsByUser($_SESSION['user']['users_id']);
+
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['reactivate'])) {
+        $comments = new Comments(); 
+        $approveComments = $comments->approveComments($_POST['reactivate']); 
+    }
+}
+$comments = new Comments(); 
+$allComments = $comments->getAllComments();
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

@@ -1,9 +1,7 @@
 <?php
 
 session_start();
-
 require_once '../controllers/addTagArr-controller.php';
-
 require_once '../elements/top.php' ?>
 
 <body class="d-flex flex-column  mx-auto min-vh-100 background container p-0 shadow-lg  justify-content-center container">
@@ -17,7 +15,7 @@ require_once '../elements/top.php' ?>
             </a>
             <div class="col-lg-5 py-4  col-11">
                 <h2 class=" text-center  welcome">Create a new arrondissement tag</h2>
-                <form method="POST" action="">
+                <form method="POST" action="" enctype="multipart/form-data">
                     <div class="d-flex flex-column">
                         <label class="py-2" for="tagArr">
                             Title of the tag :
@@ -28,10 +26,7 @@ require_once '../elements/top.php' ?>
                         <input class="form-control" type="text" id="tagArr" value="<?= isset($_POST['tagArr']) ? $_POST['tagArr'] : '' ?>" name="tagArr">
 
                     </div>
-                    <!-- <div class="d-flex flex-column">
-                    <label class="py-2">Image : <span class="text-danger"><?= isset($errors['tagArrImage']) ? $errors['tagArrImage'] : '' ?></span></label>
-                    <input type="text" id="tagArrImage" value="<?= isset($_POST['tagArrImage']) ? $_POST['tagArrImage'] : '' ?>" name="tagArrImage">
-                </div> -->
+
                     <div class="d-flex flex-column">
                         <label class="py-2" for="tagArrSummary">
                             Mini Summary :
@@ -41,9 +36,23 @@ require_once '../elements/top.php' ?>
                         </label>
                         <textarea class="form-control" type="text" id="tagArrSummary" value="<?= isset($_POST['tagArrSummary']) ? $_POST['tagArrSummary'] : '' ?>" name="tagArrSummary"></textarea>
                     </div>
+
+                    <div class="d-flex justify-content-center m-3">
+                        <img id="imgPreview">
+                    </div>
+                    <label for="picture"><i class="bi bi-camera-fill"></i> Picture
+                        <span data-span="error-picture" class="text-danger fst-italic span-error">
+                            <?= isset($errors['picture']) ? $errors['picture'] : '' ?>
+                        </span>
+                    </label>
+                    <!-- Mise en place de l'opérateur de coalescence pour afficher oui ou non la valeur de $_POST -->
+                    <input type="file" id="picture" name="picture" class="text-truncate">
+                    <!-- <button type="submit" class="btn border text-white border-dark bouton p-1 m-1"><i class="bi bi-person-plus-fill"></i> Add an image</button> -->
+
                     <div class="text-center pt-5">
                         <button class="btn bouton text-white" value="connect">Add</button>
                     </div>
+
                 </form>
             </div>
         </div>
@@ -52,7 +61,7 @@ require_once '../elements/top.php' ?>
     <button type="button" class="btn bouton btn-floating " id="btn-back-to-top">
         <i class="bi bi-arrow-up-short text-white"></i>
     </button>
-
+    <script src="../assets/script/upload.js"></script>
     <?php require_once '../elements/footer.php' ?>
 
 </body>

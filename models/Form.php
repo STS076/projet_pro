@@ -23,7 +23,7 @@ class Form
         // on indique que l'upload est en false et nous allons créer un message d'erreur
         if ($_FILES[$inputName]["error"] !== 0) {
             $permissionUpload = false;
-            $errorMessage = 'Veuillez sélectionner une image à télécharger';
+            $errorMessage = 'Please select a picture to upload';
         } else {
 
 
@@ -39,19 +39,19 @@ class Form
             // strpos() pour rechercher le mot 'image' dans le mime, si nous le trouvons pas, nous allons indiquer upload en false et message d'erreur
             if (strpos($fileMime, 'image') === false) {
                 $permissionUpload = false;
-                $errorMessage = 'Veuillez sélectionner uniquement une image';
+                $errorMessage = 'Please only select a picture';
             }
 
             // Nous contrôlons si l'extension n'est pas présente dans le tableau à l'aide la fonction !in_array()
             else if (!in_array($fileExtension, $paramUpload['extension'])) {
                 $permissionUpload = false;
-                $errorMessage = 'Seules les extensions ' . implode(' ,', $paramUpload['extension']) . ' sont autorisées';
+                $errorMessage = 'Only extensions ' . implode(' ,', $paramUpload['extension']) . ' are allowed';
             }
 
             // Nous contrôlons la taille de d'image
             else if ($_FILES[$inputName]["size"] > $paramUpload['size']) {
                 $permissionUpload = false;
-                $errorMessage = 'La taille max est de ' . $paramUpload['size'] / 1000000 . 'Mo';
+                $errorMessage = 'The maximum size is' . $paramUpload['size'] / 1000000 . 'Mo';
             }
         }
 

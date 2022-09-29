@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once '../controllers/infoUsers-controller.php';
-
 require_once '../elements/top.php' ?>
 
 <body class="d-flex flex-column  mx-auto min-vh-100 container background p-0 shadow-lg justify-content-center">
@@ -10,19 +9,28 @@ require_once '../elements/top.php' ?>
 
     <main class="bg-white p-0 m-0 container-fluid">
         <div class="row bg-white justify-content-center m-0 p-0" id="page">
-        <a class="fs-6 text-secondary  my-3" href="allUsers.php">
-                <i class='bi bi-caret-left-fill links mx-2'></i> back
-            </a>
+
+            <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>
+                <a class="fs-6 text-secondary  my-3" href="allUsers.php">
+                    <i class='bi bi-caret-left-fill links mx-2'></i> back
+                </a>
+            <?php } else { ?>
+                <a class="fs-6 text-secondary  my-3" href="dashboard.php">
+                    <i class='bi bi-caret-left-fill links mx-2'></i> back
+                </a>
+            <?php } ?>
+
             <h2 class="fs-2 text-center welcome py-2">Information about <?= $oneUserArray['users_username'] ?></h2>
             <div class="row justify-content-evenly">
                 <div class="col-lg-4 col-11 ">
-                    <p>Name<span> :<?= $oneUserArray['users_name'] ?></span></p>
-                    <p>Surname<span> :<?= $oneUserArray['users_surname'] ?></span></p>
+                    <p>Name<span> : <?= $oneUserArray['users_name'] ?></span></p>
+                    <p>Surname<span> : <?= $oneUserArray['users_surname'] ?></span></p>
                     <p>Mail<span> : <?= $oneUserArray['users_mail'] ?></span></p>
                     <p>Role<span> : <?= $oneUserArray['role_role'] ?></span></p>
                     <p>Registered since<span> : <?= $oneUserArray['users_joined'] ?></span></p>
 
                 </div>
+                <a class="text-secondary text-center" href="amendUsers.php?amend=<?= $_SESSION['user']['users_id'] ?>">Modify your profile</a>
             </div>
 
 

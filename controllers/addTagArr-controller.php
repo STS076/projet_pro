@@ -15,6 +15,7 @@ require_once '../models/DealsHasCat.php';
 require_once '../models/Images.php';
 require_once '../models/Role.php';
 require_once '../models/Users.php';
+require_once '../models/Form.php';
 
 $arr = new Arrondissements();
 $allTagsArrArray = $arr->getAllTagArr();
@@ -23,8 +24,17 @@ $category = new Categories();
 $allTagsCategoryArray = $category->getAllTagCategory();
 
 
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    $paramUpload = [
+        'size' => 4000000,
+        'extension' => ['jpeg', 'jpg', 'webp', 'png'],
+        'directory' => '../assets/images/images/',
+        'extend' => 'png'
+    ];
+
+    $resultVerifyImg = Form::verifyImg('picture', $paramUpload);
+
 
     $errors = [];
 
@@ -49,12 +59,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
+    if ($resultVerifyImg['permissionToUpload'] === false) {
+        $errors['picture'] = $resultVerifyImg['errorMessage'];
+    }
+
     if (count($errors) == 0) {
 
         $tagArr = safeInput($_POST['tagArr']);
 
+        // téléchargement de la photo
+        $resultUploadImage = Form::uploadImage('picture', $paramUpload);
+        if ($resultUploadImage['success'] === true) {
+            $picture = Form::convertImagetoBase64($paramUpload['directory'] . $resultUploadImage['imageName']);
+            // var_dump($picture);
+
+        } else {
+            $errors['picture'] = $resultUploadImage['messageError'];
+        }
+        
         $tagArrObj = new Arrondissements();
-        $tagArrObj->addTagArr($tagArr, $_POST['tagArrImage'], $_POST['tagArrSummary']);
+        $tagArrObj->addTagArr($tagArr, $picture, $_POST['tagArrSummary']);
+
+
+
 
         header('location: dashboard-tagsArr.php');
         exit;

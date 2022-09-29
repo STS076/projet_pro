@@ -46,6 +46,10 @@ require_once '../controllers/allComments-controller.php';
                                     <th class="text-center">Deal</th>
                                     <th class="text-center">Rating</th>
                                     <th class="text-center">More Info</th>
+                                    <th class="text-center">Status</th>
+                                    <?php if ($_SESSION['user']['role_id_ROLE'] != 3) { ?>
+                                        <th class="text-center">Delete</th>
+                                    <?php } ?>
                                 </tr>
                             </thead>
                             <tbody>
@@ -59,26 +63,48 @@ require_once '../controllers/allComments-controller.php';
                                             <td class="text-center"><?= $value['deals_title'] ?></td>
                                             <td class="text-center text-truncate" style="max-width: 100px;"><?= $value['comments_rating'] ?></td>
                                             <td class="text-center"><a class="text-light btn bouton" href="infoComments.php?info=<?= $value['comments_id'] ?>"> + d'info</a></td>
-                                        </tr>
-                                        <!-- <div class="modal fade" id="comments-<?= $value['comments_id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <p class="modal-title fs-4" id="exampleModalLabel"><?= $value['comments_id'] ?> </p>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                do you want to delete this comment ?
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                                                <form action="" method="POST">
-                                                    <button class="btn btn-primary" name="delete" value="<?= $value['comments_id'] ?> ">Supprimer</button>
+
+                                            <?php if ($value["comments_validate"] != 2) { ?>
+                                                <form method="POST" action="" name="form-<?= $value["comments_id"] ?>">
+                                                    <td class="text-center">
+                                                        <button class="text-light btn activated" name="archive" value=<?= $value["comments_id"] ?>>Activated</button>
+                                                    </td>
                                                 </form>
+                                            <?php } else { ?>
+                                                <form method="POST" action="" name="form-<?= $value["comments_id"] ?>">
+                                                    <td class="text-center">
+                                                        <button class="text-light btn archive" name="reactivate" value=<?= $value["comments_id"] ?>>Achived</button>
+                                                    </td>
+                                                </form>
+                                            <?php } ?>
+
+                                            <form method="POST" action="">
+                                                <td class="text-center">
+                                                    <a class="text-light btn bg-danger" name="delete" data-bs-toggle="modal" data-bs-target="#comments-<?= $value['comments_id'] ?>">
+                                                        Delete
+                                                    </a>
+                                                </td>
+                                            </form>
+                                        </tr>
+                                        <div class="modal fade" id="comments-<?= $value['comments_id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <p class="modal-title fs-4" id="exampleModalLabel"><?= $value['comments_id'] ?> </p>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        do you want to delete this comment ?
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                                                        <form action="" method="POST">
+                                                            <button class="btn btn-primary" name="delete" value="<?= $value['comments_id'] ?> ">Supprimer</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div> -->
                                 <?php }
                                 }
                                 ?>
@@ -91,6 +117,13 @@ require_once '../controllers/allComments-controller.php';
                                             <td class="text-center"><?= $value['deals_title'] ?></td>
                                             <td class="text-center text-truncate" style="max-width: 100px;"><?= $value['comments_rating'] ?></td>
                                             <td class="text-center"><a class="text-light btn bouton" href="infoComments.php?info=<?= $value['comments_id'] ?>"> + d'info</a></td>
+                                            <?php if ($value['comments_validate'] == 0) { ?>
+                                                <td class="text-center text-danger">Submited</td>
+                                            <?php } else if ($value['comments_validate'] == 1) { ?>
+                                                <td class="text-center text-success">Validated</td>
+                                            <?php } else if ($value['comments_validate'] == 2) { ?>
+                                                <td class="text-center text-info">Archived</td>
+                                            <?php } ?>
 
                                         </tr>
                                 <?php }
@@ -108,7 +141,7 @@ require_once '../controllers/allComments-controller.php';
     <button type="button" class="btn bouton btn-floating " id="btn-back-to-top">
         <i class="bi bi-arrow-up-short text-white"></i>
     </button>
-    
+
     <?php include '../elements/footer.php' ?>
     <script src="../assets/script/filterImages.js"></script>
 
