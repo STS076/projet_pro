@@ -18,15 +18,15 @@ require_once '../controllers/allComments-controller.php';
                     <i class='bi bi-caret-left-fill links mx-2'></i> back
                 </a>
             <?php } else { ?>
-                <a class="fs-6 text-secondary  my-3" href="dashboard-comments.php">
+                <a class="fs-6 text-secondary  my-3" href="dashboard.php">
                     <i class='bi bi-caret-left-fill links mx-2'></i> back
                 </a>
             <?php } ?>
             <div class="col-lg-12 col-11">
                 <?php if ($_SESSION['user']['role_id_ROLE'] != 1 && $_SESSION['user']['role_id_ROLE'] != 2) { ?>
-                    <h2 class="fs-2 text-center welcome ">Comments submited by <?= $_SESSION['user']['users_username'] ?></h2>
+                    <h2 class="fs-2  pt-5 pb-3 text-center welcome ">Comments submited by <?= $_SESSION['user']['users_username'] ?></h2>
                 <?php } else { ?>
-                    <h2 class="fs-2 text-center welcome ">All comments</h2>
+                    <h2 class="fs-2  pt-5 pb-3 text-center welcome ">All comments</h2>
                 <?php } ?>
 
                 <?php if ($_SESSION['user']['role_id_ROLE'] != 3) { ?>
@@ -62,18 +62,24 @@ require_once '../controllers/allComments-controller.php';
                                             <td class="text-center"><?= $value['comments_date'] ?></td>
                                             <td class="text-center"><?= $value['deals_title'] ?></td>
                                             <td class="text-center text-truncate" style="max-width: 100px;"><?= $value['comments_rating'] ?></td>
-                                            <td class="text-center"><a class="text-light btn bouton" href="infoComments.php?info=<?= $value['comments_id'] ?>"> + d'info</a></td>
+                                            <td class="text-center">
+                                                <a class="text-light btn bouton" href="infoComments.php?info=<?= $value['comments_id'] ?>">
+                                                    Info
+                                                </a>
+                                            </td>
 
                                             <?php if ($value["comments_validate"] != 2) { ?>
                                                 <form method="POST" action="" name="form-<?= $value["comments_id"] ?>">
                                                     <td class="text-center">
-                                                        <button class="text-light btn activated" name="archive" value=<?= $value["comments_id"] ?>>Activated</button>
+                                                        <button class="text-light btn activated" name="archive" value=<?= $value["comments_id"] ?>>
+                                                            Activated</button>
                                                     </td>
                                                 </form>
                                             <?php } else { ?>
                                                 <form method="POST" action="" name="form-<?= $value["comments_id"] ?>">
                                                     <td class="text-center">
-                                                        <button class="text-light btn archive" name="reactivate" value=<?= $value["comments_id"] ?>>Achived</button>
+                                                        <button class="text-light btn archive" name="reactivate" value=<?= $value["comments_id"] ?>>
+                                                            Achived</button>
                                                     </td>
                                                 </form>
                                             <?php } ?>
@@ -90,16 +96,20 @@ require_once '../controllers/allComments-controller.php';
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <p class="modal-title fs-4" id="exampleModalLabel"><?= $value['comments_id'] ?> </p>
+                                                        <p class="modal-title fs-4 welcome" id="exampleModalLabel"><?= $value['users_username'] ?> for <?= $value['deals_title'] ?></p>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
                                                         do you want to delete this comment ?
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                                                        <button type="button" class="btn bouton text-white" data-bs-dismiss="modal">
+                                                            Close
+                                                        </button>
                                                         <form action="" method="POST">
-                                                            <button class="btn btn-primary" name="delete" value="<?= $value['comments_id'] ?> ">Supprimer</button>
+                                                            <button class="btn btn-danger" name="delete" value="<?= $value['comments_id'] ?> ">
+                                                                Supprimer
+                                                            </button>
                                                         </form>
                                                     </div>
                                                 </div>

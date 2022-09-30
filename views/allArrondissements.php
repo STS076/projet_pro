@@ -11,7 +11,7 @@ require_once '../controllers/allArrondissements-controller.php';
     <main class="bg-white p-0 m-0 container-fluid">
         <div class="row bg-white justify-content-center m-0 p-0" id="page">
 
-            <p class="fs-2 text-center welcome pt-5 comments">Arrondissements</p>
+            <h2 class="fs-2 text-center welcome pt-5 comments">Arrondissements</h2>
             <div class="row m-0 p-0 justify-content-center">
                 <?php foreach ($allTagsArrArray as $value) {
                 ?>

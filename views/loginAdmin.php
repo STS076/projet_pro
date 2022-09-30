@@ -14,7 +14,7 @@ require_once '../elements/top.php' ?>
     <main class="bg-white py-5">
         <div class="row  justify-content-center m-0 py-5" id="page">
             <div class="bg-white  col-lg-6 col-11">
-                <h2 class="py-4 text-center welcome ">Please enter below information to login : </h2>
+                <h2 class="fs-2  pt-5 pb-3 text-center welcome">Please enter below information to login : </h2>
                 <form action="" method="POST">
 
                     <div class="d-flex flex-column">
@@ -24,12 +24,11 @@ require_once '../elements/top.php' ?>
                     </div>
 
                     <div class="input-group  rounded mb-3">
-                        <!-- <label class="text-dark">Password:</label> -->
                         <input type="password" class="identify text-center form-control" id="password" placeholder="Password" name="password">
                         <span class="input-group-text" id=""><i class="bi bi-eye-slash" id="togglePassword"></i></span>
-                        <p data-span="error-password" class="text-danger"><?= isset($errors['password']) ? $errors['password'] : '' ?></p>
-                    </div>
 
+                    </div>
+                    <p data-span="error-password" class="text-danger"><?= isset($errors['password']) ? $errors['password'] : '' ?></p>
                     <div class="text-center">
                         <button class="btn bouton border border-dark text-light" id="submit" name="submit">Login</button>
                         <p class="text-danger" id="errorConnect"><?= isset($errors['connection']) ? $errors['connection'] : '' ?></p>

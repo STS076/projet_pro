@@ -13,8 +13,8 @@ require_once '../elements/top.php' ?>
                 <i class='bi bi-caret-left-fill links mx-2'></i> back
             </a>
 
-            <h2 class=" text-center py-4 welcome">Upload Images for deal <?= $oneDealArray['deals_title'] ?></h2>
-            <div class="row mx-auto">
+            <h2 class="fs-2  pt-5 pb-3 text-center welcome">Upload Images for deal <?= $oneDealArray['deals_title'] ?></h2>
+            <div class="row mx-auto pb-5">
                 <div class="col-lg-8 col-11 py-5 d-flex justify-content-center mx-auto">
                     <form method="POST" action="" enctype="multipart/form-data">
                         <div class="d-flex justify-content-center">

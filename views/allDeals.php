@@ -11,7 +11,7 @@ require_once '../controllers/allDeals-controller.php';
     <main class="bg-white px-0 m-0 container-fluid">
         <div class="row bg-white justify-content-center m-0" id="page">
 
-            <a class="fs-6 text-secondary my-3" href="dashboard-deals.php">
+            <a class="fs-6 text-secondary my-3" href="dashboard.php">
                 <i class='bi bi-caret-left-fill links mx-2'></i> back
             </a>
 
@@ -96,7 +96,7 @@ require_once '../controllers/allDeals-controller.php';
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <p class="modal-title fs-4" id="exampleModalLabel"><?= $value['deals_title'] ?></p>
+                                                        <p class="modal-title fs-4 welcome" id="exampleModalLabel"><?= $value['deals_title'] ?></p>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body my-2">

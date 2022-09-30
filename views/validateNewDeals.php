@@ -8,14 +8,14 @@ require_once '../controllers/validateNewDeals-controller.php';
 <body class="d-flex flex-column  mx-auto min-vh-100 background container p-0 shadow-lg  justify-content-center">
     <?php include '../elements/header.php' ?>
 
-    <main class="bg-white p-0 m-0 container-fluid">
+    <main class="bg-white p-0 m-0 container-fluid ">
         <div class="row bg-white justify-content-center m-0 p-0" id="page">
-        <a class="fs-6 text-secondary my-3 " href="dashboard-deals.php">
+        <a class="fs-6 text-secondary my-3 " href="dashboard.php">
                     <i class='bi bi-caret-left-fill links mx-2'></i> back
                 </a>
-            <div class="col-lg-12  col-12">
+            <div class="col-lg-12  col-12 pb-5">
      
-                <h2 class="text-center fst-italic welcome py-4">New deals validation</h2>
+                <h2 class="fs-2  pt-5 pb-3 text-center welcome">New deals validation</h2>
                 <?php if ($numberofDealsToValidate['count(deals_id)'] == 0) { ?>
                     <p class="text-center fs-3 py-5">There is no new deal</p>
                 <?php } else { ?>
@@ -41,9 +41,9 @@ require_once '../controllers/validateNewDeals-controller.php';
                                     if ($value['deals_validate'] != 1) { ?>
                                         <tr>
                                             <!-- <th class="text-center"><?= $value['deals_id'] ?></th> -->
-                                            <th class="text-center"><?= $value['deals_title'] ?></th>
-                                            <th class="text-center"><?= $value['tag_arr_name'] ?></th>
-                                            <th class="text-center"><?= $value['DealsCatTag'] ?></th>
+                                            <td class="text-center"><?= $value['deals_title'] ?></td>
+                                            <td class="text-center"><?= $value['tag_arr_name'] ?></td>
+                                            <td class="text-center"><?= $value['DealsCatTag'] ?></td>
                                             <td class="text-center">
                                                 <a class="text-light btn bouton" href="infoDeals.php?info=<?= $value['deals_id'] ?>">
                                                     Info

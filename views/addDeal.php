@@ -12,11 +12,11 @@ require_once '../elements/top.php' ?>
 
     <main class="bg-white p-0 m-0 container-fluid">
         <div class="row bg-white justify-content-center m-0 p-0" id="page">
-            <a class="fs-6 text-secondary  my-3 " href="dashboard-deals.php">
+            <a class="fs-6 text-secondary  my-3 " href="dashboard.php">
                 <i class='bi bi-caret-left-fill links mx-2'></i> back
             </a>
-            <div class="col-lg-6 py-5  col-12">
-                <h2 class="fs-2 py-2 text-center welcome ">Upload a new deal</h2>
+            <div class="col-lg-6 col-12 pb-5">
+                <h2 class="fs-2  pt-5 pb-3 text-center welcome ">Upload a new deal</h2>
                 <?php
                 if ($showForm) { ?>
 

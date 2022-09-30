@@ -267,7 +267,7 @@ footer {
 .boutons {
     width: 15rem;
     height: 5rem;
-    background-color:#2E3F5D;
+    background-color: #2E3F5D;
     ;
 }
 
@@ -483,4 +483,17 @@ footer {
 
 .activated {
     background-color: #a5d2af;
+}
+
+main {
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+}
+
+html {
+    height: -webkit-fill-available;
+}
+
+.headerCards{
+    background-color: #dcccf6;
 }

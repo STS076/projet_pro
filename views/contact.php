@@ -13,7 +13,7 @@ require_once '../elements/top.php' ?>
         <?php if ($showForm) { ?>
             <div class="row bg-white justify-content-center m-0 p-0">
                 <div class="col-lg-7 col-11">
-                    <h2 class="pb-3 text-center welcome comments">Contact us</h2>
+                    <h2 class="pb-3 text-center welcome comments py-5">Contact us</h2>
                     <p class="text-center">You noticed a mistake in one of our deals ? Please let us know below.</p>
 
                     <form action="" method="POST">

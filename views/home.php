@@ -34,7 +34,7 @@ require_once '../elements/top.php' ?>
             <?php foreach ($hotDeals as $value) {
                 if ($value['deals_validate'] == 1) { ?>
                     <div class="col-lg-2 col-11 bg-light shadow-sm mx-2 my-3 p-0">
-                        <div class="d-flex flex-column justify-content-between">
+                        <div class=" d-flex flex-column justify-content-between">
                             <div class="col  ">
                                 <?php
                                 $images = $image->getOneGallery($value['deals_id']);
@@ -79,8 +79,8 @@ require_once '../elements/top.php' ?>
 
         <p class="fs-1 text-center welcome pt-5">What to do today in Paris ?</p>
         <div class="row justify-content-evenly p-0 mx-0 bg-light">
-            <?php 
-            $count = 2 ; 
+            <?php
+            $count = 2;
             $count2 = 1;
             foreach ($lastTenDeals as $value) {
                 if ($value['deals_validate'] == 1) { ?>

@@ -11,14 +11,14 @@ require_once '../controllers/validatecomments-controller.php';
 <body class="d-flex flex-column  mx-auto min-vh-100 background container p-0 shadow-lg  justify-content-center">
     <?php include '../elements/header.php' ?>
 
-    <main class="bg-white p-0 m-0 container-fluid">
+    <main class="bg-white p-0 m-0 container-fluid ">
         <div class="row bg-white justify-content-center m-0 p-0 pb-5" id="page">
-            <a class="fs-6 text-secondary  my-3" href="dashboard-comments.php">
+            <a class="fs-6 text-secondary  my-3" href="dashboard.php">
                 <i class='bi bi-caret-left-fill links mx-2'></i> back
             </a>
-            <div class="col-lg-12 col-11">
+            <div class="col-lg-12 col-11 pb-5">
 
-                <h2 class="text-center p-5 fst-italic welcome">Validate Comments</h2>
+                <h2 class="fs-2  pt-5 pb-3 text-center welcome">Validate Comments</h2>
 
                 <?php if ($numberofNewComments['count(comments_id)'] == 0) { ?>
                     <p class="text-center fs-3">There no new review</p>

@@ -12,11 +12,11 @@ require_once '../elements/top.php' ?>
 
     <main class="bg-white p-0 m-0 container-fluid">
         <div class="row bg-white justify-content-center m-0 p-0" id="page">
-            <a class="fs-6 text-secondary  my-3 " href="dashboard-tagsCategories.php">
+            <a class="fs-6 text-secondary  my-3 " href="dashboard.php">
                 <i class='bi bi-caret-left-fill links mx-2'></i> back
             </a>
-            <div class="col-lg-5  col-11 py-5">
-                <h2 class=" text-center welcome">Create a new category</h2>
+            <div class="col-lg-6  col-12 pb-5">
+                <h2 class="fs-2  pt-5 pb-3 text-center welcome">Create a new category</h2>
                 <form method="POST" action="">
                     <div class="d-flex flex-column">
                         <label class="py-2" for="tagCategory">
@@ -25,7 +25,7 @@ require_once '../elements/top.php' ?>
                                 <?= isset($errors['tagCategory']) ? $errors['tagCategory'] : '' ?>
                             </span>
                         </label>
-                        <input type="text" id="tagCategory" value="<?= isset($_POST['tagCategory']) ? $_POST['tagCategory'] : '' ?>" name="tagCategory">
+                        <input class="form-control" type="text" id="tagCategory" value="<?= isset($_POST['tagCategory']) ? $_POST['tagCategory'] : '' ?>" name="tagCategory">
                     </div>
                     <div class="d-flex flex-column">
                         <label class="py-2" for="tagCategorySummary">
@@ -34,7 +34,7 @@ require_once '../elements/top.php' ?>
                                 <?= isset($errors['tagCategorySummary']) ? $errors['tagCategorySummary'] : '' ?>
                             </span>
                         </label>
-                        <textarea type="text" id="tagCategorySummary" value="<?= isset($_POST['tagCategorySummary']) ? $_POST['tagCategorySummary'] : '' ?>" name="tagCategorySummary"></textarea>
+                        <textarea class="form-control" type="text" id="tagCategorySummary" value="<?= isset($_POST['tagCategorySummary']) ? $_POST['tagCategorySummary'] : '' ?>" name="tagCategorySummary"></textarea>
                     </div>
                     <div class="text-center pt-5">
                         <button class="btn bouton text-white" value="connect">Add</button>

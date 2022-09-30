@@ -9,11 +9,11 @@ require_once '../controllers/allTagsCategory-controller.php';
 
     <main class="bg-white p-0 m-0 container-fluid">
         <div class="row bg-white justify-content-center m-0 p-0" id="page">
-            <a class="fs-6 text-secondary  my-3 " href="dashboard-tagsCategories.php">
+            <a class="fs-6 text-secondary  my-3 " href="dashboard.php">
                 <i class='bi bi-caret-left-fill links mx-2'></i> back
             </a>
-            <div class="col-lg-8 col-12 text-center ">
-                <h2 class="fs-2 text-center welcome pb-4">All Categories</h2>
+            <div class="col-lg-8 col-12 text-center pb-5 ">
+                <h2 class="fs-2  pt-5 pb-3 text-center welcome">All Categories</h2>
                 <div class="table-responsive pb-5">
                     <table class="table  table-hover ">
                         <thead>
@@ -31,12 +31,12 @@ require_once '../controllers/allTagsCategory-controller.php';
                                     <td class="text-center"><?= $value['tag_categories_name'] ?></td>
                                     <td class="text-center">
                                         <a class="btn bouton text-light" href="infoCat.php?info=<?= $value['tag_categories_id'] ?>">
-                                            + d'info
+                                            Info
                                         </a>
                                     </td>
                                     <td class="text-center">
                                         <a class="btn bouton text-light" href="amendCategories.php?amend=<?= $value['tag_categories_id'] ?>">
-                                            Modifier
+                                            Modify
                                         </a>
                                     </td>
                                     <td class="text-center">
@@ -49,19 +49,19 @@ require_once '../controllers/allTagsCategory-controller.php';
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <p class="modal-title fs-4" id="exampleModalLabel"><?= $value['tag_categories_name'] ?></p>
+                                                <p class="modal-title fs-4 welcome" id="exampleModalLabel"><?= $value['tag_categories_name'] ?></p>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
                                                 Do you want to delete this category ?
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                                                    Fermer
+                                                <button type="button" class="btn bouton text-white" data-bs-dismiss="modal">
+                                                    Close
                                                 </button>
                                                 <form action="" method="POST">
-                                                    <button class="btn btn-primary" name="delete" value="<?= $value['tag_categories_id'] ?> ">
-                                                        Supprimer
+                                                    <button class="btn btn-danger" name="delete" value="<?= $value['tag_categories_id'] ?> ">
+                                                        Delete
                                                     </button>
                                                 </form>
                                             </div>

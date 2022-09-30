@@ -78,13 +78,8 @@ require_once '../elements/top.php' ?>
 
             <?php } else { ?>
                 <div class="row justify-content-center mx-0 py-5">
-                    <div class="bg-light border border-dark shadow-sm col-lg-10 py-5 rounded col-11 text-center">
+                    <div class="col-lg-10 py-5 rounded col-11 text-center">
                         You are not authorised to access to this page
-                        <div class="mt-5 text-center">
-                            <a class="text-decoration-none" href="amendUsers.php?amend=<?= $_SESSION['user']['users_id'] ?>">
-                                <button class="btn text-white bg-info">back</button>
-                            </a>
-                        </div>
                     </div>
                 </div>
             <?php }

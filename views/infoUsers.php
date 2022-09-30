@@ -7,7 +7,7 @@ require_once '../elements/top.php' ?>
 
     <?php require_once '../elements/header.php' ?>
     <main class="bg-white p-0 m-0 container-fluid">
-        <div class="row bg-white justify-content-center m-0 p-0" id="page">
+        <div class="row bg-white justify-content-center m-0 p-0 pb-5" id="page">
             <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>
                 <a class="fs-6 text-secondary  my-3" href="allUsers.php">
                     <i class='bi bi-caret-left-fill links mx-2'></i> back
@@ -17,7 +17,7 @@ require_once '../elements/top.php' ?>
                     <i class='bi bi-caret-left-fill links mx-2'></i> back
                 </a>
             <?php } ?>
-            <h2 class="fs-2 text-center welcome py-2">Information about <?= $oneUserArray['users_username'] ?></h2>
+            <h2 class="fs-2  pt-5 pb-3 text-center welcome">Information about <?= $oneUserArray['users_username'] ?></h2>
             <div class="row justify-content-evenly">
                 <div class="col-lg-4 col-11 ">
                     <p>Name<span> : <?= $oneUserArray['users_name'] ?></span></p>
@@ -27,7 +27,7 @@ require_once '../elements/top.php' ?>
                     <p>Registered since<span> : <?= $oneUserArray['users_joined'] ?></span></p>
 
                 </div>
-                <a class="text-secondary text-center" href="amendUsers.php?amend=<?= $_SESSION['user']['users_id'] ?>">Modify your profile</a>
+                <a class="text-secondary text-center" href="amendUsers.php?amend=<?= $oneUserArray['users_id'] ?>">Modify your profile</a>
             </div>
 
             <div class="row justify-content-center my-5">

@@ -10,7 +10,7 @@ require_once '../controllers/allTagsArr-controller.php';
 
     <main class="bg-white p-0 m-0 container-fluid">
         <div class="row bg-white justify-content-center m-0 p-0 pb-5" id="page">
-            <a class="fs-6 text-secondary my-3 " href="dashboard-tagsArr.php">
+            <a class="fs-6 text-secondary my-3 " href="dashboard.php">
                 <i class='bi bi-caret-left-fill links mx-2'></i> back
             </a>
             <h2 class="fs-2 text-center welcome pb-4">All Arrondissement
@@ -50,7 +50,7 @@ require_once '../controllers/allTagsArr-controller.php';
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <p class="modal-title fs-4" id="exampleModalLabel">
+                                            <p class="modal-title fs-4 welcome" id="exampleModalLabel">
                                                 <?= $value['tag_arr_name'] ?>
                                             </p>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -59,9 +59,13 @@ require_once '../controllers/allTagsArr-controller.php';
                                             Do you want to delete this arrondissement ?
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                                            <button type="button" class="btn bouton text-white" data-bs-dismiss="modal">
+                                                Close
+                                            </button>
                                             <form action="" method="POST">
-                                                <button class="btn btn-primary" name="delete" value="<?= $value['tag_arr_id'] ?> ">Supprimer</button>
+                                                <button class="btn btn-danger" name="delete" value="<?= $value['tag_arr_id'] ?> ">
+                                                Delete
+                                            </button>
                                             </form>
                                         </div>
                                     </div>

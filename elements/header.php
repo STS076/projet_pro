@@ -14,18 +14,18 @@
     <div class="collapse navbar-collapse " id="navbarSupportedContent">
         <ul class="navbar-nav  w-100 justify-content-evenly nav d-flex">
             <li class="nav-item d-flex">
-                <a href="home.php" class="nav-link fw-bold text-black ">Home</a>
+                <a href="home.php" class="nav-link fw-bold text-white ">Home</a>
             </li>
             <!-- <li class="nav-item">
-                <a class="nav-link active titre box fw-bold text-black " href="news.php">News</a>
+                <a class="nav-link active titre box fw-bold text-white " href="news.php">News</a>
             </li> -->
 
             <li class="nav-item">
-                <a class="nav-link active titre box fw-bold text-black " href="allArrondissements.php">Arrondissements</a>
+                <a class="nav-link active titre box fw-bold text-white " href="allArrondissements.php">Arrondissements</a>
             </li>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-black  fw-bold " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle text-white  fw-bold " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Categories
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -36,29 +36,29 @@
                 </ul>
             </li>
             <li class="nav-item">
-                <a class="nav-link active titre box fw-bold text-black " href="contact.php">Contact us</a>
+                <a class="nav-link active titre box fw-bold text-white " href="contact.php">Contact us</a>
             </li>
             <li class="nav-item">
                 <?php if (!isset($_SESSION['user'])) { ?>
-                    <a class="nav-link active titre box fw-bold text-black " href="loginAdmin.php">
+                    <a class="nav-link active titre box fw-bold text-white " href="loginAdmin.php">
                         <i class="bi bi-person-circle me-2"></i>Login
                     </a>
                 <?php } else { ?>
-                    <a class="nav-link active titre box fw-bold text-black " href="dashboard.php">
+                    <a class="nav-link active titre box fw-bold text-white " href="dashboard.php">
                         <i class="bi bi-person-circle me-2"></i><?= $_SESSION['user']['users_username'] ?>
                     </a>
                 <?php } ?>
             </li>
             <?php if (isset($_SESSION['user'])) { ?>
                 <li class="nav-item">
-                    <a class="nav-link active titre box fw-bold text-black" href="logout.php">
+                    <a class="nav-link active titre box fw-bold text-white" href="logout.php">
                         <i class="bi bi-box-arrow-left me-2"></i>Log Out
                     </a>
                 </li>
             <?php } ?>
             <?php if (!isset($_SESSION['user'])) { ?>
                 <li class="nav-item">
-                    <a class="nav-link active titre box fw-bold text-black" href="signUp.php">
+                    <a class="nav-link active titre box fw-bold text-white" href="signUp.php">
                         Sign Up
                     </a>
                 </li>
@@ -79,14 +79,14 @@
         <div class="collapse navbar-collapse" id="navbarSupported">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                 <li class="nav-item d-flex">
-                    <a href="home.php" class="nav-link fw-bold text-dark">Home</a>
+                    <a href="home.php" class="nav-link fw-bold text-white">Home</a>
                 </li>
              
                 <li class="nav-item">
-                    <a class="nav-link active titre box fw-bold text-black me-5 " href="allArrondissements.php">Arrondissements</a>
+                    <a class="nav-link active titre box fw-bold text-white me-5 " href="allArrondissements.php">Arrondissements</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-black  fw-bold me-5" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle text-white  fw-bold me-5" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Categories
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -97,22 +97,22 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active titre box fw-bold text-black" href="contact.php">Contact us</a>
+                    <a class="nav-link active titre box fw-bold text-white" href="contact.php">Contact us</a>
                 </li>
                 <li class="nav-item">
                     <?php if (!isset($_SESSION['user'])) { ?>
-                        <a class="nav-link active titre box fw-bold text-black me-5" href="loginAdmin.php">
+                        <a class="nav-link active titre box fw-bold text-white me-5" href="loginAdmin.php">
                             <i class="bi bi-person-circle me-2"></i>Login
                         </a>
                     <?php } else { ?>
-                        <a class="nav-link active titre box fw-bold text-black me-5" href="dashboard.php">
+                        <a class="nav-link active titre box fw-bold text-white me-5" href="dashboard.php">
                             <i class="bi bi-person-circle me-2"></i><?= $_SESSION['user']['users_username'] ?>
                         </a>
                     <?php } ?>
                 </li>
                 <?php if (isset($_SESSION['user'])) { ?>
                     <li class="nav-item">
-                        <a class="nav-link active titre box fw-bold text-black" href="logout.php">
+                        <a class="nav-link active titre box fw-bold text-white" href="logout.php">
                             <i class="bi bi-box-arrow-left me-2"></i>Log Out
                         </a>
                     </li>

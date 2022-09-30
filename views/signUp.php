@@ -8,10 +8,10 @@ require_once '../elements/top.php' ?>
     <?php require_once '../elements/header.php' ?>
 
     <?php if ($showForm) { ?>
-        <main class="bg-white py-5  px-0 container-fluid">
+        <main class="bg-white py-5  px-0 container-fluid ">
             <div class="row  justify-content-center m-0" id="page">
                 <div class=" col-lg-5 p-4 col-11">
-                    <h2 class="py-3 text-center welcome ">Please enter below information to Sign Up : </h2>
+                    <h2 class="fs-2  pt-5 pb-3 text-center welcome">Please enter below information to Sign Up : </h2>
                     <form action="" method="POST">
 
                         <div class="d-flex flex-column">
@@ -38,21 +38,28 @@ require_once '../elements/top.php' ?>
                             <p data-span="error-emailAddress" class="text-danger"><?= isset($errors['emailAddress']) ? $errors['emailAddress'] : '' ?></p>
                         </div>
 
-                        <div class="input-group  rounded mb-3">
-                            <input type="password" class="form-control text-center" id="password" placeholder="Password" name="password" value="<?= isset($_POST['password']) ? $_POST['password'] : '' ?>">
-                            <span class="input-group-text" id=""><i class="bi bi-eye-slash" id="togglePassword"></i></span>
-                            <p data-span="error-password" class="text-danger"><?= isset($errors['password']) ? $errors['password'] : '' ?></p>
-                        </div>
-
-
                         <div class="input-group rounded mb-3">
-                            <!-- <label class="text-dark">Confirm Password : </label> -->
-                            <input type="password" class=" text-center form-control" id="passwordconfirm" placeholder="Confirm Password" name="passwordconfirm" value="<?= isset($_POST['passwordconfirm']) ? $_POST['passwordconfirm'] : '' ?>" />
-                            <span class="input-group-text" id=""><i class="bi bi-eye-slash" id="toggleConfirmPassword"></i></span>
-                            <p data-span="error-passwordconfirm" class="text-danger"><?= isset($errors['passwordconfirm']) ? $errors['passwordconfirm'] : '' ?></p>
+                            <input type="password" class="form-control text-center" id="password" placeholder="Password" name="password" value="<?= isset($_POST['password']) ? $_POST['password'] : '' ?>">
+                            <span class="input-group-text" id="">
+                                <i class="bi bi-eye-slash" id="togglePassword"></i>
+                            </span>
+                           
                         </div>
+                        <p data-span="error-password" class="text-danger">
+                                <?= isset($errors['password']) ? $errors['password'] : '' ?>
+                            </p>
 
-                        <div class="my-1 text-center">
+                        <div class="input-group rounded mb-1">
+                            <input type="password" class=" text-center form-control" id="passwordconfirm" placeholder="Confirm Password" name="passwordconfirm" value="<?= isset($_POST['passwordconfirm']) ? $_POST['passwordconfirm'] : '' ?>" />
+                            <span class="input-group-text" id="">
+                                <i class="bi bi-eye-slash" id="toggleConfirmPassword"></i>
+                            </span>
+
+                        </div>
+                        <p data-span="error-passwordconfirm" class="text-danger">
+                            <?= isset($errors['passwordconfirm']) ? $errors['passwordconfirm'] : '' ?>
+                        </p>
+                        <div class="my-5 text-center">
                             <button class="btn bouton border border-dark text-light" id="submit" name="submit">Sign Up</button>
                         </div>
                         <p class="pt-2 text-center filAriane">*Password need a lowercase, an uppercase, a number, a special character and minimum 8 characters</p>
@@ -60,24 +67,26 @@ require_once '../elements/top.php' ?>
                     </form>
                 </div>
             </div>
-        <?php } else { ?>
+        </main>
+    <?php } else { ?>
 
-            <div class="container bg-light col-lg-8  bienvenue d-flex align-items-center flex-column my-5 py-3 shadow">
+        <main class="bg-white py-5  px-0 container-fluid ">
+            <div class="row  justify-content-center m-0" id="page">
                 <p class="text-center fs-6 py-5">
                     Thank you for signing up <?= $_POST['firstname']  ?>, you can now login with your username and password.
                 </p>
             </div>
-
-        <?php } ?>
         </main>
-        <button type="button" class="btn bouton btn-floating " id="btn-back-to-top">
-            <i class="bi bi-arrow-up-short text-white"></i>
-        </button>
+    <?php } ?>
 
-        <script src="../assets/script/contact.js"></script>
-        <script src="../assets/script/password.js"></script>
+    <button type="button" class="btn bouton btn-floating " id="btn-back-to-top">
+        <i class="bi bi-arrow-up-short text-white"></i>
+    </button>
 
-        <?php require_once '../elements/footer.php' ?>
+    <script src="../assets/script/contact.js"></script>
+    <script src="../assets/script/password.js"></script>
+
+    <?php require_once '../elements/footer.php' ?>
 
 </body>
 

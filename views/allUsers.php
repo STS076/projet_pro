@@ -12,7 +12,7 @@ require_once '../controllers/allUsers-controller.php';
 
     <main class="bg-white p-0 m-0 container-fluid">
         <div class="row bg-white justify-content-center m-0 p-0" id="page">
-            <a class="fs-6 text-secondary  my-3 " href="dashboard-users.php">
+            <a class="fs-6 text-secondary  my-3 " href="dashboard.php">
                 <i class='bi bi-caret-left-fill links mx-2'></i> back
             </a>
             <h2 class="fs-2 text-center welcome ">All Users</h2>
