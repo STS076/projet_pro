@@ -10,12 +10,14 @@ require_once '../elements/top.php' ?>
 
     <main class="bg-white py-5  px-0 container-fluid">
 
-        <p class=" text-center welcome2 mt-2">Welcome To Paris</p>
+        <p class=" text-center welcome2 pb-2">Welcome To Paris</p>
         <div class="row m-0 p-0 justify-content-center bg-light">
             <div class="col-lg-5 col-11  mx-1 d-flex align-items-center justify-content-center">
                 <p class="fs-6">
                     Paradise for museums, concerts and exibitions connoisseurs, Paris can be hell when it come to your wallet that cannot follow all of your adventures. And no one want to give up the pleasure of visiting the city of lights because of an empty purse. Thankfully, the city is more generous than we would expect for people with small means, you just have to know the good deals and free treasure than it can offer. <br>
-                    There is a myriad of time slot where museums are free,
+                    There is a myriad of time slot where museums are free. 
+                    On this website, you will be able to find good deal by 
+                    <a class="text-decoration-none text-black" href="allArrondissements.php">Arrondissements</a> and also by Categories. 
                 </p>
             </div>
             <div class="col-lg-6 col-11 text-center d-lg-block d-none mx-1">
@@ -29,25 +31,23 @@ require_once '../elements/top.php' ?>
 
         <div class=" row justify-content-evenly mx-0 p-0  mt-3 bg-light">
             <div class="col-lg-2 col-12 hotDeals py-5 d-flex align-items-center justify-content-center">
-                <p class="text-light fw-bold fs-2 text-center welcome p-0 m-0">Our better rated deals</p>
+                <p class="text-light  fs-2 text-center welcome p-0 m-0">Our better rated deals</p>
             </div>
             <?php foreach ($hotDeals as $value) {
                 if ($value['deals_validate'] == 1) { ?>
-                    <div class="col-lg-2 col-11 bg-light shadow-sm mx-2 my-3 p-0">
-                        <div class=" d-flex flex-column justify-content-between">
-                            <div class="col  ">
-                                <?php
-                                $images = $image->getOneGallery($value['deals_id']);
-                                ?>
-                                <img src="data:image/png;base64,<?= $images[0]['images_name'] ?>" class="m-0 p-0 img-fluid imgCard" alt="<?= $value['deals_title'] ?>">
-                                <p class="card-title text-center fw-bold welcome fs-4 newDealsWrite p-2"><?= $value['deals_title'] ?></p>
-                                <p class="p-2 "><?= $value['deals_mini_summary'] ?></p>
-                            </div>
-                            <div class="col">
-                                <div class="d-flex justify-content-evenly p-2">
-                                    <p><?= $value['DealsCatTag'] ?></p>
-                                    <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="newDealsWrite">Explore</a>
-                                </div>
+                    <div class="col-lg-2 col-11 bg-light shadow-sm mx-2 my-3 p-0  d-flex flex-column justify-content-between ">
+                        <div class=" ">
+                            <?php
+                            $images = $image->getOneGallery($value['deals_id']);
+                            ?>
+                            <img src="data:image/png;base64,<?= $images[0]['images_name'] ?>" class="m-0 p-0 img-fluid imgCard" alt="picture for deal <?= $value['deals_title'] ?>">
+                            <p class="card-title text-center fw-bold welcome fs-4 newDealsWrite p-2"><?= $value['deals_title'] ?></p>
+                            <p class="p-2 "><?= $value['deals_mini_summary'] ?></p>
+                        </div>
+                        <div class="">
+                            <div class="d-flex justify-content-evenly p-2">
+                                <p><?= $value['DealsCatTag'] ?></p>
+                                <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="newDealsWrite">Explore</a>
                             </div>
                         </div>
                     </div>
@@ -84,13 +84,15 @@ require_once '../elements/top.php' ?>
             $count2 = 1;
             foreach ($lastTenDeals as $value) {
                 if ($value['deals_validate'] == 1) { ?>
-                    <div class="col-lg-2 col-11 bg-light shadow-sm mx-2 my-3 p-0 order-lg-<?= $count2++ ?> order-<?= $count++ ?>">
-                        <?php
-                        $images = $image->getOneGallery($value['deals_id']);
-                        ?>
-                        <img src="data:image/png;base64,<?= $images[0]['images_name'] ?>" class="m-0 p-0 img-fluid imgCard" alt="<?= $value['deals_title'] ?>">
-                        <p class="card-title text-center fw-bold welcome fs-4 newDealsWrite p-2"><?= $value['deals_title'] ?></p>
-                        <p class="p-2"><?= $value['deals_mini_summary'] ?></p>
+                    <div class="col-lg-2 col-11 bg-lightcol-lg-2 col-11 bg-light shadow-sm mx-2 my-3 p-0  d-flex flex-column justify-content-between   shadow-sm mx-2 my-3 p-0 order-lg-<?= $count2++ ?> order-<?= $count++ ?>">
+                        <div>
+                            <?php
+                            $images = $image->getOneGallery($value['deals_id']);
+                            ?>
+                            <img src="data:image/png;base64,<?= $images[0]['images_name'] ?>" class="m-0 p-0 img-fluid imgCard" alt="picture for deal <?= $value['deals_title'] ?>">
+                            <p class="card-title text-center fw-bold welcome fs-4 newDealsWrite p-2"><?= $value['deals_title'] ?></p>
+                            <p class="p-2"><?= $value['deals_mini_summary'] ?></p>
+                        </div>
                         <div class="d-flex justify-content-evenly p-2">
                             <p><?= $value['DealsCatTag'] ?></p>
                             <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="newDealsWrite">Explore</a>
@@ -99,7 +101,7 @@ require_once '../elements/top.php' ?>
             <?php }
             } ?>
             <div class="col-lg-2 col-12 newDeals py-5 d-flex align-items-center justify-content-center order-lg-4 order-1">
-                <p class="text-light fw-bold fs-2 text-center welcome">Our brand new deals</p>
+                <p class="text-light fs-2 text-center welcome">Our brand new deals</p>
             </div>
         </div>
     </main>

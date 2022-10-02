@@ -63,7 +63,7 @@ require_once '../elements/top.php' ?>
         <?php } else { ?>
 
 
-            <div class="container bg-light col-lg-8  bienvenue d-flex align-items-center flex-column rounded my-5 py-3  shadow">
+            <div class="row bg-white justify-content-center m-0 p-0 py-5">
                 <p class="text-center fs-4 py-5">Thank you for contacting us, we will review your message as soon as possible.</p>
             </div>
 

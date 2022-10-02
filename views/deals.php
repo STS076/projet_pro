@@ -174,9 +174,11 @@ require_once '../elements/top.php';
             </div>
         </main>
     <?php } else { ?>
-        <div class="container bg-white col-lg-8 text-center my-5 py-5  shadow">
-            <p class="p-5">This deal does not exist, you can go back to our <a href="home.php" class="text-decoration-none text-black fw-bold">homepage</a></p>
-        </div>
+        <main class="bg-white p-0 m-0 container-fluid">
+            <div class="row bg-white justify-content-center m-0 p-0" id="page">
+                <p class="p-5">This deal does not exist, you can go back to our <a href="home.php" class="text-decoration-none text-black fw-bold">homepage</a></p>
+            </div>
+        </main>
     <?php }
     ?>
 

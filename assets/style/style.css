@@ -130,7 +130,7 @@ footer {
 }
 
 .hotDeals {
-    background-color: #FCCF4E;
+    background-color: #FCB001;
 }
 
 
@@ -481,9 +481,19 @@ footer {
     background-color: burlywood;
 }
 
+.archive:hover {
+    background-color: burlywood;
+}
+
 .activated {
     background-color: #a5d2af;
 }
+
+.activated:hover {
+    background-color: #a5d2af;
+}
+
+
 
 main {
     min-height: 100vh;
@@ -494,6 +504,6 @@ html {
     height: -webkit-fill-available;
 }
 
-.headerCards{
+.headerCards {
     background-color: #dcccf6;
 }

@@ -75,16 +75,16 @@ require_once '../controllers/validateNewDeals-controller.php';
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <p class="modal-title fs-4" id="exampleModalLabel"><?= $value['deals_title'] ?></p>
+                                                        <p class="modal-title fs-4 welcome" id="exampleModalLabel"><?= $value['deals_title'] ?></p>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
                                                         Do you want to delete this deal ?
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn text-white bouton" data-bs-dismiss="modal">Close</button>
                                                         <form action="" method="POST">
-                                                            <button class="btn btn-primary" name="delete" value="<?= $value['deals_id'] ?> ">Delete</button>
+                                                            <button class="btn btn-danger" name="delete" value="<?= $value['deals_id'] ?> ">Delete</button>
                                                         </form>
                                                     </div>
                                                 </div>

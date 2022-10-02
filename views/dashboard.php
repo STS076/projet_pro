@@ -58,27 +58,6 @@ require_once '../elements/top.php' ?>
                         </ul>
                     </div>
 
-                    <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>
-                        <div class="card col-lg-5 col-11 text-center m-3">
-                            <div class="card-header my-2 headerCards">
-                                Categories
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item my-2">
-                                    <a class="text-decoration-none text-black " href="allTagsCategory.php">
-                                        All Categories
-                                    </a>
-                                </li>
-                                <li class="list-group-item my-2">
-                                    <a class="text-decoration-none text-black " href="addTagCategory.php">
-                                        Add a category
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    <?php } ?>
-
-
                     <div class="card col-lg-5 col-11 text-center m-3">
                         <div class="card-header my-2 headerCards">
                             Users
@@ -106,6 +85,29 @@ require_once '../elements/top.php' ?>
                     </div>
 
 
+
+                    <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>
+                        <div class="card col-lg-5 col-11 text-center m-3">
+                            <div class="card-header my-2 headerCards">
+                                Categories
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item my-2">
+                                    <a class="text-decoration-none text-black " href="allTagsCategory.php">
+                                        All Categories
+                                    </a>
+                                </li>
+                                <li class="list-group-item my-2">
+                                    <a class="text-decoration-none text-black " href="addTagCategory.php">
+                                        Add a category
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    <?php } ?>
+
+
+
                     <div class="card col-lg-5 col-11 text-center m-3">
                         <div class="card-header my-2 headerCards">
                             Comments
@@ -129,7 +131,7 @@ require_once '../elements/top.php' ?>
                                 </li>
                             <?php } else { ?>
                                 <li class="list-group-item my-2">
-                                    <a class="text-decoration-none text-black " href="allUsers.php">
+                                    <a class="text-decoration-none text-black " href="allComments.php">
                                         My Comments
                                     </a>
                                 </li>

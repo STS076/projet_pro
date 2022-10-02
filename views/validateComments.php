@@ -35,7 +35,9 @@ require_once '../controllers/validatecomments-controller.php';
                                     <th class="text-center">More Info</th>
                                     <th class="text-center">Approve</th>
                                     <th class="text-center">Archive</th>
-                                    <th class="text-center">Delete</th>
+                                    <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>
+                                        <th class="text-center">Delete</th>
+                                    <?php } ?>
                                 </tr>
                             </thead>
                             <tbody>
@@ -70,16 +72,17 @@ require_once '../controllers/validatecomments-controller.php';
                                                 </td>
                                             </form>
                                             <!-- fin bouton archiver -->
-
-                                            <!-- bouton delete -->
-                                            <form method="POST" action="">
-                                                <td class="text-center">
-                                                    <a class="text-light btn bg-danger" name="delete" data-bs-toggle="modal" data-bs-target="#comments-<?= $value['comments_id'] ?>">
-                                                        Delete
-                                                    </a>
-                                                </td>
-                                            </form>
-                                            <!-- fin bouton delete -->
+                                            <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>
+                                                <!-- bouton delete -->
+                                                <form method="POST" action="">
+                                                    <td class="text-center">
+                                                        <a class="text-light btn bg-danger" name="delete" data-bs-toggle="modal" data-bs-target="#comments-<?= $value['comments_id'] ?>">
+                                                            Delete
+                                                        </a>
+                                                    </td>
+                                                </form>
+                                                <!-- fin bouton delete -->
+                                            <?php } ?>
                                         </tr>
 
                                         <!-- MODALE DELELTE -->
@@ -87,16 +90,16 @@ require_once '../controllers/validatecomments-controller.php';
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <p class="modal-title fs-4" id="exampleModalLabel"><?= $value['comments_id'] ?> </p>
+                                                        <p class="modal-title fs-4 welcome" id="exampleModalLabel">Comment for <?=$value['deals_title']  ?> </p>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
                                                         do you want to delete this comment ?
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                                                        <button type="button" class="btn text-white bouton" data-bs-dismiss="modal">Close</button>
                                                         <form action="" method="POST">
-                                                            <button class="btn btn-primary" name="delete" value="<?= $value['comments_id'] ?> ">Supprimer</button>
+                                                            <button class="btn btn-danger" name="delete" value="<?= $value['comments_id'] ?> ">Delete</button>
                                                         </form>
                                                     </div>
                                                 </div>
