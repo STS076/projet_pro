@@ -63,18 +63,22 @@ require_once '../elements/top.php' ?>
 
                         <div class="row text-center">
                             <div class="col-lg-12 col-12 my-1">
-                                <input type="checkbox" id="checkbox" name="checkbox" value="<?= isset($_POST['checkbox']) ? $_POST['checkbox'] : '' ?>"><label for="checkbox">I agree with the terms and conditions </label>
+                                <input type="checkbox" id="checkbox" name="checkbox" class="ms-1" value="<?= isset($_POST['checkbox']) ? $_POST['checkbox'] : '' ?>"><label for="checkbox"> I agree with the terms and conditions </label>
                                 <p class="text-danger" id="errorcheckbox"><?= isset($errors['checkbox']) ? $errors['checkbox'] : '' ?></p>
                             </div>
                         </div>
+
+                        <div class="row align-items-center">
+                            <div name="captcha" id="captcha" class="g-recaptcha" data-sitekey="6LdeH08iAAAAALqtcwdoy3J2C60ZJ6YVCUSiEHW3"></div>
+                        </div>
+
                         <div class="my-5 text-center">
                             <button class="btn bouton border border-dark text-light" id="submit" name="submit">Sign Up</button>
                         </div>
 
-                        <input type="hidden" id="recaptchaResponse" name="recaptcha-response">
-                        <p class="text-danger" id="errorcheckbox"><?= isset($errors['recaptcha-response']) ? $errors['recaptcha-response'] : '' ?></p>
                     </form>
-
+                    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
+                    </script>
 
 
                 </div>
@@ -97,6 +101,8 @@ require_once '../elements/top.php' ?>
     <script src="../assets/script/captcha.js"></script>
     <script src="../assets/script/contact.js"></script>
     <script src="../assets/script/password.js"></script>
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <?php require_once '../elements/footer.php' ?>
 

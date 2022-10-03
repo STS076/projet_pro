@@ -98,6 +98,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errors['checkbox'] = "* please validate terms and conditions";
     }
 
+    if (!isset($_POST['captcha'])) {
+        $errors['captcha'] = "* You are a robot";
+    }
+
+
     if (count($errors) == 0) {
         $showForm = false;
 

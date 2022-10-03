@@ -150,9 +150,9 @@ class Users extends Database
     {
         $pdo = parent::connectDb();
         $sql = "SELECT * FROM `users` 
-        inner join `role` 
-        on role_id_ROLE=role_id
-        where users_id=:users_id";
+        INNER JOIN `role` 
+        ON role_id_ROLE=role_id
+        WHERE users_id=:users_id";
         $query = $pdo->prepare($sql);
         $query->bindValue(':users_id', $users_id, PDO::PARAM_INT);
         $query->execute();
@@ -225,8 +225,8 @@ class Users extends Database
     public function deleteUser($users_id)
     {
         $pdo = parent::connectDb();
-        $sql = "DELETE from users 
-        where users_id=:users_id";
+        $sql = "DELETE FROM users 
+        WHERE users_id=:users_id";
         $query = $pdo->prepare($sql);
         $query->bindValue(':users_id', $users_id, PDO::PARAM_INT);
         $query->execute();

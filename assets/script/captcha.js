@@ -1,9 +1,14 @@
-src = "https://www.google.com/recaptcha/api.js?render=6LdeH08iAAAAALqtcwdoy3J2C60ZJ6YVCUSiEHW3";
+function get_action(form) {
 
-grecaptcha.ready(function () {
-    grecaptcha.execute('6LdeH08iAAAAALqtcwdoy3J2C60ZJ6YVCUSiEHW3', {
-        action: 'homepage'
-    }).then(function (token) {
-        document.getElementById('recaptchaResponse').value = token
-    });
-});
+    var v = grecaptcha.getResponse();
+    if(v.length == 0)
+    {
+        document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
+        return false;
+    }
+     if(v.length != 0)
+     {
+        document.getElementById('captcha').innerHTML="Captcha completed";
+        return true; 
+     }
+    }
