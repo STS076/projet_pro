@@ -21,7 +21,7 @@ require_once '../elements/top.php' ?>
                 if ($showForm) { ?>
 
                     <form method="POST" action="" enctype="multipart/form-data">
-                        <p class="text-danger mandatoryInput">Input with an * are mandatory</p>
+                        <p class="text-danger ">Input with an * are mandatory</p>
                         <div class="d-flex flex-column">
                             <label for="dealTitle" class="py-2">
                                 * Title of the Deal :

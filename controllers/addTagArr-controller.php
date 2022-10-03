@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 
-        header('location: dashboard-tagsArr.php');
+        header('location: allTagsArr.php');
         exit;
     }
 }

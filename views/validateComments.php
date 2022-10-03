@@ -51,7 +51,7 @@ require_once '../controllers/validatecomments-controller.php';
                                             <td class="text-center"><?= $value['deals_title'] ?></td>
                                             <td class="text-center text-truncate" style="max-width: 100px;"><?= $value['comments_comment'] ?></td>
                                             <td class="text-center text-truncate" style="max-width: 100px;"><?= $value['comments_rating'] ?></td>
-                                            <td class="text-center"><a class="text-light btn bouton" href="infoComments.php?info=<?= $value['deals_id'] ?>"> + d'info</a></td>
+                                            <td class="text-center"><a class="text-light btn bouton" href="infoComments.php?info=<?= $value['comments_id'] ?>">Info</a></td>
 
                                             <!-- bouton approve -->
                                             <form method="POST" action="" name="form-<?= $value["comments_id"] ?>">

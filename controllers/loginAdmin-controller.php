@@ -23,12 +23,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (isset($_POST['pseudo'])) {
         if (empty($_POST['pseudo'])) {
-            $errors['pseudo'] = "* Veuillez rentrer votre identifiant";
+            $errors['pseudo'] = "* Please enter an email address";
         }
     }
     if (isset($_POST['password'])) {
         if (empty($_POST['password'])) {
-            $errors['password'] = "* Veuillez rentrer un mot de passe";
+            $errors['password'] = "* Please enter a password";
         }
     }
 
@@ -46,10 +46,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     exit;
                 }
             } else {
-                $errors['connection'] = "Identifiant ou MDP incorrect";
+                $errors['connection'] = "email address or password invalid";
             }
         } else {
-            $errors['connection'] = "Identifiant ou MDP incorrect";
+            $errors['connection'] = "email address or password invalid";
         }
     }
 }

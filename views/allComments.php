@@ -68,21 +68,26 @@ require_once '../controllers/allComments-controller.php';
                                                 </a>
                                             </td>
 
-                                            <?php if ($value["comments_validate"] != 2) { ?>
+                                            <?php if ($value["comments_validate"] == 1) { ?>
                                                 <form method="POST" action="" name="form-<?= $value["comments_id"] ?>">
                                                     <td class="text-center">
                                                         <button class="text-light btn activated" name="archive" value=<?= $value["comments_id"] ?>>
                                                             Activated</button>
                                                     </td>
                                                 </form>
-                                            <?php } else { ?>
+                                            <?php } else if ($value["comments_validate"] == 2) { ?>
                                                 <form method="POST" action="" name="form-<?= $value["comments_id"] ?>">
                                                     <td class="text-center">
                                                         <button class="text-light btn archive" name="reactivate" value=<?= $value["comments_id"] ?>>
                                                             Achived</button>
                                                     </td>
                                                 </form>
+                                            <?php } else { ?>
+                                                <td class="text-center">
+                                                    <p class="text-danger">Submited</p>
+                                                </td>
                                             <?php } ?>
+
 
                                             <form method="POST" action="">
                                                 <td class="text-center">

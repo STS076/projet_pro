@@ -15,9 +15,9 @@ require_once '../elements/top.php' ?>
             <div class="col-lg-5 col-11  mx-1 d-flex align-items-center justify-content-center">
                 <p class="fs-6">
                     Paradise for museums, concerts and exibitions connoisseurs, Paris can be hell when it come to your wallet that cannot follow all of your adventures. And no one want to give up the pleasure of visiting the city of lights because of an empty purse. Thankfully, the city is more generous than we would expect for people with small means, you just have to know the good deals and free treasure than it can offer. <br>
-                    There is a myriad of time slot where museums are free. 
-                    On this website, you will be able to find good deal by 
-                    <a class="text-decoration-none text-black" href="allArrondissements.php">Arrondissements</a> and also by Categories. 
+                    There is a myriad of time slot where museums are free.
+                    On this website, you will be able to find good deal by
+                    <a class="text-decoration-none text-black" href="allArrondissements.php">Arrondissements</a> and also by Categories.
                 </p>
             </div>
             <div class="col-lg-6 col-11 text-center d-lg-block d-none mx-1">
@@ -57,25 +57,24 @@ require_once '../elements/top.php' ?>
 
         <section class="bg-white">
             <div class="row m-0 p-0 justify-content-center">
-                <div class="col-lg-8 col-11 py-4 my-4">
-                    <p class="fs-5 text-center fw-bold newsletter">Sign up to our newsletter</p>
-                    <p class="text-center">You never want to miss any good deal ? Well, sign up to our newsletter to keep up with Paris' best deals.</p>
+                <div class="col-lg-8 col-11 pt-4 mt-4">
+                    <p class="fs-3 text-center  newsletter welcome ">Sign up to our newsletter</p>
+                    <p class="text-center fs-6">You never want to miss any good deal ? Well, sign up to our newsletter to keep up with Paris' best deals.</p>
                     <form method="post" class="d-flex justify-content-center">
                         <div class="form-group m-0 p-0">
-                            <input class="m-0 p-0" type="text" name="mail" placeholder="Your email" />
-                            <input class="m-0 p-0" type="submit" value="Sign up" />
+                            <input class="m-0 p-0 fs-5" type="text" name="mail" placeholder="Your email" />
+                            <input class="m-0 p-0 fs-5" type="submit" value="Sign up" />
                             <p class="text-danger" id="errorsurname"><?= isset($erreurs['mail']) ? $erreurs['mail'] : '' ?></p>
                         </div>
                     </form>
                 </div>
             </div>
-        </section>
-
-        <div class="row m-0 p-0 justify-content-center">
-            <div class="col-12 text-center">
-                <p>You would like to join our community and help us to add new deals and keep everything up to date ? <a href="SignUp.php" class="text-dark text-decoration-none fw-bold">Join us</a> </p>
+            <div class="row m-0 p-0 justify-content-center">
+                <div class="col-12 text-center">
+                    <p class="fs-6">You would like to join our community and help us to add new deals and keep everything up to date ? <a href="SignUp.php" class="text-dark text-decoration-none fw-bold fs-5">Join us</a> </p>
+                </div>
             </div>
-        </div>
+        </section>
 
         <p class="fs-1 text-center welcome pt-5">What to do today in Paris ?</p>
         <div class="row justify-content-evenly p-0 mx-0 bg-light">

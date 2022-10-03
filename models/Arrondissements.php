@@ -112,7 +112,7 @@ class Arrondissements extends Database
     /**
      * fonction permettant de modifier les arrondissements
      */
-    public function amendArr($tag_arr_id, $tag_arr_name, $tag_arr_summary)
+    public function amendArr($tag_arr_id, $tag_arr_name, $tag_arr_summary )
     {
         $pdo = parent::connectDb();
         $sql = "UPDATE tag_arr 

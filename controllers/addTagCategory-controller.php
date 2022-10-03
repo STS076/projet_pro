@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $tagCatObj = new Categories();
         $tagCatObj->addTagCategory($tagCategory, $_POST['tagCategorySummary']);
 
-        header('location: dashboard-tagsCategories.php');
+        header('location: AllTagsCategory.php');
         exit;
     }
 }

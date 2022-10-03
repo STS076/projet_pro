@@ -94,6 +94,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
+    if (!isset($_POST['checkbox'])) {
+        $errors['checkbox'] = "* please validate terms and conditions";
+    }
+
     if (count($errors) == 0) {
         $showForm = false;
 

@@ -18,7 +18,8 @@ require_once '../controllers/allArrondissements-controller.php';
 
                     <div class="col-lg-3 col-11 m-3 cardarr shadow-sm card cadre m-0 p-0 ">
                         <a href="arrondissements.php?choice=<?= $value['tag_arr_id'] ?>">
-                            <img class="image m-0 p-0" src="../assets/images/arrondissements/<?= $value['tag_arr_picture'] ?>.jpg">
+                            <!-- <img class="image m-0 p-0" src="../assets/images/arrondissements/<?= $value['tag_arr_picture'] ?>.jpg"> -->
+                            <img src="data:image/png;base64,<?= $value['tag_arr_picture'] ?>" class="m-0 p-0 image" alt="picture for deal <?= $value['tag_arr_name'] ?>">
                             <div class="arrondissement px-2 m-0 fs-5">
                                 <p class="text-white glass hoverNav text-decoration-none">
                                     <?= $value['tag_arr_name'] ?>

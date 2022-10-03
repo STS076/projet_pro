@@ -43,12 +43,13 @@ require_once '../elements/top.php' ?>
                             <span class="input-group-text" id="">
                                 <i class="bi bi-eye-slash" id="togglePassword"></i>
                             </span>
-                           
+
                         </div>
                         <p data-span="error-password" class="text-danger">
-                                <?= isset($errors['password']) ? $errors['password'] : '' ?>
-                            </p>
+                            <?= isset($errors['password']) ? $errors['password'] : '' ?>
+                        </p>
 
+                        <p class="pt-2 text-center text-success">Password need 1 lowercase, 1 uppercase, 1 number, 1 special character, 8 characters</p>
                         <div class="input-group rounded mb-1">
                             <input type="password" class=" text-center form-control" id="passwordconfirm" placeholder="Confirm Password" name="passwordconfirm" value="<?= isset($_POST['passwordconfirm']) ? $_POST['passwordconfirm'] : '' ?>" />
                             <span class="input-group-text" id="">
@@ -59,12 +60,23 @@ require_once '../elements/top.php' ?>
                         <p data-span="error-passwordconfirm" class="text-danger">
                             <?= isset($errors['passwordconfirm']) ? $errors['passwordconfirm'] : '' ?>
                         </p>
+
+                        <div class="row text-center">
+                            <div class="col-lg-12 col-12 my-1">
+                                <input type="checkbox" id="checkbox" name="checkbox" value="<?= isset($_POST['checkbox']) ? $_POST['checkbox'] : '' ?>"><label for="checkbox">I agree with the terms and conditions </label>
+                                <p class="text-danger" id="errorcheckbox"><?= isset($errors['checkbox']) ? $errors['checkbox'] : '' ?></p>
+                            </div>
+                        </div>
                         <div class="my-5 text-center">
                             <button class="btn bouton border border-dark text-light" id="submit" name="submit">Sign Up</button>
                         </div>
-                        <p class="pt-2 text-center filAriane">*Password need a lowercase, an uppercase, a number, a special character and minimum 8 characters</p>
 
+                        <input type="hidden" id="recaptchaResponse" name="recaptcha-response">
+                        <p class="text-danger" id="errorcheckbox"><?= isset($errors['recaptcha-response']) ? $errors['recaptcha-response'] : '' ?></p>
                     </form>
+
+
+
                 </div>
             </div>
         </main>
@@ -82,7 +94,7 @@ require_once '../elements/top.php' ?>
     <button type="button" class="btn bouton btn-floating " id="btn-back-to-top">
         <i class="bi bi-arrow-up-short text-white"></i>
     </button>
-
+    <script src="../assets/script/captcha.js"></script>
     <script src="../assets/script/contact.js"></script>
     <script src="../assets/script/password.js"></script>
 

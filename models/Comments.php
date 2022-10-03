@@ -221,7 +221,7 @@ class Comments extends Database
     /**
      * permet de récupérer tous les informations d'un commentaire
      */
-    public function getOnecomment($comments_id)
+    public function getOnecomment(int $comments_id)
     {
         $pdo = parent::connectDb();
 
@@ -232,6 +232,7 @@ class Comments extends Database
         inner join users 
         on comments.users_id_USERS=users_id 
         where comments_id=:comments_id";
+        
         $query = $pdo->prepare($sql);
         $query->bindValue(':comments_id', $comments_id, PDO::PARAM_STR);
         $query->execute();

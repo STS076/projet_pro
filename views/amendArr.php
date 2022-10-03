@@ -17,7 +17,7 @@ require_once '../elements/top.php' ?>
             </a>
             <div class=" col-lg-5 py-5  col-11 ">
                 <h2 class="fs-2 text-center welcome">Amend an Arrondissement</h2>
-                <form method="POST" action="">
+                <form method="POST" action="" enctype="multipart/form-data">
                     <div class="d-flex flex-column">
                         <label class="py-2" for="tagArr">
                             Title of the tag :
@@ -38,6 +38,17 @@ require_once '../elements/top.php' ?>
                         <textarea type="text" id="tagArrSummary" value="" name="tagArrSummary"><?= $getOneArrondissement['tag_arr_summary'] ?></textarea>
                     </div>
 
+                
+                    <!-- <div class="d-flex justify-content-center m-3">
+                        <img id="imgPreview">
+                    </div>
+                    <label for="picture"><i class="bi bi-camera-fill"></i> Picture
+                        <span data-span="error-picture" class="text-danger fst-italic span-error"><?= isset($errors['picture']) ? $errors['picture'] : '' ?></span>
+                    </label>
+          
+                    <input type="file" id="picture" name="picture" class="text-truncate">
+                    <button type="submit" class="btn border text-white border-dark bouton p-1 m-1"><i class="bi bi-person-plus-fill"></i> Add an image</button> -->
+
                     <div class="text-center pt-5">
                         <button class="btn bouton text-white" value="connect">Modify</button>
                     </div>
@@ -52,7 +63,7 @@ require_once '../elements/top.php' ?>
     </button>
 
     <?php require_once '../elements/footer.php' ?>
-
+    <script src="../assets/script/upload.js"></script>
 
 </body>
 
