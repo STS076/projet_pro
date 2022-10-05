@@ -13,6 +13,11 @@ require_once '../elements/top.php' ?>
             <a class="fs-6 text-secondary my-3" href="allComments.php">
                 <i class='bi bi-caret-left-fill links mx-2'></i> back
             </a>
+            <?php if ($_SESSION['user']['role_id_ROLE'] != 3) { ?>
+                <a class="fs-6 text-secondary my-3" href="validateComments.php">
+                    <i class='bi bi-caret-left-fill links mx-2'></i> back validation
+                </a>
+            <?php } ?>
 
             <h2 class="text-center  fs-4 welcome py-5">Comment on deal <?= $getOnecomment['deals_title'] ?></h2>
             <div class="row justify-content-evenly pb-5">

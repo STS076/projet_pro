@@ -83,7 +83,7 @@ footer {
     position: relative;
     text-align: center;
     font-family: 'Courgette', cursive;
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
     color: whitesmoke;
 }
 
@@ -96,7 +96,7 @@ footer {
 }
 
 .glass {
-    background: rgba(36, 45, 60, 0.15);
+    background: rgba(36, 40, 50, 0.198);
     border-radius: 10%;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(8px);
@@ -253,7 +253,7 @@ footer {
 }
 
 .gallery {
-    width: 20rem;
+    width: 25rem;
     height: auto;
 }
 
@@ -285,10 +285,12 @@ footer {
     display: flex;
     justify-content: center;
 }
-
+/* hastags */
 .links {
     color: #48CFC4;
 }
+
+/* couleurs des étoiles sur le rating */
 
 .rating {
     color: goldenrod;
@@ -298,24 +300,16 @@ footer {
 
 /* back to the top */
 
-@media screen and (max-width:600px) {
-    #btn-back-to-top {
-        position: fixed;
-        bottom: 20rem;
-        right: 2rem;
-        display: none;
-    }
-}
-
 #btn-back-to-top {
     position: fixed;
     bottom: 2rem;
     right: 2rem;
     display: none;
+    background-color: #5C5B7E;
 }
 
 #btn-back-to-top:hover {
-    background-color: #242D3C;
+    background-color: #5C5B7E;
 }
 
 /* carte paris  */
@@ -497,6 +491,7 @@ footer {
     height: auto;
 }
 
+/* couleurs boutons archive + activer les deals + commentaires */
 .archive {
     background-color: burlywood;
 }
@@ -513,17 +508,19 @@ footer {
     background-color: #a5d2af;
 }
 
-
+/* vue 100% de la page */
 
 main {
     min-height: 100vh;
     min-height: calc(var(--vh, 1vh) * 100);
 }
 
+
+
 html {
     height: -webkit-fill-available;
 }
-
+/* header cards dashboard */
 .headerCards {
     background-color: #dcccf6;
 }

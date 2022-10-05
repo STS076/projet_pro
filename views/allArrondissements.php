@@ -12,7 +12,7 @@ require_once '../controllers/allArrondissements-controller.php';
         <div class="row bg-white justify-content-center m-0 p-0" id="page">
 
             <h2 class="fs-2 text-center welcome pt-5 comments">Arrondissements</h2>
-            <div class="row m-0 p-0 justify-content-center">
+            <div class="row m-0 pb-5 justify-content-center">
                 <?php foreach ($allTagsArrArray as $value) {
                 ?>
 
@@ -20,8 +20,8 @@ require_once '../controllers/allArrondissements-controller.php';
                         <a href="arrondissements.php?choice=<?= $value['tag_arr_id'] ?>">
                             <!-- <img class="image m-0 p-0" src="../assets/images/arrondissements/<?= $value['tag_arr_picture'] ?>.jpg"> -->
                             <img src="data:image/png;base64,<?= $value['tag_arr_picture'] ?>" class="m-0 p-0 image" alt="picture for deal <?= $value['tag_arr_name'] ?>">
-                            <div class="arrondissement px-2 m-0 fs-5">
-                                <p class="text-white glass hoverNav text-decoration-none">
+                            <div class="arrondissement px-2 m-0 ">
+                                <p class="text-white glass hoverNav text-decoration-none fs-3">
                                     <?= $value['tag_arr_name'] ?>
                                 </p>
                             </div>

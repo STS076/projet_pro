@@ -8,7 +8,7 @@ require_once '../elements/top.php' ?>
     <?php require_once '../elements/header.php' ?>
 
     <?php if ($showForm) { ?>
-        <main class="bg-white py-5  px-0 container-fluid ">
+        <main class="bg-white  px-0 container-fluid ">
             <div class="row  justify-content-center m-0" id="page">
                 <div class=" col-lg-5 p-4 col-11">
                     <h2 class="fs-2  pt-5 pb-3 text-center welcome">Please enter below information to Sign Up : </h2>
@@ -43,7 +43,6 @@ require_once '../elements/top.php' ?>
                             <span class="input-group-text" id="">
                                 <i class="bi bi-eye-slash" id="togglePassword"></i>
                             </span>
-
                         </div>
                         <p data-span="error-password" class="text-danger">
                             <?= isset($errors['password']) ? $errors['password'] : '' ?>
@@ -69,7 +68,8 @@ require_once '../elements/top.php' ?>
                         </div>
 
                         <div class="row align-items-center">
-                            <div name="captcha" id="captcha" class="g-recaptcha" data-sitekey="6LdeH08iAAAAALqtcwdoy3J2C60ZJ6YVCUSiEHW3"></div>
+                            <div class="g-recaptcha" data-sitekey="6LdeH08iAAAAALqtcwdoy3J2C60ZJ6YVCUSiEHW3"></div>
+                            <p  class="text-danger"><?= isset($errors['captcha']) ? $errors['captcha'] : '' ?></p>
                         </div>
 
                         <div class="my-5 text-center">
@@ -95,7 +95,7 @@ require_once '../elements/top.php' ?>
         </main>
     <?php } ?>
 
-    <button type="button" class="btn bouton btn-floating " id="btn-back-to-top">
+    <button type="button" class="btn btn-floating " id="btn-back-to-top">
         <i class="bi bi-arrow-up-short text-white"></i>
     </button>
     <script src="../assets/script/captcha.js"></script>

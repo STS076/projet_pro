@@ -98,10 +98,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errors['checkbox'] = "* please validate terms and conditions";
     }
 
-    if (!isset($_POST['captcha'])) {
-        $errors['captcha'] = "* You are a robot";
+    $captcha;
+
+    if (isset($_POST['g-recaptcha-response'])) {
+        $captcha = $_POST['g-recaptcha-response'];
     }
 
+    if (!$captcha) {
+        $errors['captcha'] = '*Please check captcha';
+    } else {
+        // Google Secret Key
+        $secretKey = "6LdeH08iAAAAAChA-DKgty7n3YCdXNSGX2UPiF3-";
+        // Creation d'une url avec les différents paramètres
+        $url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode($secretKey) .  '&response=' . urlencode($captcha);
+        $response = file_get_contents($url);
+        $responseKeys = json_decode($response, true);
+
+        // Nous contrôlons si le responseKeys est différent de success, si oui, nous allons faire un message d'erreur
+        if (!$responseKeys["success"]) {
+            $errors['captcha'] = '*Vous êtes un bot !!!';
+        }
+    }
 
     if (count($errors) == 0) {
         $showForm = false;

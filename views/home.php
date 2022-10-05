@@ -13,11 +13,11 @@ require_once '../elements/top.php' ?>
         <p class=" text-center welcome2 pb-2">Welcome To Paris</p>
         <div class="row m-0 p-0 justify-content-center bg-light">
             <div class="col-lg-5 col-11  mx-1 d-flex align-items-center justify-content-center">
-                <p class="fs-6">
+                <p class="">
                     Paradise for museums, concerts and exibitions connoisseurs, Paris can be hell when it come to your wallet that cannot follow all of your adventures. And no one want to give up the pleasure of visiting the city of lights because of an empty purse. Thankfully, the city is more generous than we would expect for people with small means, you just have to know the good deals and free treasure than it can offer. <br>
                     There is a myriad of time slot where museums are free.
                     On this website, you will be able to find good deal by
-                    <a class="text-decoration-none text-black" href="allArrondissements.php">Arrondissements</a> and also by Categories.
+                    <a class="text-decoration-none  fw-bold text-black" href="allArrondissements.php">Arrondissements</a> and also by Categories.You will also find our best rated deals by our users, and also keep up to date with our brand new deals. 
                 </p>
             </div>
             <div class="col-lg-6 col-11 text-center d-lg-block d-none mx-1">
@@ -45,7 +45,8 @@ require_once '../elements/top.php' ?>
                             <p class="p-2 "><?= $value['deals_mini_summary'] ?></p>
                         </div>
                         <div class="">
-                            <div class="d-flex justify-content-evenly p-2">
+                            <div class="d-flex justify-content-between p-2">
+                                <p class="fw-bold"><?= $value['AverageRating'] ?>/5</p>
                                 <p><?= $value['DealsCatTag'] ?></p>
                                 <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="newDealsWrite">Explore</a>
                             </div>

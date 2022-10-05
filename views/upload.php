@@ -25,7 +25,7 @@ require_once '../elements/top.php' ?>
                         </label>
                         <!-- Mise en place de l'opérateur de coalescence pour afficher oui ou non la valeur de $_POST -->
                         <input type="file" id="picture" name="picture" class="text-truncate">
-                        <button type="submit" class="btn border text-white border-dark bouton p-1 m-1"><i class="bi bi-person-plus-fill"></i> Add an image</button>
+                        <button type="submit" class="btn border text-white border-dark bouton py-2 m-1"><i class="bi bi-person-plus-fill"></i> Add an image</button>
                     </form>
                 </div>
             </div>

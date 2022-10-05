@@ -305,7 +305,7 @@ class Deals extends Database
         ON tag_arr_id_TAG_ARR=tag_arr_id
         left join 
                 (
-                SELECT avg(comments_rating) 
+                SELECT round(avg(comments_rating),1 )
                 as AverageRating, deals.deals_id 
                 as Average
                 from comments 

@@ -75,23 +75,26 @@ require_once '../elements/top.php';
                         </div>
                         <!-- Gellery -->
                         <h3 class="fst-italic comments fw-bold text-center p-5">Gallery</h3>
-                        <div class="container mx-auto">
-                            <div class="row justify-content-center mx-auto" data-masonry='{ "percentPosition": true }'>
+
+                        <section class="">
+                            <div class="mx-auto row justify-content-evenly  " data-masonry='{ "percentPosition": true }'>
+
                                 <?php
                                 foreach ($getAllImagesByDeal as $value) {
                                     if ($value == '.' || $value == '..') {
                                     } else {
                                 ?>
-                                        <div class="col-11 col-lg-4 my-2 gallery ">
-                                            <div class="">
-                                                <a class="example-image-link" href="data:image/png;base64,<?= $value['images_name'] ?>" data-lightbox="galerie"><img src="data:image/png;base64,<?= $value['images_name'] ?>" data-lightbox="cozy" class="galleryPicture"></a>
-                                            </div>
+                                        <div class="col-12 my-2 gallery">
+                                            <a class="example-image-link" href="data:image/png;base64,<?= $value['images_name'] ?>" data-lightbox="galerie">
+                                                <img src="data:image/png;base64,<?= $value['images_name'] ?>" data-lightbox="cozy" class="galleryPicture">
+                                            </a>
                                         </div>
                                 <?php }
                                 }
                                 ?>
+                                
                             </div>
-                        </div>
+                        </section>
 
                         <!-- liens vers formulaire de contact -->
                         <div class="row mx-0 mt-5 p-0 justify-content-center">

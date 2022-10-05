@@ -14,7 +14,7 @@ require_once '../elements/top.php' ?>
     <main class="bg-white py-5">
         <div class="row  justify-content-center m-0 py-5" id="page">
             <div class="bg-white  col-lg-6 col-11">
-                <h2 class="fs-2  pt-5 pb-3 text-center welcome">Please enter below information to login : </h2>
+                <h2 class="fs-2  pb-3 text-center welcome">Please enter below information to login : </h2>
                 <form action="" method="POST">
 
                     <div class="d-flex flex-column">
@@ -37,8 +37,12 @@ require_once '../elements/top.php' ?>
 
                 </form>
                 <div class="text-center py-3">
+                    <a href="forgotpassword.php" class="text-dark fw-bold ">Forgot password</a>
+                </div>
+                <div class="text-center py-3">
                     <a href="signUp.php" class="text-dark fw-bold filAriane">Sign up if you do not have already an account </a>
                 </div>
+                
             </div>
         </div>
     </main>

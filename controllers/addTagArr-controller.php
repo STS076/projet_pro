@@ -66,6 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (count($errors) == 0) {
 
         $tagArr = safeInput($_POST['tagArr']);
+        $summary = safeInput($_POST['tagArrSummary']);
 
         // téléchargement de la photo
         $resultUploadImage = Form::uploadImage('picture', $paramUpload);
@@ -76,9 +77,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } else {
             $errors['picture'] = $resultUploadImage['messageError'];
         }
-        
+
         $tagArrObj = new Arrondissements();
-        $tagArrObj->addTagArr($tagArr, $picture, $_POST['tagArrSummary']);
+        $tagArrObj->addTagArr($tagArr, $picture, $summary);
 
 
 

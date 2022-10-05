@@ -38,7 +38,7 @@ require_once '../controllers/validateNewDeals-controller.php';
                             </thead>
                             <tbody>
                                 <?php foreach ($AllDealsArray as $value) {
-                                    if ($value['deals_validate'] != 1) { ?>
+                                    if ($value['deals_validate'] == 0 ) { ?>
                                         <tr>
                                             <!-- <th class="text-center"><?= $value['deals_id'] ?></th> -->
                                             <td class="text-center"><?= $value['deals_title'] ?></td>

@@ -30,7 +30,7 @@ require_once '../controllers/validatecomments-controller.php';
                                     <th class="text-center">User</th>
                                     <th class="text-center">Date</th>
                                     <th class="text-center">Deal</th>
-                                    <th class="text-center">Comment</th>
+                                    <!-- <th class="text-center">Comment</th> -->
                                     <th class="text-center">Rating</th>
                                     <th class="text-center">More Info</th>
                                     <th class="text-center">Approve</th>
@@ -49,7 +49,7 @@ require_once '../controllers/validatecomments-controller.php';
                                             <td class="text-center"><?= $value['users_username'] ?></td>
                                             <td class="text-center"><?= $value['comments_date'] ?></td>
                                             <td class="text-center"><?= $value['deals_title'] ?></td>
-                                            <td class="text-center text-truncate" style="max-width: 100px;"><?= $value['comments_comment'] ?></td>
+                                            <!-- <td class="text-center text-truncate" style="max-width: 100px;"><?= $value['comments_comment'] ?></td> -->
                                             <td class="text-center text-truncate" style="max-width: 100px;"><?= $value['comments_rating'] ?></td>
                                             <td class="text-center"><a class="text-light btn bouton" href="infoComments.php?info=<?= $value['comments_id'] ?>">Info</a></td>
 

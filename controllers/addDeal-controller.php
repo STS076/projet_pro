@@ -124,8 +124,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $dealTagArr = safeInput($_POST['dealTagArr']);
         $date = date('d/m/Y');
 
-
-
         // va créer un nouveau deal 
         $deal = new Deals();
         $idDeals = $deal->addDeals($dealTitle, $_POST['dealMiniSummary'], $_POST['dealSummary'], $dealWhen, $dealWhere, $dealPrice, $dealMap, $dealMetro, $dealInfo, $_POST['dealContact'], $dealTagArr, $_SESSION['user']['users_id'], $date);

@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $user = new Users();
         $obj = $user->checkIfMailExists($_POST['emailAddress']);
         if ($user->checkIfMailExists($_POST['emailAddress'])) {
-            $errors['emailAddress'] = '*Cet email existe déjà';
+            $errors['emailAddress'] = '*This email already exists';
         }
         if (empty($_POST['emailAddress'])) {
             $errors['emailAddress'] = '*Please enter your email address';
