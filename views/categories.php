@@ -24,25 +24,27 @@ require_once '../elements/top.php';
                     foreach ($getDealByCat as $value) {
                         if ($value['deals_validate'] == 1) {
                     ?>
-                            <div class="col-lg-3 col-11 shadow-sm  mx-4 my-3 p-0  <?= $cardColors[$oneCatArray['tag_categories_name']]  ?> ">
-                                <?php
-                                $images = $image->getOneGallery($value['deals_id']);
-                                ?>
-                                <img src="data:image/png;base64,<?= $images[0]['images_name'] ?>" class="m-0 p-0 img-fluid imgArrCat" alt="<?= $value['deals_title'] ?>">
-                                <div class="
-                               
-                                ">
+                            <div class="col-lg-3 col-11 shadow-sm  mx-4 my-3 p-0  d-flex flex-column justify-content-between <?= $cardColors[$oneCatArray['tag_categories_name']]  ?> ">
+                                <div>
+                                    <?php
+                                    $images = $image->getOneGallery($value['deals_id']);
+                                    ?>
+
+                                    <img src="data:image/png;base64,<?= $images[0]['images_name'] ?>" class="m-0 p-0 img-fluid imgArrCat" alt="<?= $value['deals_title'] ?>">
+
                                     <p class="card-title text-center fw-bold welcome fs-4 py-2"><?= $value['deals_title'] ?></p>
                                     <p class="p-2 card-text"><?= $value['deals_mini_summary'] ?></p>
-                                    <div class="d-flex justify-content-end p-2">
-                                        <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="newDealsWrite">Explore</a>
-                                    </div>
+                                </div>
+                                <div class="p-2">
+                                    <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="newDealsWrite fw-bold ">Explore</a>
                                 </div>
                             </div>
                     <?php }
                     }
                     ?>
                 </div>
+
+
             </article>
         </section>
     </main>

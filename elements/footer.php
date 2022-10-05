@@ -1,14 +1,17 @@
 <footer class="d-flex flex-wrap justify-content-evenly mt-auto py-3 ">
     <div class="">
-        <span class=" text-white">
-            <a class="text-decoration-none text-white"> © Sophie Toussaint </a>
-        </span>
+
+        <a class="text-decoration-none text-white"> © Sophie Toussaint </a>
+
     </div>
     <div class=" text-white">
         <a href="mentions.php" class=" m-0 p-0 text-white text-decoration-none"> Legal Disclaimer</a>
     </div>
     <div class="text-white">
         <a href="SignUp.php" class=" m-0 p-0 text-white text-decoration-none"> Sign Up</a>
+    </div>
+    <div class="text-white">
+        GDPR
     </div>
 </footer>
 

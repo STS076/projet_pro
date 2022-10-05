@@ -127,6 +127,7 @@ footer {
 
 .newDealsWrite {
     color: rgb(0, 0, 77);
+    font-size: 1.2rem;
 }
 
 .hotDeals {
@@ -465,7 +466,7 @@ footer {
 /* Taille des images cards */
 .imgArrCat {
     width: 100%;
-    height: 20rem;
+    height: 17rem;
 }
 
 /* Taille map home */

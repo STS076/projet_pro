@@ -57,31 +57,7 @@ require_once '../elements/top.php' ?>
                         </ul>
                     </div>
 
-                    <div class="card col-lg-5 col-11 text-center m-3">
-                        <div class="card-header my-2 headerCards">
-                            Users <i class="ms-3 fa-solid fa-user-group"></i>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <?php if ($_SESSION['user']['role_id_ROLE'] != 1) { ?>
-                                <a class="text-decoration-none text-black " href="infoUsers.php?users=<?= $_SESSION['user']['users_id'] ?>">
-                                    <li class="list-group-item my-2">
-                                        My profile
-                                    </li>
-                                </a>
-                            <?php } else { ?>
-                                <a class="text-decoration-none text-black " href="allUsers.php">
-                                    <li class="list-group-item my-2">
-                                        All Users
-                                    </li>
-                                </a>
-                                <a class="text-decoration-none text-black " href="addUsers.php">
-                                    <li class="list-group-item my-2">
-                                        Add an user
-                                    </li>
-                                </a>
-                            <?php } ?>
-                        </ul>
-                    </div>
+
 
                     <div class="card col-lg-5 col-11 text-center m-3">
                         <div class="card-header my-2 headerCards">
@@ -155,6 +131,28 @@ require_once '../elements/top.php' ?>
                             </ul>
                         </div>
                     <?php } ?>
+
+
+                    <div class="card col-lg-5 col-11 text-center m-3">
+                        <div class="card-header my-2 headerCards">
+                            Users <i class="ms-3 fa-solid fa-user-group"></i>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <?php if ($_SESSION['user']['role_id_ROLE'] != 1) { ?>
+                                <a class="text-decoration-none text-black " href="infoUsers.php?users=<?= $_SESSION['user']['users_id'] ?>">
+                                    <li class="list-group-item my-2">
+                                        My profile
+                                    </li>
+                                </a>
+                            <?php } else { ?>
+                                <a class="text-decoration-none text-black " href="allUsers.php">
+                                    <li class="list-group-item my-2">
+                                        All Users
+                                    </li>
+                                </a>
+                            <?php } ?>
+                        </ul>
+                    </div>
 
                 </div>
             </div>

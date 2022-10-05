@@ -49,7 +49,7 @@ require_once '../elements/top.php' ?>
                     <input type="file" id="picture" name="picture" class="text-truncate">
                     <!-- <button type="submit" class="btn border text-white border-dark bouton p-1 m-1"><i class="bi bi-person-plus-fill"></i> Add an image</button> -->
 
-                    <div class="text-center pt-5">
+                    <div class="text-center py-5">
                         <button class="btn bouton text-white" value="connect">Add</button>
                     </div>
 

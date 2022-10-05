@@ -66,7 +66,7 @@ require_once '../controllers/validatecomments-controller.php';
                                             <!-- Bonton archiver -->
                                             <form method="POST" action="" name="archive-<?= $value["comments_id"] ?>">
                                                 <td class="text-center">
-                                                    <button class="text-light btn activated" name="archive" value=<?= $value["comments_id"] ?>>
+                                                    <button class="text-light btn archive" name="archive" value=<?= $value["comments_id"] ?>>
                                                         Archive
                                                     </button>
                                                 </td>

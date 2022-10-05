@@ -54,7 +54,7 @@ require_once '../controllers/allUsers-controller.php';
                                 </tr>
 
                                 <div class="modal fade" id="users-<?= $value['users_id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <p class="modal-title fs-4 welcome" id="exampleModalLabel"><?= $value['users_name'] ?> <?= $value['users_surname'] ?></p>
