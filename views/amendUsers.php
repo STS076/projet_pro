@@ -18,13 +18,14 @@ require_once '../elements/top.php' ?>
                     <i class='bi bi-caret-left-fill links mx-2'></i> back
                 </a>
             <?php } else { ?>
-                <a class="fs-6 text-secondary  my-3"  href="infoUsers.php?users=<?= $_SESSION['user']['users_id'] ?>">
+                <a class="fs-6 text-secondary  my-3" href="infoUsers.php?users=<?= $_SESSION['user']['users_id'] ?>">
                     <i class='bi bi-caret-left-fill links mx-2'></i> back
                 </a>
             <?php } ?>
 
-            <h2 class="text-center py-3 fst-italic welcome">Modify your profile : </h2>
+
             <?php if ($_SESSION['user']['role_id_ROLE'] != 1 && $_SESSION['user']['users_id'] == $_GET['amend'] || $_SESSION['user']['role_id_ROLE'] == 1) { ?>
+                <h2 class="text-center py-3 fst-italic welcome">Modify your profile : </h2>
                 <div class="col-lg-5 py-4  col-11">
                     <form action="" method="POST">
                         <div class=" d-flex flex-column">
@@ -88,17 +89,7 @@ require_once '../elements/top.php' ?>
         </div>
     </main>
 
-    <?php if (isset($_SESSION['swal'])) { ?>
-        <script>
-            Swal.fire({
-                icon: '<?= $_SESSION['swal']['icon'] ?>',
-                title: '<?= $_SESSION['swal']['title'] ?>',
-                text: '<?= $_SESSION['swal']['text'] ?>'
-            })
-        </script>
-    <?php
-        unset($_SESSION['swal']);
-    } ?>
+ 
 
 
     <button type="button" class="btn bouton btn-floating " id="btn-back-to-top">

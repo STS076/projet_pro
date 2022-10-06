@@ -72,7 +72,7 @@ body {
 /* footer */
 /*  */
 footer {
-    background-color: #5C5B7E;
+    background-color: #0F1523;
     color: white;
 }
 
@@ -216,7 +216,7 @@ footer {
 @media screen and (min-width:600px) {
     .map {
         width: 100%;
-        height: 30rem;
+        height: 35rem;
     }
 
 }
@@ -286,6 +286,7 @@ footer {
     display: flex;
     justify-content: center;
 }
+
 /* hastags */
 .links {
     color: #48CFC4;
@@ -521,6 +522,7 @@ main {
 html {
     height: -webkit-fill-available;
 }
+
 /* header cards dashboard */
 .headerCards {
     background-color: #dcccf6;

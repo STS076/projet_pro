@@ -29,7 +29,11 @@ require_once '../elements/top.php' ?>
                         <p>Registered since<span> : <?= $oneUserArray['users_joined'] ?></span></p>
 
                     </div>
-                    <a class="text-secondary text-center" href="amendUsers.php?amend=<?= $oneUserArray['users_id'] ?>">Modify your profile</a>
+                    <?php if ($_SESSION['user']['role_id_ROLE'] != 1) { ?>
+                        <a class="text-secondary text-center" href="amendUsers.php?amend=<?= $oneUserArray['users_id'] ?>">Modify your profile</a>
+                    <?php } else { ?>
+                        <a class="text-secondary text-center" href="amendUsers.php?amend=<?= $oneUserArray['users_id'] ?>">Modify the profile</a>
+                    <?php } ?>
                 </div>
 
                 <div class="row justify-content-center my-5">
@@ -75,7 +79,7 @@ require_once '../elements/top.php' ?>
                                         <tr>
                                             <td class="text-center"><?= $value['comments_date'] ?></td>
                                             <td class="text-center"><?= $value['deals_title'] ?></td>
-                                            <td class="text-center d-flex justify-content-start ps-5"><?= $value['comments_comment'] ?></td>
+                                            <td class="text-center text-truncate" style="max-width: 100px;"><?= $value['comments_comment'] ?></td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>
@@ -93,6 +97,21 @@ require_once '../elements/top.php' ?>
             ?>
         </div>
     </main>
+
+
+    <?php if (isset($_SESSION['swal'])) { ?>
+        <script>
+            Swal.fire({
+                icon: '<?= $_SESSION['swal']['icon'] ?>',
+                title: '<?= $_SESSION['swal']['title'] ?>',
+                text: '<?= $_SESSION['swal']['text'] ?>'
+            })
+        </script>
+    <?php
+        unset($_SESSION['swal']);
+    } ?>
+
+
 
     <button type="button" class="btn bouton btn-floating " id="btn-back-to-top">
         <i class="bi bi-arrow-up-short text-white"></i>

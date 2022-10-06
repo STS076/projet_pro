@@ -47,7 +47,7 @@ require_once '../controllers/allComments-controller.php';
                                     <th class="text-center">Rating</th>
                                     <th class="text-center">More Info</th>
                                     <th class="text-center">Status</th>
-                                    <?php if ($_SESSION['user']['role_id_ROLE'] != 3) { ?>
+                                    <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>
                                         <th class="text-center">Delete</th>
                                     <?php } ?>
                                 </tr>
@@ -88,14 +88,15 @@ require_once '../controllers/allComments-controller.php';
                                                 </td>
                                             <?php } ?>
 
-
-                                            <form method="POST" action="">
-                                                <td class="text-center">
-                                                    <a class="text-light btn bg-danger" name="delete" data-bs-toggle="modal" data-bs-target="#comments-<?= $value['comments_id'] ?>">
-                                                        Delete
-                                                    </a>
-                                                </td>
-                                            </form>
+                                            <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>
+                                                <form method="POST" action="">
+                                                    <td class="text-center">
+                                                        <a class="text-light btn bg-danger" name="delete" data-bs-toggle="modal" data-bs-target="#comments-<?= $value['comments_id'] ?>">
+                                                            Delete
+                                                        </a>
+                                                    </td>
+                                                </form>
+                                            <?php }  ?>
                                         </tr>
                                         <div class="modal fade" id="comments-<?= $value['comments_id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog">

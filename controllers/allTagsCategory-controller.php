@@ -23,7 +23,17 @@ $allTagsCategoryArray = $category->getAllTagCategory();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['delete'])) {
-        $deleteCategory = $category->deleteCategory($_POST['delete']);
+        $deals = new Deals;
+        $getDealsbyCat = $deals->getDealsbyCat($_POST['delete']);
+
+        foreach ($getDealsbyCat as $value) {
+            $deals->deleteDeals($value['deals_id']);
+        }
+
+        $category->deleteCategory($_POST['delete']);
+
+        $dealHasCatObj = new DealsHasCat();
+        $dealHasCatObj->deleteCatCat($_POST['delete']);
     }
 }
 $allTagsCategoryArray = $category->getAllTagCategory();

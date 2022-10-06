@@ -112,6 +112,8 @@ require_once '../elements/top.php' ?>
                             </label>
                             <textarea type="text" id="dealMap" placeholder="google map iframe" value="" name="dealMap"><?= isset($_POST['dealMap']) ? $_POST['dealMap'] : '' ?></textarea>
                         </div>
+
+
                         <div class="d-flex flex-column">
                             <label class="py-2" for="dealTagArr">
                                 * Tag Arrondissement :
@@ -121,8 +123,9 @@ require_once '../elements/top.php' ?>
                             <select id="dealTagArr" value="<?= isset($_POST['dealTagArr']) ? $_POST['dealTagArr'] : '' ?>" name="dealTagArr">
                                 <option value="">Please select an Arrondissement</option>
                                 <?php foreach ($allTagsArrArray as $value) { ?>
-                                    <option value="<?= $value['tag_arr_id'] ?>" name="dealTagArr[<?= $value['tag_arr_id'] ?>]">
-                                        <?= $value['tag_arr_name'] ?></option>
+                                    <option value="<?= $value['tag_arr_id'] ?>" <?= isset($_POST['dealTagArr']) && $_POST['dealTagArr'] == $value['tag_arr_id'] ? 'selected' : '' ?>>
+                                        <?= $value['tag_arr_name'] ?>
+                                    </option>
                                 <?php } ?>
                             </select>
                         </div>
@@ -134,9 +137,12 @@ require_once '../elements/top.php' ?>
                                     <?= isset($errors['dealTagCat']) ? $errors['dealTagCat'] : '' ?>
                             </label>
                             <select id="dealTagCat" multiple name="dealTagCat[]">
-                                <option value="">Please select a Category</option>
+                                <option value="" selected disabled>
+                                    Please select a Category
+                                </option>
                                 <?php foreach ($allTagsCategoryArray as $value) { ?>
-                                    <option class="fontCat" value="<?= $value['tag_categories_id'] ?>" name="dealTagCat[<?= $value['tag_categories_id'] ?>]"><?= $value['tag_categories_name'] ?>
+                                    <option class="fontCat" value="<?= $value['tag_categories_id'] ?>" <?= isset($_POST['dealTagCat']) && $_POST['dealTagCat'] == $value['tag_categories_id'] ? 'selected' : '' ?>>
+                                        <?= $value['tag_categories_name'] ?>
                                     </option>
                                 <?php } ?>
                             </select>

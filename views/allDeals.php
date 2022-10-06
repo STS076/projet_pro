@@ -66,19 +66,23 @@ require_once '../controllers/allDeals-controller.php';
 
                                                 <td class="text-center"><a class="text-light btn bouton" href="amendDeals.php?amend=<?= $value['deals_id'] ?>">Amend</a></td>
                                                 <td class="text-center"><a class="text-light btn bouton" href="gallery.php?deal=<?= $value['deals_id'] ?>">Images</a></td>
-                                                <?php if ($value["deals_validate"] != 2) { ?>
+                                                <?php if ($value["deals_validate"] == 1) { ?>
                                                     <form method="POST" action="" name="form-<?= $value["deals_id"] ?>">
                                                         <td class="text-center">
                                                             <button class="text-light btn activated" name="archive" value=<?= $value["deals_id"] ?>>Activated</button>
                                                         </td>
                                                     </form>
-                                                <?php } else { ?>
+                                                <?php } else  if ($value["deals_validate"] == 2) { ?>
                                                     <form method="POST" action="" name="form-<?= $value["deals_id"] ?>">
                                                         <td class="text-center">
                                                             <button class="text-light btn archive" name="reactivate" value=<?= $value["deals_id"] ?>>Achived</button>
                                                         </td>
                                                     </form>
-                                                <?php } ?>
+                                                <?php } else { ?>
+                                                    <td class="text-center text-danger">
+                                                        Submited
+                                                    </td>
+                                                <?php }  ?>
                                             <?php }
                                             ?>
                                             <?php if ($_SESSION['user']['role_id_ROLE'] == 1) { ?>

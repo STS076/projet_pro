@@ -10,7 +10,8 @@ require_once '../elements/top.php' ?>
 
     <main class="bg-white py-5  px-0 container-fluid">
         <section class="m-0 p-0">
-            <p class=" text-center welcome2 pb-2">Welcome To Paris</p>
+            <h2 class=" text-center welcome2 pb-2">Welcome To Paris </h2>
+            <h3 class="welcome text-center pb-2">for good deals and other reduced prices</h3>
             <div class="row m-0 p-0 justify-content-center bg-light">
                 <div class="col-lg-5 col-11  mx-1 d-flex align-items-center justify-content-center">
                     <article>
@@ -27,7 +28,8 @@ require_once '../elements/top.php' ?>
                 </div>
         </section>
         <div class="text-center py-5">
-            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1OkLNPaeSeYtR3EM-UlL16JUNNjzlPHA&ehbc=2E312F" class="goodDealsMap" scrolling="NO"></iframe>
+            <iframe src="https://www.google.com/maps/d/embed?mid=1OkLNPaeSeYtR3EM-UlL16JUNNjzlPHA&ehbc=2E312F" class="goodDealsMap" scrolling="NO"></iframe>
+
         </div>
         <section class="m-0 p-0">
             <div class=" row justify-content-evenly mx-0 p-0  mt-3 bg-light">

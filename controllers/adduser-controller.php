@@ -29,7 +29,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $errors = [];
 
     $regexName = "/^[a-zA-Z-éèëêâäàöôûùüîïç]+$/";
-    $regexPhoneNumber = "/^[0-9]{10}+$/";
     $password = $_POST['password'];
     $uppercase = preg_match('@[A-Z]@', $password);
     $lowercase = preg_match('@[a-z]@', $password);
@@ -66,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (isset($_POST['emailAddress'])) {
         $user = new Users();
-        $obj = $user->checkIfMailExists($_POST['emailAddress']);
+        $checkIfMailExists = $user->checkIfMailExists($_POST['emailAddress']);
         if ($user->checkIfMailExists($_POST['emailAddress'])) {
             $errors['emailAddress'] = '*This email already exists';
         }

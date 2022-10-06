@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['username'])) {
         if ($_POST['username'] != $getOneUser['users_username']) {
             $user = new Users();
-            $obj = $user->checkIfUsernameExists($_POST['username']);
+            $checkIfUsernameExists = $user->checkIfUsernameExists($_POST['username']);
             if ($user->checkIfUsernameExists($_POST['username'])) {
                 $errors['username'] = '*This username is already taken';
             }
@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['emailAddress'])) {
         if ($_POST['emailAddress'] != $getOneUser['users_mail']) {
             $user = new Users();
-            $obj = $user->checkIfMailExists($_POST['emailAddress']);
+            $checkIfMailExists = $user->checkIfMailExists($_POST['emailAddress']);
             if ($user->checkIfMailExists($_POST['emailAddress'])) {
                 $errors['emailAddress'] = '*Cet email existe déjà';
             }
@@ -110,10 +110,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             'text' => 'You have successfully modified your profile ! '
         ];
 
-        if ($_SESSION['user']['role_id_ROLE'] == 1) {
-            header('location: amendUsers.php?amend=' . $_GET['amend']);
-            exit;
-        }
+
+        header('location: infoUsers.php?users=' . $_GET['amend']);
+        exit;
     }
 }
 

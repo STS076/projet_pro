@@ -422,7 +422,21 @@ class Deals extends Database
         $result = $query->fetch();
         return $result;
     }
+
+    /**
+     * fonction pour effacer les deals par cat
+     */
+    public function deleteDealsByCat($cat)
+    {
+        $pdo = parent::connectDb();
+        $sql = "DELETE from deals 
+        where cat=:cat";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':cat', $cat, PDO::PARAM_INT);
+        $query->execute();
+    }
 }
+
 
 
 // SELECT AverageRating, deals_id, deals_title, deals_mini_summary, deals_when, deals_where, deals_validate, deals_price, deals_metro, deals_map, deals_info, GROUP_CONCAT(`tag_categories_name`  SEPARATOR ', ') 

@@ -58,6 +58,22 @@ class DealsHasCat extends Database
 
     }
 
+        /**
+     * permet de supprimer les catégories d'un deal si modifie. supprime et ensuite ajoute. 
+     */
+    public function deleteCatCat($tag_categories_id_TAG_CATEGORIES)
+    {
+        $pdo = parent::connectDb();
+
+        $sql = "DELETE from deals_has_cat 
+        where tag_categories_id_TAG_CATEGORIES=:tag_categories_id_TAG_CATEGORIES; ";
+
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':tag_categories_id_TAG_CATEGORIES', $tag_categories_id_TAG_CATEGORIES, PDO::PARAM_INT);
+        $query->execute();
+
+    }
+
     /**
      * récupère les catégories d'un deal
      */
