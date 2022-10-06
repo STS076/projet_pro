@@ -1,9 +1,6 @@
 <?php
 session_start();
 require_once '../controllers/allComments-controller.php';
-// var_dump($_POST);
-// var_dump($allComments);
-
 ?>
 <?php include '../elements/top.php' ?>
 

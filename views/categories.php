@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once '../controllers/categories-controller.php';
-// var_dump($oneCatArray['tag_categories_name']);
 require_once '../elements/top.php';
 ?>
 

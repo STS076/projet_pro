@@ -3,9 +3,6 @@
 session_start();
 
 require_once '../controllers/amendDeals-controller.php';
-
-// var_dump($oneDealArray);
-// var_dump($_POST);
 require_once '../elements/top.php' ?>
 
 <body class="mx-auto min-vh-100 background container p-0 shadow-lg justify-content-center">

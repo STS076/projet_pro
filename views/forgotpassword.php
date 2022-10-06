@@ -2,7 +2,6 @@
 
 session_start();
 require_once '../controllers/forgotpassword-controller.php';
-// var_dump($usersInfos);
 require_once '../elements/top.php' ?>
 
 <body class="d-flex flex-column min-vh-100 mx-auto  background container p-0  container  justify-content-center">

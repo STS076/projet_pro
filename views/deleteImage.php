@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once '../controllers/deleteImage-controller.php';
-// var_dump($getOneGallery);
 ?>
 
 <?php require_once '../elements/top.php' ?>

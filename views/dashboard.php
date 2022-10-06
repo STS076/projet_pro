@@ -3,7 +3,6 @@
 session_start();
 
 require_once '../controllers/dashboard-controller.php';
-// var_dump($numberofNewComments);
 require_once '../elements/top.php' ?>
 
 <body class="d-flex flex-column container  mx-auto min-vh-100 background p-0 shadow-lg justify-content-center">

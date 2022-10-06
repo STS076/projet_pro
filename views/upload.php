@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once '../controllers/upload-controller.php';
-// var_dump($oneDealArray);
 require_once '../elements/top.php' ?>
 
 <body class="d-flex flex-column  mx-auto min-vh-100 background p-0 shadow-lg container justify-content-center">

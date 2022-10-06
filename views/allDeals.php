@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once '../controllers/allDeals-controller.php';
-// var_dump($getDealsByUser);
 ?>
 <?php include '../elements/top.php' ?>
 

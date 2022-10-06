@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $resultUploadImage = Form::uploadImage('picture', $paramUpload);
         if ($resultUploadImage['success'] === true) {
             $picture = Form::convertImagetoBase64($paramUpload['directory'] . $resultUploadImage['imageName']);
-            // var_dump($picture);
+
 
         } else {
             $errors['picture'] = $resultUploadImage['messageError'];

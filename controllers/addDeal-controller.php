@@ -145,7 +145,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if ($resultUploadImage['success'] === true) {
             $picture = Form::convertImagetoBase64($paramUpload['directory'] . $resultUploadImage['imageName']);
-            // var_dump($picture);
+       
             // va enregistrer la photo dans la BDD et récupère l'id du deal 
             $image = new Images();
             $addImage = $image->addImage($picture, $idDeals);

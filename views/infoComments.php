@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once '../controllers/infoComments-controller.php';
-// var_dump($getOnecomment);
 require_once '../elements/top.php' ?>
 
 <body class="d-flex flex-column  mx-auto min-vh-100 background container p-0 shadow-lg  justify-content-center container">

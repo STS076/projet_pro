@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once '../controllers/infoDeals-controller.php';
-// var_dump($oneDealArray);
 
 require_once '../elements/top.php';
 ?>

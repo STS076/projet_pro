@@ -3,8 +3,6 @@ session_start();
 require_once '../controllers/arrondissements-controller.php';
 require_once '../elements/top.php';
 
-
-// var_dump($exploreColor); 
 ?>
 
 <body class="d-flex flex-column  mx-auto min-vh-100 background container p-0 shadow-lg  justify-content-center container">

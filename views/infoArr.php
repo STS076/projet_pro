@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once '../controllers/infoArr-controller.php';
-// var_dump($oneTagArray);
 ?>
 <?php include '../elements/top.php' ?>
 

@@ -1,8 +1,6 @@
 <?php
 session_start();
 require_once '../controllers/home-controller.php';
-// var_dump($exploreColor);
-// require_once '../data/data.php';
 require_once '../elements/top.php' ?>
 
 <body class="mx-auto min-vh-100 background p-0 shadow-lg justify-content-center container">

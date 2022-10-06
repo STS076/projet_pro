@@ -3,7 +3,7 @@
 session_start();
 
 require_once '../controllers/amendArr-controller.php';
-// var_dump($getOneArrondissement);
+
 require_once '../elements/top.php' ?>
 
 <body class="d-flex flex-column  mx-auto min-vh-100 container background p-0 shadow-lg justify-content-center">
