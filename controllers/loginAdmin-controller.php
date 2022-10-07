@@ -25,11 +25,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (empty($_POST['pseudo'])) {
             $errors['pseudo'] = "* Please enter an email address";
         }
+        else if (!filter_var($_POST['pseudo'], FILTER_VALIDATE_EMAIL)) { // si ça ne passe pas le filter var : FILTER_VALIDATE_EMAIL
+            $errors['pseudo'] = '* Email not valid, ex. mail@mail.com';
+        }
     }
+    
     if (isset($_POST['password'])) {
         if (empty($_POST['password'])) {
             $errors['password'] = "* Please enter a password";
         }
+        
     }
 
     if (count($errors) == 0) {

@@ -52,10 +52,14 @@ require_once '../elements/top.php';
                                 <a href="arrondissements.php?choice=<?= $oneDealArray['tag_arr_id_TAG_ARR']  ?>" class="links">
                                     # <?= $oneDealArray['tag_arr_name']  ?>
                                 </a>
-                                <?php foreach (explode(', ', $oneDealArray['DealsCatTagId']) as $value) { ?>
-                                    <a href="categories.php?category=<?= $value ?>" class="links"> <?php } ?>
-                                    <?php foreach (explode(', ', $oneDealArray['DealsCatTag']) as $value) { ?>
-                                        # <?= $value ?></a>
+                                <?php
+                                $arrayTag = explode(', ', $oneDealArray['DealsCatTag']);
+                                $arrayTagsId =  explode(', ', $oneDealArray['DealsCatTagId']);
+                                foreach ($arrayTagsId as $key => $value) {
+                                ?>
+                                    <a href="categories.php?category=<?= $value ?>" class="links">
+                                        # <?= $arrayTag[$key] ?>
+                                    </a>
                                 <?php } ?>
                             </p>
                         </div>
@@ -92,7 +96,7 @@ require_once '../elements/top.php';
                                 <?php }
                                 }
                                 ?>
-                                
+
                             </div>
                         </section>
 

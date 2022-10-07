@@ -28,20 +28,7 @@ require_once '../elements/top.php' ?>
                             <input class="form-control" id="emailAddress" placeholder="Email" name="emailAddress" value="<?= isset($_POST['emailAddress']) ? $_POST['emailAddress'] : '' ?>">
 
                         </div>
-                        <!-- 
-                        <div class="d-flex flex-column">
-                            <label class="py-2" for="option">
-                                Object :
-                                <span data-span="error-option" class="text-danger" id="erroroption">
-                                    <?= isset($errors['option']) ? $errors['option'] : '' ?>
-                                </span>
-                            </label>
-                            <select class="form-control" name="option" id="option">
-                                <option value="">Please choose </option>
-                                <option value="New Deal" >This concerns a new deal</option>
-                                <option value="Mistake" selected>I noticed a mistake in one of the deal</option>
-                            </select>
-                        </div> -->
+
 
                         <div class="d-flex flex-column">
                             <label name="review">Your message: <span data-span="" class="text-danger" id="errorreview"><?= isset($errors['review']) ? $errors['review'] : '' ?></span></label>
@@ -49,7 +36,10 @@ require_once '../elements/top.php' ?>
                         </div>
                         <div class="row text-center">
                             <div class="col-lg-12 col-12 my-1">
-                                <input type="checkbox" id="checkbox" name="checkbox" value="<?= isset($_POST['checkbox']) ? $_POST['checkbox'] : '' ?>"><label for="checkbox">I agree with the terms and conditions </label>
+                                <input type="checkbox" id="checkbox" name="checkbox" value="<?= isset($_POST['checkbox']) ? $_POST['checkbox'] : '' ?>">
+                                <label for="checkbox" class="text-decoration-underline">
+                                    I agree with the terms and conditions
+                                </label>
                                 <p class="text-danger" id="errorcheckbox"><?= isset($errors['checkbox']) ? $errors['checkbox'] : '' ?></p>
                             </div>
                         </div>

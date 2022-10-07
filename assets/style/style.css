@@ -127,7 +127,8 @@ footer {
 
 .newDealsWrite {
     color: rgb(0, 0, 77);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    padding: 0;
 }
 
 .hotDeals {
@@ -254,7 +255,7 @@ footer {
 }
 
 .gallery {
-    width: 25rem;
+    width: 30rem;
     height: auto;
 }
 

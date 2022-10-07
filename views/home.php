@@ -45,11 +45,11 @@ require_once '../elements/top.php' ?>
                                 <p class="card-title text-center fw-bold welcome fs-4 newDealsWrite p-2"><?= $value['deals_title'] ?></p>
                                 <p class="p-2 "><?= $value['deals_mini_summary'] ?></p>
                             </div>
-                            <div class="">
-                                <div class="d-flex justify-content-between p-2">
+                            <div class=" ">
+                                <div class="d-flex justify-content-between  p-1 ">
                                     <p class="fw-bold"><?= $value['AverageRating'] ?>/5</p>
                                     <p><?= $value['DealsCatTag'] ?></p>
-                                    <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="newDealsWrite">Explore</a>
+                                    <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="p-0 m-0 newDealsWrite">Explore</a>
                                 </div>
                             </div>
                         </div>
@@ -68,6 +68,12 @@ require_once '../elements/top.php' ?>
                             <input class="m-0 p-0 fs-5" type="text" name="mail" placeholder="Your email" />
                             <input class="m-0 p-0 fs-5" type="submit" value="Sign up" />
                             <p class="text-danger" id="errorsurname"><?= isset($erreurs['mail']) ? $erreurs['mail'] : '' ?></p>
+                        </div>
+                        <div class="form-group m-0 p-0">
+                            <input type="checkbox" id="checkbox" name="checkbox" class="ms-1 " value="<?= isset($erreurs['checkbox']) ? $erreurs['checkbox'] : '' ?>">
+                            <label for="checkbox" class="text-decoration-underline">
+                                I agree with the terms and conditions
+                            </label>
                         </div>
                     </form>
                 </div>
@@ -95,7 +101,7 @@ require_once '../elements/top.php' ?>
                             <p class="card-title text-center fw-bold welcome fs-4 newDealsWrite p-2"><?= $value['deals_title'] ?></p>
                             <p class="p-2"><?= $value['deals_mini_summary'] ?></p>
                         </div>
-                        <div class="d-flex justify-content-evenly p-2">
+                        <div class="d-flex justify-content-between p-1">
                             <p><?= $value['DealsCatTag'] ?></p>
                             <a href="deals.php?choice=<?= $value['deals_id'] ?>" class="newDealsWrite">Explore</a>
                         </div>

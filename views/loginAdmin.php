@@ -13,18 +13,23 @@ require_once '../elements/top.php' ?>
                 <h2 class="fs-2  pb-3 text-center welcome">Please enter below information to login : </h2>
                 <form action="" method="POST">
 
-                    <div class="d-flex flex-column">
-                        <!-- <label class="text-dark">Email</label> -->
+                    <div class="d-flex flex-column mb-3">
+                        <label class="text-dark sr-only">Email</label>
                         <input class="text-center form-control identify" placeholder="Email Address" id="pseudo" value="<?= isset($_POST['pseudo']) ? $_POST['pseudo'] : '' ?>" name="pseudo">
                         <p data-span="error-pseudo" class="text-danger"><?= isset($errors['pseudo']) ? $errors['pseudo'] : '' ?></p>
                     </div>
 
-                    <div class="input-group  rounded mb-3">
-                        <input type="password" class="identify text-center form-control" id="password" placeholder="Password" name="password">
-                        <span class="input-group-text" id=""><i class="bi bi-eye-slash" id="togglePassword"></i></span>
-
+                    <div class="input-group rounded mb-3">
+                        <label class="text-dark sr-only">Password</label>
+                        <input type="password" class="text-center form-control identify" id="password" placeholder="Password" name="password" value="<?= isset($_POST['password']) ? $_POST['password'] : '' ?>">
+                        <span class="input-group-text" id="">
+                            <i class="bi bi-eye-slash" id="togglePassword"></i>
+                        </span>
                     </div>
+
+
                     <p data-span="error-password" class="text-danger"><?= isset($errors['password']) ? $errors['password'] : '' ?></p>
+
                     <div class="text-center">
                         <button class="btn bouton border border-dark text-light" id="submit" name="submit">Login</button>
                         <p class="text-danger" id="errorConnect"><?= isset($errors['connection']) ? $errors['connection'] : '' ?></p>
@@ -38,7 +43,7 @@ require_once '../elements/top.php' ?>
                 <div class="text-center py-3">
                     <a href="signUp.php" class="text-dark fw-bold filAriane">Sign up if you do not have already an account </a>
                 </div>
-                
+
             </div>
         </div>
     </main>

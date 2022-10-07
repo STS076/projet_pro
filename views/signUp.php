@@ -15,30 +15,31 @@ require_once '../elements/top.php' ?>
                     <form action="" method="POST">
 
                         <div class="d-flex flex-column">
-                            <!-- <label class="text-dark">Name : </label> -->
+                            <label class="text-dark sr-only">Name : </label>
                             <input class="text-center form-control " placeholder="Name" id="firstname" value="<?= isset($_POST['firstname']) ? $_POST['firstname'] : '' ?>" name="firstname">
                             <p data-span="error-firstname" class="text-danger"><?= isset($errors['firstname']) ? $errors['firstname'] : '' ?></p>
                         </div>
 
                         <div class="d-flex flex-column">
-                            <!-- <label class="text-dark">Surname : </label> -->
+                            <label class="text-dark sr-only">Surname : </label>
                             <input class="text-center form-control " placeholder="Surname" id="surname" value="<?= isset($_POST['surname']) ? $_POST['surname'] : '' ?>" name="surname">
                             <p data-span="error-surname" class="text-danger"><?= isset($errors['surname']) ? $errors['surname'] : '' ?></p>
                         </div>
 
                         <div class="d-flex flex-column">
-                            <!-- <label class="text-dark">Username :</label> -->
+                            <label class="text-dark sr-only">Username :</label>
                             <input class=" text-center form-control" id="username" placeholder="Username" name="username" value="<?= isset($_POST['username']) ? $_POST['username'] : '' ?>">
                             <p data-span="error-username" class="text-danger"><?= isset($errors['username']) ? $errors['username'] : '' ?></p>
                         </div>
 
                         <div class="d-flex flex-column">
-                            <!-- <label class="text-dark">Email Address :</label> -->
+                            <label class="text-dark sr-only">Email Address :</label>
                             <input type="emailAddress" class=" text-center form-control" id="emailAddress" placeholder="Email Address" name="emailAddress" value="<?= isset($_POST['emailAddress']) ? $_POST['emailAddress'] : '' ?>">
                             <p data-span="error-emailAddress" class="text-danger"><?= isset($errors['emailAddress']) ? $errors['emailAddress'] : '' ?></p>
                         </div>
 
                         <div class="input-group rounded mb-3">
+                        <label class="text-dark sr-only">Password :</label>
                             <input type="password" class="form-control text-center" id="password" placeholder="Password" name="password" value="<?= isset($_POST['password']) ? $_POST['password'] : '' ?>">
                             <span class="input-group-text" id="">
                                 <i class="bi bi-eye-slash" id="togglePassword"></i>
@@ -49,7 +50,9 @@ require_once '../elements/top.php' ?>
                         </p>
 
                         <p class="pt-2 text-center text-success">Password need 1 lowercase, 1 uppercase, 1 number, 1 special character, 8 characters</p>
+                        
                         <div class="input-group rounded mb-1">
+                        <label class="text-dark sr-only">Confirm your password :</label>
                             <input type="password" class=" text-center form-control" id="passwordconfirm" placeholder="Confirm Password" name="passwordconfirm" value="<?= isset($_POST['passwordconfirm']) ? $_POST['passwordconfirm'] : '' ?>" />
                             <span class="input-group-text" id="">
                                 <i class="bi bi-eye-slash" id="toggleConfirmPassword"></i>
@@ -62,14 +65,17 @@ require_once '../elements/top.php' ?>
 
                         <div class="row text-center">
                             <div class="col-lg-12 col-12 my-1">
-                                <input type="checkbox" id="checkbox" name="checkbox" class="ms-1" value="<?= isset($_POST['checkbox']) ? $_POST['checkbox'] : '' ?>"><label for="checkbox"> I agree with the terms and conditions </label>
+                                <input type="checkbox" id="checkbox" name="checkbox" class="ms-1 " value="<?= isset($_POST['checkbox']) ? $_POST['checkbox'] : '' ?>">
+                                <label for="checkbox" class="text-decoration-underline">
+                                    I agree with the terms and conditions
+                                </label>
                                 <p class="text-danger" id="errorcheckbox"><?= isset($errors['checkbox']) ? $errors['checkbox'] : '' ?></p>
                             </div>
                         </div>
 
                         <div class="row align-items-center">
                             <div class="g-recaptcha" data-sitekey="6LdeH08iAAAAALqtcwdoy3J2C60ZJ6YVCUSiEHW3"></div>
-                            <p  class="text-danger"><?= isset($errors['captcha']) ? $errors['captcha'] : '' ?></p>
+                            <p class="text-danger"><?= isset($errors['captcha']) ? $errors['captcha'] : '' ?></p>
                         </div>
 
                         <div class="my-5 text-center">
